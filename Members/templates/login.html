@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 
-    <div class ="form-group;" style =" width: 500px; margin-left:500px; padding-bottom: 60px; margin-top: 150px">
+    <div class ="form-group;" style =" width: 500px; margin-left:500px; padding-bottom: 70px; margin-top: 150px">
             <div class="col-md-8 text-black;">
                     {% if messages %}
                             {% for message in messages %}
-                                <div class="alert alert-primary" role="alert">
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                     <p1>{{ message }}.</p1>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
