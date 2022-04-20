@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class ="form-group;" style =" width: 500px; margin-left:500px; padding-bottom: 210px; margin-top: 200px">
+    <h1>You have been logged out.</h1>
+    <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">Login Again</button></a>
+    </div>
+
+{% endblock %}
