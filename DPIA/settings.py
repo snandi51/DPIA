@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'DPIA.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dpia-dev',
+        'NAME': 'dpia',
         'USER': 'dpia',
         'PASSWORD': 'Blast@123',
         'HOST': 'dpia-dev.mysql.database.azure.com',
