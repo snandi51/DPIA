@@ -26,7 +26,7 @@ SECRET_KEY = '11gc*#44bc78__h*o%1=t9f+ck5$q-h)l685r_xb3v)v5gx2_o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # for all hosts
 
 
 # Application definition
@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -76,13 +77,23 @@ WSGI_APPLICATION = 'DPIA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dpia-dev',
+        'USER': 'dpia',
+        'PASSWORD': 'Blast@123',
+        'HOST': 'dpia-dev.mysql.database.azure.com',
+        'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -123,5 +134,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL= '/media/'
-# LOGIN_REDIRECT_URL= 'index'
-# LOGOUT_REDIRECT_URL = 'login'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

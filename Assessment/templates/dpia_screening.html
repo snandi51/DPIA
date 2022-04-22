@@ -1,0 +1,744 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        .item {
+            height: 930px;
+            margin-right: 200px;
+        }
+
+        h2 {
+            margin: 0;
+            color: #888;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h2>DPIA Assessment</h2>
+    <div class="thumbnail">
+        <div id="DemoCarousel" class="carousel slide" data-interval="2000" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#" data-slide-to="0" class="active"></li>
+                <li data-target="#DemoCarousel" data-slide-to="1"></li>
+                <li data-target="#DemoCarousel" data-slide-to="2"></li>
+                <li data-target="#DemoCarousel" data-slide-to="3"></li>
+                <li data-target="#DemoCarousel" data-slide-to="4"></li>
+                <li data-target="#DemoCarousel" data-slide-to="5"></li>
+                <li data-target="#DemoCarousel" data-slide-to="6"></li>
+                <li data-target="#DemoCarousel" data-slide-to="7"></li>
+            </ol>
+            <div class="carousel-inner">
+                 <div class="item active">
+                    <div class="carousel-caption">
+                        <h1 class="text-dark">Plan 1</h1>
+                        <div  style ="width: 1000px; height: 750px;">
+                            <br>
+                        <div>
+                            <h3><strong style="color:green">Risk identification and assessment</strong></h3>
+                        </div>
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the purpose of the processing defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Yes</option>
+                                        <option value="1">No</option>
+                                    </select>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the aim of the project defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                             </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent is method of processing defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent are the expected benefit(s) from the processing defined ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the list of departments who will benefit from this processing defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the list of members / teams who will be involved in the processing defined in your organization ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                 </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h1 class="text-dark">Plan 2</h1>
+                        <div style ="background-color: white; width: 1100px; height: 750px">
+                            <br>
+                        <div>
+                            <h3><strong style="color:green">Step 2: Provide details on the proposed processing</strong></h3>
+                        </div>
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h5 style="color:blue">Basic processing</h5>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the process of collecting , using , storing and deleting data defined in your organization ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Yes</option>
+                                        <option value="1">No</option>
+                                    </select>
+                                 </div>
+                             </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent are the data source(s) used to initiate processing defined in your organization ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                             </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <p class="text-black">Do you have a list of people who will have access to this data?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the types of High-risk processing defined for this data processing ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Do you comply by legal requirements to collect the data (Do you have consent of the data subjects) ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">How many data subjects are likely to be affected by the project?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Where is data stored ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Do you have appropriate measures to destroy data after use ? </p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the Data retention policy defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What level of access security do you have ? / access control policy</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Is there a audit access to data ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Is there a BCM/DRP process in case of data loss?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What measures are in place to ensure the information is accurate and up to date? </p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                    <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Does any part of the data leave the EU?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">If data will be used for a new process , how will the data subjects be informed of any changes?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">If a data breach were to occur how would this be flagged up? Who within the Council would be initially made aware of a known or suspected breach? If external company is being used are there any reassurances, and, what contact details are there?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <<input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <h5>Scope of processing</h5>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What is the data to be collected?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What special category or criminal offense data is being processed?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">How much data is to be collected?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What is the frequency of data collection?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What is the retention period?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Who is affected by the data ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What geographic area does the data cover?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <<input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <h5>Framework of processing</h5>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Describe the flow of information – include where it comes from, who collects it and how, where it’s stored, how it’s used, who manages it at each stage of the process, when and how it’s deleted or archived. A diagram, flow chart or link to relevant websites or documents might be useful here.</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <<input type="text" class="form-control">
+                                 </div>
+                            </div>
+                            <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What is the relationship with the individuals whose data is</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What effect do they have regarding the data?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What are their expectations for how the data is to be used?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What special groups, for example, children or other vulnerable groups, are involved?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">What is the current state of technology associated with the intended processing?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                    <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                             <div class="row">
+                                 <div class="col-sm-8">
+                                    <p class="text-black">Is the project a one-off initiative or part of an ongoing system?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                    <input type="text" class="form-control">
+                                 </div>
+                            </div>
+                        </form>
+
+                      </div>
+                    </div>
+                </div>
+
+                <div class="item ">
+                    <div class="carousel-caption">
+                        <h1 class="text-dark">Plan 3</h1>
+                        <div style ="background-color: white; width: 1100px; height: 750px">
+                            <br>
+                            <div>
+                                <h3><strong style="color:green;">Describe the importance and materiality of processing</strong></h3>
+                            </div>
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent have to defined the legal basis for processing?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                                 <div class="col-sm-8">
+                                    <p class="text-black">To what extent it the proposed processing supposed to achieve the desired goals?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                 </div>
+                                 <div class="col-sm-2">
+                                     <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent are the alternate approaches defined to  achieve the same results?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the metrics for achieving data quality and data integrity defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Yes</option>
+                                        <option value="1">No</option>
+                                    </select>
+                                 </div>
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the information that will be given to the data subjects defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                 </div>
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent is compliance by the designated processing entities ensured for the proposed processing ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">Managed</option>
+                                        <option value="1">Optimized</option>
+                                        <option value="2">Defined</option>
+                                        <option value="3">Initial</option>
+                                    </select>
+                                 </div>
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent is the plan prepared to prevent function creep?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                 </div>
+                                <div class="col-sm-8">
+                                    <p class="text-black">To what extent are the mesaures defined to safeguard any international transfers?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <select class="form-select" id="autoSizingSelect" name="gender">
+                                        <option selected value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                 </div>
+                               <div class="col-sm-8">
+                                <p class="text-black">To what extent are the mesaures defined to safeguard any international transfers?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                               </div>
+                                <div class="col-sm-2">
+                                   <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                               </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h1 class="text-dark">Plan 4</h1>
+                        <div  style ="background-color: white; margin-left:10px; width: 800px; height: 700px">
+                        <br>
+                        <div>
+                            <h3><strong  style="color: green">Describe the consultation process used</strong></h3>
+                        </div>
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                             <div class="col-sm-8">
+                                <p class="text-black">To what extent is the process of deciding the people to consult on the proposed processing defined  in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                             </div>
+                             <div class="col-sm-2">
+                                 <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                             <div class="col-sm-8">
+                                <p class="text-black">To what extent is the process to select the consultants defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                             </div>
+                             <div class="col-sm-2">
+                                 <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">To what extent is your process defined for mapping roles of the selected consultant(s)?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Do you have a list of members who will also involved from the organization in the consultation process?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person who will keep track of the progress of these consultants?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">To what extent is the process to discuss the issues raised by the consultants defined in your organization ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Do you have a proper forum where these consultants can provide assurances and rasie their concerns ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person who will be responsible for keeping a check that all the issues raised by these consultants have been resolved ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                             </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h1 class="text-dark">Plan 5</h1>
+                        <div  style ="background-color: white; margin-left: 80px: width: 900px; height: 700px">
+                        <br>
+                        <div>
+                            <h3 ><strong  style="color: green">Risk identification and assessment</strong> </h3>
+                        </div>
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                             <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person/team who will be responsible for Identifying all the risks ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                             </div>
+                             <div class="col-sm-2">
+                                 <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                             </div>
+                             <div class="col-sm-8">
+                                <p class="text-black">To what extent is the plan to quantify the impact of the risks defined in your organization?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                             </div>
+                             <div class="col-sm-2">
+                                 <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="carousel-caption">
+                        <h1 class="text-dark">Plan 6</h1>
+                        <div  style ="background-color: white; margin-left: 80px: width: 900px; height: 700px">
+                        <br>
+                        <div>
+                            <h3 ><strong  style="color: green">Describe measures to mitigate or eliminate risk</strong> </h3>
+                        </div>
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                             <div class="col-sm-8">
+                                <p class="text-black"><b>Have you assigned a person/team who will be responsible for describing the risk mitigation measures ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                             </div>
+                             <div class="col-sm-2">
+                                 <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                             </div>
+                             <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person/team who will be responsible who will be responsible for defining the impact of risk ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                             </div>
+                             <div class="col-sm-2">
+                                 <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person/team who will be responsible who will be responsible for defining the impact of risk ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">To what extent is the plan to reduce or eliminate risk defined in your organization ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Managed</option>
+                                    <option value="1">Optimized</option>
+                                    <option value="2">Defined</option>
+                                    <option value="3">Initial</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person who will be responsible for planning and leading the risk mitigation action plan ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                    <option selected value="0">Yes</option>
+                                    <option value="1">No</option>
+                                </select>
+                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-black">Have you assigned a person who will be responsible for auditing the plan ?</p><label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            </div>
+                            <div class="col-sm-2">
+                                <select class="form-select" id="autoSizingSelect" name="gender">
+                                     <option selected value="0">Yes</option>
+                                     <option value="1">No</option>
+                                </select>
+                             </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control left" href="#DemoCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#DemoCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+</body>
+{% endblock %}
