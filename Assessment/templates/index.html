@@ -6,21 +6,187 @@
 <html lang="en">
 
 <body>
-  <!-- ======= Hero Section ======= -->
+   ======= Hero Section =======
   <section id="hero" class="d-flex align-items-center">
 
-    <div class="container align-items-center justify-content-center">
-      <img src="static/assets/img/features-2.png" width="500" height="320">
-    </div>
+<!--      <div class="container align-items-center justify-content-center">-->
+<!--        </div>-->
+
 
   </section><!-- End Hero -->
 
   <main id="main">
+    <head>
+    <title>Text alignment</title>
+    <style>
+        h1{text-align: center; margin-top: 0px;}
+    p.ex1 {
+        padding-left: 10px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        padding: 0 50px 0 50px;
+    }
+
+    </style>
+        <style>
+            body {
+
+  #color: #4CAF50;
+  background: #f7f7f7;
+  overflow-x: hidden;
+
+}
+
+
+
+.form-box {
+
+  max-width: 500px;
+
+  margin: auto;
+
+  padding: 50px;
+
+  background: #ffffff;
+
+  border: 10px solid #f2f2f2;
+
+        </style>
+
+</head>
+   <div class="row mb-2">
+      <h1>
+        DATA PROTECTION IMPACT ASSESSMENT
+      </h1>
+      </div>
+    <div>
+      <p class="ex1">This Toolkit is designed to simplify and implement the processing of Data Protection Impact Assessment (DPIA). </p>
+      <p class="ex1">Instructions :</p>
+      <p class="ex1" style="font-family: Calibri">1.  Please fill out the " Document Details"  sheet . This sheet will contain information about the details of author and approver.</p>
+      <p class="ex1" style="font-family: Calibri">2. Please provide Inputs to all the mandatory line items which are present in "DPIA Screening " sheet. This sheet will collect basic information about the scope of work / project  and will help us understand if DPIA is required or not.</p>
+      <p class="ex1" style="font-family: Calibri">3. If  'Result' cell in "DPIA Screening" sheet shows an output as " Yes, DPIA Is Recommended " or " Yes, DPIA is Mandatory ",  then please open the "DPIA Assessment" sheet and provide your responses.</p>
+      <p class="ex1" style="font-family: Calibri">4. The concerned personnel will be requested to provide inputs to "DPIA Assessment" sheet.</p>
+      <p class="ex1" style="font-family: Calibri">5. On the basis of the repsonses provided in "DPIA Assessment" sheet , we will be preparing a " Risk Summary" sheet. This sheet will have the following details : <br>
+          a. Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.<br>
+          b. Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned with these risks.<br>
+          c. Heatmap which will depict the current scenario and possible risk at each step of the whole process.  </p>
+      <p class="ex1" style="font-family: Calibri">Note 1: Data controller and Data Protection Officer should collectively analyse and provide additional checks which maybe required over this toolkit.<br>
+
+      Note 2: Data Protection Officer is responsible to observe and montior if there is a possibility of any potential risk arising from the implementation of DPIA. </p>
+        <center>
+        <div class="form-box">
+
+
+        <h1>Documents Details:</h1>
+
+        <form action="http://127.0.0.1:8000/document" method="post">
+
+          <div class="form-group">
+
+            <label for="name">Title</label>
+
+            <input class="form-control" id="name" required type="text" name="Name">
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="author">Author</label>
+
+            <input class="form-control" id="email" type="text" placeholder="Name" name="name">
+
+            <br>
+
+            <input class="form-control" id="email" type="text" placeholder="Department" name="department">
+
+            <br>
+
+
+
+            <input class="form-control" id="email" type="text" placeholder="Roll" name="roll">
+
+          </div>
+            <div class="form-group">
+
+            <label for="approval">Approver/Manager*</label>
+
+            <input class="form-control" id="name" type="name1" placeholder="Name" name="Email">
+
+            <br>
+
+            <input class="form-control" id="department" type="department1" placeholder="Department" name="Email">
+
+            <br>
+
+            <input class="form-control" id="roll" type="roll1" placeholder="Roll" name="Email">
+
+          </div>
+
+
+
+          <div class="form-group">
+
+            <label for="name">Document Version</label>
+
+            <input class="form-control" id="name" placeholder="version-1.0" type="text" name="Name">
+
+          </div>
+            <div class="form-group">
+
+            <label for="name">DPIA Status</label><br>
+
+            <select id="name" name="Name">
+
+              <option value="select">Select Here</option>
+
+              <option value="Not Started">Not Started</option>
+
+              <option value="In-Progress">In-Progress</option>
+
+              <option value="Waiting For Approval">Waiting For Approval</option>
+
+              <option value="Approved">Approved</option>
+
+            </select>
+
+          </div>
+
+
+           <div class="form-group">
+
+            <label for="name">Date</label>
+
+            <input class="form-control" id="name" type="date" name="Name"> <br>
+                <div class="text-centre" align="right">
+            <a class="first-link" href="">
+            <a href="{% url 'screening' %}"><button type="button" class="btn btn-primary">Get Started</button></a>
+            </a>
+        </div>
+
+          </div>
+
+
+
+
+
+        </form>
+
+
+      </div>
+
+       </center>
+
+
+
+<!--        <div class="text-center">-->
+<!--            <a class="first-link" href="">-->
+<!--            <button style="background-color:Green" type="button" class="btn btn-primary">Get started</button>-->
+<!--            </a>-->
+<!--        </div>-->
 
 
   </main><!-- End #main -->
 {% endblock %}
-
 </body>
 
 </html>
