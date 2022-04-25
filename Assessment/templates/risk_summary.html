@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div style="height: 55px">
+</div>
+<br>
+  <main id="main">
+      <center><h3>Risk Summary</h3></center>
+    <table class="table table-bordered" style="margin-bottom: 10px">
+      <thead>
+        <tr>
+          <th scope="col" class="table-primary">Total Risks</th>
+          <th scope="col" class="table-primary">26</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="table-primary">Data Protection impacted assessment steps</th>
+            <th scope="row" class="table-primary">Number of Risks</th>
+            <th scope="row" class="table-primary">Risk Score</th>
+            <th scope="row" class="table-primary">Risk Percentage</th>
+        </tr>
+        <tr>
+          <td>STEP 1 : Specify the need for a DPIA</td>
+          <td>3</td>
+          <td>4</td>
+          <td class="bg-info">60%</td>
+        </tr>
+        <tr>
+          <td>Step 2: Provide details on the proposed processing</td>
+          <td>4</td>
+          <td>3</td>
+            <td class="bg-info">67%</td>
+        </tr>
+        <tr>
+          <td>Step 3: Describe the consultation process used</td>
+          <td>3</td>
+          <td>4</td>
+            <td class="bg-primary">50%</td>
+        </tr>
+        <tr>
+          <td>Step 4: Describe the importance and materiality of processing</td>
+          <td>4</td>
+          <td>3</td>
+            <td class="bg-warning">70%</td>
+        </tr>
+        <tr>
+          <td>Step 5: Risk identification and assessment</td>
+          <td>4</td>
+          <td>3</td>
+            <td class="bg-danger">100%</td>
+        </tr>
+        <tr>
+          <td>Step 6: Describe measures to mitigate or eliminate risk</td>
+          <td>3</td>
+          <td>4</td>
+            <td class="bg-success">20%</td>
+        </tr>
+        <tr>
+          <td>Step 8 : Implement DPIA outcomes in Organization</td>
+          <td>5</td>
+          <td>3</td>
+            <td class="bg-success">40%</td>
+        </tr>
+      </tbody>
+</table>
+<!--<div style="margin-top: 45px">-->
+
+<!--</div>-->
+  </main>
+<!-- End #main -->
+{% endblock %}
+</body>
+
+</html>
