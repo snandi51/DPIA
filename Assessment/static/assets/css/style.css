@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #EBEBEC; /* change navbar color */
+  background: #DEDDDD; /* change navbar color */
   border-bottom: 2px solid #eceefe;
   transition: all 0.5s;
   z-index: 997;
@@ -1240,7 +1240,7 @@ section {
 #footer {
   color: #444444;
   font-size: 14px;
-  background: #EBEBEC; /* change footer color */
+  background: #DEDDDD; /* change footer color */
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 #footer .footer-top {

@@ -14,3 +14,13 @@ def temp(request):
 
 def dpia_screening(request):
     return render(request, 'dpia_screening.html')
+
+
+def risk_summary(request):
+    return render(request, 'risk_summary.html')
+
+
+def heat_map(request):
+    return render(request, 'heat_map.html')
+
+
