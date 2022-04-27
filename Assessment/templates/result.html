@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<div style="height: 130px">
+
+</div>
+<div class="container col-sm-4 text-black rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding: 30px;">
+    <center>
+        <h1><strong>Result</strong></h1>
+        {% if dpia_status %}
+            {% if dpia_status == 'Mandatory' %}
+                <p style="color:red"><b>DPIA is Mandatory</b></p>
+                <a href="{% url 'dpia_screening' %}"><button type="button" class="btn btn-success rounded-pill"><i class="fa fa-unlock fa-lg "></i>Start Assessment</button></a>
+            {% else %}
+                <p style="color:green"><b>DPIA is Not Mandatory</b></p>
+                <a href="{% url 'index' %}"><button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-unlock fa-lg "></i>Back to Home</button></a>
+            {% endif %}
+        {% endif %}
+    </center>
+<!-- End #main -->
+    </div >
+<div style="margin-bottom: 90px">
+
+</div>
+{% endblock %}
+</body>
+
+</html>

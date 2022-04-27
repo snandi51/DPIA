@@ -2,202 +2,95 @@
 {% block content %}
 {% load static %}
 
+
+<link href="static/assets/css/style.css" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 
 <body>
-<div style="height: 80px">
-
+<div style="height: 30px">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </div>
   <main id="main">
-    <head>
-    <style>
-        h3{text-align: center;}
-    p.ex1 {
-        padding-left: 10px;
-        font-size: 16px;
-        margin-bottom: 0px;
-        margin-top: 0px;
-        padding: 0 10px 0 10px;
-    }
-
-    </style>
-        <style>
-            body {
-
-  #color: #4CAF50;
-  background: #f7f7f7;
-  overflow-x: hidden;
-
-}
-
-
-
-.form-box {
-
-  max-width: 500px;
-
-  #margin: auto;
-
-  padding: 50px;
-
-  background: #ffffff;
-
-  border: 10px solid #f2f2f2;
-  }
-
-input, textarea {
-
-  width: 100%;
-  }
-
-
-        </style>
-
-</head>
-
-<div class="row">
-
-    <div class="col-8">
-
-     <div class="form-box1">
-
-      <div class="row mb-4">
-
-        <h3 style="margin-top: 20px">
-
-            <strong>DATA PROTECTION IMPACT ASSESSMENT</strong>
-
-        </h3>
-
-        </div>
-
-      <div>
-
-        <p class="ex1" style="font-family: Arial, Helvetica, sans-serif" ><strong>This Toolkit is designed to simplify and implement the processing of Data Protection Impact Assessment (DPIA).</strong> </p>
-        <br>
-        <p class="ex1"><strong>Instructions:</strong></p>
-
-        <p class="ex1" style="font-family: Fjalla One"><strong>1.</strong>  Please fill out the " Document Details"  sheet . This sheet will contain information about the details of
-            author and approver.</p>
-
-        <p class="ex1" style="font-family: Fjalla One"><strong>2.</strong> Please provide Inputs to all the mandatory line items which are present in "DPIA Screening " sheet.
-            This sheet will collect &nbsp; &nbsp; &nbsp; &nbsp; basic information about the scope of work / project  and will help us understand if
-            DPIA is required or not. </p>
-
-        <p class="ex1" style="font-family: Fjalla One"><strong>3.</strong> If  'Result' cell in "DPIA Screening" sheet shows an output as " Yes, DPIA Is Recommended " or " Yes,
-            DPIA is &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Mandatory ",  then please open the "DPIA Assessment" sheet and provide your responses.</p>
-
-        <p class="ex1" style="font-family: Fjalla One"><strong>4.</strong> The concerned personnel will be requested to provide inputs to "DPIA Assessment" sheet. </p>
-          <p class="ex1" style="font-family: Fjalla One"><strong>5.</strong> On the basis of the repsonses provided in "DPIA Assessment" sheet , we will be preparing a
-              "Risk Summary" Sheet.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; This sheet will have the following details :<br>
-
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>a.</strong> Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.<br>
-
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>b.</strong> Steps which are weak points in the current process and may be vulnerable to threats. Mitigation
-              measures will be &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mentioned with these risks.<br>
-
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>c.</strong> Heatmap which will depict the current scenario and possible risk at each step of the whole process.  </p>
-
-        <p class="ex1" style="font-family: Fjalla One"><strong>Note 1</strong>: Data controller and Data Protection Officer should collectively analyse and provide additional
-            checks which maybe &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;required over this toolkit.<br>
-
-            <strong>Note 2</strong>: Data Protection Officer is responsible to observe and montior if there is a possibility of any
-            potential risk arising from &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; the implementation of DPIA. </p>
-
+    <div class="float-container text-black" style="height:500px; margin-top:10; padding-top:10px">
+      <div class="float-child1">
+          <h5 class="text-black"><strong>Data Protection Impact Assessment</strong></h5>
+          <hr>
+          <p class="p_title">This Toolkit is designed to simplify and implement the processing of Data Protection Impact Assessment (DPIA).</p>
+          <hr>
+          <p><strong>Instructions :</strong></p>
+          <p class="instruction"><strong>1.</strong> Please fill out the " Document Details"  sheet . This sheet will contain information about the details of author and approver.</p>
+          <p class="instruction"><strong>2.</strong> Please provide Inputs to all the mandatory line items which are present in "DPIA Screening " sheet. This sheet will collect basic &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;information about the scope of work / project  and will help us understand if DPIA is required or not. </p>
+          <p class="instruction"><strong>3.</strong> If  'Result' cell in "DPIA Screening" sheet shows an output as " Yes, DPIA Is Recommended " or " Yes, DPIA is Mandatory ",  then &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; please open the "DPIA Assessment" sheet and provide your responses.</p>
+          <p class="instruction"><strong>4.</strong> The concerned personnel will be requested to provide inputs to "DPIA Assessment" sheet. </p>
+          <p class="instruction"><strong>5.</strong> On the basis of the repsonses provided in "DPIA Assessment" sheet ,
+            we will be preparing a " Risk Summary" sheet. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;This sheet will have the following details :</p>
+              <p class="instruction">&nbsp;&nbsp;&nbsp;&nbsp;<strong>a.</strong> Steps which are in compliance with recommended "Security by Design" prinicple of GDPR. </p>
+              <p class="instruction">&nbsp;&nbsp;&nbsp;&nbsp;<strong>b.</strong> Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with these risks </p>
+              <p class="instruction">&nbsp;&nbsp;&nbsp;&nbsp;<strong>c.</strong> Heatmap which will depict the current scenario and possible risk at each step of the whole process. </p>
+          <p class="instruction"><strong>Note 1:</strong> Data controller and Data Protection Officer should collectively analyse and provide additional checks which &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;maybe required over this toolkit. </p>
+          <p class="instruction"><strong>Note 2:</strong> Data Protection Officer is responsible to observe and montior if there is a possibility of any potential risk arising from the &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;implementation of DPIA. </p>
       </div>
-
+          <div class="float-child2">
+              <h5 class="text-black"><strong>Document Details</strong></h5>
+              <hr>
+              <form method="POST" action="index">
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Title*</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="title" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Jack Cena" required>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Author*</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="author" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Robert Kiyosaki" required>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Department*</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="department" class="form-control form-control-sm" id="inputPassword" placeholder="eg: IT" required>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Approver/Manager*</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="manager" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Martin Bill" required>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Document Version*</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="version" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Version 1.0" required>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">DPIA Status*</label>
+                    <div class="col-sm-7">
+                      <select class="form-select dropdown_size dropdown_value" name="status" required>
+                        <option selected value="0">Select Here</option>
+                        <option value="1">Not-Started</option>
+                        <option value="2">In-Progress</option>
+                        <option value="2">Waiting for Approval</option>
+                        <option value="2">Approved</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Date*</label>
+                    <div class="col-sm-7">
+                      <input type="date" class="form-control form-control-sm" required>
+                    </div>
+                  </div>
+                  <div style="margin-top:29px; margin-bottom:10x">
+                        <button type="submit" class="btn btn-success" style="margin-left:230px;"><i class="fa fa-address-card"></i> Start Screening</button>
+                  </div>
+              </form>
+          </div>
     </div>
-
-    </div>
-    <div class="col-4">
-
-      <div class="form-box">
-
-        <h4>Documents Details</h4>
-
-        <form action="/#" method="post">
-
-          <div class="form-group">
-
-            <label for="name">Title</label>
-
-            <input class="form-control-sm" id="name" type="text" name="Name">
-
-          </div>
-
-          <div class="form-group">
-
-            <label>Author</label><br>
-
-            <input class="form-control-sm" id="email" type="text" name="name">
-              <label>Department</label>
-            <input class="form-control-sm" id="email" type="text" name="department">
-                <label>Roll</label>
-            <input class="form-control-sm" id="email" type="text" name="roll">
-
-          </div>
-    <div class="form-group">
-
-            <label>Approver/Manager</label><br>
-
-            <input class="form-control-sm" id="name" type="name1" name="Email">
-
-          </div>
-
-          <div class="form-group">
-            <label   for="name">Document Version:</label><br>
-
-            <input class="form-control-sm" id="name" placeholder="version-1.0" type="text" name="Name">
-
-          </div><br>
-            <div class="form-group" >
-
-            <label for="name" type="text">DPIA Status</label><br>
-
-            <select class="form-control-sm" id="name" name="Name">
-
-              <option value="select">Select Here</option>
-
-              <option value="Not Started">Not Started</option>
-
-              <option value="In-Progress">In-Progress</option>
-
-              <option value="Waiting For Approval">Waiting For Approval</option>
-
-              <option value="Approved">Approved</option>
-
-            </select>
-
-          </div><br>
-
-
-
-          <div class="form-group">
-
-            <label for="name">Date</label>
-
-            <input class="form-control-sm" id="name" type="date" name="Name">
-
-          </div>
-     <br>
-
-          <!-- <input class="btn btn-secondary" type="button" value="Get Started" /> -->
-
-          <a class="first-link" href="{% url 'screening' %}">
-            <button  type="button" class="btn btn-primary">Start Screening</button>
-               </a>
-
-        </form>
-
-        </div>
-
-      </div>
-
-</div>
-
-</div>
-  </main><!-- End #main -->
+  </main>
+<!-- End #main -->
 {% endblock %}
 </body>
 
