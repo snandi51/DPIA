@@ -77,23 +77,23 @@ WSGI_APPLICATION = 'DPIA.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'dpia-dev',
-#         'USER': 'dpia',
-#         'PASSWORD': 'Blast@123',
-#         'HOST': 'dpia-dev.mysql.database.azure.com',
-#         'PORT': '3306',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dpia-dev',
+        'USER': 'dpia',
+        'PASSWORD': 'Blast@123',
+        'HOST': 'dpia-dev.mysql.database.azure.com',
+        'PORT': '3306',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -134,6 +134,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 MEDIA_URL= '/media/'
+
+LOGIN_REDIRECT_URL = 'index'
+HOME_URL = 'index'
+LOGIN_URL = 'login'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

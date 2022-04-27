@@ -4,262 +4,356 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+        <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-  <!-- ======= Hero Section ======= -->
-  <section id="Screening" class="d-flex align-items-center">
-
-  </section><!-- End Hero -->
-
+        <div style="margin-top:40px">
+        </div>
+  <link href="static/assets/css/style.css" rel="stylesheet">
   <main id="main">
+      <h2 style="color:white; margin-left:480px"><b>DPIA-Screening</b></h2>
         <!-- Form Name -->
       <div class="container">
-          <div class="row mb-4" style="padding-bottom=700px">
-              <h3><strong  style="color:Green; margin-left: 300px " >Organization details</strong></h3>
+          <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+          <div class="row mb-1" style="padding:5px">
+              <h3 ><strong  style="color:Black; margin-left:190px">Organization details</strong></h3>
+          </div>
           </div>
           <form method="POST" class="form-horizontal" action="screening">
+              <div class="container text-white; rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding:15px">
               <div class="form-group">
-                  <div class="row mb-4">
-                      <label class="control-label col-sm-4" ><strong style="color:Green;" >Name of the Organization</strong></label>
+                  <div class="row mb-3">
+                      <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; " >Name of the Organization</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" name="name_of_organization" id="Name of the Organization"  placeholder="eg.ABC Private Limited">
+                      </div>
                       <div class="col-sm-5">
-                          <input type="text" class="form-control" name="id_of_organization" placeholder="eg.ABC Private Limited">
-                          <i data-tags="arrow right-angle" data-categories="arrows">Please enter name of your Organization.</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please enter name of your Organization.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4" ><strong style="color:Green;">Industry</strong></label>
+                      <label class="control-label col-sm-4" ><strong style="color:#2B0A3D;">Industry</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" id="Industry" placeholder="Banking" name="industry">
+                      </div>
                       <div class="col-sm-5">
-                          <input type="text" class="form-control" id="Industry" placeholder="Banking">
-                          <i data-tags="arrow right-angle" data-categories="arrows">Please mention the Industry of your Organization.</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please mention the Industry of your Organization.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Scope of Service / Project</strong></label>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Scope of Service / Project</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" id="Scope of Service / Project" name="scope_of_service_project" placeholder="We aim to do KYC of new customers for our new Health Insurance Scheme">
+                      </div>
                       <div class="col-sm-5">
-                          <input type="text" class="form-control" id="Scope of Service / Project" placeholder="We aim to do KYC of new customers for our new Health Insurance Scheme">
-                          <i data-tags="arrow right-angle" data-categories="arrows">Please provide the name of data protection officer</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">We aim to do KYC of new customers for our new Health Insurance Scheme</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4" ><strong style="color:Green; ">Does Your Organization have'Data Protection Officer'?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Does Your Organization have a 'Data Protection Officer' ?" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does Your Organization have'Data Protection Officer'?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Does Your Organization have a 'Data Protection Officer' ?" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
                       </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Name of Data Protection Officer (DPO)</strong></label>
                       <div class="col-sm-5">
-                          <input type="text" class="form-control" id="Name of Data Protection Officer (DPO)" placeholder="eg.john smith">
-                          <i data-tags="arrow right-angle" data-categories="arrows">Please provide the name of data protection officer</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please provide the name of data protection officer</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
-                  <div class="row mb-2">
-                      <div class="col-sm-offset-15 col-sm-8">
-                          <center><button type="result" style="background-color:Green" class="btn btn-primary">Reset</button></center><br>
-                      </div>
-                  </div>
-              </div>
-              <div class="row mb-5" style="padding-bottom=700px">
-                 <h3><strong  style="color:Green; margin-left: 300px ">DPIA Screening</strong></h3>
-              </div>
-              <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4" ><strong style="color:Green;">Will you require Data Processing for this project?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will you require Data Processing for this project?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Name of Data Protection Officer (DPO)</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Name of Data Protection Officer (DPO)" name="name_of_DPO"><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
                       </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Please Select the Data Which You Process :</strong></label>
                       <div class="col-sm-5">
-                          <input type="text" class="form-control" id="Please Select the Data Which You Process :"placeholder="Sensetive Personal Data">
-                          <i>(Please mention the category of data which you will be processing. Categories: a) Personal Data : Name , Age , Contact Number , Address etc. ; b) Sensitive Personal Information : Ethnic Data , Health Data , Religious Data , Criminal Data, Racial Information  etc. ; c) Public Data : Data available on trusted public websites.)</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Yes/No</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
-                  <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Who will be processing this data ?</strong></label>
+               <div class="form-group">
+                  <div class="row mb-5">
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Title of Data Protection Officer (DPO)</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" name="title_of_DPO" id="Title of Data Protection Officer (DPO)" placeholder="eg.john smith">
+                      </div>
                       <div class="col-sm-5">
-                          <input type="text" class="form-control" id="Who will be processing this data ?" placeholder="Data Processor">
-                          <i>(Please mention if Data Controller Organization will be doing the data processing itself or will they be hiring external firm to do the processing.)</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please provide the name of Data Protection Officer.</i>
                       </div>
                   </div>
               </div>
+              </div>
+
+              <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
+              <div class="row mb-1" style="padding-top:5px">
+                 <h3><strong  style="color:black; margin-left:200px;">DPIA Screening<button style="margin-left:490px" type="reset" class="btn btn-primary"><strong>Reset</strong></button></strong></h3>
+              </div>
+              </div>
+
+              <div class="container text-white; rounded-top" style="background-color: rgba(245, 245, 248, 0.7);">
               <div class="form-group">
-                  <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve evaluating , scoring , profiling or predicting ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve evaluating , scoring , profiling or predicting ? ">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                  <div class="row mb-4" style="padding:15px">
+                      <label class="control-label col-sm-4" ><strong style="color:#2B0A3D;">Will you require Data Processing for this project?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Will you require Data Processing for this project?" name="data_processing_project" required>
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
                       </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve Automated decision making ?</strong></label>
                       <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve Automated decision making ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
-                          </select>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please mention if your organization will require to process data for mentioned scope of service.  Please select 'Yes' even if you have anonymised or psuedonymized the data.  Processing includes the collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction of personal data</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve Systematic monitoring ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve Systematic monitoring ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Please Select the Data Which You Process :</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Please Select the Data Which You Process :" name="select_data_process" required>
+                              <option></option>
+                              <option  value="1">Personal Data</option>
+                              <option value="2">Sensitive Personal Data</option>
+                              <option value="3">Both Personal and Sensitive Personal Data</option>
+                              <option value="4">Public Data</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">(Please mention the category of data which you will be processing. Categories: a) Personal Data : Name , Age , Contact Number , Address etc. ; b) Sensitive Personal Information : Ethnic Data , Health Data , Religious Data , Criminal Data, Racial Information  etc. ; c) Public Data : Data available on trusted public websites.)</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will you process data on a large scale?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will you process data on a large scale?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Who will be processing this data ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Who will be processing this data ?" name="processing_data">
+                              <option></option>
+                              <option  value="1">Self Processing / Data Controller </option>
+                              <option value="2">Data Processor</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">(Please mention if Data Controller Organization will be doing the data processing itself or will they be hiring external firm to do the processing.)</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve evaluating , scoring , profiling or predicting ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select"  name="data_processing_involve" id="Will Data Processing involve evaluating , scoring , profiling or predicting ? ">
+                              <option ></option>
+                              <option  value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please especially check from aspects concerning the data subject’s economic situation, health, personal preferences, interests, reliability, behaviour, location or movements.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve data primarily concerning vulnerable data subjects ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve data primarily concerning vulnerable data subjects ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve Automated decision making ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Will Data Processing involve Automated decision making ?" name="automated_decision_making">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if you will be doing any processing which will have zero human involvement. Examples -KYC Process collects the data from the system and evaluates the risk score on its own, if certain criteria are met. </i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve applying novel/innovative technologies ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve applying novel/innovative technologies ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve Systematic monitoring ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Will Data Processing involve Systematic monitoring ?" name="systematic_monitoring">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if processing  is used to observe, monitor or control data subjects. Example - CCTV camera in a public area ; This will collect data when the data subject is not aware that their data is being collected.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve sharing data outside of the European Union ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve sharing data outside of the European Union ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will you process data on a large scale?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" id="Will you process data on a large scale?" name="process_data_on_large_scale">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please consider :  a) The number of data subjects involved in the process ; b) The volume and range of personal data involved ; c)How long will the processing activity be in place for; d) The geographical extent of the processing activity.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve a new collection of personal information ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve a new collection of personal information ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select"  name="data_processing_involve_reusing_old_dataset" id="Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if processing is done for same purpose. Few examples where Re-using datasets is done for different purpose : a) Sending job mailers to unusuccessful applicants in an exam ; b) Credit Card details used to verify eligibility and sending loan offers. ; c) Combining two datasets for a new purpose.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve using a third-party contractor when processing personal information ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve using a third-party contractor when processing personal information ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve data primarily concerning vulnerable data subjects ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select"  name="vulnerable_data_subjects" id="Will Data Processing involve data primarily concerning vulnerable data subjects ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if data is store for any vulnerable groups of people. Examples of Vulnerable groups : a) Elderly People ; b) Asylum Seekers ; c) Patients ; d) Children under age of 12 ; e) Disputed matters like data of an employee whose firing has been done on biased grounds.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve a change in the way personal information is stored or secured ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve a change in the way personal information is stored or secured ?">
-                              <option  value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve applying novel/innovative technologies ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" name="data_processing_involve_innovative_technologies" id="Will Data Processing involve applying novel/innovative technologies ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if data processing involves innovative technology like facial recognition software, biometric technology, other novel ways of collecting personal data</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Will Data Processing involve a change to the way that personal data is currently collected ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Will Data Processing involve a change to the way that personal data is currently collected ?">
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve sharing data outside of the European Union ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" name="data_processing_involve_sharing_data_outside_european_union" id="Will Data Processing involve sharing data outside of the European Union ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if you will be sharing data  which may include third party services based outside of the EU. For example, if you are using a system run by a Russian company it is possible that the personal data you enter into the system is held on their Russian based servers.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4"><strong style="color:Green;">Have you Conducted DPIA for any similar scope of service ?</strong></label>
-                      <div class="col-sm-5">
-                          <select type="text" class="form-select" id="Have you Conducted DPIA for any similar scope of service ?">
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a new collection of personal information ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" name="data_processing_involve_collection_personal_information" id="Will Data Processing involve a new collection of personal information ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
                           </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if you will be collecting new information. For example - collecting information about location of data subjects or collecting the the new mailing list.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
-                  <div class="row mb-2">
-                      <div class="col-sm-offset-15 col-sm-8">
-                          <center><button type="result" style="background-color:Green" class="btn btn-primary">Result</button>
-                              <center>
-                          </center><br>
+                  <div class="row mb-4">
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve using a third-party contractor when processing personal information ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select"  name="data_processing_involve_third_party" id="Will Data Processing involve using a third-party contractor when processing personal information ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">Please check if you will share this data with a third party . For example outsourcing HR functions or storing information in the cloud. In case of a external Data Processor , please check if there is any involvement of any third party vendor like cloud service provider or data storage provider.</i>
                       </div>
                   </div>
+              </div>
+              <div class="form-group">
+                  <div class="row mb-4">
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a change in the way personal information is stored or secured ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" name="data_processing_involve_change_information_is_stored_secured" id="Will Data Processing involve a change in the way personal information is stored or secured ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">If this is not a new collection process , then please check if the new data is stored in similar way as of the old data. For example - there is no change of transferring the storage of personal information into the cloud, or the implementation of a policy that effects a change to the way personal information is stored or secured.</i>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row mb-4">
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a change to the way that personal data is currently collected ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" name="data_processing_involve_change_personal_data_is_currently_collected" id="Will Data Processing involve a change to the way that personal data is currently collected ?">
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D;">If this is not a new collection process , then please check if the new data is collected in same way as of old date. For example - Collection is done using paper forms and has not been upgraded to online forms.</i>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row mb-4">
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Have you Conducted DPIA for any similar scope of service ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select"  name="conducted_DPIA_for_similar_scope_of_service" id="Have you Conducted DPIA for any similar scope of service ?" required>
+                              <option ></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i style="color:#2B0A3D">Please mention if you have conducted DPIA for any service which has similar nature , scope , context or purpose.</i>
+                      </div>
+                  </div>
+              </div>
+            <center style="padding:10px">
+                <button type="submit" class="btn btn-primary">Result</button>
+            </center>
               </div>
           </form>
       </div>
       </div>
-s
+
 
   </main><!-- End #main -->
 {% endblock %}
