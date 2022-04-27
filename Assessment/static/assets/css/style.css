@@ -1242,6 +1242,10 @@ section {
   font-size: 14px;
   background: #DEDDDD; /* change footer color */
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 #footer .footer-top {
   padding: 60px 0 30px 0;
