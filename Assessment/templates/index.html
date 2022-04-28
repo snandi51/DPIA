@@ -8,34 +8,34 @@
 <html lang="en">
 
 <body>
-<div style="height: 30px">
+<div style="height: 29px">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </div>
   <main id="main">
-    <div class="float-container text-black" style="height: 500px; margin-top:10; padding-top:10px">
+
+    <div class="float-container text-black" style="height: 510px; margin-top:10; padding-top:10px">
       <div class="float-child1" style="padding-left:20px">
           <h5 class="text-black"><strong>Data Protection Impact Assessment</strong></h5>
           <hr>
           <p class="p_title">This Toolkit is designed to simplify and implement the processing of Data Protection Impact Assessment (DPIA).</p>
           <hr>
-          <p><strong>Instructions :</strong></p>
-
+          <p><strong>Instructions: </strong></p>
           <p class="instruction">
               <ol class="instruction">
                 <li>
-                  Please fill out the " Document Details"  sheet . This sheet will contain information about the details of author and approver.
+                  Please fill out the "Document Details"  sheet . This sheet will contain information about the details of author and approver.
                 </li>
                 <li>
-                  Please provide Inputs to all the mandatory line items which are present in "DPIA Screening " sheet. This sheet will collect basic information about the scope of work / project  and will help us understand if DPIA is required or not.
+                  Please provide Inputs to all the mandatory line items which are present in "DPIA Screening" sheet. This sheet will collect basic information about the scope of work/project  and will help us understand if DPIA is required or not.
                 </li>
                 <li>
-                  If  'Result' cell in "DPIA Screening" sheet shows an output as " Yes, DPIA Is Recommended " or " Yes, DPIA is Mandatory ",  then please open the "DPIA Assessment" sheet and provide your responses.
+                  If  "Result" cell in "DPIA Screening" sheet shows an output as "Yes, DPIA Is Recommended" or "Yes, DPIA is Mandatory",  then please open the "DPIA Assessment" sheet and provide your responses.
                 </li>
                 <li>
                   The concerned personnel will be requested to provide inputs to "DPIA Assessment" sheet.
                 </li>
                 <li>
-                  On the basis of the repsonses provided in "DPIA Assessment" sheet, we will be preparing a " Risk Summary" sheet. This sheet will have the following details :
+                  On the basis of the responses provided in "DPIA Assessment" sheet, we will be preparing a "Risk Summary" sheet. This sheet will have the following details :
                   <ol type="a">
                     <li>
                       Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.
@@ -61,13 +61,13 @@
               <p class="instruction">&nbsp;&nbsp;&nbsp;&nbsp;<strong>b.</strong> Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; with these risks </p>
               <p class="instruction">&nbsp;&nbsp;&nbsp;&nbsp;<strong>c.</strong> Heatmap which will depict the current scenario and possible risk at each step of the whole process. </p>
           -->
-          <p><strong>NOTES :</strong></p>
+          <p><strong>Notes: </strong></p>
           <ol class="instruction">
             <li>
               Data controller and Data Protection Officer should collectively analyse and provide additional checks which maybe required over this toolkit.
             </li>
             <li>
-              Data Protection Officer is responsible to observe and montior if there is a possibility of any potential risk arising from the implementation of DPIA.
+              Data Protection Officer is responsible to observe and monitor if there is a possibility of any potential risk arising from the implementation of DPIA.
             </li>
           </ol>
       </div>
@@ -85,6 +85,12 @@
                     <label for="inputPassword" class="col-sm-4 col-form-label form_title">Author*</label>
                     <div class="col-sm-7">
                       <input type="text" name="author" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Robert Kiyosaki" required>
+                    </div>
+                  </div>
+                  <div class="form-group row space1">
+                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Role*</label>
+                    <div class="col-sm-7">
+                      <input type="text" name="role" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Software Engineer" required>
                     </div>
                   </div>
                   <div class="form-group row space1">
@@ -109,7 +115,7 @@
                     <label for="inputPassword" class="col-sm-4 col-form-label form_title">DPIA Status*</label>
                     <div class="col-sm-7">
                       <select class="form-select dropdown_size dropdown_value" name="status" required>
-                        <option selected value="0">Select Here</option>
+                        <option value="">Select Here</option>
                         <option value="1">Not-Started</option>
                         <option value="2">In-Progress</option>
                         <option value="2">Waiting for Approval</option>
