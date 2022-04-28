@@ -4,23 +4,65 @@
 
 <!DOCTYPE html>
 <html lang="en">
-        <head>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
         <div style="margin-top:40px">
         </div>
   <link href="static/assets/css/style.css" rel="stylesheet">
   <main id="main">
-      <h2 style="color:white; margin-left:480px"><b>DPIA-Screening</b></h2>
+      <script type="text/javascript">
+            function toggleInput() {
+                    var data_protection_officer = document.getElementById("data_protection_officer");
+                    var div1 = document.getElementById("div1");
+                    div1.style.display = data_protection_officer.value == "0" ? "block" : "none";
+                    var div2 = document.getElementById("div2");
+                    div2.style.display = data_protection_officer.value == "0" ? "block" : "none";
+            }
+        function toggleInput1() {
+                            var data_processing_project = document.getElementById("data_processing_project");
+                            var Asset1 = document.getElementById("Asset1");
+                            Asset1.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset2 = document.getElementById("Asset2");
+                            Asset2.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset3 = document.getElementById("Asset3");
+                            Asset3.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset4 = document.getElementById("Asset4");
+                            Asset4.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset5 = document.getElementById("Asset5");
+                            Asset5.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset6 = document.getElementById("Asset6");
+                            Asset6.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset7 = document.getElementById("Asset7");
+                            Asset7.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset8 = document.getElementById("Asset8");
+                            Asset8.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset9 = document.getElementById("Asset9");
+                            Asset9.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset10 = document.getElementById("Asset10");
+                            Asset10.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset11 = document.getElementById("Asset11");
+                            Asset11.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset12 = document.getElementById("Asset12");
+                            Asset12.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset13 = document.getElementById("Asset13");
+                            Asset13.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset14 = document.getElementById("Asset14");
+                            Asset14.style.display = data_processing_project.value == "0" ? "block" : "none";
+                            var Asset15 = document.getElementById("Asset15");
+                            Asset15.style.display = data_processing_project.value == "0" ? "block" : "none";
+                        }
+      </script>
+      <center><h2 style="color:black;"><b>DPIA-SCREENING</b></h2></center>
         <!-- Form Name -->
       <div class="container">
           <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
           <div class="row mb-1" style="padding:5px">
-              <h3 ><strong  style="color:Black; margin-left:190px">Organization details</strong></h3>
+              <h4><strong  style="color:Black; margin-left:100px">Organization Details</strong><strong  style="color:Black; margin-left:310px">Guidance</strong></h4>
           </div>
           </div>
           <form method="POST" class="form-horizontal" action="screening">
-              <div class="container text-white; rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding:15px">
+              <div class="container text-white; rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding:15px; height:auto">
               <div class="form-group">
                   <div class="row mb-3">
                       <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; " >Name of the Organization</strong></label>
@@ -44,62 +86,60 @@
                   </div>
               </div>
               <div class="form-group">
-                  <div class="row mb-4">
+                  <div class="row mb-4 ">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Scope of Service / Project</strong></label>
                       <div class="col-sm-3">
-                          <input type="text" class="form-control" id="Scope of Service / Project" name="scope_of_service_project" placeholder="We aim to do KYC of new customers for our new Health Insurance Scheme">
+                          <input type="text" class="form-control" id="Scope of Service / Project" name="scope_of_service_project" placeholder="KYC of new customers">
                       </div>
                       <div class="col-sm-5">
-                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">We aim to do KYC of new customers for our new Health Insurance Scheme</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please elaborate the scope for service or project for which you want to conduct DPIA.</i>
                       </div>
                   </div>
               </div>
               <div class="form-group">
                   <div class="row mb-4">
-                      <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does Your Organization have'Data Protection Officer'?</strong></label>
+                      <label class="control-label col-sm-4" ><strong style="color:#2B0A3D; ">Does Your Organization have 'Data Protection Officer' ?</strong></label>
                       <div class="col-sm-3">
-                          <select type="text" class="form-select" id="Does Your Organization have a 'Data Protection Officer' ?" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
-                              <option ></option>
+                          <select type="text" class="form-select" onchange="toggleInput();" id="data_protection_officer" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
+                              <option value=""></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please provide the name of data protection officer</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please mention if your organization has a Data Protection Officer.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="div1">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Name of Data Protection Officer (DPO)</strong></label>
                       <div class="col-sm-3">
-                          <select type="text" class="form-select" id="Name of Data Protection Officer (DPO)" name="name_of_DPO"><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
-                              <option ></option>
-                              <option value="0">Yes</option>
-                              <option value="1">No</option>
-                          </select>
-                      </div>
-                      <div class="col-sm-5">
-                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Yes/No</i>
-                      </div>
-                  </div>
-              </div>
-               <div class="form-group">
-                  <div class="row mb-5">
-                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Title of Data Protection Officer (DPO)</strong></label>
-                      <div class="col-sm-3">
-                          <input type="text" class="form-control" name="title_of_DPO" id="Title of Data Protection Officer (DPO)" placeholder="eg.john smith">
+                          <input type="text" class="form-control" id="Name of Data Protection Officer (DPO)" name="name_of_DPO" placeholder="eg. John Smith">
                       </div>
                       <div class="col-sm-5">
                           <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please provide the name of Data Protection Officer.</i>
                       </div>
                   </div>
               </div>
+               <div class="form-group" id="div2">
+                  <div class="row mb-5">
+                      <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Title of Data Protection Officer (DPO)</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" name="title_of_DPO" id="Title of Data Protection Officer (DPO)" placeholder="eg. IT Head">
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please provide the title of Data Protection Officer.</i>
+                      </div>
+                  </div>
               </div>
+              </div>
+                <div style="margin-bottom:4px">
 
+                </div>
               <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.7);">
               <div class="row mb-1" style="padding-top:5px">
-                 <h3><strong  style="color:black; margin-left:200px;">DPIA Screening<button style="margin-left:490px" type="reset" class="btn btn-primary"><strong>Reset</strong></button></strong></h3>
+                <h4><strong  style="color:black; margin-left:400px">DPIA Screening<button style="margin-left:300px" type="reset" class="btn btn-primary">Reset</button></strong></h4>
               </div>
               </div>
 
@@ -108,22 +148,22 @@
                   <div class="row mb-4" style="padding:15px">
                       <label class="control-label col-sm-4" ><strong style="color:#2B0A3D;">Will you require Data Processing for this project?</strong></label>
                       <div class="col-sm-3">
-                          <select type="text" class="form-select" id="Will you require Data Processing for this project?" name="data_processing_project" required>
+                          <select type="text" class="form-select" onchange="toggleInput1();" id="data_processing_project" name="data_processing_project" required>
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please mention if your organization will require to process data for mentioned scope of service.  Please select 'Yes' even if you have anonymised or psuedonymized the data.  Processing includes the collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction of personal data</i>
+                          <i data-tags="arrow right-angle" data-categories="arrows" style="color:#2B0A3D;">Please mention if your organization will require to process data for mentioned scope of service.  Please select 'Yes' even if you have anonymised or psuedonymized the data.  Processing includes the collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction of personal data.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset1">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Please Select the Data Which You Process :</strong></label>
                       <div class="col-sm-3">
-                          <select type="text" class="form-select" id="Please Select the Data Which You Process :" name="select_data_process" required>
+                          <select type="text" class="form-select" id="Please Select the Data Which You Process :" name="select_data_process">
                               <option></option>
                               <option  value="1">Personal Data</option>
                               <option value="2">Sensitive Personal Data</option>
@@ -132,11 +172,11 @@
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D;">(Please mention the category of data which you will be processing. Categories: a) Personal Data : Name , Age , Contact Number , Address etc. ; b) Sensitive Personal Information : Ethnic Data , Health Data , Religious Data , Criminal Data, Racial Information  etc. ; c) Public Data : Data available on trusted public websites.)</i>
+                          <i style="color:#2B0A3D;">Please mention the category of data which you will be processing. Categories: a) Personal Data : Name , Age , Contact Number , Address etc. ; b) Sensitive Personal Information : Ethnic Data , Health Data , Religious Data , Criminal Data, Racial Information  etc. ; c) Public Data : Data available on trusted public websites.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset2">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Who will be processing this data ?</strong></label>
                       <div class="col-sm-3">
@@ -147,11 +187,11 @@
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D;">(Please mention if Data Controller Organization will be doing the data processing itself or will they be hiring external firm to do the processing.)</i>
+                          <i style="color:#2B0A3D;">Please mention if Data Controller Organization will be doing the data processing itself or will they be hiring external firm to do the processing.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset3">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve evaluating , scoring , profiling or predicting ?</strong></label>
                       <div class="col-sm-3">
@@ -166,7 +206,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset4">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve Automated decision making ?</strong></label>
                       <div class="col-sm-3">
@@ -181,7 +221,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset5">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve Systematic monitoring ?</strong></label>
                       <div class="col-sm-3">
@@ -196,7 +236,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset6">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will you process data on a large scale?</strong></label>
                       <div class="col-sm-3">
@@ -211,7 +251,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset7">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?</strong></label>
                       <div class="col-sm-3">
@@ -226,7 +266,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset8">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve data primarily concerning vulnerable data subjects ?</strong></label>
                       <div class="col-sm-3">
@@ -241,7 +281,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset9">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve applying novel/innovative technologies ?</strong></label>
                       <div class="col-sm-3">
@@ -252,11 +292,11 @@
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D;">Please check if data processing involves innovative technology like facial recognition software, biometric technology, other novel ways of collecting personal data</i>
+                          <i style="color:#2B0A3D;">Please check if data processing involves innovative technology like facial recognition software, biometric technology, other novel ways of collecting personal data.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset10">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve sharing data outside of the European Union ?</strong></label>
                       <div class="col-sm-3">
@@ -271,7 +311,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset11">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a new collection of personal information ?</strong></label>
                       <div class="col-sm-3">
@@ -286,7 +326,7 @@
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset12">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve using a third-party contractor when processing personal information ?</strong></label>
                       <div class="col-sm-3">
@@ -297,11 +337,11 @@
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D;">Please check if you will share this data with a third party . For example outsourcing HR functions or storing information in the cloud. In case of a external Data Processor , please check if there is any involvement of any third party vendor like cloud service provider or data storage provider.</i>
+                          <i style="color:#2B0A3D;">Please check if you will share this data with a third party . For example outsourcing HR functions or storing information in the cloud. In case of a external Data Processor, please check if there is any involvement of any third party vendor like cloud service provider or data storage provider.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset13">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a change in the way personal information is stored or secured ?</strong></label>
                       <div class="col-sm-3">
@@ -312,11 +352,11 @@
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D;">If this is not a new collection process , then please check if the new data is stored in similar way as of the old data. For example - there is no change of transferring the storage of personal information into the cloud, or the implementation of a policy that effects a change to the way personal information is stored or secured.</i>
+                          <i style="color:#2B0A3D;">If this is not a new collection process, then please check if the new data is stored in similar way as of the old data. For example - there is no change of transferring the storage of personal information into the cloud, or the implementation of a policy that effects a change to the way personal information is stored or secured.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset14">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a change to the way that personal data is currently collected ?</strong></label>
                       <div class="col-sm-3">
@@ -327,35 +367,34 @@
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D;">If this is not a new collection process , then please check if the new data is collected in same way as of old date. For example - Collection is done using paper forms and has not been upgraded to online forms.</i>
+                          <i style="color:#2B0A3D;">If this is not a new collection process, then please check if the new data is collected in same way as of old date. For example - Collection is done using paper forms and has not been upgraded to online forms.</i>
                       </div>
                   </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" id="Asset15">
                   <div class="row mb-4">
                       <label class="control-label col-sm-4"><strong style="color:#2B0A3D;">Have you Conducted DPIA for any similar scope of service ?</strong></label>
                       <div class="col-sm-3">
-                          <select type="text" class="form-select"  name="conducted_DPIA_for_similar_scope_of_service" id="Have you Conducted DPIA for any similar scope of service ?" required>
+                          <select type="text" class="form-select"  name="conducted_DPIA_for_similar_scope_of_service" id="Have you Conducted DPIA for any similar scope of service ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
                       <div class="col-sm-5">
-                          <i style="color:#2B0A3D">Please mention if you have conducted DPIA for any service which has similar nature , scope , context or purpose.</i>
+                          <i style="color:#2B0A3D">Please mention if you have conducted DPIA for any service which has similar nature, scope, context or purpose.</i>
                       </div>
                   </div>
               </div>
             <center style="padding:10px">
-                <button type="submit" class="btn btn-primary">Result</button>
+                <button type="submit" class="btn btn-success result_button">Result</button>
             </center>
               </div>
           </form>
       </div>
       </div>
-
-
-  </main><!-- End #main -->
+  </main>
+        <!-- End #main -->
 {% endblock %}
 
 </body>

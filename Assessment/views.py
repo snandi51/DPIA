@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 
 @login_required
@@ -8,6 +9,7 @@ def home(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         author = request.POST.get('author')
+        role = request.POST.get('role')
         department = request.POST.get('department')
         manager = request.POST.get('manager')
         version = request.POST.get('version')
@@ -18,6 +20,7 @@ def home(request):
             'title': title,
             'author': author,
             'department': department,
+            'role': role,
             'manager': manager,
             'version': version,
             'status': status,
@@ -41,11 +44,6 @@ def temp(request):
 
 
 @login_required
-def dpia_screening(request):
-    return render(request, 'dpia_screening.html')
-
-
-@login_required
 def risk_summary(request):
     return render(request, 'risk_summary.html')
 
@@ -63,12 +61,17 @@ def result(request):
 def dpia_status(input_data):
     dpia_status = 'Mandatory'
     if input_data.get('data_processing_project') == '0':
-        if input_data.get('select_data_process') == '4' and input_data.get('conducted_DPIA_for_similar_scope_of_service') == '0':
+        if input_data.get('select_data_process') == '4':
+            dpia_status = 'Recommended'
+        elif input_data.get('select_data_process') != '4' and input_data.get('conducted_DPIA_for_similar_scope_of_service') == '0':
+            dpia_status = 'Recommended'
+        elif input_data.get('select_data_process') != '4' and \
+                input_data.get('conducted_DPIA_for_similar_scope_of_service') == '1' or input_data.get('data_processing_project') == '0':
             dpia_status = 'Mandatory'
         else:
             dpia_status = 'Not Mandatory'
     else:
-        dpia_status = 'Not Mandatory'
+        dpia_status = 'Not Required'
     return dpia_status
 
 
@@ -126,5 +129,479 @@ def screening(request):
         }
         return render(request, 'result.html', context)
     return render(request, 'screening.html')
+
+
+class RiskCalculations:
+    def __init__(self, input_data):
+        self.input_data = input_data
+        self.risk_score = 0
+        self.number_of_risks = 0
+
+    # Risk Summary Form 1
+    def risk_calculation_f1_1(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f1_1') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f1_1') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f1_1') == '3':
+            risk_score += 1
+        if self.input_data.get('f1_1') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    def risk_calculation_f1_2(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f1_2') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f1_2') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f1_2') == '3':
+            risk_score += 1
+        if self.input_data.get('f1_2') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    def risk_calculation_f1_3(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f1_3') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f1_3') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f1_3') == '3':
+            risk_score += 1
+        if self.input_data.get('f1_3') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    def risk_calculation_f1_4(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f1_4') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f1_4') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f1_4') == '3':
+            risk_score += 1
+        if self.input_data.get('f1_4') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    def risk_calculation_f1_5(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f1_5') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f1_5') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f1_5') == '3':
+            risk_score += 1
+        if self.input_data.get('f1_5') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    def risk_calculation_f1_6(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f1_6') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f1_6') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f1_6') == '3':
+            risk_score += 1
+        if self.input_data.get('f1_6') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    def risk_calculation_f1_all(self):
+        f1_1 = self.risk_calculation_f1_1()
+        f1_2 = self.risk_calculation_f1_2()
+        f1_3 = self.risk_calculation_f1_3()
+        f1_4 = self.risk_calculation_f1_4()
+        f1_5 = self.risk_calculation_f1_5()
+        f1_6 = self.risk_calculation_f1_6()
+        risk_score = f1_1[0] + f1_2[0] + f1_3[0] + f1_4[0] + f1_5[0] + f1_6[0]
+        number_of_risks = f1_1[1] + f1_2[1] + f1_3[1] + f1_4[1] + f1_5[1] + f1_6[1]
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    # Risk Summary Form 2
+    def risk_calculation_f2_1(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_1') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f2_1') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f2_1') == '3':
+            risk_score += 1
+        if self.input_data.get('f2_1') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_2(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_2') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f2_2') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f2_2') == '3':
+            risk_score += 1
+        if self.input_data.get('f2_2') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_3(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_3') == '0':
+            risk_score += 0
+            number_of_risks += 0
+        elif self.input_data.get('f2_3') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_4(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_4') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f2_4') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f2_4') == '3':
+            risk_score += 1
+        if self.input_data.get('f2_4') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_5(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_5') == '0':
+            risk_score += 0
+            number_of_risks += 0
+        elif self.input_data.get('f2_5') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_6(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_6') == '1':
+            risk_score += 0
+            number_of_risks += 0
+        elif self.input_data.get('f2_6') == '2':
+            risk_score += 1
+            number_of_risks += 1
+        elif self.input_data.get('f2_6') == '3':
+            risk_score += 2
+            number_of_risks += 1
+        if self.input_data.get('f2_6') == '4':
+            risk_score += 3
+            number_of_risks += 1
+        if self.input_data.get('f2_6') == '5':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_7(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_7') == '1':
+            number_of_risks += 1
+        elif self.input_data.get('f2_7') == '2':
+            number_of_risks += 1
+        elif self.input_data.get('f2_7') == '3':
+            number_of_risks += 1
+        if self.input_data.get('f2_7') == '4':
+            number_of_risks += 1
+        if self.input_data.get('f2_7') == '5':
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_8(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_8') == '0':
+            risk_score += 0
+            number_of_risks += 0
+        elif self.input_data.get('f2_8') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_9(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f2_9') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f2_9') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f2_9') == '3':
+            risk_score += 1
+        if self.input_data.get('f2_9') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f2_all(self):
+        f2_1 = self.risk_calculation_f2_1()
+        f2_2 = self.risk_calculation_f2_2()
+        f2_3 = self.risk_calculation_f2_3()
+        f2_4 = self.risk_calculation_f2_4()
+        f2_5 = self.risk_calculation_f2_5()
+        f2_6 = self.risk_calculation_f2_6()
+        f2_7 = self.risk_calculation_f2_7()
+        f2_8 = self.risk_calculation_f2_8()
+        f2_9 = self.risk_calculation_f2_9()
+        risk_score = f2_1[0] + f2_2[0] + f2_3[0] + f2_4[0] + f2_5[0] + f2_6[0] + f2_7[0] + f2_8[0] + f2_9[0]
+        number_of_risks = f2_1[1] + f2_2[1] + f2_3[1] + f2_4[1] + f2_5[1] + f2_6[1] + f2_7[1] + f2_8[1] + f2_9[1]
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+    # Risk Summary Form 8
+    def risk_calculation_f8_1(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f8_1') == '1':
+            risk_score += 0
+
+        elif self.input_data.get('f8_1') == '2':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f8_2(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f8_2') == '1':
+            risk_score += 0
+            number_of_risks += 1
+        elif self.input_data.get('f8_2') == '2':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f8_3(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f8_3') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f8_3') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f8_3') == '3':
+            risk_score += 1
+        if self.input_data.get('f8_3') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f8_4(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f8_4') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f8_4') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f8_4') == '3':
+            risk_score += 1
+        if self.input_data.get('f8_4') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f8_all(self):
+        f8_1 = self.risk_calculation_f8_1()
+        f8_2 = self.risk_calculation_f8_2()
+        f8_3 = self.risk_calculation_f8_3()
+        f8_4 = self.risk_calculation_f8_4()
+        risk_score = f8_1[0] + f8_2[0] + f8_3[0] + f8_4[0]
+        number_of_risks = f8_1[1] + f8_2[1] + f8_3[1] + f8_4[1]
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+
+def dpia_screening(request):
+    if request.method == 'POST':
+        f1_1 = request.POST.get("f1_1")
+        f1_2 = request.POST.get("f1_2")
+        f1_3 = request.POST.get("f1_3")
+        f1_4 = request.POST.get("f1_4")
+        f1_5 = request.POST.get("f1_5")
+        f1_6 = request.POST.get("f1_6")
+
+        f2_1 = request.POST.get("f2_1")
+        f2_2 = request.POST.get("f2_2")
+        f2_3 = request.POST.get("f2_3")
+        f2_4 = request.POST.get("f2_4")
+        f2_5 = request.POST.get("f2_5")
+        f2_6 = request.POST.get("f2_6")
+        f2_7 = request.POST.get("f2_7")
+        f2_8 = request.POST.get("f2_8")
+        f2_9 = request.POST.get("f2_9")
+
+        f3_1 = request.POST.get("f3_1")
+        f3_2 = request.POST.get("f3_2")
+        f3_3 = request.POST.get("f3_3")
+        f3_4 = request.POST.get("f3_4")
+        f3_5 = request.POST.get("f3_5")
+        f3_6 = request.POST.get("f3_6")
+        f3_7 = request.POST.get("f3_7")
+        f3_8 = request.POST.get("f3_8")
+
+        f4_1 = request.POST.get("f4_1")
+        f4_2 = request.POST.get("f4_2")
+        f4_3 = request.POST.get("f4_3")
+        f4_4 = request.POST.get("f4_4")
+        f4_5 = request.POST.get("f4_5")
+        f4_6 = request.POST.get("f4_6")
+        f4_7 = request.POST.get("f4_7")
+        f4_8 = request.POST.get("f4_8")
+        f4_9 = request.POST.get("f4_9")
+
+        f5_1 = request.POST.get("f5_1")
+        f5_2 = request.POST.get("f5_2")
+
+        f6_1 = request.POST.get("f6_1")
+        f6_2 = request.POST.get("f6_2")
+        f6_3 = request.POST.get("f6_3")
+        f6_4 = request.POST.get("f6_4")
+        f6_5 = request.POST.get("f6_5")
+
+        f7_1 = request.POST.get("f7_1")
+        f7_2 = request.POST.get("f7_2")
+        f7_3 = '0'
+        f7_4 = '0'
+        f7_5 = '0'
+        f7_6 = '0'
+
+        f8_1 = request.POST.get("f8_1")
+        f8_2 = request.POST.get("f8_2")
+        f8_3 = request.POST.get("f8_3")
+        f8_4 = request.POST.get("f8_4")
+
+        input_data = {
+            'f1_1': f1_1,
+            'f1_2': f1_2,
+            'f1_3': f1_3,
+            'f1_4': f1_4,
+            'f1_5': f1_5,
+            'f1_6': f1_6,
+
+            'f2_1': f2_1,
+            'f2_2': f2_2,
+            'f2_3': f2_3,
+            'f2_4': f2_4,
+            'f2_5': f2_5,
+            'f2_6': f2_6,
+            'f2_7': f2_7,
+            'f2_8': f2_8,
+            'f2_9': f2_9,
+
+            'f3_1': f3_1,
+            'f3_2': f3_2,
+            'f3_3': f3_3,
+            'f3_4': f3_4,
+            'f3_5': f3_5,
+            'f3_6': f3_6,
+            'f3_7': f3_7,
+            'f3_8': f3_8,
+
+            'f4_1': f4_1,
+            'f4_2': f4_2,
+            'f4_3': f4_3,
+            'f4_4': f4_4,
+            'f4_5': f4_5,
+            'f4_6': f4_6,
+            'f4_7': f4_7,
+            'f4_8': f4_8,
+            'f4_9': f4_9,
+
+            'f5_1': f5_1,
+            'f5_2': f5_2,
+
+            'f6_1': f6_1,
+            'f6_2': f6_2,
+            'f6_3': f6_3,
+            'f6_4': f6_4,
+            'f6_5': f6_5,
+
+            'f7_1': f7_1,
+            'f7_2': f7_2,
+            'f7_3': f7_3,
+            'f7_4': f7_4,
+            'f7_5': f7_5,
+            'f7_6': f7_6,
+
+            'f8_1': f8_1,
+            'f8_2': f8_2,
+            'f8_3': f8_3,
+            'f8_4': f8_4,
+        }
+
+        table = RiskCalculations(input_data)
+        context = {
+            'input_data': input_data,
+            'risk_score1': table.risk_calculation_f1_all(),
+            'risk_score2': table.risk_calculation_f2_all(),
+            'risk_score8': table.risk_calculation_f8_all()
+        }
+        return render(request, 'risk_summary.html', context)
+    else:
+        return render(request, 'dpia_screening.html')
+
 
 

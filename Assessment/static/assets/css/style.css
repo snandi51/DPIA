@@ -1242,7 +1242,7 @@ section {
   font-size: 14px;
   background: #DEDDDD; /* change footer color */
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -1438,7 +1438,7 @@ section {
 .float-child1 {
     width: 62%;
     float: left;
-    padding: 10px;
+    padding: 20px;
     background-color:rgba(255,255,255,0.7);
 }
 
@@ -1468,4 +1468,49 @@ section {
 
 .login_button{
     width:120px;
+}
+
+#container-target {
+
+}
+
+#target-1 {
+  background:#0099cc;
+  width:300px;
+  height:300px;
+  height:160px;
+  padding:5px;
+  display:none;
+}
+
+
+#target-2 {
+  background: red;
+  width:300px;
+  height:300px;
+  height:160px;
+  padding:5px;
+  display:none;
+}
+
+.hide
+{
+  display:none;
+}
+
+/*  added this - not working  */
+
+.hide-1-yes
+{
+  display:none;
+}
+
+.hide-2-yes
+{
+  display:none;
+}
+
+.result_button{
+    height:40px;
+    width:130px
 }
