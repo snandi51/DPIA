@@ -6,6 +6,7 @@ from Assessment import views as assessment_views
 urlpatterns = [
     path('', member_views.login_user, name='login'),
     path('logout', member_views.logout_user, name='logout'),
+    path('screening1', assessment_views.screening1, name='screening1'),
     path('screening', assessment_views.screening, name='screening'),
     path('index', assessment_views.home, name='index'),
     path('result', assessment_views.result, name='result'),

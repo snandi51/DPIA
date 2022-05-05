@@ -4,6 +4,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    function myFunction() {
+        var row1 = document.getElementById("row1");
+        if (row1.value > 80) {
+            row.bgColor = "green";
+        } else {
+            row.ngColor = "red";
+        }
+    }
+</script>
 
 <body>
 <br><br>
@@ -14,7 +24,7 @@
           <thead>
             <tr>
               <th scope="col" class="table-active">Total Risks</th>
-              <th scope="col" class="table-active">26</th>
+              <th scope="col" class="table-active">{{ total_no_of_risk }}</th>
             </tr>
           </thead>
           <tbody>
@@ -28,43 +38,49 @@
               <td>STEP 1 : Specify the need for a DPIA</td>
               <td>{{ risk_score1.1 }}</td>
               <td>{{ risk_score1.0 }}</td>
-              <td class="bg-info">60%</td>
+              <td class="bg-info" id="row1">60</td>
             </tr>
             <tr>
               <td>Step 2: Provide details on the proposed processing</td>
               <td>{{ risk_score2.1 }}</td>
               <td>{{ risk_score2.0 }}</td>
-                <td class="bg-info">67%</td>
+                <td class="bg-info" id="row2">67</td>
             </tr>
             <tr>
               <td>Step 3: Describe the consultation process used</td>
-              <td>0</td>
-              <td>0</td>
-                <td class="bg-primary">50%</td>
+              <td>{{ risk_score3.1 }}</td>
+              <td>{{ risk_score3.0 }}</td>
+                <td class="bg-primary" id="row3">50%</td>
             </tr>
             <tr>
               <td>Step 4: Describe the importance and materiality of processing</td>
-              <td>0</td>
-              <td>0</td>
-                <td class="bg-warning">70%</td>
+              <td>{{ risk_score4.1 }}</td>
+              <td>{{ risk_score4.0 }}</td>
+                <td class="bg-warning" id="row4">70%</td>
             </tr>
             <tr>
               <td>Step 5: Risk identification and assessment</td>
-              <td>0</td>
-              <td>0</td>
-                <td class="bg-danger">100%</td>
+              <td>{{ risk_score5.1 }}</td>
+              <td>{{ risk_score5.0 }}</td>
+                <td class="bg-danger" id="row5">100%</td>
             </tr>
             <tr>
               <td>Step 6: Describe measures to mitigate or eliminate risk</td>
-              <td>0</td>
-              <td>0</td>
-                <td class="bg-success">20%</td>
+              <td>{{ risk_score6.1 }}</td>
+              <td>{{ risk_score6.1 }}</td>
+                <td class="bg-success" id="row6">20%</td>
+            </tr>
+            <tr>
+              <td>Step 7 : Obtain necessary approvals</td>
+              <td>{{ risk_score7.1 }}</td>
+              <td>{{ risk_score7.0 }}</td>
+                <td class="bg-success" id="row7">40%</td>
             </tr>
             <tr>
               <td>Step 8 : Implement DPIA outcomes in Organization</td>
               <td>{{ risk_score8.1 }}</td>
               <td>{{ risk_score8.0 }}</td>
-                <td class="bg-success">40%</td>
+                <td class="bg-success" id="row8">40%</td>
             </tr>
           </tbody>
     </table>
