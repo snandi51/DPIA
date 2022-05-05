@@ -13,7 +13,7 @@
         <h1><strong>Result</strong></h1>
         {% if dpia_status %}
             {% if dpia_status == 'Recommended' %}
-                <p style="color:red"><b>DPIA is Recommended</b></p>
+                <p style="color:#FFBF00"><b>DPIA is Recommended</b></p>
                 <a href="{% url 'dpia_screening' %}"><button type="button" class="btn btn-success rounded-pill">Start Assessment</button></a>
             {% elif dpia_status == 'Mandatory' %}
                 <p style="color:red"><b>DPIA is Mandatory</b></p>

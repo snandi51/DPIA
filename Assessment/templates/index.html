@@ -13,10 +13,8 @@
 </div>
   <main id="main">
 
-    <div class="float-container text-black" style="height: 510px; margin-top:10; padding-top:10px">
+    <div class="float-container text-black" style="height: 450px; margin-top:10; padding-top:10px">
       <div class="float-child1" style="padding-left:20px">
-          <h5 class="text-black"><strong>Data Protection Impact Assessment</strong></h5>
-          <hr>
           <p class="p_title">This Toolkit is designed to simplify and implement the processing of Data Protection Impact Assessment (DPIA).</p>
           <hr>
           <p><strong>Instructions: </strong></p>
@@ -72,13 +70,11 @@
           </ol>
       </div>
           <div class="float-child2">
-              <h5 class="text-black"><strong>Document Details</strong></h5>
-              <hr>
               <form method="POST" action="index">
                   <div class="form-group row space1">
                     <label for="inputPassword" class="col-sm-4 col-form-label form_title">Title*</label>
                     <div class="col-sm-7">
-                      <input type="text" name="title" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Jack Cena" required>
+                      <input type="text" name="title" class="form-control form-control-sm" id="inputPassword" placeholder="DPIA on <Name of Organization>" required>
                     </div>
                   </div>
                   <div class="form-group row space1">
@@ -106,12 +102,6 @@
                     </div>
                   </div>
                   <div class="form-group row space1">
-                    <label for="inputPassword" class="col-sm-4 col-form-label form_title">Document Version*</label>
-                    <div class="col-sm-7">
-                      <input type="text" name="version" class="form-control form-control-sm" id="inputPassword" placeholder="eg: Version 1.0" required>
-                    </div>
-                  </div>
-                  <div class="form-group row space1">
                     <label for="inputPassword" class="col-sm-4 col-form-label form_title">DPIA Status*</label>
                     <div class="col-sm-7">
                       <select class="form-select dropdown_size dropdown_value" name="status" required>
@@ -126,11 +116,11 @@
                   <div class="form-group row space1">
                     <label for="inputPassword" class="col-sm-4 col-form-label form_title">Date*</label>
                     <div class="col-sm-7">
-                      <input type="date" class="form-control form-control-sm" required>
+                      <input type="date" name="date" class="form-control form-control-sm" required>
                     </div>
-                  </div>
-                  <div style="margin-top:29px; margin-bottom:10x">
+                      <div style="margin-top:48px; margin-bottom:100x; height:68px">
                         <button type="submit" class="btn btn-success" style="margin-left:230px;"><i class="fa fa-address-card"></i> Start Screening</button>
+                  </div>
                   </div>
               </form>
           </div>
