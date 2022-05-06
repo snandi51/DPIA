@@ -4,14 +4,10 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<script>
+<script type ="text/javascript">
     function myFunction() {
         var row1 = document.getElementById("row1");
-        if (row1.value > 80) {
-            row.bgColor = "green";
-        } else {
-            row.ngColor = "red";
-        }
+            row1.bgColor = "green";
     }
 </script>
 
@@ -19,8 +15,8 @@
 <br><br>
 <div class="container text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding:20px">
       <main id="main">
-          <center><h3 class="text-black"><strong>Risk Summary</strong></h3></center>
-        <table class="table table-bordered" style="margin-bottom: 10px">
+          <center><h3 class="text-black verdana" style="font-size:25px"><strong>RISK SUMMARY</strong></h3></center>
+        <table class="table table-bordered" style="margin-bottom: 10px; border-color: black;">
           <thead>
             <tr>
               <th scope="col" class="table-active">Total Risks</th>
@@ -35,55 +31,104 @@
                 <th scope="row" class="table-active">Risk Percentage</th>
             </tr>
             <tr>
-              <td>STEP 1 : Specify the need for a DPIA</td>
+              <td>Step 1 : Specify the need for a DPIA</td>
               <td>{{ risk_score1.1 }}</td>
               <td>{{ risk_score1.0 }}</td>
-              <td class="bg-info" id="row1">60</td>
+              {% if form1_color == 'green'%}
+                <td class="bg-success" id="row1" >{{ form1_percentage }}%</td>
+              {% elif form1_color == 'yellow' %}
+                <td class="bg-warning" id="row1" >{{ form1_percentage }}%</td>
+              {% else %}
+                <td class="bg-danger" id="row1" >{{ form1_percentage }}%</td>
+              {% endif %}
             </tr>
             <tr>
               <td>Step 2: Provide details on the proposed processing</td>
               <td>{{ risk_score2.1 }}</td>
               <td>{{ risk_score2.0 }}</td>
-                <td class="bg-info" id="row2">67</td>
+                {% if form2_color == 'green'%}
+                  <td class="bg-success" >{{ form2_percentage }}%</td>
+                {% elif form2_color == 'yellow' %}
+                  <td class="bg-warning">{{ form2_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form2_percentage }}%</td>
+                {% endif %}
             </tr>
             <tr>
               <td>Step 3: Describe the consultation process used</td>
               <td>{{ risk_score3.1 }}</td>
               <td>{{ risk_score3.0 }}</td>
-                <td class="bg-primary" id="row3">50%</td>
+                {% if form3_color == 'green'%}
+                  <td class="bg-success" >{{ form3_percentage }}%</td>
+                {% elif form3_color == 'yellow' %}
+                  <td class="bg-warning">{{ form3_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form3_percentage }}%</td>
+                {% endif %}
             </tr>
             <tr>
               <td>Step 4: Describe the importance and materiality of processing</td>
               <td>{{ risk_score4.1 }}</td>
               <td>{{ risk_score4.0 }}</td>
-                <td class="bg-warning" id="row4">70%</td>
+                {% if form4_color == 'green'%}
+                  <td class="bg-success" >{{ form4_percentage }}%</td>
+                {% elif form4_color == 'yellow' %}
+                  <td class="bg-warning">{{ form4_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form4_percentage }}%</td>
+                {% endif %}
             </tr>
             <tr>
               <td>Step 5: Risk identification and assessment</td>
               <td>{{ risk_score5.1 }}</td>
               <td>{{ risk_score5.0 }}</td>
-                <td class="bg-danger" id="row5">100%</td>
+                {% if form5_color == 'green'%}
+                  <td class="bg-success" >{{ form5_percentage }}%</td>
+                {% elif form5_color == 'yellow' %}
+                  <td class="bg-warning">{{ form5_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form5_percentage }}%</td>
+                {% endif %}
             </tr>
             <tr>
               <td>Step 6: Describe measures to mitigate or eliminate risk</td>
               <td>{{ risk_score6.1 }}</td>
               <td>{{ risk_score6.1 }}</td>
-                <td class="bg-success" id="row6">20%</td>
+                {% if form6_color == 'green'%}
+                  <td class="bg-success" >{{ form6_percentage }}%</td>
+                {% elif form6_color == 'yellow' %}
+                  <td class="bg-warning">{{ form6_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form6_percentage }}%</td>
+                {% endif %}
             </tr>
             <tr>
               <td>Step 7 : Obtain necessary approvals</td>
               <td>{{ risk_score7.1 }}</td>
               <td>{{ risk_score7.0 }}</td>
-                <td class="bg-success" id="row7">40%</td>
+                {% if form7_color == 'green'%}
+                  <td class="bg-success" >{{ form7_percentage }}%</td>
+                {% elif form7_color == 'yellow' %}
+                  <td class="bg-warning">{{ form7_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form7_percentage }}%</td>
+                {% endif %}
             </tr>
             <tr>
               <td>Step 8 : Implement DPIA outcomes in Organization</td>
               <td>{{ risk_score8.1 }}</td>
               <td>{{ risk_score8.0 }}</td>
-                <td class="bg-success" id="row8">40%</td>
+                {% if form8_color == 'green'%}
+                  <td class="bg-success" >{{ form8_percentage }}%</td>
+                {% elif form8_color == 'yellow' %}
+                  <td class="bg-warning">{{ form8_percentage }}%</td>
+                {% else %}
+                  <td class="bg-danger">{{ form8_percentage }}%</td>
+                {% endif %}
             </tr>
           </tbody>
     </table>
+        <a><button type="button" style="font-family:Verdana; margin-left:720px" class="btn btn-success rounded-pill">Generate PDF</button></a> <a><button type="button" style="font-family:Verdana" class="btn btn-success rounded-pill">Create Summary Report</button></a>
       </main>
     <!-- End #main -->
   </div>

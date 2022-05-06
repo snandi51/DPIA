@@ -1520,10 +1520,14 @@ section {
     font-weight: bold;
 }
 
-.vardana{
-    font-family: "Arial", serif;
-    font-size: 16px;
+.verdana{
+    font-family: "Verdana", sans-serif;
+    font-size: 20px;
 }
+
+verdana_result{
+    font-family: "Verdana", sans-serif;
+    font-size: 25px;
 
 .dpia_screening_form{
     font-family: "Vardana", sans-serif;
@@ -1550,12 +1554,33 @@ section {
 }
 
 .submit_only{
-    width:100px;
-     border: none;
-    color: white;
+    width:380px;
+    height:40px;
+    border: none;
+    color: green;
 }
 
 .dpia_title{
-    font-family: "Arial", Helvetica, sans-serif;
-    font-size: 15px;
+    font-family: "Vardana", Helvetica, sans-serif;
+    font-size: 10px;
     }
+
+.input_box{
+    width:50px;
+    height:60px;
+}
+
+.small_text{
+    font-size: 12px;
+}
+
+
+.red{
+    background-color: red;
+}
+.yellow {
+    background-color: #ff9;
+}
+.green {
+    background-color: #9f9;
+}

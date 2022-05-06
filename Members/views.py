@@ -14,12 +14,14 @@ def login_user(request):
         if user is not None:
             login(request, user)
             authorized = True
-            return render(request, 'index.html')
+            context = {'authorized': True}
+            return render(request, 'index.html', context)
         else:
             messages.success(request, 'Invalid Username or Password')
             return render(request, 'login.html')
     if request.user.is_authenticated:
-        return render(request, 'index.html')
+        context = {'authorized': True}
+        return render(request, 'index.html', context)
     else:
         return render(request, 'login.html')
 
