@@ -34,15 +34,15 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <a class="navbar-brand text-black vardana"><img src="static/assets/img/cg_logo.png" height=50>| <b class="dpia_title">DATA PROTECTION IMPACT ASSESSMENT</b></a>
+      <a class="navbar-brand text-black"><img src="static/assets/img/cg_logo.png" height=50><b>| </b><b class="verdana" style="font-size:15px"> DATA PROTECTION IMPACT ASSESSMENT</b></a>
       <nav id="navbar" class="navbar">
         <ul>
           {% if user.is_authenticated %}
-            <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+            {% if authorized == false %}
+              <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+            {% endif %}
           <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
           {% else %}
-<!--          <li><a class="nav-link scrollto" href="#about">About</a></li>-->
-<!--          <li><a class="nav-link scrollto" href="{% url 'login' %}">Login</a></li>-->
           {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

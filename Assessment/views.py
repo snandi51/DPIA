@@ -34,7 +34,10 @@ def home(request):
             'input_data': input_data,
         }
         return render(request, 'screening.html', context)
-    return render(request, 'index.html')
+    context = {
+        'authorized': True,
+    }
+    return render(request, 'index.html', context)
 
 
 @login_required
@@ -181,6 +184,17 @@ class RiskCalculations:
         self.risk_score = 0
         self.number_of_risks = 0
         self.request = request
+        self.form1 = 6
+        self.form2 = 30
+        self.form3 = 9
+        self.form4 = 9
+        self.form5 = 2
+        self.form6 = 5
+        self.form7 = 4
+        self.form8 = 4
+        self.danger = 'red'
+        self.warning = 'yellow'
+        self.ok = 'green'
 
     # Risk Summary Form 1
     def risk_calculation_f1_1(self):
@@ -778,7 +792,7 @@ class RiskCalculations:
         if self.input_data.get('f5_1') == '0':
             risk_score = 0
             number_of_risks = 0
-        else:
+        elif self.input_data.get('f5_1') == '1':
             risk_score += 3
             number_of_risks += 1
         total_risk = [risk_score, number_of_risks]
@@ -887,7 +901,7 @@ class RiskCalculations:
         if self.input_data.get('f7_1') == '0':
             risk_score = 0
             number_of_risks = 0
-        else:
+        elif self.input_data.get('f7_1') == '1':
             risk_score += 3
             number_of_risks += 1
         total_risk = [risk_score, number_of_risks]
@@ -899,7 +913,7 @@ class RiskCalculations:
         if self.input_data.get('f7_2') == '0':
             risk_score = 0
             number_of_risks += 1
-        else:
+        elif self.input_data.get('f7_2') == '1':
             risk_score = 3
             number_of_risks += 1
         total_risk = [risk_score, number_of_risks]
@@ -1100,6 +1114,71 @@ def dpia_screening(request):
         }
 
         table = RiskCalculations(input_data, request)
+        form1_percentage = round((table.risk_calculation_f1_all()[1] / table.form1) * 100, 2)
+        form2_percentage = round((table.risk_calculation_f2_all()[1] / table.form2) * 100, 2)
+        form3_percentage = round((table.risk_calculation_f3_all()[1] / table.form3) * 100, 2)
+        form4_percentage = round((table.risk_calculation_f4_all()[1] / table.form4) * 100, 2)
+        form5_percentage = round((table.risk_calculation_f5_all()[1] / table.form5) * 100, 2)
+        form6_percentage = round((table.risk_calculation_f6_all()[1] / table.form6) * 100, 2)
+        form7_percentage = round((table.risk_calculation_f7_all()[1] / table.form7) * 100, 2)
+        form8_percentage = round((table.risk_calculation_f8_all()[1] / table.form8) * 100, 2)
+
+        if form1_percentage <= 30:
+            form1_color = 'green'
+        elif form1_percentage > 30 and form1_percentage <= 60:
+            form1_color = 'yellow'
+        else:
+            form1_color = 'red'
+
+        if form2_percentage <= 30:
+            form2_color = 'green'
+        elif form2_percentage > 30 and form2_percentage <= 60:
+            form2_color = 'yellow'
+        else:
+            form2_color = 'red'
+
+        if form3_percentage <= 30:
+            form3_color = 'green'
+        elif form3_percentage > 30 and form3_percentage <= 60:
+            form3_color = 'yellow'
+        else:
+            form3_color = 'red'
+
+        if form4_percentage <= 30:
+            form4_color = 'green'
+        elif form4_percentage > 30 and form4_percentage <= 60:
+            form4_color = 'yellow'
+        else:
+            form4_color = 'red'
+
+        if form5_percentage <= 30:
+            form5_color = 'green'
+        elif form5_percentage > 30 and form5_percentage <= 60:
+            form5_color = 'yellow'
+        else:
+            form5_color = 'red'
+
+        if form6_percentage <= 30:
+            form6_color = 'green'
+        elif form6_percentage > 30 and form6_percentage <= 60:
+            form6_color = 'yellow'
+        else:
+            form6_color = 'red'
+
+        if form7_percentage <= 30:
+            form7_color = 'green'
+        elif form7_percentage > 30 and form7_percentage <= 60:
+            form7_color = 'yellow'
+        else:
+            form7_color = 'red'
+
+        if form8_percentage <= 30:
+            form8_color = 'green'
+        elif form8_percentage > 30 and form8_percentage <= 60:
+            form8_color = 'yellow'
+        else:
+            form8_color = 'red'
+
         context = {
             'input_data': input_data,
             'risk_score1': table.risk_calculation_f1_all(),
@@ -1110,6 +1189,22 @@ def dpia_screening(request):
             'risk_score6': table.risk_calculation_f6_all(),
             'risk_score7': table.risk_calculation_f7_all(),
             'risk_score8': table.risk_calculation_f8_all(),
+            'form1_color': form1_color,
+            'form2_color': form2_color,
+            'form3_color': form3_color,
+            'form4_color': form4_color,
+            'form5_color': form5_color,
+            'form6_color': form6_color,
+            'form7_color': form7_color,
+            'form8_color': form8_color,
+            'form1_percentage': form1_percentage,
+            'form2_percentage': form2_percentage,
+            'form3_percentage': form3_percentage,
+            'form4_percentage': form4_percentage,
+            'form5_percentage': form5_percentage,
+            'form6_percentage': form6_percentage,
+            'form7_percentage': form7_percentage,
+            'form8_percentage': form8_percentage,
             'total_no_of_risk': table.risk_calculation_f1_all()[1] + table.risk_calculation_f2_all()[1]
                                 + table.risk_calculation_f3_all()[1] + table.risk_calculation_f4_all()[1]
                                 + table.risk_calculation_f5_all()[1] + table.risk_calculation_f6_all()[1]
