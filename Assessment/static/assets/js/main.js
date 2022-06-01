@@ -244,3 +244,14 @@
   });
 
 })()
+
+$('.show-1-yes').click(function() {
+    $('#target-1').show(500);
+    $('.show-1-yes').hide(0);
+    $('.hide-1-yes').show(0);
+});
+$('.hide-1-yes').click(function() {
+    $('#target-1').hide(500);
+    $('.show-1-yes').show(0);
+    $('.hide-1-yes').hide(0);
+});

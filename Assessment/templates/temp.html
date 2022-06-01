@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <!-- ======= Hero Section ======= -->
+  <section id="Screening" class="d-flex align-items-center">
+
+  </section><!-- End Hero -->
+
+ <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <main id="main">
+       <script type="text/javascript">
+		function hideDiv(elem) {
+			if(elem.value == "Laptop")
+			document.getElementById('hideDiv').style.display = "none";
+			else
+				document.getElementById('hideDiv').style.display = 'block';
+		}
+		</script>
+
+		<select class="form-control input-lg" onchange="hideDiv(this)" name="category">
+		  <option value="Desktop PCs &amp; Central unit">Desktop PCs &amp; Central unit</option>
+		  <option value="Laptop">Laptop</option>
+		</select>
+
+		<div id="hideDiv" class="form-group">
+		  <label class="" for="Name">Name</label>
+		  <input type="text"/>
+		</div>
+  </main>
+  <!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

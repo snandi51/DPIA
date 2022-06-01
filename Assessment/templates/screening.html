@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+        <div style="margin-bottom:50px;">
+        </div>
+  <link href="static/assets/css/style.css" rel="stylesheet">
+  <main id="main">
+      <script type="text/javascript">
+            function toggleInput() {
+                    var data_protection_officer = document.getElementById("data_protection_officer");
+                    var div1 = document.getElementById("div1");
+                    div1.style.display = data_protection_officer.value == "0" ? "block" : "none";
+                    var div2 = document.getElementById("div2");
+                    div2.style.display = data_protection_officer.value == "0" ? "block" : "none";
+            }
+      </script>
+        <!-- Form Name -->
+      <div class="container" style="height:390px">
+          <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.5);">
+          <div class="row mb-1" style="padding:5px">
+              <center><h4><strong  style="color:Black; margin-left:70px" class="verdana">DPIA SCREENING</strong></h4></center>
+          </div>
+          </div>
+          <form method="POST" class="form-horizontal" action="screening">
+              <div class="container text-white; rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding:15px; height:auto">
+              <div class="form-group">
+                  <div class="row mb-2">
+                      <label class="col-sm-4 dpia_screening_form"><strong style="color:#2B0A3D; " >Name of the Organization</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control " name="name_of_organization" id="Name of the Organization"  placeholder="eg.ABC Private Limited" required>
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" class="dpia_screening_guidance" data-categories="arrows" style="color:#2B0A3D;">Please enter name of your Organization.</i>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row mb-2">
+                      <label class="dpia_screening_form col-sm-4" ><strong style="color:#2B0A3D;">Industry</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" id="Industry" placeholder="Banking" name="industry">
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" data-categories="arrows" class="dpia_screening_guidance" style="color:#2B0A3D;">Please mention the Industry of your Organization.</i>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row mb-2">
+                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Scope of Service / Project</strong></label>
+                      <div class="col-sm-3">
+                          <textarea rows="2" class="form-control" id="Scope of Service / Project" name="scope_of_service_project" placeholder="We aim to do KYC of new customers for our new Health Insurance Scheme"></textarea>
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" data-categories="arrows" class="dpia_screening_guidance" style="color:#2B0A3D;">Please elaborate the scope for service or project for which you want to conduct DPIA.</i>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="row mb-2">
+                      <label class="dpia_screening_form col-sm-4" ><strong style="color:#2B0A3D; ">Does Your Organization have 'Data Protection Officer' ?</strong></label>
+                      <div class="col-sm-3">
+                          <select type="text" class="form-select" onchange="toggleInput();" id="data_protection_officer" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
+                              <option value=""></option>
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" data-categories="arrows" class="dpia_screening_guidance" style="color:#2B0A3D;">Please mention if your organization has a Data Protection Officer.</i>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-group" id="div1">
+                  <div class="row mb-2">
+                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Name of Data Protection Officer (DPO)</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" id="Name of Data Protection Officer (DPO)" name="name_of_DPO" placeholder="eg. John Smith">
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" data-categories="arrows" class="dpia_screening_guidance" style="color:#2B0A3D;">Please provide the name of Data Protection Officer.</i>
+                      </div>
+                  </div>
+              </div>
+               <div class="form-group" id="div2">
+                  <div class="row sm-5">
+                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Title of Data Protection Officer (DPO)</strong></label>
+                      <div class="col-sm-3">
+                          <input type="text" class="form-control" name="title_of_DPO" id="Title of Data Protection Officer (DPO)" placeholder="eg. IT Head">
+                      </div>
+                      <div class="col-sm-5">
+                          <i data-tags="arrow right-angle" data-categories="arrows" class="dpia_screening_guidance" style="color:#2B0A3D;">Please provide the title of Data Protection Officer.</i>
+                      </div>
+                  </div>
+              </div>
+                  <div style="margin-bottom:4px">
+                  <button style="margin-left:1000px" type="submit" class="btn btn-primary submit_button">Next</button>
+              </div>
+              </div>
+
+          </form>
+      </div>
+      </div>
+  </main>
+        <!-- End #main -->
+{% endblock %}
+
+</body>
+
+</html>

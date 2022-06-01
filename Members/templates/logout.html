@@ -2,9 +2,13 @@
 {% load static %}
 {% block content %}
 
-<div class ="form-group;" style =" width: 500px; margin-left:500px; padding-bottom: 210px; margin-top: 200px">
-    <h1>You have been logged out.</h1>
-    <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">Login Again</button></a>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7);">
+<div class ="form-group;" style =" width: 500px; padding-bottom: 210px; margin-top: 100px">
+    <br>
+    <h1 class="text-black" style="border-color:white; font-family: Verdana">You have been logged out.</h1>
+    <a href="{% url 'login' %}"><button type="button" class="btn btn-primary rounded-pill" style="font-family:Verdana"><i class="fa fa-lock fa-lg "></i> Login Again</button></a>
     </div>
+</div>
 
 {% endblock %}
