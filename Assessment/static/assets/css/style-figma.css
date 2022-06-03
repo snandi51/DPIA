@@ -1,57 +1,51 @@
 /* Top Navigation */
 
 .top-nav{
-position: absolute;
-width: auto;
-height: 72px;
-left: 0px;
-top: 0px;
+    position: absolute;
+    width: auto;
+    height: 72px;
+    left: 0px;
+    top: 0px;
 
-/* Primary/Contrast */
+    /* Primary/Contrast */
 
-background: #FFFFFF;
+    background: #FFFFFF;
 }
 
 .alt-button{
-font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 16px;
-/* identical to box height, or 114% */
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
 
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.75px;
-text-transform: capitalize;
-/* Primary/Palette/Primary */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: capitalize;
+    /* Primary/Palette/Primary */
 
-color: #12ABDB;
+    color: #12ABDB;
 
-position: absolute;
-left: 70.22%;
-right: 14.24%;
-top: 38.89%;
-bottom: 38.89%;
+    position: absolute;
+    left: 70.22%;
+    right: 14.24%;
+    top: 38.89%;
+    bottom: 38.89%;
 }
 
 .product{
-position: absolute;
-left: 82.22%;
-right: 14.24%;
-top: 38.89%;
-bottom: 38.89%;
+    position: absolute;
+    left: 82.22%;
+    right: 14.24%;
+    top: 38.89%;
+    bottom: 38.89%;
 }
 
 
 .h1{
-    position: absolute;
-    height: 56px;
-    left: 14.17%;
-    right: 14.17%;
-    top: calc(50% - 56px/2 - 302px);
-    
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
@@ -66,92 +60,101 @@ bottom: 38.89%;
     color: rgba(255, 255, 255, 0.95);
 }
 
+.rect-1{
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    left: 12.5%;
+    top: 15%;  
+}
+
 .rect-4{
-position: absolute;
-width: 1031px;
-height: 480px;
-left: 204px;
-top: 200px;
+    position: absolute;
+    width: 70%;
+    height: 62.50%;
+    left: 12.5%;
+    top: 25%;
 
-background: #FFFFFF;
-/* Elevation/03 */
+    background: #FFFFFF;
+    /* Elevation/03 */
 
-box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
-border-radius: 8px;
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
 }
 
 .label-top{
-width: 26px;
-height: 16px;
+    width: 26px;
+    height: 16px;
 
-/* Alternative/Caption */
+    /* Alternative/Caption */
 
-font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height, or 133% */
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
 
-letter-spacing: 0.2px;
+    letter-spacing: 0.2px;
 
-/* Typography/On Surface/Medium Emphasis */
+    /* Typography/On Surface/Medium Emphasis */
 
-color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.75);
 
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 0;
-flex-grow: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
+
 .input-master{
     box-sizing: border-box;
 
-width: 295px;
-height: 32px;
+    width: 100%;
+    height: 60%;
 
-background: #FFFFFF;
-/* Gray/40 */
+    background: #FFFFFF;
+    /* Gray/40 */
 
-border: 1px solid #DFE3EA;
-border-radius: 3px;
+    border: 1px solid #DFE3EA;
+    border-radius: 3px;
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
 .input-master-box{
     box-sizing: border-box;
 
-/* Auto layout */
+    /* Auto layout */
 
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 5px 10px 5px 12px;
-gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 10px 5px 12px;
+    gap: 16px;
 
-width: 295px;
-height: 32px;
+    width: 100%;
+    height: 60%;
 
-background: #FFFFFF;
-/* Gray/40 */
+    background: #FFFFFF;
+    /* Gray/40 */
 
-border: 1px solid #DFE3EA;
-border-radius: 3px;
+    border: 1px solid #DFE3EA;
+    border-radius: 3px;
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
 .font{
@@ -179,110 +182,8 @@ gap: 4px;
 position: absolute;
 width: 295px;
 height: 52px;
-left: 48px;
-top: 84px;
-
-border-radius: 0px;
-}
-
-.input-2{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 295px;
-height: 52px;
-left: 380px;
-top: 84px;
-
-border-radius: 0px;
-}
-
-.input-3{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 295px;
-height: 52px;
-left: 48px;
-top: 160px;
-
-border-radius: 0px;
-}
-
-.input-4{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 295px;
-height: 52px;
-left: 380px;
-top: 160px;
-
-border-radius: 0px;
-}
-
-.input-5{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 295px;
-height: 52px;
-left: 48px;
-top: 236px;
-
-border-radius: 0px;
-}
-
-.input-6{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 295px;
-height: 52px;
-left: 380px;
-top: 236px;
-
-border-radius: 0px;
-}
-
-.input-7{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0px;
-gap: 4px;
-
-position: absolute;
-width: 295px;
-height: 52px;
-left: 48px;
-top: 312px;
+/* left: 48px;
+top: 84px; */
 
 border-radius: 0px;
 }
@@ -301,8 +202,7 @@ padding: 9px 8px 7px;
 position: absolute;
 width: 295px;
 height: 40px;
-left: 688px;
-top: 376px;
+
 
 /* Primary/Palette/Primary */
 
@@ -315,6 +215,4 @@ border-radius: 4px;
     position: absolute;
 width: 295px;
 height: 295px;
-left: 688px;
-top: 61px;
 }
