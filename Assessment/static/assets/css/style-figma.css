@@ -65,7 +65,7 @@
     width: 60%;
     height: 10%;
     left: 12.5%;
-    top: 15%;  
+    top: 13%;  
 }
 
 .rect-4{
@@ -112,7 +112,7 @@
 .input-master{
     box-sizing: border-box;
 
-    width: 100%;
+    width: 85%;
     height: 60%;
 
     background: #FFFFFF;
@@ -140,7 +140,7 @@
     padding: 5px 10px 5px 12px;
     gap: 16px;
 
-    width: 100%;
+    width: 85%;
     height: 60%;
 
     background: #FFFFFF;
