@@ -82,6 +82,31 @@
     border-radius: 8px;
 }
 
+.rect-28{
+    position: absolute;
+    width: 23.3%;
+    height: 8px;
+    left: 12.5%;
+    top: 24%;
+    
+    /* Primary/Palette/Primary 2 */
+    
+    background: #0070AD;
+    border-radius: 8px;
+}
+
+.ellipse-4{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 35.8%;
+    top: 24%;
+
+    /* Primary/Palette/Primary 2 */
+
+    background: #0070AD;
+}
+
 .label-top{
     width: 26px;
     height: 16px;
@@ -180,7 +205,7 @@ padding: 0px;
 gap: 4px;
 
 position: absolute;
-width: 295px;
+width: 30%;
 height: 52px;
 /* left: 48px;
 top: 84px; */
@@ -213,6 +238,7 @@ border-radius: 4px;
 
 .group11{
     position: absolute;
-width: 295px;
-height: 295px;
+    width: 25%;
+    height: auto;
 }
+
