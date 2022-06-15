@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Screen</title>
+</head>
+<style>
+.row_s {
+    display: table;
+    width: 30%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.column_s {
+    display: table-cell;
+    height: 80px;
+    width: 240px;
+    padding: 8px;
+}
+</style>
+<script type="text/javascript">
+
+    window.onload = function(){
+        console.log('inside ready function')
+    };
+
+    var num_range = {{db_instance|safe}}
+    console.log('Num Range:'+num_range)
+
+    var session_db = {{ session_dict|safe }}
+    var session_db_num = Object.keys(session_db)
+    console.log(session_db);
+
+    for (var i = 1; i <= num_range; i++) {
+      const button = document.createElement("button");
+      button.innerText = "Title : "+ session_db[`session_dict_${i}`].title + "\n" +
+      "Date : "+ session_db[`session_dict_${i}`].date + "\n" + "Status : "+ session_db[`session_dict_${i}`].status;
+      button.style.padding = "30px";
+      button.style.paddingLeft = "30px";
+      button.style.paddingRight = "35px";
+      button.className = "btn btn-secondary";
+      button.style.margin = "20px";
+      (function(index){
+            button.addEventListener("click", function() {
+            console.log(index)
+            window.location.href = "{% url 'no_session' %}" + "?search="+index
+            })
+        })(i)
+      document.getElementById("main").appendChild(button);
+    }
+    console.log(i);
+
+    const div = document.createElement("div");
+    div.style.padding = "55px";
+    document.getElementById("main").appendChild(div);
+
+
+    function clickDB(){
+        var data1 = document.getElementById('objects').value
+        console.log('Value is: '+ data1)
+
+    }
+
+    function setGetParameter(){
+    searchWord = document.getElementById('db_value').value;
+    console.log("Word is: "+searchWord)
+    window.location.href = "{% url 'no_session' %}" + "?search="+searchWord;
+    }
+
+    document.addEventListener("click", function(){
+        a = document.getElementById("session_button").index;
+        console.log(a);
+    });
+
+    var d = {{ db_instance|safe }}
+    console.log("DB instances are "+ d)
+
+
+</script>
+<body>
+  <div style="padding-top:50px">
+      <center><h4><strong  style="color:Black; margin-left:70px" class="verdana">SESSIONS</strong></h4></center>
+      <center style="padding-left: 960px"><a href="{% url 'index' %}"><button type="button" class="btn btn-primary">Skip & Start New Assessment</button></a></center>
+  </div>
+<!--    <div class="row_s" id="main">-->
+<!--        {% for data in db_data %}-->
+<!--                <div class="column_s" id="session_div" style="background-color:#897FF7; ">-->
+<!--                  <h6>Title: <b id="session_title"> {{data.title}}</b></h6>-->
+<!--                  <h6>Date: <b id="session_date"> {{data.date}}</b></h6>-->
+<!--                  <h6>Status: <b id="session_status"> {{data.status}}</b></h6>-->
+<!--                  <br>-->
+<!--                </div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+</body>
+</html>
+{% endblock %}

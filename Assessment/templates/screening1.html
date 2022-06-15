@@ -14,6 +14,78 @@ height: 2500px;">
   <link href="static/assets/css/style-figma.css" rel="stylesheet">
   <main id="main">
       <script type="text/javascript">
+
+        window.onload = function(){
+                console.log('inside the function')
+                var value_dict = {{value_dict|safe}}
+                console.log(value_dict)
+
+                if(document.getElementsByName('data_processing_project').value == null){
+                document.forms['screening1']['data_processing_project'].value = value_dict.data_processing_project;
+                }
+
+                if(document.getElementsByName('select_data_process').value == null){
+                document.forms['screening1']['select_data_process'].value = value_dict.select_data_process;
+                }
+
+                if(document.getElementsByName('processing_data').value == null){
+                document.forms['screening1']['processing_data'].value = value_dict.processing_data;
+                }
+
+                if(document.getElementsByName('data_processing_involve').value == null){
+                document.forms['screening1']['data_processing_involve'].value = value_dict.data_processing_involve;
+                }
+
+                if(document.getElementsByName('automated_decision_making').value == null){
+                document.forms['screening1']['automated_decision_making'].value = value_dict.automated_decision_making;
+                }
+
+                if(document.getElementsByName('systematic_monitoring').value == null){
+                document.forms['screening1']['systematic_monitoring'].value = value_dict.systematic_monitoring;
+                }
+
+                if(document.getElementsByName('process_data_on_large_scale').value == null){
+                document.forms['screening1']['process_data_on_large_scale'].value = value_dict.process_data_on_large_scale;
+                }
+
+                if(document.getElementsByName('data_processing_involve_reusing_old_dataset').value == null){
+                document.forms['screening1']['data_processing_involve_reusing_old_dataset'].value = value_dict.data_processing_involve_reusing_old_dataset;
+                }
+
+                if(document.getElementsByName('vulnerable_data_subjects').value == null){
+                document.forms['screening1']['vulnerable_data_subjects'].value = value_dict.vulnerable_data_subjects;
+                }
+
+                if(document.getElementsByName('data_processing_involve_innovative_technologies').value == null){
+                document.forms['screening1']['data_processing_involve_innovative_technologies'].value = value_dict.data_processing_involve_innovative_technologies;
+                }
+
+                if(document.getElementsByName('data_processing_involve_sharing_data_outside_european_union').value == null){
+                document.forms['screening1']['data_processing_involve_sharing_data_outside_european_union'].value = value_dict.data_processing_involve_sharing_data_outside_european_union;
+                }
+
+                if(document.getElementsByName('data_processing_involve_collection_personal_information').value == null){
+                document.forms['screening1']['data_processing_involve_collection_personal_information'].value = value_dict.data_processing_involve_collection_personal_information;
+                }
+
+                if(document.getElementsByName('data_processing_involve_third_party').value == null){
+                document.forms['screening1']['data_processing_involve_third_party'].value = value_dict.data_processing_involve_third_party;
+                }
+
+                if(document.getElementsByName('data_processing_involve_change_information_is_stored_secured').value == null){
+                document.forms['screening1']['data_processing_involve_change_information_is_stored_secured'].value = value_dict.data_processing_involve_change_information_is_stored_secured;
+                }
+
+                if(document.getElementsByName('data_processing_involve_change_personal_data_is_currently_collected').value == null){
+                document.forms['screening1']['data_processing_involve_change_personal_data_is_currently_collected'].value = value_dict.data_processing_involve_change_personal_data_is_currently_collected;
+                }
+
+                if(document.getElementsByName('conducted_DPIA_for_similar_scope_of_service').value == null){
+                document.forms['screening1']['conducted_DPIA_for_similar_scope_of_service'].value = value_dict.conducted_DPIA_for_similar_scope_of_service;
+                }
+                console.log("Value replaced successfully")
+        }
+
         function toggleInput1() {
                             var data_processing_project = document.getElementById("data_processing_project");
                             var Asset1 = document.getElementById("Asset1");
@@ -224,7 +296,7 @@ height: 2500px;">
                 }
             }
       </script>
-      <form method="POST" class="form-horizontal" action="screening1">
+      <form method="POST" class="form-horizontal" action="screening1" name="screening1">
       <div class="alt-nav">
         <div style="position: absolute;
         left: 14.39%;
@@ -237,9 +309,9 @@ height: 2500px;">
         font-size: 14px;
         line-height: 28px;
         /* or 200% */
-    
+
         font-feature-settings: 'pnum' on, 'lnum' on;
-    
+
         color: #12ABDB;">
             TITLE
         </div>
@@ -248,18 +320,18 @@ height: 2500px;">
         left: 11.39%;
         right: 38.75%;
         top: 40%;
-        
+
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 500;
         font-size: 24px;
         line-height: 28px;
         /* or 117% */
-        
+
         font-feature-settings: 'pnum' on, 'lnum' on;
-        
+
         /* Typography/On Surface/High Emphasis */
-        
+
         color: rgba(39, 41, 54, 0.85);">
             <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
             <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/></a>
@@ -270,7 +342,7 @@ height: 2500px;">
         left: 70.39%;
         top: 40%;">
             <button type="submit" class="proceed-btn">Proceed</button>
-            
+
         </div>
         <div style="position: absolute;
         height: 26px;
@@ -278,10 +350,10 @@ height: 2500px;">
         top: 35%;">
             <input type="reset" id="resetbuttonid" style="display:none;">
             <a href="#">
-            <img 
-            onclick="document.getElementById('resetbuttonid').click()" 
-            src="static/assets/img/Reset.png"  
-            alt="reset the form" 
+            <img
+            onclick="document.getElementById('resetbuttonid').click()"
+            src="static/assets/img/Reset.png"
+            alt="reset the form"
             title="Click to reset the form.">
             </a>
         </div>
@@ -320,7 +392,7 @@ height: 2500px;">
                 <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
                 <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
             </div>
-            
+
               <div class="form-group" id="Asset1">
                   <div class="col">
                       <label class="scr-h1">2. Please Select the Data Which You Process :</label>
