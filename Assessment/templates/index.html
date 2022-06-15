@@ -6,7 +6,44 @@
 <link href="static/assets/css/style-figma.css" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
+<script>
+  window.onload = function(){
+        console.log('inside the function')
+        var session_db = {{ db_dict_num|safe }}
+        console.log(session_db);
 
+        var session_dict = {{ session_dict|safe }}
+        console.log(session_dict);
+
+        var value_dict = {{value_dict|safe}}
+        console.log(value_dict)
+
+
+        if(document.getElementsByName('title').value == null){
+            document.forms['organization_form']['title'].value = value_dict.title;
+        }
+        if(document.getElementsByName('author').value == null){
+            document.forms['organization_form']['author'].value = value_dict.author;
+        }
+        if(document.getElementsByName('role').value == null){
+            document.forms['organization_form']['role'].value = value_dict.role;
+        }
+        if(document.getElementsByName('department').value == null){
+            document.forms['organization_form']['department'].value = value_dict.department;
+        }
+        if(document.getElementsByName('manager').value == null){
+            document.forms['organization_form']['manager'].value = value_dict.manager;
+        }
+        if(document.getElementsByName('status').value == null){
+            document.forms['organization_form']['status'].value = value_dict.status;
+        }
+        if(document.getElementsByName('date').value == null){
+            document.forms['organization_form']['date'].value = value_dict.date;
+        }
+
+        console.log('Value Replaced Successfully');
+    };
+</script>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 1440px;
@@ -16,7 +53,7 @@ height: 850px;">
       Impact Assessment (DPIA).</a>
     </div>
   <div class="rect-4 font">
-    <form method="POST" action="index">
+    <form method="POST" action="index" name="organization_form">
       <div class="input-1 col " style="left: 5%; top: 15%;">
         <label for="inputPassword" class="label-top">Title*</label>
         <input type="text" name="title" class="input-master" id="inputPassword"
@@ -36,10 +73,10 @@ height: 850px;">
         <label for="inputPassword" class="label-top">DPIA Status*</label>
         <select class="input-master-box" name="status" required>
           <option value="">Select Here</option>
-          <option value="1">Not-Started</option>
-          <option value="2">In-Progress</option>
-          <option value="2">Waiting for Approval</option>
-          <option value="2">Approved</option>
+          <option value="Not-Started">Not-Started</option>
+          <option value="In-Progress">In-Progress</option>
+          <option value="Waiting for Approval">Waiting for Approval</option>
+          <option value="Approved">Approved</option>
         </select>
       </div>
       <div class="input-1 col" style="left: 35%; top: 15%;">
@@ -55,7 +92,7 @@ height: 850px;">
         <label for="inputPassword" class="label-top">Department*</label>
         <input type="text" name="department" class="input-master" id="inputPassword" placeholder="eg: IT" required>
       </div>
-      
+
       <button type="submit" class="button-master" style="left: 65%; top: 80%;">Proceed</button>
     </form>
     <a style="position:absolute;top: 75%;left: 5%;">‘*’ fields are mandatory in this DPIA screening sheet</a>

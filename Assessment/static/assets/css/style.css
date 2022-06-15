@@ -1584,3 +1584,16 @@ verdana_result{
 .green {
     background-color: #9f9;
 }
+
+.row_s {
+    display: table;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.column_s {
+    display: table-cell;
+    height: 100px;
+    padding: 8px;
+}
+
