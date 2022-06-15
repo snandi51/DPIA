@@ -1,15 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base-figma.html' %}
 {% block content %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<body>
-        <div style="margin-top:40px">
-        </div>
-  <link href="static/assets/css/style.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">\
+
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: 1440px;
+height: 2500px;">
+  <link href="static/assets/css/style-figma.css" rel="stylesheet">
   <main id="main">
       <script type="text/javascript">
         function toggleInput1() {
@@ -45,36 +47,284 @@
                             var Asset15 = document.getElementById("Asset15");
                             Asset15.style.display = data_processing_project.value == "0" ? "block" : "none";
                         }
-      </script>
-        <!-- Form Name -->
-      <div class="container" style="height:2100px">
-          <form method="POST" class="form-horizontal" action="screening1">
-              <div class="container text-white; rounded" style="background-color:rgba(149, 230, 22, 0.5);">
-              <div class="row sm-2" style="padding-top:7px">
-                <h4><strong  style="color:black; margin-left:400px" class="font verdana">DPIA SCREENING<button style="margin-left:270px" type="reset" class="btn btn-primary submit_button">Reset</button><button style="margin-left:20px" type="button" class="btn btn-primary submit_button" onclick="history.back()">Back</button></strong></h4>
-              </div>
-              </div>
+            function toggleText(){
+                var myText=document.getElementById("info");
+                var displaySetting=myText.style.display;
 
-              <div class="container text-white; rounded-top" style="background-color: rgba(245, 245, 248, 0.7);">
-              <div class="form-group">
-                  <div class="row sm-2" style="padding:15px">
-                      <label class="dpia_screening_form col-sm-4" ><strong style="color:#2B0A3D;">Will you require Data Processing for this project?</strong></label>
-                      <div class="col-sm-3">
-                          <select type="text" class="form-select" onchange="toggleInput1();" id="data_processing_project" name="data_processing_project" required>
-                              <option ></option>
-                              <option value="0">Yes</option>
-                              <option value="1">No</option>
-                          </select>
-                      </div>
-                      <div class="col-sm-5">
-                          <i data-tags="arrow right-angle" class="dpia_screening_guidance" data-categories="arrows" style="color:#2B0A3D;">Please mention if your organization will require to process data for mentioned scope of service.  Please select 'Yes' even if you have anonymised or psuedonymized the data.  Processing includes the collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction of personal data.</i>
-                      </div>
-                  </div>
-              </div>
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText1(){
+                var myText=document.getElementById("info1");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText2(){
+                var myText=document.getElementById("info2");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText3(){
+                var myText=document.getElementById("info3");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText4(){
+                var myText=document.getElementById("info4");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText5(){
+                var myText=document.getElementById("info5");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText6(){
+                var myText=document.getElementById("info6");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText7(){
+                var myText=document.getElementById("info7");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText8(){
+                var myText=document.getElementById("info8");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText9(){
+                var myText=document.getElementById("info9");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText10(){
+                var myText=document.getElementById("info10");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText11(){
+                var myText=document.getElementById("info11");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText12(){
+                var myText=document.getElementById("info12");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText13(){
+                var myText=document.getElementById("info13");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText14(){
+                var myText=document.getElementById("info14");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+            function toggleText15(){
+                var myText=document.getElementById("info15");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+      </script>
+      <form method="POST" class="form-horizontal" action="screening1">
+      <div class="alt-nav">
+        <div style="position: absolute;
+        left: 14.39%;
+        right: 38.75%;
+        top: 8.22%;
+        bottom: 88.89%;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 28px;
+        /* or 200% */
+    
+        font-feature-settings: 'pnum' on, 'lnum' on;
+    
+        color: #12ABDB;">
+            TITLE
+        </div>
+        <div style="position: absolute;
+        height: 26px;
+        left: 11.39%;
+        right: 38.75%;
+        top: 40%;
+        
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        /* or 117% */
+        
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        
+        /* Typography/On Surface/High Emphasis */
+        
+        color: rgba(39, 41, 54, 0.85);">
+            <button type="button" onclick="history.back()" style="display: none;" id="back-btn"></button>
+            <a href="#"><img src="static/assets/img/Icon.png" onclick="document.getElementById('back-btn').click()" alt="Back"/></a>
+            DPIA Screening
+        </div>
+        <div style="position: absolute;
+        height: 26px;
+        left: 70.39%;
+        top: 40%;">
+            <button type="submit" class="proceed-btn">Proceed</button>
+            
+        </div>
+        <div style="position: absolute;
+        height: 26px;
+        left: 77.00%;
+        top: 35%;">
+            <input type="reset" id="resetbuttonid" style="display:none;">
+            <a href="#">
+            <img 
+            onclick="document.getElementById('resetbuttonid').click()" 
+            src="static/assets/img/Reset.png"  
+            alt="reset the form" 
+            title="Click to reset the form.">
+            </a>
+        </div>
+    </div>
+        <!-- Form Name -->
+      <div class="rect-4" style="height:2100px">
+        <div style="position:absolute; left:5%; padding-right: 5%;">
+            <div style="padding-top: 2%;">
+                <p class="font" style="color: black; text-transform: uppercase ;">Need help? hit the <img src="static/assets/img/icon-right-inside.png"> icon to Refer to the parameters</p>
+                <p class="font" style="color: black; text-transform: uppercase ;">KINDLY ADD COMMENTS IF THERE IS ANY EXTRA INFORMATION TO BE PROVIDED</p>
+            </div>
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText()" style="display: none;" id="info-btn"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+            </div>
+            <div class="form-group">
+                <div class="col">
+                    <label class="scr-h1" > 1. Will you require Data Processing for this project? </label>
+                    <div class="col-sm-3">
+                        <input type="radio" id="data_processing_project" name="data_processing_project" value="0">Yes</input>
+                        <input type="radio" id="data_processing_project" name="data_processing_project" value="1">No</input>
+                        <!-- <select type="text" class="form-select" onchange="toggleInput1();" id="data_processing_project" name="data_processing_project" required>
+                            <option ></option>
+                            <option value="0">Yes</option>
+                            <option value="1">No</option>
+                        </select> -->
+                    </div>
+                    <div class="row font info" id="info" style="padding-left:2%; padding-right: 2%;">
+                        <i style="color:#2B0A3D;">Please mention if your organization will require to process data for mentioned scope of service.  Please select 'Yes' even if you have anonymised or psuedonymized the data.  Processing includes the collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction of personal data.</i>
+                    </div>
+                </div>
+            </div>
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+            </div>
+            
               <div class="form-group" id="Asset1">
-                  <div class="row mb-2">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Please Select the Data Which You Process :</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1">2. Please Select the Data Which You Process :</label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" id="Please Select the Data Which You Process :" name="select_data_process">
                               <option></option>
                               <option  value="1">Personal Data</option>
@@ -83,223 +333,296 @@
                               <option value="4">Public Data</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info1">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please mention the category of data which you will be processing. Categories: a) Personal Data : Name , Age , Contact Number , Address etc. ; b) Sensitive Personal Information : Ethnic Data , Health Data , Religious Data , Criminal Data, Racial Information  etc. ; c) Public Data : Data available on trusted public websites.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                </div>
+                
               <div class="form-group" id="Asset2">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Who will be processing this data ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 3. Who will be processing this data ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" id="Who will be processing this data ?" name="processing_data">
                               <option></option>
                               <option  value="1">Self Processing / Data Controller </option>
                               <option value="2">Data Processor</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info2">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please mention if Data Controller Organization will be doing the data processing itself or will they be hiring external firm to do the processing.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                </div>
+                
               <div class="form-group" id="Asset3">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve evaluating , scoring , profiling or predicting ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 4. Will Data Processing involve evaluating , scoring , profiling or predicting ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select"  name="data_processing_involve" id="Will Data Processing involve evaluating , scoring , profiling or predicting ? ">
                               <option ></option>
                               <option  value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info3">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please especially check from aspects concerning the data subject’s economic situation, health, personal preferences, interests, reliability, behaviour, location or movements.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn4').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                </div>
+                
               <div class="form-group" id="Asset4">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve Automated decision making ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 5. Will Data Processing involve Automated decision making ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" id="Will Data Processing involve Automated decision making ?" name="automated_decision_making">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info4">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if you will be doing any processing which will have zero human involvement. Examples -KYC Process collects the data from the system and evaluates the risk score on its own, if certain criteria are met. </i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn5').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset5">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve Systematic monitoring ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 6. Will Data Processing involve Systematic monitoring ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" id="Will Data Processing involve Systematic monitoring ?" name="systematic_monitoring">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info5">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if processing  is used to observe, monitor or control data subjects. Example - CCTV camera in a public area ; This will collect data when the data subject is not aware that their data is being collected.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText6()" style="display: none;" id="info-btn6"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn6').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset6">
-                  <div class="row mb-4">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will you process data on a large scale?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 7. Will you process data on a large scale? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" id="Will you process data on a large scale?" name="process_data_on_large_scale">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info6">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please consider :  a) The number of data subjects involved in the process ; b) The volume and range of personal data involved ; c)How long will the processing activity be in place for; d) The geographical extent of the processing activity.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText7()" style="display: none;" id="info-btn5"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn7').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset7">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 8. Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select"  name="data_processing_involve_reusing_old_dataset" id="Will Data Processing involve re-using old dataset(s) for a new, completely different purpose from which it was first intended ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info7">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if processing is done for same purpose. Few examples where Re-using datasets is done for different purpose : a) Sending job mailers to unusuccessful applicants in an exam ; b) Credit Card details used to verify eligibility and sending loan offers. ; c) Combining two datasets for a new purpose.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText8()" style="display: none;" id="info-btn8"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn8').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset8">
-                  <div class="row mb-4">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve data primarily concerning vulnerable data subjects ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 9. Will Data Processing involve data primarily concerning vulnerable data subjects ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select"  name="vulnerable_data_subjects" id="Will Data Processing involve data primarily concerning vulnerable data subjects ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info8">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if data is store for any vulnerable groups of people. Examples of Vulnerable groups : a) Elderly People ; b) Asylum Seekers ; c) Patients ; d) Children under age of 12 ; e) Disputed matters like data of an employee whose firing has been done on biased grounds.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText9()" style="display: none;" id="info-btn9"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn9').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset9">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve applying novel/innovative technologies ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 10. Will Data Processing involve applying novel/innovative technologies ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" name="data_processing_involve_innovative_technologies" id="Will Data Processing involve applying novel/innovative technologies ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info9">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if data processing involves innovative technology like facial recognition software, biometric technology, other novel ways of collecting personal data.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText10()" style="display: none;" id="info-btn10"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn10').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset10">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve sharing data outside of the European Union ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 11. Will Data Processing involve sharing data outside of the European Union ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" name="data_processing_involve_sharing_data_outside_european_union" id="Will Data Processing involve sharing data outside of the European Union ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info10">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if you will be sharing data  which may include third party services based outside of the EU. For example, if you are using a system run by a Russian company it is possible that the personal data you enter into the system is held on their Russian based servers.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText11()" style="display: none;" id="info-btn11"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn11').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset11">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a new collection of personal information ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 12. Will Data Processing involve a new collection of personal information ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" name="data_processing_involve_collection_personal_information" id="Will Data Processing involve a new collection of personal information ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info11">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if you will be collecting new information. For example - collecting information about location of data subjects or collecting the the new mailing list.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText12()" style="display: none;" id="info-btn12"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn12').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset12">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve using a third-party contractor when processing personal information ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 13. Will Data Processing involve using a third-party contractor when processing personal information ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select"  name="data_processing_involve_third_party" id="Will Data Processing involve using a third-party contractor when processing personal information ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info12">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">Please check if you will share this data with a third party . For example outsourcing HR functions or storing information in the cloud. In case of a external Data Processor, please check if there is any involvement of any third party vendor like cloud service provider or data storage provider.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText13()" style="display: none;" id="info-btn13"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn13').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset13">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a change in the way personal information is stored or secured ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 14. Will Data Processing involve a change in the way personal information is stored or secured ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" name="data_processing_involve_change_information_is_stored_secured" id="Will Data Processing involve a change in the way personal information is stored or secured ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info13">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">If this is not a new collection process, then please check if the new data is stored in similar way as of the old data. For example - there is no change of transferring the storage of personal information into the cloud, or the implementation of a policy that effects a change to the way personal information is stored or secured.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText14()" style="display: none;" id="info-btn14"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn14').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset14">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Will Data Processing involve a change to the way that personal data is currently collected ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1"> 15. Will Data Processing involve a change to the way that personal data is currently collected ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select" name="data_processing_involve_change_personal_data_is_currently_collected" id="Will Data Processing involve a change to the way that personal data is currently collected ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info14">
                           <i style="color:#2B0A3D;" class="dpia_screening_guidance">If this is not a new collection process, then please check if the new data is collected in same way as of old date. For example - Collection is done using paper forms and has not been upgraded to online forms.</i>
                       </div>
                   </div>
               </div>
+              <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText15()" style="display: none;" id="info-btn15"></button>
+                <img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn15').click()" alt="Info">
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
               <div class="form-group" id="Asset15">
-                  <div class="row mb-3">
-                      <label class="dpia_screening_form col-sm-4"><strong style="color:#2B0A3D;">Have you Conducted DPIA for any similar scope of service ?</strong></label>
-                      <div class="col-sm-3">
+                  <div class="col">
+                      <label class="scr-h1" > 16. Have you Conducted DPIA for any similar scope of service ? </label>
+                      <div class="col-sm-3" style="padding-top: 2%;">
                           <select type="text" class="form-select"  name="conducted_DPIA_for_similar_scope_of_service" id="Have you Conducted DPIA for any similar scope of service ?">
                               <option ></option>
                               <option value="0">Yes</option>
                               <option value="1">No</option>
                           </select>
                       </div>
-                      <div class="col-sm-5 ">
+                      <div class="row font info" style="padding-left:2%; padding-right: 2%;" id="info15">
                           <i style="color:#2B0A3D" class="dpia_screening_guidance">Please mention if you have conducted DPIA for any service which has similar nature, scope, context or purpose.</i>
                       </div>
                   </div>
               </div>
             <center style="padding:20px">
-                <button type="submit" class="btn btn-success" style="width:100px">Result</button>
+                <!-- <button type="submit" class="btn btn-success" style="width:100px">Result</button> -->
             </center>
               </div>
           </form>

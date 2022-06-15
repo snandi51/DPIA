@@ -12,6 +12,18 @@
     background: #FFFFFF;
 }
 
+.alt-nav{
+    position: absolute;
+    width: 1500px;
+    height: 78px;
+    left: 0px;
+    top: 90px;
+
+    /* Grey Scale/Grey 2 */
+
+    background: #F4F4F4;
+}
+
 .alt-button{
     font-family: 'Ubuntu';
     font-style: normal;
@@ -65,7 +77,7 @@
     width: 60%;
     height: 10%;
     left: 12.5%;
-    top: 13%;  
+    top: 15%;  
 }
 
 .rect-4{
@@ -73,7 +85,7 @@
     width: 70%;
     height: 62.50%;
     left: 12.5%;
-    top: 25%;
+    top: 27%;
 
     background: #FFFFFF;
     /* Elevation/03 */
@@ -82,16 +94,20 @@
     border-radius: 8px;
 }
 
-.rect-28{
+.rect-2{
     position: absolute;
-    width: 23.3%;
+    width: 70%;
     height: 8px;
     left: 12.5%;
-    top: 24%;
-    
-    /* Primary/Palette/Primary 2 */
-    
-    background: #0070AD;
+    top: 26%;
+    z-index: 11;
+    border-radius: 8px;
+}
+.rect-28{
+    position: absolute;
+    width: 53%;
+    height: 8px;
+    top: 2.5px;    
     border-radius: 8px;
 }
 
@@ -99,12 +115,7 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    left: 35.8%;
-    top: 24%;
-
-    /* Primary/Palette/Primary 2 */
-
-    background: #0070AD;
+    
 }
 
 .label-top{
@@ -184,10 +195,10 @@
 
 .font{
     font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 20px;
 /* or 143% */
 
 
@@ -216,24 +227,24 @@ border-radius: 0px;
 .button-master{
     box-sizing: border-box;
 
-/* Auto layout */
+    /* Auto layout */
 
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 9px 8px 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 8px 7px;
 
-position: absolute;
-width: 295px;
-height: 40px;
+    position: absolute;
+    width: 295px;
+    height: 40px;
 
 
-/* Primary/Palette/Primary */
+    /* Primary/Palette/Primary */
 
-background: #12ABDB;
-border: 1px solid #0E88AF;
-border-radius: 4px;
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
 }
 
 .group11{
@@ -242,3 +253,68 @@ border-radius: 4px;
     height: auto;
 }
 
+.proceed-btn{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 8px;
+
+    width: 91px;
+    height: 30px;
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: capitalize;
+    /* Primary/Palette/Primary */
+
+    color: white;
+}
+input[type="radio"]{
+    margin: 30px 5px 30px 50px;
+}
+.info{
+    display: none;
+}
+
+.scr-h1{
+    /* Subtitle/Subtitle 01 */
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
+
+    letter-spacing: 0.15px;
+
+    /* Typography/On Surface/High Emphasis */
+
+    color: rgba(39, 41, 54, 0.85);
+}
