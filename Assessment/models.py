@@ -50,7 +50,7 @@ class Master(models.Model):
     data_processing_involve_collection_personal_information = models.CharField(max_length=30, choices=CHOICES)
     data_processing_involve_third_party = models.CharField(max_length=30, choices=CHOICES)
     data_processing_involve_change_information_is_stored_secured = models.CharField(max_length=30, choices=CHOICES)
-    data_processing_involve_change_personal_data_is_currently_collected = models.CharField(max_length=30, choices=CHOICES)
+    data_procc_involve_chg_personal_data_currently_collected = models.CharField(max_length=30, choices=CHOICES)
     conducted_DPIA_for_similar_scope_of_service = models.CharField(max_length=30, choices=CHOICES)
 
     # DPIA Assessment models

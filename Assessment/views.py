@@ -179,7 +179,7 @@ def screening1(request):
         request.session['data_processing_involve_collection_personal_information'] = request.POST.get("data_processing_involve_collection_personal_information")
         request.session['data_processing_involve_third_party'] = request.POST.get("data_processing_involve_third_party")
         request.session['data_processing_involve_change_information_is_stored_secured'] = request.POST.get("data_processing_involve_change_information_is_stored_secured")
-        request.session['data_processing_involve_change_personal_data_is_currently_collected'] = request.POST.get("data_processing_involve_change_personal_data_is_currently_collected")
+        request.session['data_procc_involve_chg_personal_data_currently_collected'] = request.POST.get("data_procc_involve_chg_personal_data_currently_collected")
         request.session['conducted_DPIA_for_similar_scope_of_service'] = request.POST.get("conducted_DPIA_for_similar_scope_of_service")
 
         data_processing_project = request.session['data_processing_project']
@@ -196,7 +196,7 @@ def screening1(request):
         data_processing_involve_collection_personal_information = request.session['data_processing_involve_collection_personal_information']
         data_processing_involve_third_party = request.session['data_processing_involve_third_party']
         data_processing_involve_change_information_is_stored_secured = request.session['data_processing_involve_change_information_is_stored_secured']
-        data_processing_involve_change_personal_data_is_currently_collected = request.session['data_processing_involve_change_personal_data_is_currently_collected']
+        data_procc_involve_chg_personal_data_currently_collected = request.session['data_procc_involve_chg_personal_data_currently_collected']
         conducted_DPIA_for_similar_scope_of_service = request.session['conducted_DPIA_for_similar_scope_of_service']
 
         input_data = {
@@ -214,7 +214,7 @@ def screening1(request):
             'data_processing_involve_collection_personal_information': data_processing_involve_collection_personal_information,
             'data_processing_involve_third_party': data_processing_involve_third_party,
             'data_processing_involve_change_information_is_stored_secured': data_processing_involve_change_information_is_stored_secured,
-            'data_processing_involve_change_personal_data_is_currently_collected': data_processing_involve_change_personal_data_is_currently_collected,
+            'data_procc_involve_chg_personal_data_currently_collected': data_procc_involve_chg_personal_data_currently_collected,
             'conducted_DPIA_for_similar_scope_of_service': conducted_DPIA_for_similar_scope_of_service,
 
         }
@@ -1263,7 +1263,7 @@ def dpia_screening(request):
                         data_processing_involve_collection_personal_information=request.session.get('data_processing_involve_collection_personal_information'),
                         data_processing_involve_third_party=request.session.get('data_processing_involve_third_party'),
                         data_processing_involve_change_information_is_stored_secured=request.session.get('data_processing_involve_change_information_is_stored_secured'),
-                        data_processing_involve_change_personal_data_is_currently_collected=request.session.get('data_processing_involve_change_personal_data_is_currently_collected'),
+                        data_procc_involve_chg_personal_data_currently_collected=request.session.get('data_procc_involve_chg_personal_data_currently_collected'),
                         conducted_DPIA_for_similar_scope_of_service=request.session.get('conducted_DPIA_for_similar_scope_of_service'),
                                     f1_1=f1_1, f1_2=f1_2, f1_3=f1_3, f1_4=f1_4, f1_5=f1_5, f1_6=f1_6,
                                     f2_1=f2_1, f2_2=f2_2, f2_3=f2_3, f2_4=f2_4, f2_5=f2_5, f2_6=f2_6, f2_7=f2_7,
