@@ -2,7 +2,7 @@ from django.db import models
 
 class Master(models.Model):
     # Login Models
-    primary_key = models.IntegerField(primary_key=True, null=False)
+    primary_key = models.AutoField(primary_key=True)
     username = models.CharField(max_length=30)
 
     # Organization details models
