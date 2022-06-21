@@ -1,12 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-import io
 from fpdf import FPDF
 from Assessment.models import Master
-from PyPDF2 import PdfFileWriter, PdfFileReader
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
 import json
 import os
 
@@ -98,15 +94,6 @@ def session_screen(request):
 @login_required
 def risk_summary(request):
     return render(request, 'risk_summary.html')
-
-
-@login_required
-def gdpr_report(request):
-    context = {
-
-    }
-
-    return render(request, 'gdpr_report.html')
 
 
 @login_required
@@ -1394,86 +1381,15 @@ class PDF(FPDF):
     pass
     # nothing happens when it is executed.
 
-
 def get_pdf(request):
-    packet = io.BytesIO()
-    can = canvas.Canvas(packet, pagesize=letter)
+    pdf = PDF(orientation='P', unit='mm', format='A4') # landscape
+    pdf.add_page()
+    pdf.set_font('Arial', 'B', 16)
 
-    # page 1
-    can.setFont('Helvetica', 12)
-    page1_text1 = request.session.get('title')
-    page1_text2 = request.session.get('title_of_DPO')
-    page1_text3 = request.session.get('name_of_DPO')
-    can.drawString(350, 500, page1_text1)
-    can.drawString(350, 485, page1_text2)
-    can.drawString(350, 465, page1_text3)
-    can.showPage()
-
-    # page 2
-    can.setFont('Helvetica', 12)
-    page2_text1 = "This is page 2"
-    can.drawString(350, 500, page2_text1)
-    can.showPage()
-
-    # page 3
-    can.setFont('Helvetica', 12)
-    page3_text1 = "This is page 3"
-    can.drawString(350, 500, page3_text1)
-    can.showPage()
-
-    # page 4
-    can.setFont('Helvetica', 12)
-    page4_text1 = "This is page 4"
-    can.drawString(350, 500, page4_text1)
-    can.showPage()
-
-    # page 5
-    can.setFont('Helvetica', 12)
-    page5_text1 = "This is page 5"
-    can.drawString(350, 500, page5_text1)
-    can.showPage()
-
-    # page 6
-    can.setFont('Helvetica', 12)
-    page6_text1 = "This is page 6"
-    can.drawString(350, 500, page6_text1)
-    can.showPage()
-
-    # page 7
-    can.setFont('Helvetica', 12)
-    page7_text1 = "This is page 7"
-    can.drawString(350, 500, page7_text1)
-    can.showPage()
-
-    # page 8
-    can.setFont('Helvetica', 12)
-    page8_text1 = "This is page 8"
-    can.drawString(350, 500, page8_text1)
-    can.showPage()
-
-    can.save()
-
-    # move to the beginning of the StringIO buffer
-    packet.seek(0)
-
-    # create a new PDF with Reportlab
-    new_pdf = PdfFileReader(packet)
-
-    # read your existing PDF
-    existing_pdf = PdfFileReader(open("pdf/dpia_pdf_input.pdf", "rb"))
-
-
-    output = PdfFileWriter()
-
-    for page in range(len(existing_pdf.pages)):
-        # add the page to the output document
-        pages = existing_pdf.getPage(page)
-        pages.mergePage(new_pdf.getPage(page))
-        output.addPage(pages)
-
-    # finally, write "output" to a real file
-    outputStream = open("pdf/dpia_pdf_output.pdf", "wb")
-    output.write(outputStream)
-    outputStream.close()
-    return HttpResponse(open('pdf/dpia_pdf_output.pdf', 'rb').read(), content_type='application/pdf')
+    title = 'DATA PROTECTION IMPACT ASSESSMENT'
+    image = 'media/cg_logo.png'
+    pdf.image(image, x=5, y=5, w=42, h=12)
+    pdf.cell(ln=1, h=30, align='C', w=0, txt=title,  border=0)
+    pdf.output('pdf/output.pdf', 'F')
+    return HttpResponse(open('pdf/output.pdf', 'rb'), content_type='application/pdf')
 
