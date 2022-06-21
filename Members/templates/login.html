@@ -1,12 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'base-figma.html' %}
 {% load static %}
 {% block content %}
 
-<div style="margin-top: 70px" class="text-black  text-center">
+<div style="margin-top: 40px" class="text-black  text-center">
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="container col-sm-4 text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7); height: auto">
-    <div class ="form-group" style =" width: 500px; margin-left:30px; padding-bottom: 50px; margin-top: 40px">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<div style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: auto;
+height: 550px">
+    <div class ="form-group" style ="position:absolute; left: 30%; width: 50%; margin-left:30px;  margin-top: 60px;">
             <div class="col-md-8 text-black;">
                     {% if messages %}
                             {% for message in messages %}
