@@ -128,7 +128,7 @@
             </tr>
           </tbody>
     </table>
-        <a href="{% url 'pdf' %}"><button type="button"  style="font-family:Verdana; margin-left:720px" class="btn btn-success rounded-pill">Generate PDF</button></a> <a><button type="button" style="font-family:Verdana" class="btn btn-success rounded-pill">Create Summary Report</button></a>
+        <a href="{% url 'pdf' %}" style="pointer-events: none"><button type="button" disabled  style="font-family:Verdana; margin-left:720px" class="btn btn-success rounded-pill">Generate PDF</button></a> <a href="{% url 'gdpr_report' %}"><button type="button" style="font-family:Verdana" class="btn btn-success rounded-pill">Proceed to GDPR Report</button></a>
       </main>
     <!-- End #main -->
   </div>

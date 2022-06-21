@@ -15,6 +15,7 @@ urlpatterns = [
     path('dpia_screening', assessment_views.dpia_screening, name='dpia_screening'),
     path('session_screen', assessment_views.session_screen, name='session_screen'),
     path('risk_summary', assessment_views.risk_summary, name='risk_summary'),
+    path('gdpr_report', assessment_views.gdpr_report, name='gdpr_report'),
     path('heat_map', assessment_views.heat_map, name='heat_map'),
 
 ]
