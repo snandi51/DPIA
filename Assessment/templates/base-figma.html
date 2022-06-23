@@ -30,17 +30,16 @@
   <header id="header" class="fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <div class="top-nav"> -->
-      <a class="navbar-brand" style="padding-left:100px ;"><img src="static/assets/img/logo.svg"><b style="position: relative; right: 2%;">|</b><b style="font-size:15px; font-family: 'Ubuntu';"> DPIA Manager</b></a>
-        <ul class="product navbar-nav ms-auto mb-2 mb-lg-0" style="position:absolute; top: 25%; left:80%">
+      <label style="padding-left:40px;"><img style="height:55px;" src="static/assets/img/logo.svg"><b style="position: relative; right: 2%;">|</b><label style="font-size:12.5px; font-family: 'Ubuntu';">DATA PROTECTION IMPACT ASSESSMENT MANAGER</label>
+        <ul class="product navbar-nav ms-auto mb-2 mb-lg-0" style="position:absolute; top: 22%; left:90%">
           {% if user.is_authenticated %}
             <!-- {% if authorized == false %}
               <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
             {% endif %} -->
-          <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+          <li><a class="nav-link scrollto" style="font-family: 'Ubuntu'; font-weight: bold" href="{% url 'logout' %}">Logout</a></li>
           {% else %}
           {% endif %}
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     <!-- </div> -->

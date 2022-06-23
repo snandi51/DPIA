@@ -10,7 +10,7 @@
     <div style="position: absolute;
     left: 14.39%;
     right: 38.75%;
-    top: 8.22%;
+    top: 13.22%;
     bottom: 88.89%;
     font-family: 'Ubuntu';
     font-style: normal;
@@ -29,27 +29,27 @@
     left: 11.39%;
     right: 38.75%;
     top: 40%;
-    
+
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     /* or 117% */
-    
+
     font-feature-settings: 'pnum' on, 'lnum' on;
-    
+
     /* Typography/On Surface/High Emphasis */
-    
+
     color: rgba(39, 41, 54, 0.85);">
-        <a href="#"><img src="static/assets/img/Icon.png"/></a>
+        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
         DPIA Overview
     </div>
 </div>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
-width: 1440px;
-height: 850px;">
+width: auto;
+height: 600px;">
   <link href="static/assets/css/style-figma.css" rel="stylesheet">
   <main id="main">
       <script type="text/javascript">
@@ -94,46 +94,45 @@ height: 850px;">
             }
       </script>
 
-      <div class="rect-4 font">
-
+      <div class="rect-4-1 font">
           <form method="POST" action="screening" name="screening_form1">
-                <div class="input-1 col" style="left: 5%; top: 15%;">
-                    <label class="label-top" style="width: 160px;">Name of the Organization</label>
-                    <input type="text" class="input-master" name="name_of_organization" id="Name of the Organization"  placeholder="eg.ABC Private Limited" required>
+                <div class="input-1 col" style="left: 5%; top: 10%;">
+                    <label class="label-top" style="width: 160px;">Name of the Organization*</label>
+                    <input type="text" class="input-master" name="name_of_organization" id="Name of the Organization"  placeholder="eg.Capgemini" required>
                   </div>
-                <div class="input-1 col" style="left: 35%; top: 15%;">
-                    <label class="label-top">Industry</label>
-                    <input type="text" class="input-master" id="Industry" placeholder="Banking" name="industry">        
+                <div class="input-1 col" style="left: 35%; top: 10%;">
+                    <label class="label-top">Industry*</label>
+                    <input type="text" class="input-master" id="Industry" placeholder="eg. Software Engineer" name="industry">
                 </div>
                 <div class="input-1 col" style="left: 5%;top: 30%;">
                     
-                        <label class="label-top" style="width: 160px;">Scope of Service / Project</label>
-                        <textarea rows="2" style="width: 185%; height: 100%;" class="input-master" id="Scope of Service / Project" name="scope_of_service_project" placeholder="We aim to do KYC of new customers for our new Health Insurance Scheme"></textarea> 
+                        <label class="label-top" style="width: 160px;">Scope of Service / Project*</label>
+                        <textarea rows="2" style="width: 185%; height: 100%;" class="input-master" id="Scope of Service / Project" name="scope_of_service_project" placeholder="Enter the scope of service/project"></textarea>
                 </div>
               
-                <div class="input-1 col" style="left: 5%;top: 45%;">
-                    <label class="label-top" style="width: 400px;">Does Your Organization have 'Data Protection Officer' ?</label>
-                    <select type="text" class="input-master-box" onchange="toggleInput();" id="data_protection_officer" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
+                <div class="input-1 col" style="left: 5%;top: 50%;">
+                    <label class="label-top" style="width: 200px;">Does Your Organization have 'Data Protection Officer'?*</label>
+                    <select type="text" class="input-master-box" style="margin-top:12px;" onchange="toggleInput();" id="data_protection_officer" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
                         <option value=""></option>
                         <option value="0">Yes</option>
                         <option value="1">No</option>
                     </select>
                 </div>
-              <div class="input-1 col" id="div1" style="left: 35%;top: 45%;">
-                    <label class="label-top" style="width: 300px;">Name of Data Protection Officer (DPO)</label>
-                    <input type="text" class="input-master" id="Name of Data Protection Officer (DPO)" name="name_of_DPO" placeholder="eg. John Smith">
+              <div class="input-1 col" id="div1" style="left: 35%;top: 51.5%;">
+                    <label class="label-top" style="width: 300px;">Name of Data Protection Officer (DPO)*</label>
+                    <input type="text" class="input-master" id="Name of Data Protection Officer (DPO)" name="name_of_DPO" placeholder="eg. Joe Doe">
               </div>
-               <div class="input-1 col" id="div2" style="left: 5%;top: 60%;">
-                    <label class="label-top" style="width: 300px;">Title of Data Protection Officer (DPO)</label>
+               <div class="input-1 col" id="div2" style="left: 5%;top: 67%;">
+                    <label class="label-top" style="width: 300px;">Title of Data Protection Officer (DPO)*</label>
                     <input type="text" class="input-master" name="title_of_DPO" id="Title of Data Protection Officer (DPO)" placeholder="eg. IT Head">
               </div>
             <div style="position: absolute;
             left: 5%;
             right: 0.2%;
-            top: 80%;
+            top: 90%;
             bottom: 6.14%;
             ">
-                <a style="color: black;" class="label-top">‘*’ fields are mandatory in this DPIA screening sheet</a>
+                <a style="color: black; font-size: 10px;">‘*’ fields are mandatory in this DPIA screening sheet</a>
             </div>
             <div style="position: absolute;
             left: 65%;
@@ -141,7 +140,7 @@ height: 850px;">
             top: 7.4%;
             bottom: 6.14%;
             ">
-                <img src="static/assets/img/Search-cuate 1.png" style="width: 70%; height: auto;">
+                <img src="static/assets/img/Search-cuate 1.png" style="width: 80%; height: auto;">
             </div>
             <div>
                 <button type="submit" class="button-master" style="left: 65%; top: 80%; color: white;">Proceed To Screening</button>

@@ -14,10 +14,10 @@
 
 .alt-nav{
     position: absolute;
-    width: 1500px;
+    width: 1280px;
     height: 78px;
     left: 0px;
-    top: 90px;
+    top: 60px;
 
     /* Grey Scale/Grey 2 */
 
@@ -61,11 +61,11 @@
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 28px;
     /* or 117% */
     
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    /* font-feature-settings: 'pnum' on, 'lnum' on; */
     
     /* Typography/Dark Background/High Emphasis */
     
@@ -75,17 +75,32 @@
 .rect-1{
     position: absolute;
     width: 60%;
-    height: 10%;
-    left: 12.5%;
-    top: 15%;  
+    height: 20%;
+    left: 15%;
+    top: 15%;
+    margin-top: 5px;
 }
 
 .rect-4{
     position: absolute;
-    width: 70%;
-    height: 62.50%;
-    left: 12.5%;
+    width: 850px;
+    height: 320px;
+    left: 15%;
     top: 27%;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.rect-4-1{
+    position: absolute;
+    width: 850px;
+    height: 370px;
+    left: 15%;
+    top: 30%;
 
     background: #FFFFFF;
     /* Elevation/03 */
@@ -119,7 +134,7 @@
 }
 
 .label-top{
-    width: 26px;
+    width: 90px;
     height: 16px;
 
     /* Alternative/Caption */
@@ -149,7 +164,7 @@
     box-sizing: border-box;
 
     width: 85%;
-    height: 60%;
+    height: 50%;
 
     background: #FFFFFF;
     /* Gray/40 */
@@ -177,7 +192,7 @@
     gap: 16px;
 
     width: 85%;
-    height: 60%;
+    height: 50%;
 
     background: #FFFFFF;
     /* Gray/40 */
@@ -207,12 +222,29 @@
 color: rgba(39, 41, 54, 0.45);
 }
 
+.small_font{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 0px;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+/* or 143% */
+
+
+/* Typography/On Surface/Medium Emphasis */
+
+color: rgba(39, 41, 54, 0.45);
+}
+
 .input-1{
     display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
 padding: 0px;
+font-size: 10.5px;
 gap: 4px;
 
 position: absolute;
@@ -233,11 +265,14 @@ border-radius: 0px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
+    font-family: 'Ubuntu';
     padding: 9px 8px 7px;
+    color: #FFFFFF;
 
     position: absolute;
-    width: 295px;
-    height: 40px;
+    width: 230px;
+    height: 35px;
 
 
     /* Primary/Palette/Primary */
@@ -264,8 +299,8 @@ border-radius: 0px;
     align-items: center;
     padding: 7px 8px;
 
-    width: 91px;
-    height: 30px;
+    width: 85px;
+    height: 32px;
 
     /* Primary/Palette/Primary */
 
@@ -281,8 +316,8 @@ border-radius: 0px;
     
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 13px;
     line-height: 16px;
     /* identical to box height, or 114% */
 
@@ -310,6 +345,7 @@ input[type="radio"]{
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+    margin-top: 2%;
     /* or 150% */
 
     letter-spacing: 0.15px;
@@ -318,3 +354,707 @@ input[type="radio"]{
 
     color: rgba(39, 41, 54, 0.85);
 }
+
+.session_box{
+    height: 160px;
+    width: 220px;
+    top: 300px;
+    border-color: #DFE3EA;
+    margin-left:18px;
+    font-size: 16px;
+    font-family: 'Ubuntu';
+    text-align: left;
+    font-weight: 500;
+    color: gray;
+    padding-left: 20px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.button-assessment{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 800px;
+    justify-content: center;
+    align-items: center;
+    color: #12ABDB;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 200px;
+    height: 35px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #F4F4F4;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+}
+
+.result-box{
+    position: absolute;
+    width: 800px;
+    height: 250px;
+    left: 204px;
+    top: 160px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.result-text{
+    height: 46px;
+    width: 915px;
+    padding-left: 400px;
+    padding-top: 50px;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.result-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 380px;
+    margin-top: 130px;
+    justify-content: center;
+    align-items: center;
+    color: #12ABDB;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 180px;
+    height: 40px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #FFFFFF;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+.result-button2{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 570px;
+    margin-top: 130px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 200px;
+    height: 40px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+.result-png{
+    position: absolute;
+    width: 240px;
+    height: 210px;
+    left: 60px;
+    top: 25px;
+}
+
+.result-instruction{
+    position: absolute;
+    height: 16px;
+    left: 15.2%;
+    right: 476px;
+    top: 75%;
+    width: 800px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 16px;
+    /* identical to box height, or 160% */
+
+    letter-spacing: 0.4px;
+
+    /* Typography/Dark Background/High Emphasis */
+
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.summary-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 700px;
+    top: 2%;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 170px;
+    height: 35px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #0E88AF;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+}
+
+.summary-button2{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    top: 2%;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 880px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 190px;
+    height: 35px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #0E88AF;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+}
+
+.user-info1{
+    position: absolute;
+    width: 75%;
+    height: 720px;
+    left: 13.3%;
+    font-family: 'Ubuntu';
+    color: #FFFFFF;
+    font-size: 14px;
+    top: 168px;
+
+}
+
+.user-info2{
+    position: absolute;
+    width: 75%;
+    height: 720px;
+    left: 13.3%;
+    font-family: 'Ubuntu';
+    color: #FFFFFF;
+    font-size: 14px;
+    top: 225px;
+
+}
+
+/* Risk box 1*/
+.risk-clickable-box1{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 168px;
+    top: 300px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box1{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+
+/* Risk box 2*/
+.risk-clickable-box2{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 470px;
+    top: 300px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box2{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+/* Risk box 3*/
+.risk-clickable-box3{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 772px;
+    top: 300px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box3{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+
+/* Risk box 4*/
+.risk-clickable-box4{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 168px;
+    top: 573px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box4{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+
+/* Risk box 5*/
+.risk-clickable-box5{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 470px;
+    top: 573px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box5{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+/* Risk box 6*/
+.risk-clickable-box6{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 772px;
+    top: 573px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box6{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+
+/* Risk box 7*/
+.risk-clickable-box7{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 168px;
+    top: 848px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box7{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+/* Risk box 8*/
+.risk-clickable-box8{
+    position: absolute;
+    height: 250px;
+    width: 280px;
+    left: 470px;
+    top: 848px;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.inside-risk-clickable-box8{
+    position: absolute;
+    height: 70px;
+    width: 280px;
+    left: 0px;
+    top: 0px;
+    border-radius: 8px;
+    background: #EBEBEB;
+}
+
+.risk-summary-gdpr-button{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 650px;
+    justify-content: center;
+    align-items: center;
+    color: #12ABDB;
+    top: 1055px;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 240px;
+    height: 40px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #F4F4F4;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+}
+
+.risk_summary_steps{
+    display: flex;.
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 28px;
+    margin-top: 15px;
+    color: #808080;
+}
+
+.risk_summary_title{
+    display: flex;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 28px;
+    top:40px;
+    color: black;
+}
+
+.risk-details1{
+    display: flex;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: #A6A6A6;
+    left: 36px;
+    top:83px;
+}
+
+.risk-details2{
+    display: flex;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: #A6A6A6;
+    left: 36px;
+    top:129px;
+}
+
+.risk-details3{
+    display: flex;
+    position: absolute;
+    font-size: 13px;
+    font-weight: 500;
+    color: #A6A6A6;
+    left: 36px;
+    color: black;
+    top:180px;
+}
+
+.num_risk1{
+    display: flex;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    left: 0px;
+    top:20px;
+}
+
+.num_risk2{
+    display: flex;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    left: 0px;
+    top:20px;
+}
+
+.num_risk3{
+    display: flex;
+    position: absolute;
+    font-size: 28px;
+    font-weight: 500;
+    left: 0px;
+    color: #525252;
+    top:20px;
+}
+
+.gdpr_font1{
+    position: absolute;
+    font-size: 12px;
+}
+
+.summary_details_box_1{
+    position: absolute;
+    width: 960px;
+    height: 490px;
+    left: 13%;
+    top: 300px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.summary_details_box_2{
+    position: absolute;
+    width: 960px;
+    height: 490px;
+    left: 13%;
+    top: 815px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.inside-summary-box1{
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 45px;
+    margin-top: 20px;
+
+}
+
+.issue_definition{
+    display: flex;
+    font-size: 14px;
+    margin-left: 45px;
+    font-family: 'Ubuntu';
+    margin-top: 10px;
+}
+
+.issue_definition1{
+    display: flex;
+    font-size: 14px;
+    margin-left: 45px;
+    font-family: 'Ubuntu';
+    margin-top: 17px;
+}
+
+.summary-text-box-1{
+    display: flex;
+    font-size: 12px;
+    width: 90%;
+    height:35px;
+    margin-left: 45px;
+    padding-left:10px;
+    padding-top:8px;
+    font-family: 'Ubuntu';
+    border-style: ridge;
+}
+
+.input-box-1{
+    display: flex;
+    width: 90%;
+    height:80px;
+    font-size: 12px;
+    padding-bottom:50px;
+    padding-left:10px;
+    margin-left: 45px;
+}
+
+.login-box{
+    position: absolute;
+    width: 378px;
+    height: 250px;
+    left: 448px;
+    top: 220px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.login-text-box-1{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    left: 40px;
+    top: 50px;
+    font-size: 14px;
+    border-color: #E6E6EA;
+    padding-left:10px;
+    border-radius: 8px;
+    font-family: 'Ubuntu';
+}
+
+.login-text-box-2{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    left: 38px;
+    top: 110px;
+    border-color: #E6E6EA;
+    font-size: 14px;
+    padding-left:10px;
+    border-radius: 8px;
+    font-family: 'Ubuntu';
+}
+
+.login-submit{
+    position: absolute;
+    width: 300px;
+    height: 40px;
+    left: 38px;
+    top: 185px;
+    background: #12ABDB;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-family: 'Ubuntu';
+}
+
+.login-text-top{
+    position: absolute;
+    width: 380px;
+    height: 50px;
+    left: 587px;
+    top: 140px;
+    color: #FFFFFF;
+    font-size: 28px;
+    font-family: 'Ubuntu';
+}
+
+.create-session{
+    height: 160px;
+    width: 220px;
+    left: 204px;
+    margin-top: 20px;
+    border-color: #DFE3EA;
+    margin-left:18px;
+    font-size: 18px;
+    padding-left: 50px;
+    color: #12ABDB;
+    padding-top: 40px;
+    font-family: 'Ubuntu';
+    text-align: left;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -46,30 +46,29 @@
 </script>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
-width: 1440px;
-height: 850px;">
+width: auto;
+height: 576px;">
     <div class="rect-1">
-    <a class="h1">Toolkit is designed to simplify and implement the processing of Data Protection
-      Impact Assessment (DPIA).</a>
+    <p class="h1">One stop solution to centralize, standardize, and streamline your Data Protection Impact Assessment process</p>
     </div>
   <div class="rect-4 font">
     <form method="POST" action="index" name="organization_form">
-      <div class="input-1 col " style="left: 5%; top: 15%;">
+      <div class="input-1 col " style="left: 5%; top: 10%;">
         <label for="inputPassword" class="label-top">Title*</label>
         <input type="text" name="title" class="input-master" id="inputPassword"
-          placeholder="DPIA on <Name of Organization>" required>
+          placeholder="Title of DPIA" required>
       </div>
       <div class="input-1 col " style="left: 5%;top: 30%;">
         <label for="inputPassword" class="label-top">Approver/Manager*</label>
-        <input type="text" name="manager" class="input-master" id="inputPassword" placeholder="eg: Martin Bill"
+        <input type="text" name="manager" class="input-master" id="inputPassword" placeholder="eg: Jon Deo"
           required>
       </div>
-      <div class="input-1 col " style="left: 5%;top: 45%;">
+      <div class="input-1 col " style="left: 5%;top: 50%;">
         <label for="inputPassword" class="label-top">Author*</label>
-        <input type="text" name="author" class="input-master" id="inputPassword" placeholder="eg: Robert Kiyosaki"
+        <input type="text" name="author" class="input-master" id="inputPassword" placeholder="eg: Jon Deo"
           required>
       </div>
-      <div class="input-1 col " style="left: 5%; top: 60%;">
+      <div class="input-1 col " style="left: 5%; top: 70%;">
         <label for="inputPassword" class="label-top">DPIA Status*</label>
         <select class="input-master-box" name="status" required>
           <option value="">Select Here</option>
@@ -79,30 +78,31 @@ height: 850px;">
           <option value="Approved">Approved</option>
         </select>
       </div>
-      <div class="input-1 col" style="left: 35%; top: 15%;">
-        <label for="inputPassword" class="label-top">Role*</label>
-        <input type="text" name="role" class="input-master" id="inputPassword" placeholder="eg: Software Engineer"
+      <div class="input-1 col" style="left: 35%; top: 10%;">
+        <label for="inputPassword" class="label-top">Project Name*</label>
+        <input type="text" name="role" class="input-master" id="inputPassword" placeholder="eg: Project name"
           required>
       </div>
       <div class="input-1 col" style="left: 35%; top: 30%;">
         <label for="inputPassword" class="label-top">Date*</label>
         <input type="date" name="date" class="input-master-box" required>
       </div>
-      <div class="input-1 col" style="left: 35%; top: 45%;">
+      <div class="input-1 col" style="left: 35%; top: 50%;">
         <label for="inputPassword" class="label-top">Department*</label>
         <input type="text" name="department" class="input-master" id="inputPassword" placeholder="eg: IT" required>
       </div>
 
-      <button type="submit" class="button-master" style="left: 65%; top: 80%;">Proceed</button>
+      <button type="submit" class="button-master" style="left: 62%; top: 80%;">Proceed</button>
     </form>
-    <a style="position:absolute;top: 75%;left: 5%;">‘*’ fields are mandatory in this DPIA screening sheet</a>
+    <a style="position:absolute;top: 90%;left: 5%; font-size: 10px; color: black">‘*’ fields are mandatory in this DPIA screening sheet</a>
     <img class="group11" style="top: 15%;left: 65%;"src="static/assets/img/Group11.svg" />
   </div>
   <div style="position: absolute;
         height: 16px;
-        left: 15%;
+        left: 15.2%;
         right: 476px;
-        top: 95%;
+        top: 85%;
+        width: 800px;
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 700;
@@ -116,7 +116,7 @@ height: 850px;">
 
         color: rgba(255, 255, 255, 0.95);"
     >
-  <a>INSTRUCTIONS</a>
+  <a>INSTRUCTIONS: </a>
   <ol>
     <li>This sheet will collect basic information about the scope of work/project and will help us understand if DPIA is required or not.</li>
     <li>The concerned personnel will be requested to provide inputs to "DPIA Assessment" sheet.</li>
