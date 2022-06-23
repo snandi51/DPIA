@@ -1,27 +1,55 @@
-{% extends 'base.html' %}
+{% extends 'base-figma.html' %}
 {% block content %}
 {% load static %}
 
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Session Screen</title>
 </head>
-<style>
-.row_s {
-    display: table;
-    width: 30%; /*Optional*/
-    table-layout: fixed; /*Optional*/
-    border-spacing: 10px; /*Optional*/
-}
-.column_s {
-    display: table-cell;
-    height: 80px;
-    width: 240px;
-    padding: 8px;
-}
-</style>
+<div class="alt-nav">
+    <div style="position: absolute;
+    left: 14.39%;
+    right: 38.75%;
+    top: 13.22%;
+    bottom: 88.89%;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    /* or 200% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    color: #12ABDB;">
+        TITLE
+    </div>
+    <div style="position: absolute;
+    height: 26px;
+    left: 11.39%;
+    right: 38.75%;
+    top: 40%;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 117% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* Typography/On Surface/High Emphasis */
+
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="{% url 'index' %}"><button class="button-assessment">Start a DPIA Assessment</button></a>
+        <a href="#"><img src="static/assets/img/Icon.png"/></a>
+        DPIA Assessments
+    </div>
+</div>
 <script type="text/javascript">
 
     window.onload = function(){
@@ -37,13 +65,11 @@
 
     for (var i = 1; i <= num_range; i++) {
       const button = document.createElement("button");
-      button.innerText = "Title : "+ session_db[`session_dict_${i}`].title + "\n" +
-      "Date : "+ session_db[`session_dict_${i}`].date + "\n" + "Status : "+ session_db[`session_dict_${i}`].status;
-      button.style.padding = "30px";
-      button.style.paddingLeft = "30px";
-      button.style.paddingRight = "35px";
-      button.className = "btn btn-secondary";
-      button.style.margin = "20px";
+      button.innerText = session_db[`session_dict_${i}`].title + "\n" +
+      "Date : "+ session_db[`session_dict_${i}`].date + "\n" +
+      "Status : "+ session_db[`session_dict_${i}`].status + "\n" +
+      "Project Name : "+ session_db[`session_dict_${i}`].name_of_organization;
+      button.className = "session_box";
       (function(index){
             button.addEventListener("click", function() {
             console.log(index)
@@ -53,10 +79,10 @@
       document.getElementById("main").appendChild(button);
     }
     console.log(i);
-
-    const div = document.createElement("div");
-    div.style.padding = "55px";
-    document.getElementById("main").appendChild(div);
+<!--    const div1 = document.createElement("button");-->
+<!--    div1.innerHTML = "ADD NEW ASSESSMENT +"-->
+<!--    div1.className = "create-session";-->
+<!--    document.getElementById("main").appendChild(div1);-->
 
 
     function clickDB(){
@@ -81,21 +107,15 @@
 
 
 </script>
-<body>
-  <div style="padding-top:50px">
-      <center><h4><strong  style="color:Black; margin-left:70px" class="verdana">SESSIONS</strong></h4></center>
-      <center style="padding-left: 960px"><a href="{% url 'index' %}"><button type="button" class="btn btn-primary">Skip & Start New Assessment</button></a></center>
-  </div>
-<!--    <div class="row_s" id="main">-->
-<!--        {% for data in db_data %}-->
-<!--                <div class="column_s" id="session_div" style="background-color:#897FF7; ">-->
-<!--                  <h6>Title: <b id="session_title"> {{data.title}}</b></h6>-->
-<!--                  <h6>Date: <b id="session_date"> {{data.date}}</b></h6>-->
-<!--                  <h6>Status: <b id="session_status"> {{data.status}}</b></h6>-->
-<!--                  <br>-->
-<!--                </div>-->
-<!--        {% endfor %}-->
-<!--    </div>-->
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: 960px;
+height: 1200px;
+margin-left: 150px;
+padding-top: 100px;"
+>
+
+
 </body>
 </html>
 {% endblock %}

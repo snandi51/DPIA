@@ -106,6 +106,61 @@ def result(request):
     return render(request, 'result.html')
 
 
+@login_required
+def gdpr_report(request):
+    context = {
+
+    }
+
+    return render(request, 'gdpr_report.html')
+
+
+
+@login_required
+def risk_summary_details(request):
+    title = request.GET.get('search')
+    risk_score1 = request.session.get('risk_score1')
+    risk_score2 = request.session.get('risk_score2')
+    risk_score3 = request.session.get('risk_score3')
+    risk_score4 = request.session.get('risk_score4')
+    risk_score5 = request.session.get('risk_score5')
+    risk_score6 = request.session.get('risk_score6')
+    risk_score7 = request.session.get('risk_score7')
+    risk_score8 = request.session.get('risk_score8')
+    form1_percentage = request.session.get('form1_percentage')
+    form2_percentage = request.session.get('form2_percentage')
+    form3_percentage = request.session.get('form3_percentage')
+    form4_percentage = request.session.get('form4_percentage')
+    form5_percentage = request.session.get('form5_percentage')
+    form6_percentage = request.session.get('form6_percentage')
+    form7_percentage = request.session.get('form7_percentage')
+    form8_percentage = request.session.get('form8_percentage')
+    context = {
+        'title': title,
+        'risk_score1': risk_score1,
+        'risk_score2': risk_score2,
+        'risk_score3': risk_score3,
+        'risk_score4': risk_score4,
+        'risk_score5': risk_score5,
+        'risk_score6': risk_score6,
+        'risk_score7': risk_score7,
+        'risk_score8': risk_score8,
+        'form1_percentage': form1_percentage,
+        'form2_percentage': form2_percentage,
+        'form3_percentage': form3_percentage,
+        'form4_percentage': form4_percentage,
+        'form5_percentage': form5_percentage,
+        'form6_percentage': form6_percentage,
+        'form7_percentage': form7_percentage,
+        'form8_percentage': form8_percentage,
+        'name_of_controller': request.session.get('manager'),
+        'name_of_dpo': request.session.get('name_of_DPO'),
+        'title_of_dpo': request.session.get('title_of_DPO')
+    }
+    return render(request, 'risk_summary_details.html', context)
+
+
+
 def dpia_status(input_data):
     dpia_status = 'Mandatory'
     if input_data.get('data_processing_project') == '0':
@@ -1277,13 +1332,21 @@ def dpia_screening(request):
 
         table = RiskCalculations(input_data, request)
         form1_percentage = round((table.risk_calculation_f1_all()[1] / table.form1) * 100, 2)
+        request.session['form1_percentage'] = form1_percentage
         form2_percentage = round((table.risk_calculation_f2_all()[1] / table.form2) * 100, 2)
+        request.session['form2_percentage'] = form2_percentage
         form3_percentage = round((table.risk_calculation_f3_all()[1] / table.form3) * 100, 2)
+        request.session['form3_percentage'] = form3_percentage
         form4_percentage = round((table.risk_calculation_f4_all()[1] / table.form4) * 100, 2)
+        request.session['form4_percentage'] = form4_percentage
         form5_percentage = round((table.risk_calculation_f5_all()[1] / table.form5) * 100, 2)
+        request.session['form5_percentage'] = form5_percentage
         form6_percentage = round((table.risk_calculation_f6_all()[1] / table.form6) * 100, 2)
+        request.session['form6_percentage'] = form6_percentage
         form7_percentage = round((table.risk_calculation_f7_all()[1] / table.form7) * 100, 2)
+        request.session['form7_percentage'] = form7_percentage
         form8_percentage = round((table.risk_calculation_f8_all()[1] / table.form8) * 100, 2)
+        request.session['form8_percentage'] = form8_percentage
 
         if form1_percentage <= 30:
             form1_color = 'green'
@@ -1341,8 +1404,20 @@ def dpia_screening(request):
         else:
             form8_color = 'red'
 
+        request.session['risk_score1']= table.risk_calculation_f1_all()
+        request.session['risk_score2']= table.risk_calculation_f2_all()
+        request.session['risk_score3']= table.risk_calculation_f3_all()
+        request.session['risk_score4']= table.risk_calculation_f4_all()
+        request.session['risk_score5']= table.risk_calculation_f5_all()
+        request.session['risk_score6']= table.risk_calculation_f6_all()
+        request.session['risk_score7']= table.risk_calculation_f7_all()
+        request.session['risk_score8']= table.risk_calculation_f8_all()
+
         context = {
             'input_data': input_data,
+            'name_of_controller': request.session.get('manager'),
+            'title_of_dpo': request.session.get('title_of_DPO'),
+            'name_of_dpo': request.session.get('name_of_DPO'),
             'risk_score1': table.risk_calculation_f1_all(),
             'risk_score2': table.risk_calculation_f2_all(),
             'risk_score3': table.risk_calculation_f3_all(),
@@ -1382,14 +1457,14 @@ class PDF(FPDF):
     # nothing happens when it is executed.
 
 def get_pdf(request):
-    pdf = PDF(orientation='P', unit='mm', format='A4') # landscape
-    pdf.add_page()
-    pdf.set_font('Arial', 'B', 16)
-
-    title = 'DATA PROTECTION IMPACT ASSESSMENT'
-    image = 'media/cg_logo.png'
-    pdf.image(image, x=5, y=5, w=42, h=12)
-    pdf.cell(ln=1, h=30, align='C', w=0, txt=title,  border=0)
-    pdf.output('pdf/output.pdf', 'F')
-    return HttpResponse(open('pdf/output.pdf', 'rb'), content_type='application/pdf')
+    # pdf = PDF(orientation='P', unit='mm', format='A4') # landscape
+    # pdf.add_page()
+    # pdf.set_font('Arial', 'B', 16)
+    #
+    # title = 'DATA PROTECTION IMPACT ASSESSMENT'
+    # image = 'media/cg_logo.png'
+    # pdf.image(image, x=5, y=5, w=42, h=12)
+    # pdf.cell(ln=1, h=30, align='C', w=0, txt=title,  border=0)
+    # pdf.output('pdf/output.pdf', 'F')
+    return HttpResponse(open('pdf/dpia_template_v_1.pdf', 'rb'), content_type='application/pdf')
 

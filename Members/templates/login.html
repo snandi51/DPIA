@@ -1,41 +1,41 @@
 {% extends 'base-figma.html' %}
-{% load static %}
 {% block content %}
+{% load static %}
 
-<div style="margin-top: 40px" class="text-black  text-center">
-</div>
-<link href="static/assets/css/style-figma.css" rel="stylesheet">
-<div style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+<!DOCTYPE html>
+<html lang="en">
+
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
-width: auto;
-height: 550px">
-    <div class ="form-group" style ="position:absolute; left: 30%; width: 50%; margin-left:30px;  margin-top: 60px;">
-            <div class="col-md-8 text-black;">
-                    {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <p1>{{ message }}.</p1>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            {% endfor %}
-                    {% endif %}
-                <form method="POST">
-                    <fieldset class="form-group">
-                        <br>
-                         <center><h4 class="text-black" style="font-family: Verdana"><strong><i class="fa fa-user"></i> LOGIN</strong></h4></center>
-                          <div class="form-group;" style="padding:10px">
-                            <label class="text-black" for="exampleInputEmail1">Username *</label>
-                            <input type="text" class="form-control" name="username" required>
-                          </div>
-                          <div class="form-group" style="padding:10px">
-                            <label class="text-black" for="exampleInputPassword1">Password *</label>
-                            <input type="password" class="form-control" name="password" required>
-                          </div>
-                            <br>
-                          <center><button type="submit" class="btn btn-primary rounded-pill login_button" style="font-family: Verdana"><i class="fa fa-unlock fa-lg "></i>  Login</button></center>
-                    </fieldset>
-                </form>
+width: 1240px;
+height: 575px;">
+<div class="login-text-top">
+        LOGIN
+</div>
+<div class="login-box">
+    {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <p1>{{ message }}.</p1>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+    {% endif %}
+    <form method="POST">
+        <fieldset class="form-group">
+            <div>
+                <input type="text" placeholder="Username" class="login-text-box-1" name="username" required>
             </div>
-    </div>
-    </div>
-{% endblock content %}
+            <div>
+                <input type="text" placeholder="Password" class="login-text-box-2" name="password" required>
+            </div>
+            <div>
+                <button type="submit" class="login-submit">Login</button>
+            </div>
+        </fieldset>
+    </form>
+</div >
+{% endblock %}
+</body>
+
+</html>
