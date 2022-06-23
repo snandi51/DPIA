@@ -2,16 +2,111 @@
 {% block content %}
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type ="text/javascript">
+function toggleText2(){
+                var myText=document.getElementById("info2");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function toggleText3(){
+                var myText=document.getElementById("info3");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function toggleText4(){
+                var myText=document.getElementById("info4");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function toggleText5(){
+                var myText=document.getElementById("info5");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function toggleText6(){
+                var myText=document.getElementById("info6");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function toggleText7(){
+                var myText=document.getElementById("info7");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function toggleText8(){
+                var myText=document.getElementById("info8");
+                var displaySetting=myText.style.display;
+
+                if(displaySetting == 'none'){
+                    myText.style.display='block';
+                }
+                else{
+                    myText.style.display='none';
+                }
+            }
+
+function rejectClick(){
+    var value = 0
+    window.location.href = "{% url 'risk_summary' %}" + "?search="+value;
+    console.log('Rejected')
+}
+
+function approveClick(){
+    var value = 1
+    window.location.href = "{% url 'risk_summary' %}" + "?search="+value;
+    console.log('Approved')
+}
+
+</script>
 <div class="alt-nav">
     <div style="position: absolute;
     left: 14.39%;
     right: 38.75%;
-    top: 8.22%;
+    top: 13.22%;
     bottom: 88.89%;
     font-family: 'Ubuntu';
     font-style: normal;
@@ -19,7 +114,9 @@
     font-size: 14px;
     line-height: 28px;
     /* or 200% */
+
     font-feature-settings: 'pnum' on, 'lnum' on;
+
     color: #12ABDB;">
         TITLE
     </div>
@@ -28,26 +125,254 @@
     left: 11.39%;
     right: 38.75%;
     top: 40%;
+
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     /* or 117% */
+
     font-feature-settings: 'pnum' on, 'lnum' on;
+
     /* Typography/On Surface/High Emphasis */
+
     color: rgba(39, 41, 54, 0.85);">
         <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
+        <a href="#"><button onclick="rejectClick()" class="gdpr-button1">Reject</button></a>
+        <a href="#"><button onclick="approveClick()" class="gdpr-button2">Approve</button></a>
         GDPR Report
     </div>
 </div>
+
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 1440px;
-height: 1850px;">
-    <div class="rect-4 font">
+height: 1900px; margin-left: 150px;
+padding-top: 100px;"
+>
+    <div class="gdpr_top_label1">
+        <p class="gdpr_font_title_1">Need help ? hit the <img src="static/assets/img/icon-right-inside.png">     icon to Refer to the parameters</p>
     </div>
-  {% endblock %}
+    <div class="gdpr_top_label2">
+        <p class="gdpr_font_title_1">Kindly add comments if there is any extra information to be provided</p>
+    </div>
+
+    <div class="user-info2">
+      <div style="width: 20%; height: 100px; float: left;">
+          <p class="gdpr_font1">Total Risks:<br><b>3</b></p>
+      </div>
+      <div style="width: 20%; height: 100px; float: left;">
+          <p class="gdpr_font1">Name of the controller:<br><b>Joe Doe</b></p>
+      </div>
+      <div style="width: 20%; height: 100px; float: left;">
+          <p class="gdpr_font1">Subjects/Title of DPO: IT Head:<br><b>IT Head</b></p>
+      </div>
+        <div style="width: 20%; height: 100px; float: left;">
+            <p class="gdpr_font1">Name of the conroller contact/DPO:<br><b>Joe Doe</b></p>
+        </div>
+    </div>
+
+    <div class="gdpr_report_box" style="height:1580px">
+        <div style="position:absolute; left:5%; padding-right: 5%;">
+            <div class="form-group">
+                <div class="col" style="padding-top:25px">
+                    <label class="scr-h1" >Step 1:</label>
+                    <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Explain broadly what project aims to achieve and what type of processing it involves. You may find it helpful to refer or link to other documents, such as a project proposal. Summarise why you identified the need for a DPIA.</p>
+                    </div>
+                    <div style="padding-top:50px">
+                        <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                    </div>
+                    <div style="padding-top:15px">
+                        <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                    </div>
+                </div>
+            </div>
+            <br>
+
+<!--            Step 1 Box-->
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn1"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+            </div>
+
+              <div class="form-group" id="Asset3">
+                  <div class="col">
+                      <label class="scr-h1" >Step 2:</label>
+                        <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe the nature and scope of the processing, and the context and scope of the processing</p>
+                        </div>
+                      <div class="font info" style= "display:none; padding-top: 10px;" id="info2">
+                            <div style="padding-top:50px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+            <br>
+                <div style="position:absolute; left:95%; padding-right: 5%; margin-top:30px;">
+                    <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
+                    <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                </div>
+            <hr>
+              <div class="form-group" id="Asset7" >
+                  <div class="col">
+                      <label class="scr-h1" >Step 3:</label>
+                      <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Consider how to consult with relevant stakeholders</p>
+                        </div>
+                      <div class="font info" style= "display:none; padding-top: 5px;" id="info3">
+                            <div style="padding-top:30px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+            <br>
+            <hr>
+
+<!--                 Step 4 Box-->
+            <div style="position:absolute; left:95%; padding-right: 5%; margin-top:10px;">
+                <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn4').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+            </div>
+
+              <div class="form-group" id="Asset4">
+                  <div class="col">
+                      <label class="scr-h1" >Step 4:</label>
+                        <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe compliance and proportionality measures, in particular</p>
+                        </div>
+                      <div class="font info" style= "display:none; padding-top: 10px;" id="info4">
+                            <div style="padding-top:50px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+            <hr style="margin-top:50px">
+<!--        End of Box 4-->
+
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn5').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
+
+              <div class="form-group" id="Asset9">
+                  <div class="col">
+                      <label class="scr-h1" >Step 5:</label>
+                      <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe source of risk and nature of potential impact on individuals</p>
+                      </div>
+                      <div class="font info" style= "display:none; padding-top: 10px;" id="info5">
+                            <div style="padding-top:50px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+            <hr style="margin-top:50px">
+            <!--        End of Box 5-->
+
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText6()" style="display: none;" id="info-btn6"></button>
+                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn6').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
+
+              <div class="form-group" id="Asset10">
+                  <div class="col">
+                      <label class="scr-h1" >Step 6:</label>
+                      <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe source of risk and nature of potential impact on individuals</p>
+                      </div>
+                      <div class="font info" style= "display:none; padding-top: 10px;" id="info6">
+                            <div style="padding-top:50px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+
+            <hr style="margin-top:50px">
+            <!--        End of Box 6-->
+
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText7()" style="display: none;" id="info-btn7"></button>
+                  <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn7').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
+
+              <div class="form-group" id="Asset11">
+                  <div class="col">
+                      <label class="scr-h1" >Step 7:</label>
+                      <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Identify and obtain necessary approvals</p>
+                      </div>
+                      <div class="font info" style= "display:none; padding-top: 10px;" id="info7">
+                            <div style="padding-top:50px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+            <hr style="margin-top:50px">
+            <!--        End of Box 7-->
+
+            <div style="position:absolute; left:95%; padding-right: 5%;">
+                <button type="button" onclick="toggleText8()" style="display: none;" id="info-btn8"></button>
+                  <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn8').click()" alt="Info"></a>
+                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+              </div>
+
+              <div class="form-group" id="Asset12">
+                  <div class="col">
+                      <label class="scr-h1"> Step 8:</label>
+                       <div class="gdpr-steps-div" style="font-size: 16px;">
+                           <p style="font-size:14px; font-family: 'Ubuntu'">Identify and record outcomes</p>
+                      </div>
+                      <div class="font info" style= "display:none; padding-top: 10px;" id="info8">
+                            <div style="padding-top:50px">
+                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                            <div style="padding-top:15px">
+                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                            </div>
+                      </div>
+                  </div>
+              </div>
+            <center style="padding:20px">
+                <!-- <button type="submit" class="btn btn-success" style="width:100px">Result</button> -->
+            </center>
+              </div>
+          </form>
+      </div>
+
+{% endblock %}
 </body>
 
 </html>
