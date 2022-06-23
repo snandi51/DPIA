@@ -5,9 +5,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <script type ="text/javascript">
-    function myFunction() {
-        var row1 = document.getElementById("row1");
-            row1.bgColor = "green";
+    window.onload = function() {
+        var url_string = window.location;
+        var url = new URL(url_string);
+        var value = url.searchParams.get("search");
+
+        if(value == 1){
+         var pdf_button = document.getElementById('pdf_button')
+         pdf_button.style.background = '#0E88AF';
+         pdf_button.style.color = '#FFFFFF';
+         pdf_button.disabled = false;
+        }
+
+    }
+
+    function pdf_page(){
+        window.location.href = "{% url 'pdf' %}"
+        console.log('Opening PDF')
     }
 
     function risk_clickable_box1(){
@@ -103,7 +117,7 @@
 
     color: rgba(39, 41, 54, 0.85);">
         <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
-        <a href="{% url 'pdf' %}"><button class="summary-button1">Generate PDF</button></a>
+        <button onclick="pdf_page()" disabled id="pdf_button" class="summary-button1">Generate PDF</button>
         <a href="{% url 'gdpr_report' %}"><button class="summary-button2">Create Summary Report</button></a>
         Risk Summary
     </div>

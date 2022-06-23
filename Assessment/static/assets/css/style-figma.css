@@ -576,7 +576,7 @@ input[type="radio"]{
     top: 2%;
     justify-content: center;
     align-items: center;
-    color: #FFFFFF;
+    color: #D4D3D;
     padding: 9px 8px 7px;
 
     position: absolute;
@@ -586,7 +586,7 @@ input[type="radio"]{
 
     /* Primary/Palette/Primary */
 
-    background: #0E88AF;
+    background: #0cccc;
     border: 1px solid #0E88AF;
     border-radius: 4px;
 }
@@ -931,6 +931,12 @@ input[type="radio"]{
     font-size: 12px;
 }
 
+
+.gdpr_font_title_1{
+    position: absolute;
+    font-size: 12px;
+}
+
 .summary_details_box_1{
     position: absolute;
     width: 960px;
@@ -1093,6 +1099,135 @@ input[type="radio"]{
     box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
     border-radius: 8px;
 }
+
+.gdpr_top_label1{
+    position: absolute;
+    width: 175%;
+    height: 720px;
+    left: 13.3%;
+    font-family: 'Ubuntu';
+    color: #FFFFFF;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    font-size: 12px;
+    top: 168px;
+
+}
+
+.gdpr_top_label2{
+    position: absolute;
+    width: 175%;
+    height: 720px;
+    left: 13.3%;
+    font-family: 'Ubuntu';
+    color: #FFFFFF;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    font-size: 12px;
+    top: 190px;
+
+}
+
+.gdpr_report_box{
+    position: absolute;
+    width: 850px;
+    height: 320px;
+    left: 13.3%;
+    top: 52%;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.gdpr-steps-div{
+    position: absolute;
+    width: 740px;
+    height: 120px;
+    font-size: 12px;
+}
+
+.gdpr_text_box_1{
+    position: flex;
+    width: 760px;
+    height: 200px;
+    padding:10px;
+    padding-bottom: 170px;
+    font-size: 10px;
+}
+
+.gdpr_text_box_2{
+    position: flex;
+    width: 760px;
+    height: 130px;
+    padding:10px;
+    padding-bottom: 100px;
+    font-size: 10px;
+}
+
+.gdpr-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 700px;
+    top: 2%;
+    justify-content: center;
+    align-items: center;
+    color: #12ABDB;
+    padding: 9px 8px 7px;
+    padding-bottom: 11px;
+
+    position: absolute;
+    width: 170px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #F4F4F4;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+}
+
+
+.gdpr-button2{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    top: 2%;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 880px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+    padding-bottom: 11px;
+
+    position: absolute;
+    width: 190px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #0E88AF;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+}
+
 
 
 
