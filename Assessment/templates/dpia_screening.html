@@ -1,42 +1,62 @@
-{% extends 'base.html' %}
+{% extends 'base-figma.html' %}
 {% block content %}
 {% load static %}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <!DOCTYPE html>
 <html lang="en">
-
-<body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="alt-nav">
+        <div style="position: absolute;
+        left: 14.39%;
+        right: 38.75%;
+        top: 13.22%;
+        bottom: 88.89%;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 28px;
+        /* or 200% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #12ABDB;">
+            TITLE
+        </div>
+        <div style="position: absolute;
+        height: 26px;
+        left: 11.39%;
+        right: 38.75%;
+        top: 40%;
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        /* or 117% */
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        /* Typography/On Surface/High Emphasis */
+        color: rgba(39, 41, 54, 0.85);">
+            <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
+            Take the assessment test to find out your risk summary
+        </div>
+    </div>
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: 900px;
+height: 3200px;">
+    <link href="static/assets/css/style-figma-1.css" rel="stylesheet">
 <div style="height: 80px">
 
 </div>
   <main id="main">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-          <ol class="carousel-indicators">
-            <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="0" id ="li_1" onchange="changeColor1"></li>
-            <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="1" id ="li_2" onchange="changeColor2"></li>
-            <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="2" id ="li_99" onchange="changeColor3"></li>
-              <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="3" id ="li_4" onchange="changeColor4"></li>
-            <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="4" id ="li_5" onchange="changeColor5"></li>
-              <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="5" id ="li_6" onchange="changeColor6"></li>
-            <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="6" id ="li_7" onchange="changeColor7"></li>
-              <li class="btn btn-primary" data-target="#carouselExampleIndicators" data-slide-to="7" id ="li_8" onchange="changeColor8"></li>
 
-          </ol>
-          <div class="container">
-              <center><button type="submit" class="btn btn-primary submit_button" style="margin-right: 7px" data-target="#carouselExampleIndicators" data-slide-to="0" id="part1"><strong>Part 1</strong><button id="part2" class="btn btn-primary submit_button" data-target="#carouselExampleIndicators" data-slide-to="1" style="margin-right: 7px"><strong>Part 2</strong><button class="btn btn-primary submit_button" id="part3" data-target="#carouselExampleIndicators" data-slide-to="2" style="margin-right: 7px"><strong>Part 3</strong><button type="submit" class="btn btn-primary submit_button" style="margin-right: 7px" id="part4" data-target="#carouselExampleIndicators" data-slide-to="3"><strong>Part 4</strong><button type="submit" class="btn btn-primary" style="margin-right: 7px" id="part5" data-target="#carouselExampleIndicators" data-slide-to="4"><strong>Part 5</strong><button type="submit" class="btn btn-primary submit_button" style="margin-right: 7px" id="part6" data-target="#carouselExampleIndicators" data-slide-to="5"><strong>Part 6</strong><button type="submit" style="margin-right: 7px" class="btn btn-primary submit_button" id="part7" data-target="#carouselExampleIndicators" data-slide-to="6"><strong>Part 7</strong><button type="submit" class="btn btn-primary submit_button" id="Part 8" data-target="#carouselExampleIndicators" data-slide-to="7"><strong>part8</strong></button></button></button></button></button></button></button></button></center>
-<!-- style="background-color: rgba(1, 209, 208, 0.7);"-->
+
           <script>
                 window.onload = function(){
                     var value_dict = {{value_dict|safe}}
                     console.log(value_dict)
                     console.log('code reached')
 
+                    //Session management starts
                     // Form 1
                     if(document.getElementsByName('f1_1').value == null){
                         document.forms['dpia_screening_form']['f1_1'].value = value_dict.f1_1;
@@ -204,787 +224,741 @@
                     }
 
                 }
-                function changeColor1() {
-                    var input1 = document.getElementById("f1_11");
-                    var input2 = document.getElementById("f1_12");
-                    var input3 = document.getElementById("f1_13");
-                    var input4 = document.getElementById("f1_14");
-                    var input5 = document.getElementById("f1_15");
-                    var input6 = document.getElementById("f1_16");
-                    var button = document.getElementById("part1");
-                    var li_1 = document.getElementById("li_1");
-                    if (input1.value && input2.value && input3.value && input4.value && input5.value && input6.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_1.style.backgroundColor = "#95E616";
+                //Session management ends
+                //Toggle Div code
+                function toggleDiv1(){
+                var myText=document.getElementById("div1");
+                var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
                     }
                     else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_1.style.backgroundColor = "#FF304C";
+                        myText.style.display='none';
+                    }
+                }
+                function toggleDiv2(){
+                    var myText=document.getElementById("div2");
+                    var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
+                    }
+                    else{
+                        myText.style.display='none';
+                    }
+                }
+                function toggleDiv3(){
+                    var myText=document.getElementById("div3");
+                    var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
+                    }
+                    else{
+                        myText.style.display='none';
                     }
                 }
 
-                function changeColor2() {
-                    var input1 = document.getElementById("f2_11");
-                    var input2 = document.getElementById("f2_12");
-                    var input3 = document.getElementById("f2_13");
-                    var input4 = document.getElementById("f2_14");
-                    var input5 = document.getElementById("f2_15");
-                    var input6 = document.getElementById("f2_16");
-                    var input7 = document.getElementById("f2_17");
-                    var input8 = document.getElementById("f2_18");
-                    var input9 = document.getElementById("f2_19");
-                    var button = document.getElementById("part2");
-                    var li_2 = document.getElementById("li_2");
-                    if (input1.value && input2.value && input3.value && input4.value && input5.value && input6.value && input7.value && input8.value && input9.value) {
-                        button.style.backgroundColor = "#95E616";
-                         li_2.style.backgroundColor = "#95E616";
+                function toggleDiv4(){
+                var myText=document.getElementById("div4");
+                var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
                     }
                     else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_2.style.backgroundColor = "#FF304C";
+                        myText.style.display='none';
                     }
                 }
 
-                function changeColor3() {
-                    var input1 = document.getElementById("f3_11");
-                    var input2 = document.getElementById("f3_12");
-                    var input3 = document.getElementById("f3_13");
-                    var input4 = document.getElementById("f3_14");
-                    var input5 = document.getElementById("f3_15");
-                    var input6 = document.getElementById("f3_16");
-                    var input7 = document.getElementById("f3_17");
-                    var input8 = document.getElementById("f3_18");
-                    var button = document.getElementById("part3");
-                    var li_3 = document.getElementById("li_3");
-                    if (input1.value && input2.value && input3.value && input4.value && input5.value && input6.value && input7.value && input8.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_3.style.backgroundColor = "#95E616";
+                function toggleDiv5(){
+                var myText=document.getElementById("div5");
+                var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
                     }
                     else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_3.style.backgroundColor = "#FF304C";
+                        myText.style.display='none';
                     }
                 }
 
-                function changeColor4() {
-                    var input1 = document.getElementById("f4_11");
-                    var input2 = document.getElementById("f4_12");
-                    var input3 = document.getElementById("f4_13");
-                    var input4 = document.getElementById("f4_14");
-                    var input5 = document.getElementById("f4_15");
-                    var input6 = document.getElementById("f4_16");
-                    var input7 = document.getElementById("f4_17");
-                    var input8 = document.getElementById("f4_18");
-                    var input9 = document.getElementById("f4_19");
-                    var button = document.getElementById("part4");
-                    var li_4 = document.getElementById("li_4");
-                    if (input1.value && input2.value && input3.value && input4.value && input5.value && input6.value && input7.value && input8.value && input9.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_4.style.backgroundColor = "#95E616";
+                function toggleDiv6(){
+                var myText=document.getElementById("div6");
+                var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
                     }
                     else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_4.style.backgroundColor = "#FF304C";
+                        myText.style.display='none';
                     }
                 }
 
-                function changeColor5() {
-                    var input1 = document.getElementById("f5_11");
-                    var input2 = document.getElementById("f5_12");
-                    var button = document.getElementById("part5");
-                    var li_5 = document.getElementById("li_4");
-                    if (input1.value && input2.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_5.style.backgroundColor = "#95E616";
+                function toggleDiv7(){
+                var myText=document.getElementById("div7");
+                var displaySetting=myText.style.display;
+
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
                     }
                     else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_5.style.backgroundColor = "#FF304C";
+                        myText.style.display='none';
                     }
                 }
 
-                function changeColor6() {
-                    var input1 = document.getElementById("f6_11");
-                    var input2 = document.getElementById("f6_12");
-                    var input3 = document.getElementById("f6_13");
-                    var input4 = document.getElementById("f6_14");
-                    var input5 = document.getElementById("f6_15");
-                    var button = document.getElementById("part6");
-                    var li_6 = document.getElementById("li_6");
-                    if (input1.value && input2.value && input3.value && input4.value && input5.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_6.style.backgroundColor = "#95E616";
-                    }
-                    else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_7.style.backgroundColor = "#FF304C";
-                    }
-                }
+                function toggleDiv8(){
+                var myText=document.getElementById("div8");
+                var displaySetting=myText.style.display;
 
-                function changeColor7() {
-                    var input1 = document.getElementById("f7_11");
-                    var input2 = document.getElementById("f7_12");
-                    var button = document.getElementById("part7");
-                    var li_7 = document.getElementById("li_7");
-                    if (input1.value && input2.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_7.style.backgroundColor = "#95E616";
+                    if(displaySetting == 'none'){
+                        myText.style.display='block';
                     }
                     else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_7.style.backgroundColor = "#FF304C";
-                    }
-                }
-
-                function changeColor8() {
-                    var input1 = document.getElementById("f8_11");
-                    var input2 = document.getElementById("f8_12");
-                    var input3 = document.getElementById("f8_13");
-                    var input4 = document.getElementById("f8_14");
-                    var button = document.getElementById("part8");
-                    var li_8 = document.getElementById("li_8");
-                    if (input1.value && input2.value && input3.value && input4.value) {
-                        button.style.backgroundColor = "#95E616";
-                        li_8.style.backgroundColor = "#95E616";
-                    }
-                    else{
-                        button.style.backgroundColor = "#FF304C";
-                        li_8.style.backgroundColor = "#FF304C";
+                        myText.style.display='none';
                     }
                 }
           </script>
 
-          </div>
 
-          <div class="carousel-inner" id="f1">
+
+          <div class="rect-4" id="f1" style="height:2900px">
               <form method="POST" name="dpia_screening_form" action="dpia_screening">
-                  <fieldset class="form-group">
-                        <div class="carousel-item active">
-                            <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 1</center></h3>
-                                <br>
-                                <div class="form-group" >
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor1()" >
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the purpose of the processing defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f1_1" id="f1_11">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                    <div style="position:absolute; left:5%; padding-right: 5%;">
+                        <div style="padding-top: 2%;">
+                            <p class="font" style="color: black; text-transform: uppercase ;">Need help? hit the <img src="static/assets/img/icon-right-inside.png"> icon to Refer to the parameters</p>
+                            <p class="font" style="color: black; text-transform: uppercase ;">KINDLY ADD COMMENTS IF THERE IS ANY EXTRA INFORMATION TO BE PROVIDED</p>
+                        </div>
+                        <div class="font-big" >
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv1()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">1. DPIA Assessment - Part 1</label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the aim of the project defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f1_2" id="f1_12">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div1" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 10px" onchange="changeColor1()" >
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the purpose of the processing defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f1_1" id="f1_11">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is method of processing defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f1_3" id="f1_13">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent are the expected benefit(s) from the processing defined ?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f1_4" id="f1_14">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the aim of the project defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f1_2" id="f1_12">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the list of departments who will benefit from this processing defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f1_5" id="f1_15">
-                                                    <option ></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the list of members / teams who will be involved in the processing defined in your organization ?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f1_6" id="f1_16">
-                                                    <option ></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <div style="margin-bottom:25px">
 
-                                          </div>
-                                      </div>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is method of processing defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f1_3" id="f1_13">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the expected benefit(s) from the processing defined ?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f1_4" id="f1_14">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the list of departments who will benefit from this processing defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f1_5" id="f1_15">
+                                                <option ></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the list of members / teams who will be involved in the processing defined in your organization ?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f1_6" id="f1_16">
+                                                <option ></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom:25px">
+
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 2</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor2()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the process of collecting, using, storing and deleting data defined in your organization ?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_1" id="f2_11">
-                                                    <option ></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv2()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">2. DPIA Assessment - Part 2</label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent are the data source(s) used to initiate processing defined in your organization ?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_2" id="f2_12">
-                                                    <option ></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div2" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 10px" onchange="changeColor2()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the process of collecting, using, storing and deleting data defined in your organization ?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_1" id="f2_11">
+                                                <option ></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the data source(s) used to initiate processing defined in your organization ?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_2" id="f2_12">
+                                                <option ></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Do you have a list of people who will have access to this data?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_3" id="f2_13">
-                                                    <option ></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the types of High-risk processing defined for this data processing?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_4" id="f2_14">
-                                                    <option selected value="0"></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a list of people who will have access to this data?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_3" id="f2_13">
+                                                <option ></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Do you comply by legal requirements to collect the data (Do you have consent of the data subjects) ?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_5" id="f2_15">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >How many data subjects are likely to be affected by the project?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_6" id="f2_16">
-                                                    <option></option>
-                                                    <option value="1">Less Than 100</option>
-                                                    <option value="2">100-1000</option>
-                                                    <option value="3">1000-10000</option>
-                                                    <option value="4">10000-100000</option>
-                                                    <option value="5">Above 100000</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Where is data stored?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_7" id="f2_17">
-                                                    <option></option>
-                                                    <option value="1">Shared Drive File </option>
-                                                    <option value="2">National Database </option>
-                                                    <option value="3">Paper Files </option>
-                                                    <option value="4">Cloud Storage </option>
-                                                    <option value="5">Data Center</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Do you have appropriate measures to destroy data after use?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_8" id="f2_18">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the Data retention policy defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f2_9" id="f2_19">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <div style="margin-bottom:25px">
 
-                                          </div>
-                                      </div>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the types of High-risk processing defined for this data processing?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_4" id="f2_14">
+                                                <option selected value="0"></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Do you comply by legal requirements to collect the data (Do you have consent of the data subjects) ?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_5" id="f2_15">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">How many data subjects are likely to be affected by the project?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_6" id="f2_16">
+                                                <option></option>
+                                                <option value="1">Less Than 100</option>
+                                                <option value="2">100-1000</option>
+                                                <option value="3">1000-10000</option>
+                                                <option value="4">10000-100000</option>
+                                                <option value="5">Above 100000</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Where is data stored?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_7" id="f2_17">
+                                                <option></option>
+                                                <option value="1">Shared Drive File </option>
+                                                <option value="2">National Database </option>
+                                                <option value="3">Paper Files </option>
+                                                <option value="4">Cloud Storage </option>
+                                                <option value="5">Data Center</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Do you have appropriate measures to destroy data after use?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_8" id="f2_18">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the Data retention policy defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f2_9" id="f2_19">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom:25px">
+
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                          <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 3</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor3()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the process of deciding the people to consult on the proposed processing defined  in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_1" id="f3_11">
-                                                    <option ></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the process to select the consultants defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_2" id="f3_12">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv3()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">3. DPIA Assessment - Part 3 </label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is your process defined for mapping roles of the selected consultant(s)?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_3" id="f3_13">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div3" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 10px" onchange="changeColor3()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the process of deciding the people to consult on the proposed processing defined  in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_1" id="f3_11">
+                                                <option ></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Do you have a list of members who will also involved from the organization in the consultation process ? </strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_4" id="f3_14">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the process to select the consultants defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_2" id="f3_12">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will keep track of the progress of these consultants?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_5" id="f3_15">
-                                                    <option ></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the process to discuss the issues raised by the consultants defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_6" id="f3_16">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Do you have a proper forum where these consultants can provide assurances and rasie their concerns?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_7" id="f3_17">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for keeping a check that all the issues raised by these consultants have been resolved?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f3_8" id="f3_18">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
-                                          <div style="margin-bottom:25px">
 
-                                          </div>
-                                      </div>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is your process defined for mapping roles of the selected consultant(s)?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_3" id="f3_13">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a list of members who will also involved from the organization in the consultation process ? </label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_4" id="f3_14">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will keep track of the progress of these consultants?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_5" id="f3_15">
+                                                <option ></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the process to discuss the issues raised by the consultants defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_6" id="f3_16">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a proper forum where these consultants can provide assurances and rasie their concerns?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_7" id="f3_17">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for keeping a check that all the issues raised by these consultants have been resolved?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f3_8" id="f3_18">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom:25px">
+
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                          <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 4</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor4()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent have to defined the legal basis for processing?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_1" id="f4_11">
-                                                    <option ></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv4()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">4. DPIA Assessment -  Part 4</label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent it the proposed processing supposed to achieve the desired goals?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_2" id="f4_12">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div4" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 10px" onchange="changeColor4()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent have to defined the legal basis for processing?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_1" id="f4_11">
+                                                <option ></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent are the alternate approaches defined to  achieve the same results?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_3" id="f4_13">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the metrics for achieving data quality and data integrity defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_4" id="f4_14">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent it the proposed processing supposed to achieve the desired goals?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_2" id="f4_12">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the information that will be given to the data subjects defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_5" id="f4_15">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is compliance by the designated processing entities ensured for the proposed processing ?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_6" id="f4_16">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the plan prepared to prevent function creep?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_7" id="f4_17">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;"> To what extent are the alternate approaches defined to  achieve the same results?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_3" id="f4_13">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent are the measures defined to ensure processors comply during data processing?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_8" id="f4_18">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent are the measures defined to safeguard any international transfers?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f4_9" id="f4_19">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the metrics for achieving data quality and data integrity defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_4" id="f4_14">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
 
-                                          <div style="margin-bottom:25px">
 
-                                          </div>
-                                      </div>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the information that will be given to the data subjects defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_5" id="f4_15">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is compliance by the designated processing entities ensured for the proposed processing ?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_6" id="f4_16">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the plan prepared to prevent function creep?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_7" id="f4_17">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the measures defined to ensure processors comply during data processing?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_8" id="f4_18">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the measures defined to safeguard any international transfers?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f4_9" id="f4_19">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+                                        <div style="margin-bottom:25px">
+
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                          <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 5</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor5()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person/team who will be responsible for Identifying all the risks?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f5_1" id="f5_11">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv5()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">5. DPIA Assessment - Part 5</label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the plan to quantify the impact of the risks defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f5_2" id="f5_12">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <div style="margin-top:25px">
+                            <div class="form-group" id="div5" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 10px" onchange="changeColor5()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/team who will be responsible for Identifying all the risks?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f5_1" id="f5_11">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          </div>
-                                      </div>
-                                    <br><br><br>
-                                    <br><br><br>
-                                    <br><br>
-                                </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the plan to quantify the impact of the risks defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f5_2" id="f5_12">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-top:25px">
+
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                          <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 6</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor6()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person/ team who will be responsible for describing the risk mitigation measures?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f6_1" id="f6_11">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv6()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">6. DPIA Assessment - Part 6</label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person/ team who will be responsible who will be responsible for defining the impact of risk?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f6_2" id="f6_12">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div6" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 10px" onchange="changeColor6()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/ team who will be responsible for describing the risk mitigation measures?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f6_1" id="f6_11">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is the plan to reduce or eliminate risk defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f6_3" id="f6_13">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for planning and leading the risk mitigation action plan?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f6_4" id="f6_14">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/ team who will be responsible who will be responsible for defining the impact of risk?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f6_2" id="f6_12">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for auditing the plan?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f6_5" id="f6_15">
-                                                    <option ></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
-                                          <div style="margin-bottom:25px">
 
-                                          </div>
-                                      </div>
-                                    <br>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the plan to reduce or eliminate risk defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f6_3" id="f6_13">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for planning and leading the risk mitigation action plan?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f6_4" id="f6_14">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for auditing the plan?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f6_5" id="f6_15">
+                                                <option ></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom:25px">
+
+                                        </div>
+                                    </div>
+
                             </div>
                         </div>
-                        <div class="carousel-item">
-                          <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 7</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor7()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for approving the risk measures?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f7_1" id="f7_11">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv7()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">7. DPIA Assessment - Part 7</label>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for approving and examining the residual risks?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f7_2" id="f7_12">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div7" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 30px" onchange="changeColor7()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for approving the risk measures?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f7_1" id="f7_11">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Comments by Data privacy officer (DPO):</strong></label>
-                                          <div class="col-sm-3">
-                                              <input type="text" class="form-control" name="f7_3" placeholder="NA" disabled>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Comments provided by Consultation team:</strong></label>
-                                          <div class="col-sm-3">
-                                              <input type="text" class="form-control" name="f7_4" placeholder="NA" disabled>
-                                          </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for approving and examining the residual risks?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f7_2" id="f7_12">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Who has provided Sign-off and recorded DPIA outcomes?</strong></label>
-                                          <div class="col-sm-3">
-                                              <input type="text" class="form-control" name="f7_5" placeholder="NA" disabled>
-                                          </div>
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Signature of Person providing the sign-off:</strong></label>
-                                          <div class="col-sm-3">
-                                              <input type="text" class="form-control" name="f7_6" placeholder="NA" disabled>
-                                          </div>
-                                          <div style="margin-bottom:25px">
 
-                                          </div>
-                                      </div>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Comments by Data privacy officer (DPO):</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control drop-down" name="f7_3" placeholder="NA" disabled>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Comments provided by Consultation team:</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control drop-down" name="f7_4" placeholder="NA" disabled>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Who has provided Sign-off and recorded DPIA outcomes?</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control drop-down" name="f7_5" placeholder="NA" disabled>
+                                        </div>
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Signature of Person providing the sign-off:</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control drop-down" name="f7_6" placeholder="NA" disabled>
+                                        </div>
+                                        <div style="margin-bottom:25px">
+
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="carousel-item">
-                          <div class="container p-3 text-white; rounded" style="background-color:rgba(245, 245, 248, 0.7);">
-                                <h3><center><strong>DPIA Assessment - </strong>Part 8</center></h3>
-                                <br>
-                                <div class="form-group">
-                                      <div class="row mb-3" style="margin-left: 30px" onchange="changeColor8()">
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for collecting and analysing the DPIA outcomes?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f8_1" id="f8_11">
-                                                    <option></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                        <hr style="width: 700px;">
+                        <div class="font-big">
+                            <div style="position:absolute; left:90%; padding-right: 5%;">
+                                <a href="#"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv8()" alt="Info"></a>
+                            </div>
+                            <label class="font-head">8. DPIA Assessment - Part 8</label >
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >Have you assigned a person who will be responsible for planning intergration of DPIA outcomes into the project plan?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f8_2" id="f8_12">
-                                                    <option ></option>
-                                                    <option value="0">Yes</option>
-                                                    <option value="1">No</option>
-                                                </select>
-                                          </div>
+                            <div class="form-group" id="div8" style="display:none ;">
+                                    <div class="row mb-3" style="margin-left: 30px" onchange="changeColor8()">
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for collecting and analysing the DPIA outcomes?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f8_1" id="f8_11">
+                                                <option></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent is your policy for assigning time period to Implement the DPIA outcomes defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f8_3" id="f8_13">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
 
-                                          <br><br>
-                                          <label class="control-label col-sm-8" ><strong style="color:Black;" >To what extent are the KPI's which will depict the success of Integration defined in your organization?</strong></label>
-                                          <div class="col-sm-3">
-                                                <select class="form-select" name="f8_4" id="f8_14">
-                                                    <option></option>
-                                                    <option value="1">Initial</option>
-                                                    <option value="2">Defined</option>
-                                                    <option value="3">Optimized</option>
-                                                    <option value="4">Managed</option>
-                                                </select>
-                                          </div>
-                                          <div style="margin-bottom:25px">
-                                              <button style="margin-left:820px;" type="submit" class="btn btn-primary rounded-pill">Submit</button>
-                                          </div>
-                                      </div>
-                                    <br>
-                                </div>
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for planning intergration of DPIA outcomes into the project plan?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f8_2" id="f8_12">
+                                                <option ></option>
+                                                <option value="0">Yes</option>
+                                                <option value="1">No</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is your policy for assigning time period to Implement the DPIA outcomes defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f8_3" id="f8_13">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the KPI's which will depict the success of Integration defined in your organization?</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-select drop-down" name="f8_4" id="f8_14">
+                                                <option></option>
+                                                <option value="1">Initial</option>
+                                                <option value="2">Defined</option>
+                                                <option value="3">Optimized</option>
+                                                <option value="4">Managed</option>
+                                            </select>
+                                        </div>
+                                        <div style="margin-bottom:25px">
+                                            <button style="margin-left:380px;" type="submit" class="dpia-submit">Submit</button>
+                                        </div>
+                                    </div>
+
                             </div>
                         </div>
-                  </fieldset>
+                    </div>
               </form>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+
 
       </div>
 
