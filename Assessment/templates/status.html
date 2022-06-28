@@ -48,7 +48,7 @@
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 1240px;
-height: 577px;">
+height: 600px;">
 <div class="result-box">
     {% if dpia_status %}
             {% if dpia_status == 'Recommended' %}
@@ -82,16 +82,6 @@ height: 577px;">
             {% endif %}
         {% endif %}
 </div >
-<div class="result-instruction">
-    <a style="margin-left:13px;">INSTRUCTIONS: </a>
-    <ol>
-        <li>If "Result" cell in "DPIA Screening" sheet shows an output as "Yes, DPIA Is Recommended" or "Yes, DPIA is Mandatory", then please open the "DPIA Assessment" sheet and provide your responses.</li>
-        <li>On the basis of the responses provided in "DPIA Assessment" sheet, we will be preparing a "Risk Summary" sheet. This sheet will have the following details :</li>
-        <li>Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.</li>
-        <li>Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned with these risks.</li>
-        <li>Heatmap which will depict the current scenario and possible risk at each step of the whole process.</li>
-    </ol>
-</div>
 {% endblock %}
 </body>
 

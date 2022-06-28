@@ -17,6 +17,8 @@ urlpatterns = [
     path('risk_summary', assessment_views.risk_summary, name='risk_summary'),
     path('heat_map', assessment_views.heat_map, name='heat_map'),
     path('gdpr_report', assessment_views.gdpr_report, name='gdpr_report'),
+    path('pdf_button', assessment_views.pdf_button, name='pdf_button'),
+    path('status', assessment_views.status, name='status'),
     path('risk_summary_details', assessment_views.risk_summary_details, name='risk_summary_details')
 
 ]
