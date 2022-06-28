@@ -111,9 +111,61 @@ def gdpr_report(request):
     context = {
 
     }
-
     return render(request, 'gdpr_report.html')
 
+
+@login_required
+def status(request):
+    context = {
+
+    }
+    return render(request, 'gdpr_report.html')
+
+
+@login_required
+def pdf_button(request):
+
+    value = request.GET.get('search')
+    risk_score1 = request.session.get('risk_score1')
+    risk_score2 = request.session.get('risk_score2')
+    risk_score3 = request.session.get('risk_score3')
+    risk_score4 = request.session.get('risk_score4')
+    risk_score5 = request.session.get('risk_score5')
+    risk_score6 = request.session.get('risk_score6')
+    risk_score7 = request.session.get('risk_score7')
+    risk_score8 = request.session.get('risk_score8')
+    form1_percentage = request.session.get('form1_percentage')
+    form2_percentage = request.session.get('form2_percentage')
+    form3_percentage = request.session.get('form3_percentage')
+    form4_percentage = request.session.get('form4_percentage')
+    form5_percentage = request.session.get('form5_percentage')
+    form6_percentage = request.session.get('form6_percentage')
+    form7_percentage = request.session.get('form7_percentage')
+    form8_percentage = request.session.get('form8_percentage')
+    context = {
+        'value': value,
+        'risk_score1': risk_score1,
+        'risk_score2': risk_score2,
+        'risk_score3': risk_score3,
+        'risk_score4': risk_score4,
+        'risk_score5': risk_score5,
+        'risk_score6': risk_score6,
+        'risk_score7': risk_score7,
+        'risk_score8': risk_score8,
+        'form1_percentage': form1_percentage,
+        'form2_percentage': form2_percentage,
+        'form3_percentage': form3_percentage,
+        'form4_percentage': form4_percentage,
+        'form5_percentage': form5_percentage,
+        'form6_percentage': form6_percentage,
+        'form7_percentage': form7_percentage,
+        'form8_percentage': form8_percentage,
+        'name_of_controller': request.session.get('manager'),
+        'name_of_dpo': request.session.get('name_of_DPO'),
+        'title_of_dpo': request.session.get('title_of_DPO')
+    }
+
+    return render(request, 'risk_summary.html', context)
 
 
 @login_required

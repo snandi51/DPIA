@@ -299,8 +299,8 @@ border-radius: 0px;
     align-items: center;
     padding: 7px 8px;
 
-    width: 85px;
-    height: 32px;
+    width: 150px;
+    height: 35px;
 
     /* Primary/Palette/Primary */
 
@@ -330,6 +330,7 @@ border-radius: 0px;
 
     color: white;
 }
+
 input[type="radio"]{
     margin: 30px 5px 30px 50px;
 }
@@ -453,7 +454,7 @@ input[type="radio"]{
     width: 800px;
     height: 250px;
     left: 204px;
-    top: 180px;
+    top: 155px;
     border-radius: 8px;
 
     background: #FFFFFF;
@@ -546,7 +547,7 @@ input[type="radio"]{
     height: 16px;
     left: 15.2%;
     right: 476px;
-    top: 80%;
+    top: 74%;
     width: 800px;
     font-family: 'Ubuntu';
     font-style: normal;
@@ -1226,6 +1227,43 @@ input[type="radio"]{
     background: #0E88AF;
     border: 1px solid #0E88AF;
     border-radius: 4px;
+}
+
+.form-select-custom1{
+
+    display: flex;
+    font-size: 14px;
+    top: 2%;
+    font-family: 'Ubuntu';
+    width: 300px;
+    height: 35px;
+}
+
+.dpa_checkbox1{
+    display: flex;
+    font-size: 14px;
+
+    font-family: 'Ubuntu';
+    width: 20px;
+    height: 10px;
+}
+
+.dpa_checkbox2{
+    font-size: 12px;
+    background-color: black;
+    font-family: 'Ubuntu';
+    width: 10px;
+    height: 10px;
+}
+
+.col-sm-checkbox{
+    display: flex;
+    margin-top: 20px;
+    font-size: 12px;
+    margin-left: -48px;
+    font-family: 'Ubuntu';
+    width: 290px;
+    height: 60px;
 }
 
 

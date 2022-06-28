@@ -6,9 +6,8 @@
 <html lang="en">
 <script type ="text/javascript">
     window.onload = function() {
-        var url_string = window.location;
-        var url = new URL(url_string);
-        var value = url.searchParams.get("search");
+        var value = {{value|safe}}
+        console.log(value)
 
         if(value == 1){
          var pdf_button = document.getElementById('pdf_button')
