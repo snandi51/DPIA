@@ -24,7 +24,8 @@ class Master(models.Model):
         ('0', 'Yes'),
         ('1', 'No'),
     )
-    DATA_PROCESS_CHOICES = (('1', 'Personal Data'),
+    DATA_PROCESS_CHOICES = (('', 'Select'),
+                            ('1', 'Personal Data'),
                             ('2', 'Sensitive Personal Data'),
                             ('3', 'Both Personal and Sensitive Personal Data'),
                             ('4', 'Public Data'))
@@ -54,27 +55,55 @@ class Master(models.Model):
     conducted_DPIA_for_similar_scope_of_service = models.CharField(max_length=30, choices=CHOICES)
 
     # DPIA Assessment models
-    ASSESSMENT_CHOICES = (('1', 'Initial'),
+    ASSESSMENT_CHOICES = (('', 'Select'),
+                          ('1', 'Initial'),
                           ('2', 'Define'),
                           ('3', 'Optimized'),
                           ('4', 'Managed'))
-    ASSESSMENT_RANGE_CHOICES = (('1', 'Less Than 100'),
+
+    ASSESSMENT_CHOICES2 = (('', 'Select'),
+                           ('1', 'No Process'),
+                          ('2', 'Recommended'),
+                          ('3', 'Important'),
+                          ('4', 'Essentials'))
+
+    ASSESSMENT_CHOICES3 = (('', 'Select'),
+                           ('1', 'Absent'),
+                           ('2', 'Basic'),
+                           ('3', 'Intermediate'),
+                           ('4', 'Advanced'))
+
+    ASSESSMENT_CHOICES4 = (('', 'Select'),
+                           ('1', 'Consent'),
+                           ('Performance of contract', 'Performance of contract'),
+                           ('Legitimate interest', 'Legitimate interest'),
+                           ('Vital interest', 'Vital interest'),
+                           ('Legal requirement', 'Legal requirement'),
+                           ('Public interest', 'Public interest'))
+
+    ASSESSMENT_RANGE_CHOICES = (('', 'Select'),
+                                ('1', 'Less Than 100'),
                                 ('2', '100-1000'),
                                 ('3', '1000-10000'),
                                 ('4', '10000-100000'),
                                 ('5', 'Above 100000'))
-    DATA_STORED_CHOICES = (('1', 'Shared Drive File'),
+
+    DATA_STORED_CHOICES = (('', 'Select'),
+                           ('1', 'Shared Drive File'),
                                 ('2', 'National Database'),
                                 ('3', 'Paper Files'),
                                 ('4', 'Cloud Storage'),
                                 ('5', 'Data Center'))
-    f1_1 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f1_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f1_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f1_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f1_5 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f1_6 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
 
+    # Form 1
+    f1_1 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f1_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f1_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f1_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f1_5 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f1_6 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+
+    # Form 2
     f2_1 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
     f2_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
     f2_3 = models.CharField(max_length=30, choices=CHOICES, null=True)
@@ -85,49 +114,57 @@ class Master(models.Model):
     f2_8 = models.CharField(max_length=30, choices=CHOICES, null=True)
     f2_9 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
 
-    f3_1 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f3_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f3_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f3_4 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f3_5 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f3_6 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
+    # Form 3
+    f3_1 = models.CharField(max_length=30, null=True)
+    f3_2 = models.CharField(max_length=30, choices=CHOICES, null=True)
+    f3_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f3_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f3_5 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f3_6 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
     f3_7 = models.CharField(max_length=30, choices=CHOICES, null=True)
     f3_8 = models.CharField(max_length=30, choices=CHOICES, null=True)
+    f3_9 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f3_10 = models.CharField(max_length=30, choices=CHOICES, null=True)
+    f3_11 = models.CharField(max_length=30, choices=CHOICES, null=True)
+    f3_12 = models.CharField(max_length=30,  null=True)
 
-    f4_1 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_5 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_6 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_7 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_8 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f4_9 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
+    # Form 4
+    f4_1 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES4, null=True)
+    f4_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f4_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_5 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_6 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_7 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_8 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_9 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_10 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_11 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_12 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f4_13 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
 
+    # Form 5
     f5_1 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f5_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
+    f5_2 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f5_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f5_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
+    f5_5 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES2, null=True)
 
+    # Form 6
     f6_1 = models.CharField(max_length=30, choices=CHOICES, null=True)
     f6_2 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f6_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
+    f6_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
     f6_4 = models.CharField(max_length=30, choices=CHOICES, null=True)
     f6_5 = models.CharField(max_length=30, choices=CHOICES, null=True)
 
+    # Form 7
     f7_1 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f7_2 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f7_3 = models.CharField(max_length=30, default=0, null=True)
-    f7_4 = models.CharField(max_length=30, default=0, null=True)
-    f7_5 = models.CharField(max_length=30, default=0, null=True)
-    f7_6 = models.CharField(max_length=30, default=0, null=True)
+    f7_2 = models.CharField(max_length=30,  null=True)
 
+    # Form 8
     f8_1 = models.CharField(max_length=30, choices=CHOICES, null=True)
     f8_2 = models.CharField(max_length=30, choices=CHOICES, null=True)
-    f8_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-    f8_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES, null=True)
-
-
-
-
-
+    f8_3 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
+    f8_4 = models.CharField(max_length=30, choices=ASSESSMENT_CHOICES3, null=True)
 
 

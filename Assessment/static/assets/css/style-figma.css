@@ -542,6 +542,15 @@ input[type="radio"]{
     top: 25px;
 }
 
+
+.result-png-1{
+    position: absolute;
+    width: 250px;
+    height: 260px;
+    left: 40px;
+    top: -25px;
+}
+
 .result-instruction{
     position: absolute;
     height: 16px;
@@ -1266,6 +1275,15 @@ input[type="radio"]{
     height: 60px;
 }
 
+
+.text-box-1{
+    display: flex;
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: 'Ubuntu';
+    width: 175px;
+    height: 26px;
+}
 
 
 
