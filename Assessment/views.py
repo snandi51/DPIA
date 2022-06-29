@@ -214,20 +214,20 @@ def risk_summary_details(request):
 
 
 def dpia_status(input_data):
-    dpia_status = 'Mandatory'
+    status = 'Mandatory'
     if input_data.get('data_processing_project') == '0':
         if input_data.get('select_data_process') == '4':
-            dpia_status = 'Recommended'
-        elif input_data.get('select_data_process') != '4' and input_data.get('conducted_DPIA_for_similar_scope_of_service') == '0':
-            dpia_status = 'Recommended'
-        elif input_data.get('select_data_process') != '4' and \
-                input_data.get('conducted_DPIA_for_similar_scope_of_service') == '1' or input_data.get('data_processing_project') == '0':
-            dpia_status = 'Mandatory'
+            status = 'Recommended'
+        elif input_data.get('select_data_process') != '4' or \
+                input_data.get('select_data_process') == '3' or \
+                input_data.get('select_data_process') == '2' or \
+            input_data.get('select_data_process') == '1':
+            status = 'Mandatory'
         else:
-            dpia_status = 'Not Mandatory'
+            status = 'Not Required'
     else:
-        dpia_status = 'Not Required'
-    return dpia_status
+        status = 'Not Required'
+    return status
 
 
 def screening(request):
@@ -342,12 +342,12 @@ class RiskCalculations:
         self.number_of_risks = 0
         self.request = request
         self.form1 = 6
-        self.form2 = 30
-        self.form3 = 9
-        self.form4 = 9
-        self.form5 = 2
+        self.form2 = 9
+        self.form3 = 12
+        self.form4 = 13
+        self.form5 = 5
         self.form6 = 5
-        self.form7 = 4
+        self.form7 = 2
         self.form8 = 4
 
     # Risk Summary Form 1
@@ -660,32 +660,17 @@ class RiskCalculations:
     def risk_calculation_f3_1(self):
         risk_score = 0
         number_of_risks = 0
-        if self.input_data.get('f3_1') == '1':
-            risk_score += 3
-            number_of_risks += 1
-        elif self.input_data.get('f3_1') == '2':
-            risk_score += 2
-            number_of_risks += 1
-        elif self.input_data.get('f3_1') == '3':
-            risk_score += 1
-        if self.input_data.get('f3_1') == '4':
-            risk_score += 0
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
     def risk_calculation_f3_2(self):
         risk_score = 0
         number_of_risks = 0
-        if self.input_data.get('f3_2') == '1':
+        if self.input_data.get('f3_2') == '0':
+            risk_score += 0
+        elif self.input_data.get('f3_2') == '1':
             risk_score += 3
             number_of_risks += 1
-        elif self.input_data.get('f3_2') == '2':
-            risk_score += 2
-            number_of_risks += 1
-        elif self.input_data.get('f3_2') == '3':
-            risk_score += 1
-        if self.input_data.get('f3_2') == '4':
-            risk_score += 0
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -708,22 +693,32 @@ class RiskCalculations:
     def risk_calculation_f3_4(self):
         risk_score = 0
         number_of_risks = 0
-        if self.input_data.get('f3_4') == '0':
-            risk_score += 0
-        elif self.input_data.get('f3_4') == '1':
+        if self.input_data.get('f3_4') == '1':
             risk_score += 3
             number_of_risks += 1
+        elif self.input_data.get('f3_4') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f3_4') == '3':
+            risk_score += 1
+        if self.input_data.get('f3_4') == '4':
+            risk_score += 0
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
     def risk_calculation_f3_5(self):
         risk_score = 0
         number_of_risks = 0
-        if self.input_data.get('f3_5') == '0':
-            risk_score += 0
-        elif self.input_data.get('f3_5') == '1':
+        if self.input_data.get('f3_5') == '1':
             risk_score += 3
             number_of_risks += 1
+        elif self.input_data.get('f3_5') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f3_5') == '3':
+            risk_score += 1
+        if self.input_data.get('f3_5') == '4':
+            risk_score += 0
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -765,6 +760,50 @@ class RiskCalculations:
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
+    def risk_calculation_f3_9(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f3_9') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f3_9') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f3_9') == '3':
+            risk_score += 1
+        if self.input_data.get('f3_9') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f3_10(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f3_10') == '0':
+            risk_score += 0
+        elif self.input_data.get('f3_10') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f3_11(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f3_11') == '0':
+            risk_score += 0
+        elif self.input_data.get('f3_11') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f3_12(self):
+        risk_score = 0
+        number_of_risks = 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
     def risk_calculation_f3_all(self):
         f3_1 = self.risk_calculation_f3_1()
         f3_2 = self.risk_calculation_f3_2()
@@ -774,8 +813,13 @@ class RiskCalculations:
         f3_6 = self.risk_calculation_f3_6()
         f3_7 = self.risk_calculation_f3_7()
         f3_8 = self.risk_calculation_f3_8()
-        risk_score = f3_1[0] + f3_2[0] + f3_3[0] + f3_4[0] + f3_5[0] + f3_6[0] + f3_7[0] + f3_8[0]
-        number_of_risks = f3_1[1] + f3_2[1] + f3_3[1] + f3_4[1] + f3_5[1] + f3_6[1] + f3_7[1] + f3_8[1]
+        f3_9 = self.risk_calculation_f3_9()
+        f3_10 = self.risk_calculation_f3_10()
+        f3_11 = self.risk_calculation_f3_11()
+        f3_12 = self.risk_calculation_f3_12()
+
+        risk_score = f3_1[0] + f3_2[0] + f3_3[0] + f3_4[0] + f3_5[0] + f3_6[0] + f3_7[0] + f3_8[0] + f3_9[0] + f3_10[0] + f3_11[0] + f3_12[0]
+        number_of_risks = f3_1[1] + f3_2[1] + f3_3[1] + f3_4[1] + f3_5[1] + f3_6[1] + f3_7[1] + f3_8[1] + f3_9[1] + f3_10[1] + f3_11[1] + f3_12[1]
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -783,16 +827,6 @@ class RiskCalculations:
     def risk_calculation_f4_1(self):
         risk_score = 0
         number_of_risks = 0
-        if self.input_data.get('f4_1') == '1':
-            risk_score += 3
-            number_of_risks += 1
-        elif self.input_data.get('f4_1') == '2':
-            risk_score += 2
-            number_of_risks += 1
-        elif self.input_data.get('f4_1') == '3':
-            risk_score += 1
-        if self.input_data.get('f4_1') == '4':
-            risk_score += 0
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -924,6 +958,70 @@ class RiskCalculations:
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
+    def risk_calculation_f4_10(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f4_10') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f4_10') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f4_10') == '3':
+            risk_score += 1
+        if self.input_data.get('f4_10') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f4_11(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f4_11') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f4_11') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f4_11') == '3':
+            risk_score += 1
+        if self.input_data.get('f4_11') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f4_12(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f4_12') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f4_12') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f4_12') == '3':
+            risk_score += 1
+        if self.input_data.get('f4_12') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f4_13(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f4_13') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f4_13') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f4_13') == '3':
+            risk_score += 1
+        if self.input_data.get('f4_13') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
     def risk_calculation_f4_all(self):
         f4_1 = self.risk_calculation_f4_1()
         f4_2 = self.risk_calculation_f4_2()
@@ -934,8 +1032,14 @@ class RiskCalculations:
         f4_7 = self.risk_calculation_f4_7()
         f4_8 = self.risk_calculation_f4_8()
         f4_9 = self.risk_calculation_f4_9()
-        risk_score = f4_1[0] + f4_2[0] + f4_3[0] + f4_4[0] + f4_5[0] + f4_6[0] + f4_7[0] + f4_8[0] + f4_9[0]
-        number_of_risks = f4_1[1] + f4_2[1] + f4_3[1] + f4_4[1] + f4_5[1] + f4_6[1] + f4_7[1] + f4_8[1] + f4_9[1]
+        f4_10 = self.risk_calculation_f4_10()
+        f4_11 = self.risk_calculation_f4_11()
+        f4_12 = self.risk_calculation_f4_12()
+        f4_13 = self.risk_calculation_f4_13()
+
+
+        risk_score = f4_1[0] + f4_2[0] + f4_3[0] + f4_4[0] + f4_5[0] + f4_6[0] + f4_7[0] + f4_8[0] + f4_9[0] + + f4_10[0] + f4_11[0] + f4_12[0] + f4_13[0]
+        number_of_risks = f4_1[1] + f4_2[1] + f4_3[1] + f4_4[1] + f4_5[1] + f4_6[1] + f4_7[1] + f4_8[1] + f4_9[1] + f4_10[1] + f4_11[1] + f4_12[1] + f4_13[1]
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -968,11 +1072,63 @@ class RiskCalculations:
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
+    def risk_calculation_f5_3(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f5_3') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f5_3') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f5_3') == '3':
+            risk_score += 1
+        if self.input_data.get('f5_3') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f5_4(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f5_4') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f5_4') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f5_4') == '3':
+            risk_score += 1
+        if self.input_data.get('f5_4') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
+    def risk_calculation_f5_5(self):
+        risk_score = 0
+        number_of_risks = 0
+        if self.input_data.get('f5_5') == '1':
+            risk_score += 3
+            number_of_risks += 1
+        elif self.input_data.get('f5_5') == '2':
+            risk_score += 2
+            number_of_risks += 1
+        elif self.input_data.get('f5_5') == '3':
+            risk_score += 1
+        if self.input_data.get('f5_5') == '4':
+            risk_score += 0
+        total_risk = [risk_score, number_of_risks]
+        return total_risk
+
     def risk_calculation_f5_all(self):
         f5_1 = self.risk_calculation_f5_1()
         f5_2 = self.risk_calculation_f5_2()
-        risk_score = f5_1[0] + f5_2[0]
-        number_of_risks = f5_1[1] + f5_2[1]
+        f5_3 = self.risk_calculation_f5_3()
+        f5_4 = self.risk_calculation_f5_4()
+        f5_5 = self.risk_calculation_f5_5()
+
+        risk_score = f5_1[0] + f5_2[0] + f5_3[0] + f5_4[0] + f5_5[0]
+        number_of_risks = f5_1[1] + f5_2[1] + f5_3[1] + f5_4[1] + f5_5[1]
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -1064,12 +1220,6 @@ class RiskCalculations:
     def risk_calculation_f7_2(self):
         risk_score = 0
         number_of_risks = 0
-        if self.input_data.get('f7_2') == '0':
-            risk_score = 0
-            number_of_risks += 1
-        elif self.input_data.get('f7_2') == '1':
-            risk_score = 3
-            number_of_risks += 1
         total_risk = [risk_score, number_of_risks]
         return total_risk
 
@@ -1203,6 +1353,10 @@ def dpia_screening(request):
         request.session['f3_6'] = request.POST.get("f3_6")
         request.session['f3_7'] = request.POST.get("f3_7")
         request.session['f3_8'] = request.POST.get("f3_8")
+        request.session['f3_9'] = request.POST.get("f3_9")
+        request.session['f3_10'] = request.POST.get("f3_10")
+        request.session['f3_11'] = request.POST.get("f3_11")
+        request.session['f3_12'] = request.POST.get("f3_12")
         f3_1 = request.session.get('f3_1')
         f3_2 = request.session.get('f3_2')
         f3_3 = request.session.get('f3_3')
@@ -1211,6 +1365,10 @@ def dpia_screening(request):
         f3_6 = request.session.get('f3_6')
         f3_7 = request.session.get('f3_7')
         f3_8 = request.session.get('f3_8')
+        f3_9 = request.session.get('f3_9')
+        f3_10 = request.session.get('f3_10')
+        f3_11 = request.session.get('f3_11')
+        f3_12 = request.session.get('f3_12')
 
         request.session['f4_1'] = request.POST.get("f4_1")
         request.session['f4_2'] = request.POST.get("f4_2")
@@ -1221,6 +1379,10 @@ def dpia_screening(request):
         request.session['f4_7'] = request.POST.get("f4_7")
         request.session['f4_8'] = request.POST.get("f4_8")
         request.session['f4_9'] = request.POST.get("f4_9")
+        request.session['f4_10'] = request.POST.get("f4_10")
+        request.session['f4_11'] = request.POST.get("f4_11")
+        request.session['f4_12'] = request.POST.get("f4_12")
+        request.session['f4_13'] = request.POST.get("f4_13")
         f4_1 = request.session.get('f4_1')
         f4_2 = request.session.get('f4_2')
         f4_3 = request.session.get('f4_3')
@@ -1230,11 +1392,21 @@ def dpia_screening(request):
         f4_7 = request.session.get('f4_7')
         f4_8 = request.session.get('f4_8')
         f4_9 = request.session.get('f4_9')
+        f4_10 = request.session.get('f4_10')
+        f4_11 = request.session.get('f4_11')
+        f4_12 = request.session.get('f4_12')
+        f4_13 = request.session.get('f4_13')
 
         request.session['f5_1'] = request.POST.get("f5_1")
         request.session['f5_2'] = request.POST.get("f5_2")
+        request.session['f5_3'] = request.POST.get("f5_3")
+        request.session['f5_4'] = request.POST.get("f5_4")
+        request.session['f5_5'] = request.POST.get("f5_5")
         f5_1 = request.session.get('f5_1')
         f5_2 = request.session.get('f5_2')
+        f5_3 = request.session.get('f5_3')
+        f5_4 = request.session.get('f5_4')
+        f5_5 = request.session.get('f5_5')
 
         request.session['f6_1'] = request.POST.get("f6_1")
         request.session['f6_2'] = request.POST.get("f6_2")
@@ -1249,16 +1421,8 @@ def dpia_screening(request):
 
         request.session['f7_1'] = request.POST.get("f7_1")
         request.session['f7_2'] = request.POST.get("f7_2")
-        request.session['f7_3'] = "0"
-        request.session['f7_4'] = "0"
-        request.session['f7_5'] = "0"
-        request.session['f7_6'] = "0"
         f7_1 = request.session.get('f7_1')
         f7_2 = request.session.get('f7_2')
-        f7_3 = request.session.get('f7_3')
-        f7_4 = request.session.get('f7_4')
-        f7_5 = request.session.get('f7_5')
-        f7_6 = request.session.get('f7_6')
 
         request.session['f8_1'] = request.POST.get("f8_1")
         request.session['f8_2'] = request.POST.get("f8_2")
@@ -1295,6 +1459,10 @@ def dpia_screening(request):
             'f3_6': f3_6,
             'f3_7': f3_7,
             'f3_8': f3_8,
+            'f3_9': f3_9,
+            'f3_10': f3_10,
+            'f3_11': f3_11,
+            'f3_12': f3_12,
 
             'f4_1': f4_1,
             'f4_2': f4_2,
@@ -1305,9 +1473,16 @@ def dpia_screening(request):
             'f4_7': f4_7,
             'f4_8': f4_8,
             'f4_9': f4_9,
+            'f4_10': f4_10,
+            'f4_11': f4_11,
+            'f4_12': f4_12,
+            'f4_13': f4_13,
 
             'f5_1': f5_1,
             'f5_2': f5_2,
+            'f5_3': f5_3,
+            'f5_4': f5_4,
+            'f5_5': f5_5,
 
             'f6_1': f6_1,
             'f6_2': f6_2,
@@ -1317,10 +1492,6 @@ def dpia_screening(request):
 
             'f7_1': f7_1,
             'f7_2': f7_2,
-            'f7_3': f7_3,
-            'f7_4': f7_4,
-            'f7_5': f7_5,
-            'f7_6': f7_6,
 
             'f8_1': f8_1,
             'f8_2': f8_2,
@@ -1373,13 +1544,14 @@ def dpia_screening(request):
                         data_procc_involve_chg_personal_data_currently_collected=request.session.get('data_procc_involve_chg_personal_data_currently_collected'),
                         conducted_DPIA_for_similar_scope_of_service=request.session.get('conducted_DPIA_for_similar_scope_of_service'),
                                     f1_1=f1_1, f1_2=f1_2, f1_3=f1_3, f1_4=f1_4, f1_5=f1_5, f1_6=f1_6,
-                                    f2_1=f2_1, f2_2=f2_2, f2_3=f2_3, f2_4=f2_4, f2_5=f2_5, f2_6=f2_6, f2_7=f2_7,
-                                    f2_8=f2_8, f2_9=f2_9, f3_1=f3_1, f3_2=f3_2, f3_3=f3_3, f3_4=f3_4, f3_5=f3_5,
-                                    f3_6=f3_6, f3_7=f3_7, f3_8=f3_8, f4_1=f4_1, f4_2=f4_2, f4_3=f4_3, f4_4=f4_4,
-                                    f4_5=f4_5, f4_6=f4_6, f4_7=f4_7, f4_8=f4_8, f4_9=f4_9, f5_1=f5_1, f5_2=f5_2,
-                                    f6_1=f6_1, f6_2=f6_2, f6_3=f6_3, f6_4=f6_4, f6_5=f6_5, f7_1=f7_1, f7_2=f7_2,
-                                    f7_3=f7_3, f7_4=f7_4, f7_5=f7_5, f7_6=f7_6, f8_1=f8_1, f8_2=f8_2, f8_3=f8_3,
-                                    f8_4=f8_4)
+                                    f2_1=f2_1, f2_2=f2_2, f2_3=f2_3, f2_4=f2_4, f2_5=f2_5, f2_6=f2_6, f2_7=f2_7, f2_8=f2_8, f2_9=f2_9,
+                                    f3_1=f3_1, f3_2=f3_2, f3_3=f3_3, f3_4=f3_4, f3_5=f3_5, f3_6=f3_6, f3_7=f3_7, f3_8=f3_8, f3_9=f3_9, f3_10=f3_10, f3_11=f3_11, f3_12=f3_12,
+                                    f4_1=f4_1, f4_2=f4_2, f4_3=f4_3, f4_4=f4_4, f4_5=f4_5, f4_6=f4_6, f4_7=f4_7, f4_8=f4_8, f4_9=f4_9, f4_10=f4_10, f4_11=f4_11, f4_12=f4_12, f4_13=f4_13,
+                                    f5_1=f5_1, f5_2=f5_2, f5_3=f5_3, f5_4=f5_4, f5_5=f5_5,
+                                    f6_1=f6_1, f6_2=f6_2, f6_3=f6_3, f6_4=f6_4, f6_5=f6_5,
+                                    f7_1=f7_1, f7_2=f7_2,
+                                    f8_1=f8_1, f8_2=f8_2, f8_3=f8_3, f8_4=f8_4
+                                    )
         assessment_db_data.save()
 
         table = RiskCalculations(input_data, request)

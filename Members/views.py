@@ -35,8 +35,6 @@ def login_user(request):
             display_name = {}
             context = {'authorised': True,
                        'db_instance': len(db_instance),
-                       'n': range(1, 3),
-                       'db_data': db_instance,
                        'session_dict': session_dict}
             for i in session_dict:
                 context['session_dict_{}'.format(num)] = session_dict.get('session_dict_{}'.format(num))

@@ -147,6 +147,9 @@ height: 3300px;">
                 var Asset15 = document.getElementById("Asset15");
                 Asset15.style.display = 'none';
 
+                var Asset15 = document.getElementById("Asset16");
+                Asset16.style.display = 'none';
+
         }
 
         function toggleInputDisplay(){
@@ -195,6 +198,9 @@ height: 3300px;">
 
             var Asset15 = document.getElementById("Asset15");
             Asset15.style.display = 'block';
+
+            var Asset15 = document.getElementById("Asset16");
+            Asset16.style.display = 'block';
         }
 
 
@@ -444,7 +450,7 @@ height: 3300px;">
                 <p class="small_font" style="color: black; text-transform: uppercase ;">.KINDLY ADD COMMENTS IF THERE IS ANY EXTRA INFORMATION TO BE PROVIDED</p>
             </div>
             <div style="position:absolute; left:95%; padding-right: 5%;">
-                <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
+                <a href="javascript:;" id="button_1"><img src="static/assets/img/icon-right-inside.png" onclick="toggleText()" alt="Info"></a>
             </div>
             <div class="form-group">
                 <div class="col">
@@ -459,12 +465,14 @@ height: 3300px;">
                     </div>
                      <hr>
                 </div>
+                <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;" id="Asset16">
+                    <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
+                    <a href="javascript:;" id="button_2"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                </div>
             </div>
-            <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText1()" style="display: none;" id="info-btn1"></button>
-                <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn1').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-            </div>
+
+
               <div class="form-group" id="Asset1">
                   <div class="col">
                       <label class="scr-h1">2. Please Select the Data Which You Process :</label>
@@ -483,12 +491,13 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px; ">
+                    <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
+                    <a href="javascript:;" id="button_3"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px; ">
-                <button type="button" onclick="toggleText2()" style="display: none;" id="info-btn2"></button>
-                <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn2').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-                </div>
+
               <div class="form-group" id="Asset2">
                   <div class="col">
                       <label class="scr-h1"> 3. Who will be processing this data ? </label>
@@ -505,12 +514,13 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
+                    <a href="javascript:;" id="button_5"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText3()" style="display: none;" id="info-btn3"></button>
-                <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn3').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-                </div>
+
 
               <div class="form-group" id="Asset3">
                   <div class="col">
@@ -525,12 +535,13 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
+                      <a href="javascript:;" id="button_6"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn4').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText4()" style="display: none;" id="info-btn4"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn4').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-                </div>
+
 
               <div class="form-group" id="Asset4">
                   <div class="col">
@@ -545,12 +556,13 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
+                      <a href="javascript:;" id="button_7"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn5').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText5()" style="display: none;" id="info-btn5"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn5').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-              </div>
+
 
               <div class="form-group" id="Asset5">
                   <div class="col">
@@ -565,11 +577,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText6()" style="display: none;" id="info-btn6"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn6').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText6()" style="display: none;" id="info-btn6"></button>
+                      <a href="javascript:;" id="button_8"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn6').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
 
 
@@ -586,11 +598,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText7()" style="display: none;" id="info-btn7"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn7').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText7()" style="display: none;" id="info-btn7"></button>
+                      <a href="javascript:;" id="button_10"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn7').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
 
 
@@ -607,11 +619,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText8()" style="display: none;" id="info-btn8"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn8').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText8()" style="display: none;" id="info-btn8"></button>
+                      <a href="javascript:;" id="button_11"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn8').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
 
 
@@ -628,11 +640,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText9()" style="display: none;" id="info-btn9"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn9').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText9()" style="display: none;" id="info-btn9"></button>
+                      <a href="javascript:;" id="button_12"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn9').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
 
 
@@ -649,11 +661,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText10()" style="display: none;" id="info-btn10"></button>
-                <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn10').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                    <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                        <button type="button" onclick="toggleText10()" style="display: none;" id="info-btn10"></button>
+                        <a href="javascript:;" id="button_13"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn10').click()" alt="Info"></a>
+                        <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                    </div>
               </div>
 
 
@@ -670,11 +682,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText11()" style="display: none;" id="info-btn11"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn11').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                   <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText11()" style="display: none;" id="info-btn11"></button>
+                      <a href="javascript:;" id="button_14"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn11').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                   </div>
               </div>
 
 
@@ -691,12 +703,13 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText12()" style="display: none;" id="info-btn12"></button>
+                      <a href="javascript:;" id="button_15"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn12').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText12()" style="display: none;" id="info-btn12"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn12').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-              </div>
+
 
 
               <div class="form-group" id="Asset12">
@@ -712,11 +725,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText13()" style="display: none;" id="info-btn13"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn13').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText13()" style="display: none;" id="info-btn13"></button>
+                      <a href="javascript:;" id="button_16"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn13').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
 
 
@@ -732,11 +745,11 @@ height: 3300px;">
                       </div>
                        <hr>
                   </div>
-              </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText14()" style="display: none;" id="info-btn14"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn14').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText14()" style="display: none;" id="info-btn14"></button>
+                      <a href="javascript:;" id="button_17"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn14').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
 
 
@@ -753,12 +766,13 @@ height: 3300px;">
                       </div>
                       <hr>
                   </div>
+                  <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
+                    <button type="button" onclick="toggleText15()" style="display: none;" id="info-btn15"></button>
+                      <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn15').click()" alt="Info"></a>
+                    <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
+                  </div>
               </div>
-              <div style="position:absolute; left:95%; padding-right: 5%; margin-top:5px;">
-                <button type="button" onclick="toggleText15()" style="display: none;" id="info-btn15"></button>
-                  <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="document.getElementById('info-btn15').click()" alt="Info"></a>
-                <!-- <a href="#"><img src="static/assets/img/icon-right-outside.png"></a> -->
-              </div>
+
 
 
               <div class="form-group" id="Asset15">
