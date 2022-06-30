@@ -116,10 +116,11 @@ def gdpr_report(request):
 
 @login_required
 def status(request):
+    value = request.GET.get('search')
     context = {
-
+        'status': value,
     }
-    return render(request, 'gdpr_report.html')
+    return render(request, 'status.html', context)
 
 
 @login_required

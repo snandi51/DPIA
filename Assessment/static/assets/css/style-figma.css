@@ -295,12 +295,10 @@ border-radius: 0px;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 7px 8px;
 
-    width: 150px;
-    height: 35px;
+    width: 130px;
+    height: 30px;
 
     /* Primary/Palette/Primary */
 
@@ -316,15 +314,17 @@ border-radius: 0px;
     
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 400;
     font-size: 13px;
     line-height: 16px;
+    padding-left: 36px;
+    margin-top: 5px;
     /* identical to box height, or 114% */
 
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: 0.75px;
+    margin-left: 30px;
     text-transform: capitalize;
     /* Primary/Palette/Primary */
 
@@ -1283,6 +1283,141 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     width: 175px;
     height: 26px;
+}
+
+.status-box{
+    position: flex;
+    height: 320px;
+    width: 800px;
+    margin-left: 230px;
+    margin-top: 110px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+.status-png{
+    width: 260px;
+    height: 250px;
+    margin-left: 40px;
+    margin-top: -100px;
+}
+
+.status-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 370px;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+    color: #12ABDB;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 170px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #FFFFFF;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+.status-button2{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 550px;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 180px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+.status-msg{
+    position: flex;
+    height: 25px;
+    width: 300px;
+    margin-left: 380px;
+    font-size: 14px;
+    color: #A8A8A8;
+    font-family: 'Ubuntu';
+    margin-top: 60px;
+    border-radius: 8px;
+}
+
+
+.status-text{
+    height: 46px;
+    width: 915px;
+    padding-left: 330px;
+    padding-top: 50px;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.status-button3{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 380px;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 180px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
 }
 
 
