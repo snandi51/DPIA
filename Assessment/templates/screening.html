@@ -85,12 +85,21 @@ height: 577px;">
                 }
             }
 
-            function toggleInput() {
+            function toggleInput1() {
                     var data_protection_officer = document.getElementById("data_protection_officer");
                     var div1 = document.getElementById("div1");
-                    div1.style.display = data_protection_officer.value == "0" ? "block" : "none";
                     var div2 = document.getElementById("div2");
-                    div2.style.display = data_protection_officer.value == "0" ? "block" : "none";
+                    div1.style.display = 'block';
+                    div2.style.display = 'block';
+
+            }
+            function toggleInput2() {
+                    var data_protection_officer = document.getElementById("data_protection_officer");
+                    var div1 = document.getElementById("div1");
+                    var div2 = document.getElementById("div2");
+                    div1.style.display = 'none';
+                    div2.style.display = 'none';
+
             }
       </script>
 
@@ -110,19 +119,18 @@ height: 577px;">
                         <textarea rows="2" style="width: 185%; height: 100%;" class="input-master" id="Scope of Service / Project" name="scope_of_service_project" placeholder="Enter the scope of service/project"></textarea>
                 </div>
               
-                <div class="input-1 col" style="left: 5%;top: 50%;">
+                <div class="input-1 col" style="left: 5%;top: 56.4%;">
                     <label class="label-top" style="width: 200px;">Does Your Organization have 'Data Protection Officer'?*</label>
-                    <select type="text" class="input-master-box" style="margin-top:12px;" onchange="toggleInput();" id="data_protection_officer" name="data_protection_officer" ><i data-tags="arrow right-angle" data-categories="arrows">Please mention if your organization has a Data Protection Officer.</i>
-                        <option value=""></option>
-                        <option value="0">Yes</option>
-                        <option value="1">No</option>
-                    </select>
+                    <div  style="margin-top:-8px;"  id="data_protection_officer">
+                        <input type="radio" name="data_protection_officer" onclick="toggleInput1();"  id="html1"  value="0"> Yes
+                        <input type="radio" name="data_protection_officer" onclick="toggleInput2();"  id="html2"  value="1"> No
+                    </div>
                 </div>
               <div class="input-1 col" id="div1" style="left: 35%;top: 51.5%;">
                     <label class="label-top" style="width: 300px;">Name of Data Protection Officer (DPO)*</label>
                     <input type="text" class="input-master" id="Name of Data Protection Officer (DPO)" name="name_of_DPO" placeholder="eg. Joe Doe">
               </div>
-               <div class="input-1 col" id="div2" style="left: 5%;top: 67%;">
+               <div class="input-1 col" id="div2" style="left: 5%;top: 72%;">
                     <label class="label-top" style="width: 300px;">Title of Data Protection Officer (DPO)*</label>
                     <input type="text" class="input-master" name="title_of_DPO" id="Title of Data Protection Officer (DPO)" placeholder="eg. IT Head">
               </div>

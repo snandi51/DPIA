@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<form method="POST" name="dpia_screening_form" action="dpia_screening">
     <div class="alt-nav">
         <div style="position: absolute;
         left: 14.39%;
@@ -17,7 +18,9 @@
         font-size: 14px;
         line-height: 28px;
         /* or 200% */
+
         font-feature-settings: 'pnum' on, 'lnum' on;
+
         color: #12ABDB;">
             TITLE
         </div>
@@ -26,19 +29,47 @@
         left: 11.39%;
         right: 38.75%;
         top: 40%;
+
         font-family: 'Ubuntu';
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
         line-height: 28px;
         /* or 117% */
+
         font-feature-settings: 'pnum' on, 'lnum' on;
+
         /* Typography/On Surface/High Emphasis */
+
         color: rgba(39, 41, 54, 0.85);">
-            <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
+            <a href="javascript:;" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
             Take the assessment test to find out your risk summary
         </div>
-    </div>
+          <div style="position: absolute;
+        height: 26px;
+        left: 70.39%;
+        top: 40%;">
+        </div>
+          <div style="position: absolute;
+        height: 26px;
+        left: 78.00%;
+        top: 35%;">
+            <input type="reset" id="resetbuttonid" style="display:none;">
+            <a href="javascript:;">
+            <img
+            onclick="document.getElementById('resetbuttonid').click()"
+            src="static/assets/img/Reset.png"
+            alt="reset the form"
+            title="Click to reset the form.">
+            </a>
+        </div>
+          <div style="position: absolute;
+        height: 26px;
+        left: 65.00%;
+        top: 35%;">
+              <button type="submit" class="proceed-btn" style="height:30px; margin-top:5px; width:130px; margin-left:30px">Proceed</button>
+        </div>
+</div>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 900px;
@@ -346,7 +377,6 @@ height: 3200px;">
 
 
           <div class="rect-4" id="f1" style="height:2900px">
-              <form method="POST" name="dpia_screening_form" action="dpia_screening">
                     <div style="position:absolute; left:5%; padding-right: 5%;">
                         <div style="padding-top: 2%;">
                             <p class="font" style="color: black; text-transform: uppercase ;">Need help? hit the <img src="static/assets/img/icon-right-inside.png"> icon to Refer to the parameters</p>
@@ -1075,9 +1105,6 @@ height: 3200px;">
                                                 <option value="3">Intermediate</option>
                                                 <option value="4">Advanced</option>
                                             </select>
-                                        </div>
-                                        <div style="margin-bottom:25px">
-                                            <button style="margin-left:430px;" type="submit" class="proceed-btn">Submit</button>
                                         </div>
                                     </div>
 

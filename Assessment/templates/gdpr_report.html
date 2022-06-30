@@ -91,13 +91,13 @@ function toggleText8(){
 
 function rejectClick(){
     var value = 0
-    window.location.href = "{% url 'pdf_button' %}" + "?search="+value;
+    window.location.href = "{% url 'status' %}" + "?search="+value;
     console.log('Rejected')
 }
 
 function approveClick(){
     var value = 1
-    window.location.href = "{% url 'pdf_button' %}" + "?search="+value;
+    window.location.href = "{% url 'status' %}" + "?search="+value;
     console.log('Approved')
 }
 
