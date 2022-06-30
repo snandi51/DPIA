@@ -1039,27 +1039,28 @@ input[type="radio"]{
 
 .login-text-box-1{
     position: absolute;
-    width: 300px;
-    height: 40px;
+    width: 250px;
+    height: 32px;
     left: 40px;
     top: 50px;
-    font-size: 14px;
-    border-color: #E6E6EA;
+    font-size: 12px;
     padding-left:10px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: groove;
     font-family: 'Ubuntu';
 }
 
 .login-text-box-2{
     position: absolute;
-    width: 300px;
-    height: 40px;
+    width: 250px;
+    height: 32px;
     left: 38px;
     top: 110px;
-    border-color: #E6E6EA;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 12px;
     padding-left:10px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: groove;
     font-family: 'Ubuntu';
 }
 
@@ -1300,6 +1301,22 @@ input[type="radio"]{
     border-radius: 8px;
 }
 
+
+.login-box{
+    position: flex;
+    height: 320px;
+    width: 800px;
+    margin-left: -200px;
+    margin-top: -20px;
+
+    background: #FFFFFF;
+    /* Elevation/03 */
+
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
+
+
 .status-png{
     width: 260px;
     height: 250px;
@@ -1332,6 +1349,37 @@ input[type="radio"]{
     /* Primary/Palette/Primary */
 
     background: #FFFFFF;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+
+.login-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 380px;
+    margin-top: 120px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 120px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
     border: 1px solid #0E88AF;
     border-radius: 4px;
 
@@ -1419,6 +1467,133 @@ input[type="radio"]{
     border-radius: 4px;
 
 }
+
+.login-inside{
+    height: 100%;
+    width: 50%;
+    padding-left: 330px;
+    padding-top: 50px;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    background-color: #FFFFFF;
+    font-weight: 500;
+    border-radius: 8px;
+
+}
+
+.logout-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 380px;
+    margin-top: 90px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 120px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+.login-right{
+    height: 75%;
+    width: 220px;
+    margin-left: 210px;
+    margin-top: -260px;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    font-weight: 500;
+    border-radius: 8px;
+
+}
+
+.login-png{
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+
+.login1-button1{
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    flex-direction: row;
+    margin-left: 15px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 9px 8px 7px;
+
+    position: absolute;
+    width: 190px;
+    height: 30px;
+
+
+    /* Primary/Palette/Primary */
+
+    background: #12ABDB;
+    border: 1px solid #0E88AF;
+    border-radius: 4px;
+
+}
+
+.btn-close {
+  box-sizing: content-box;
+  width: 10px;
+  height: 30px;;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  border: 0;
+  border-radius: 0.25rem;
+  opacity: 0.5;
+}
+.btn-close:hover {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+}
+.btn-close:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  opacity: 1;
+}
+.btn-close:disabled, .btn-close.disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  opacity: 0.25;
+}
+
+.btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
 
 
 
