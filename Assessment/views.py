@@ -123,6 +123,12 @@ def status(request):
     return render(request, 'status.html', context)
 
 
+def forget_password(request):
+    context = {
+
+    }
+    return render(request, 'forget_password.html', context)
+
 @login_required
 def pdf_button(request):
 
