@@ -60,28 +60,30 @@ height: 577px;">
                 var value_dict = {{value_dict|safe}}
                 console.log(value_dict)
 
-                if(document.getElementsByName('name_of_organization').value == null){
-                document.forms['screening_form1']['name_of_organization'].value = value_dict.name_of_organization;
-                }
+                if (value_dict != 'undefined'){
+                    if(document.getElementsByName('name_of_organization').value == null){
+                    document.forms['screening_form1']['name_of_organization'].value = value_dict.name_of_organization;
+                    }
 
-                if(document.getElementsByName('industry').value == null){
-                document.forms['screening_form1']['industry'].value = value_dict.industry;
-                }
+                    if(document.getElementsByName('industry').value == null){
+                    document.forms['screening_form1']['industry'].value = value_dict.industry;
+                    }
 
-                if(document.getElementsByName('scope_of_service_project').value == null){
-                document.forms['screening_form1']['scope_of_service_project'].value = value_dict.scope_of_service_project;
-                }
+                    if(document.getElementsByName('scope_of_service_project').value == null){
+                    document.forms['screening_form1']['scope_of_service_project'].value = value_dict.scope_of_service_project;
+                    }
 
-                if(document.getElementsByName('data_protection_officer').value == null){
-                document.forms['screening_form1']['data_protection_officer'].value = value_dict.data_protection_officer;
-                }
+                    if(document.getElementsByName('data_protection_officer').value == null){
+                    document.forms['screening_form1']['data_protection_officer'].value = value_dict.data_protection_officer;
+                    }
 
-                if(document.getElementsByName('name_of_DPO').value == null){
-                document.forms['screening_form1']['name_of_DPO'].value = value_dict.name_of_DPO;
-                }
+                    if(document.getElementsByName('name_of_DPO').value == null){
+                    document.forms['screening_form1']['name_of_DPO'].value = value_dict.name_of_DPO;
+                    }
 
-                if(document.getElementsByName('title_of_DPO').value == null){
-                document.forms['screening_form1']['title_of_DPO'].value = value_dict.title_of_DPO;
+                    if(document.getElementsByName('title_of_DPO').value == null){
+                    document.forms['screening_form1']['title_of_DPO'].value = value_dict.title_of_DPO;
+                    }
                 }
             }
 

@@ -16,10 +16,11 @@ height: 3300px;">
       <script type="text/javascript">
 
         window.onload = function(){
-                console.log('inside the function')
-                var value_dict = {{value_dict|safe}}
-                console.log(value_dict)
+            console.log('inside the function')
+            var value_dict = {{value_dict|safe}}
+            console.log(value_dict)
 
+            if (value_dict != 'undefined'){
                 if(document.getElementsByName('data_processing_project').value == null){
                 document.forms['screening1']['data_processing_project'].value = value_dict.data_processing_project;
                 }
@@ -84,6 +85,7 @@ height: 3300px;">
                 document.forms['screening1']['conducted_DPIA_for_similar_scope_of_service'].value = value_dict.conducted_DPIA_for_similar_scope_of_service;
                 }
                 console.log("Value replaced successfully")
+            }
         }
 
         function toggleInputHide() {
@@ -461,7 +463,7 @@ height: 3300px;">
             <div class="form-group">
                 <div class="col">
                     <label class="scr-h1" > 1. Will you require Data Processing for this project? </label>
-                    <div class="col-sm-3" style="font-size: 16px;">
+                    <div class="col-sm-3" style="font-size: 16px; width: 750px;">
                         <input type="radio" id="data_processing_project1" onchange="toggleInputDisplay()" name="data_processing_project" value="0">Yes</input>
                         <input type="radio" id="data_processing_project2" onchange="toggleInputHide()" name="data_processing_project" value="1">No</input>
                     </div>
