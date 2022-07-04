@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <title>Session Screen</title>
 </head>
-<div class="alt-nav">
+<div class="alt-nav" style="width: 1263px;">
     <div style="position: absolute;
     left: 14.39%;
     right: 38.75%;
@@ -45,7 +45,7 @@
     /* Typography/On Surface/High Emphasis */
 
     color: rgba(39, 41, 54, 0.85);">
-        <a href="{% url 'index' %}"><button class="button-assessment">Start DPIA Assessment</button></a>
+        <a href="javascript:;"><button onclick="noSession()" class="button-assessment">Start DPIA Assessment</button></a>
         <a href="#"><img src="static/assets/img/Icon.png"/></a>
         DPIA Assessments
     </div>
@@ -94,22 +94,42 @@
 
     }
 
+    function noSession(){
+         var num = 0;
+         window.location.href = "{% url 'no_session' %}" + "?search="+num
+    }
+
     function setGetParameter(){
     searchWord = document.getElementById('db_value').value;
     console.log("Word is: "+searchWord)
     window.location.href = "{% url 'no_session' %}" + "?search="+searchWord;
     }
 
-    document.addEventListener("click", function(){
-        a = document.getElementById("session_button").index;
-        console.log(a);
-    });
+<!--    document.addEventListener("click", function(){-->
+<!--        a = document.getElementById("session_button").index;-->
+<!--        console.log(a);-->
+<!--    });-->
 
     var d = {{ db_instance|safe }}
     console.log("DB instances are "+ d)
 
+    function getNum(i){
+        console.log('div clicked ' + i)
+    }
+
 
 </script>
+
+<style>
+.Column {
+    display: table-cell;
+    background-color: black; /*Optional*/
+    padding: 10px;
+    margin-left: 10px;
+    width: 100px;
+}
+</style>
+
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 900px;
@@ -117,7 +137,11 @@ height: 1200px;
 margin-left: 150px;
 padding-top: 100px;"
 >
-
+<!--{% for i in db_range %}-->
+<!--<a href="javascript:"><div class="Column" style="padding-left: 10px;  margin-left:18px;  padding-left: 20px; border-color: black;" onclick="getNum(i)">-->
+<!--    <h4>{{ i }}</h4>-->
+<!--</div></a>-->
+<!--{% endfor %}-->
 
 </body>
 </html>
