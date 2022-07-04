@@ -72,8 +72,8 @@
 </div>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
-width: 900px;
-height: 3200px;">
+width: 870px;
+height: 3800px;">
     <link href="static/assets/css/style-figma-1.css" rel="stylesheet">
 <div style="height: 80px">
 
@@ -394,6 +394,15 @@ height: 3200px;">
                 }
 
 <!--          var bar_width_full = 10;-->
+
+          var bar1_width = 0;
+          var bar2_width = 0;
+          var bar3_width = 0;
+          var bar4_width = 0;
+          var bar5_width = 0;
+          var bar6_width = 0;
+          var full_width = 0;
+
           function form_bar1(){
                 var bar1 = document.getElementById('progress-1');
                 var f1_1 = document.getElementById('f1_1');
@@ -406,11 +415,151 @@ height: 3200px;">
                  f1_4.value !='' && f1_5.value !='' && f1_6.value !=''){
                     bar1.style.width = "100%";
                 }
-                else{
-                    bar1.style.width = "0%";
-                }
+          }
+
+          function form1_f1(){
+               var bar1 = document.getElementById('progress-1');
+               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                    if (f1_1.value !=''){
+                        if (bar1_width == 0){
+                            bar1_width = bar1_width + 10;
+                            full_width = full_width + bar1_width
+                            bar1.style.width = full_width + 10 + "%";
+                            console.log('full width: ' + full_width)
+
+                        }
+                    }
+                    else{
+                         full_width = full_width - bar1_width
+                         bar1_width = 0;
+                         bar1.style.width = full_width + "%";
+                         console.log('full width: ' + full_width)
+                    }
+               }
 
           }
+
+          function form1_f2(){
+               var bar1 = document.getElementById('progress-1');
+               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                    if (f1_2.value !=''){
+                        if (bar2_width == 0){
+                            bar2_width = bar2_width + 10;
+                            full_width = full_width + bar2_width
+                            bar1.style.width = full_width + 10 + "%";
+                            console.log('full width: ' + full_width)
+
+                        }
+                    }
+                    else{
+                         full_width = full_width - bar2_width
+                         bar2_width = 0;
+                         bar1.style.width = full_width + "%";
+                         console.log('full width: ' + full_width)
+                    }
+               }
+
+          }
+
+          function form1_f3(){
+               var bar1 = document.getElementById('progress-1');
+               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                    if (f1_3.value !=''){
+                        if (bar3_width == 0){
+                            bar3_width = bar3_width + 10;
+                            full_width = full_width + bar3_width
+                            bar1.style.width = full_width + 10 + "%";
+                            console.log('full width: ' + full_width)
+
+                        }
+                    }
+                    else{
+                         full_width = full_width - bar3_width
+                         bar3_width = 0;
+                         bar1.style.width = full_width + "%";
+                         console.log('full width: ' + full_width)
+                    }
+               }
+
+          }
+
+          function form1_f4(){
+               var bar1 = document.getElementById('progress-1');
+               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                    if (f1_4.value !=''){
+                        if (bar4_width == 0){
+                            bar4_width = bar4_width + 10;
+                            full_width = full_width + bar4_width
+                            bar1.style.width = full_width + 10 + "%";
+                            console.log('full width: ' + full_width)
+
+                        }
+                    }
+                    else{
+                         full_width = full_width - bar4_width
+                         bar4_width = 0;
+                         bar1.style.width = full_width + "%";
+                         console.log('full width: ' + full_width)
+                    }
+               }
+
+          }
+
+          function form1_f5(){
+               var bar1 = document.getElementById('progress-1');
+               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                    if (f1_5.value !=''){
+                        if (bar5_width == 0){
+                            bar5_width = bar5_width + 20;
+                            full_width = full_width + bar5_width
+                            bar1.style.width = full_width + 20 + "%";
+                            console.log('full width: ' + full_width)
+
+                        }
+                    }
+                    else{
+                         full_width = full_width - bar5_width
+                         bar5_width = 0;
+                         bar1.style.width = full_width + "%";
+                         console.log('full width: ' + full_width)
+                    }
+               }
+
+          }
+
+          function form1_f6(){
+               var bar1 = document.getElementById('progress-1');
+               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                    if (f1_6.value !=''){
+                        if (bar6_width == 0){
+                            bar6_width = bar6_width + 10;
+                            full_width = full_width + bar6_width
+                            bar1.style.width = full_width + 10 + "%";
+                            console.log('full width: ' + full_width)
+
+                        }
+                    }
+                    else{
+                         full_width = full_width - bar6_width
+                         bar6_width = 0;
+                         bar1.style.width = full_width + "%";
+                         console.log('full width: ' + full_width)
+                    }
+               }
+
+          }
+
+
+          var f2_bar1_width = 0;
+          var f2_bar2_width = 0;
+          var f2_bar3_width = 0;
+          var f2_bar4_width = 0;
+          var f2_bar5_width = 0;
+          var f2_bar6_width = 0;
+          var f2_bar7_width = 0;
+          var f2_bar8_width = 0;
+          var f2_bar9_width = 0;
+          var f2_full_width = 0;
 
           function form_bar2(){
                 var bar2 = document.getElementById('progress-2');
@@ -428,12 +577,222 @@ height: 3200px;">
                  f2_6.value !='' && f2_7.value !='' && f2_8.value !='' && f2_9.value !=''){
                     bar2.style.width = "100%";
                 }
-                else{
-                    bar2.style.width = "0%";
-                }
 
           }
 
+          function form2_f1(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_1.value !=''){
+                        if (f2_bar1_width == 0){
+                            f2_bar1_width = f2_bar1_width + 10;
+                            f2_full_width = f2_full_width + f2_bar1_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log('full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar1_width
+                         f2_bar1_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+
+          function form2_f2(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_2.value !=''){
+                        if (f2_bar2_width == 0){
+                            f2_bar2_width = f2_bar2_width + 10;
+                            f2_full_width = f2_full_width + f2_bar2_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log('full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar2_width
+                         f2_bar2_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+
+          function form2_f3(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_3.value !=''){
+                        if (f2_bar3_width == 0){
+                            f2_bar3_width = f2_bar3_width + 10;
+                            f2_full_width = f2_full_width + f2_bar3_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log('full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar3_width
+                         f2_bar3_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          function form2_f4(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_4.value !=''){
+                        if (f2_bar4_width == 0){
+                            f2_bar4_width = f2_bar4_width + 10;
+                            f2_full_width = f2_full_width + f2_bar4_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log(' 4th full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar4_width
+                         f2_bar4_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          function form2_f5(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_5.value !=''){
+                        if (f2_bar5_width == 0){
+                            f2_bar5_width = f2_bar5_width + 10;
+                            f2_full_width = f2_full_width + f2_bar5_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log(' 4th full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar5_width
+                         f2_bar5_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          function form2_f6(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_6.value !=''){
+                        if (f2_bar6_width == 0){
+                            f2_bar6_width = f2_bar6_width + 10;
+                            f2_full_width = f2_full_width + f2_bar6_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log(' 4th full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar6_width
+                         f2_bar6_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          function form2_f7(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_7.value !=''){
+                        if (f2_bar7_width == 0){
+                            f2_bar7_width = f2_bar7_width + 10;
+                            f2_full_width = f2_full_width + f2_bar7_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log(' 4th full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar7_width
+                         f2_bar7_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          function form2_f8(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_8.value !=''){
+                        if (f2_bar8_width == 0){
+                            f2_bar8_width = f2_bar8_width + 10;
+                            f2_full_width = f2_full_width + f2_bar8_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log(' 4th full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar8_width
+                         f2_bar8_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          function form2_f9(){
+               var bar2 = document.getElementById('progress-2');
+               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                    if (f2_9.value !=''){
+                        if (f2_bar9_width == 0){
+                            f2_bar9_width = f2_bar9_width + 10;
+                            f2_full_width = f2_full_width + f2_bar9_width
+                            bar2.style.width = f2_full_width + 10 + "%";
+                            console.log(' 4th full width: ' + f2_full_width)
+
+                        }
+                    }
+                    else{
+                         f2_full_width = f2_full_width - f2_bar9_width
+                         f2_bar9_width = 0;
+                         bar2.style.width = f2_full_width + "%";
+                         console.log('full width: ' + f2_full_width)
+                    }
+               }
+
+          }
+
+          var f3_bar1_width = 0;
+          var f3_bar2_width = 0;
+          var f3_bar3_width = 0;
+          var f3_bar4_width = 0;
+          var f3_bar5_width = 0;
+          var f3_bar6_width = 0;
+          var f3_bar7_width = 0;
+          var f3_bar8_width = 0;
+          var f3_bar9_width = 0;
+          var f3_bar10_width = 0;
+          var f3_bar11_width = 0;
+          var f3_bar12_width = 0;
+          var f3_full_width = 0;
           function form_bar3(){
                 var bar3 = document.getElementById('progress-3');
                 var f3_1 = document.getElementById('f3_1');
@@ -454,12 +813,288 @@ height: 3200px;">
                  f3_11.value !='' && f3_12.value !=''){
                     bar3.style.width = "100%";
                 }
-                else{
-                    bar3.style.width = "0%";
-                }
 
           }
 
+          function form3_f1(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_1.value !=''){
+                        if (f3_bar1_width == 0){
+                            f3_bar1_width = f3_bar1_width + 10;
+                            f3_full_width = f3_full_width + f3_bar1_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar1_width
+                         f3_bar1_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f2(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_2.value !=''){
+                        if (f3_bar2_width == 0){
+                            f3_bar2_width = f3_bar2_width + 10;
+                            f3_full_width = f3_full_width + f3_bar2_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar2_width
+                         f3_bar2_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f3(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_3.value !=''){
+                        if (f3_bar3_width == 0){
+                            f3_bar3_width = f3_bar3_width + 10;
+                            f3_full_width = f3_full_width + f3_bar3_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar3_width
+                         f3_bar3_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f4(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_4.value !=''){
+                        if (f3_bar4_width == 0){
+                            f3_bar4_width = f3_bar4_width + 10;
+                            f3_full_width = f3_full_width + f3_bar4_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar4_width
+                         f3_bar4_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f5(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_5.value !=''){
+                        if (f3_bar5_width == 0){
+                            f3_bar5_width = f3_bar5_width + 10;
+                            f3_full_width = f3_full_width + f3_bar5_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar5_width
+                         f3_bar5_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f6(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_6.value !=''){
+                        if (f3_bar6_width == 0){
+                            f3_bar6_width = f3_bar6_width + 10;
+                            f3_full_width = f3_full_width + f3_bar6_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar6_width
+                         f3_bar6_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f7(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_3.value !=''){
+                        if (f3_bar7_width == 0){
+                            f3_bar7_width = f3_bar7_width + 10;
+                            f3_full_width = f3_full_width + f3_bar7_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar7_width
+                         f3_bar7_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f8(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_8.value !=''){
+                        if (f3_bar8_width == 0){
+                            f3_bar8_width = f3_bar8_width + 5;
+                            f3_full_width = f3_full_width + f3_bar8_width
+                            bar3.style.width = f3_full_width + 5 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar8_width
+                         f3_bar8_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f9(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_9.value !=''){
+                        if (f3_bar9_width == 0){
+                            f3_bar9_width = f3_bar9_width + 5;
+                            f3_full_width = f3_full_width + f3_bar9_width
+                            bar3.style.width = f3_full_width + 5 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar9_width
+                         f3_bar9_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f10(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_10.value !=''){
+                        if (f3_bar10_width == 0){
+                            f3_bar10_width = f3_bar10_width + 5;
+                            f3_full_width = f3_full_width + f3_bar10_width
+                            bar3.style.width = f3_full_width + 5 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar10_width
+                         f3_bar10_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f11(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_11.value !=''){
+                        if (f3_bar11_width == 0){
+                            f3_bar11_width = f3_bar11_width + 5;
+                            f3_full_width = f3_full_width + f3_bar11_width
+                            bar3.style.width = f3_full_width + 5 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar11_width
+                         f3_bar11_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+          function form3_f12(){
+               var bar3 = document.getElementById('progress-3');
+               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                    if (f3_12.value !=''){
+                        if (f3_bar12_width == 0){
+                            f3_bar12_width = f3_bar12_width + 10;
+                            f3_full_width = f3_full_width + f3_bar12_width
+                            bar3.style.width = f3_full_width + 10 + "%";
+                            console.log('full width: ' + f3_full_width)
+
+                        }
+                    }
+                    else{
+                         f3_full_width = f3_full_width - f3_bar12_width
+                         f3_bar12_width = 0;
+                         bar3.style.width = f3_full_width + "%";
+                         console.log('full width: ' + f3_full_width)
+                    }
+               }
+
+          }
+
+
+          var f4_bar1_width = 0;
+          var f4_bar2_width = 0;
+          var f4_bar3_width = 0;
+          var f4_bar4_width = 0;
+          var f4_bar5_width = 0;
+          var f4_bar6_width = 0;
+          var f4_bar7_width = 0;
+          var f4_bar8_width = 0;
+          var f4_bar9_width = 0;
+          var f4_bar10_width = 0;
+          var f4_bar11_width = 0;
+          var f4_bar12_width = 0;
+          var f4_bar13_width = 0;
+          var f4_full_width = 0;
           function form_bar4(){
                 var bar4 = document.getElementById('progress-4');
                 var f4_1 = document.getElementById('f4_1');
@@ -481,12 +1116,302 @@ height: 3200px;">
                  f4_12.value !='' && f4_13.value !=''){
                     bar4.style.width = "100%";
                 }
-                else{
-                    bar4.style.width = "0%";
-                }
 
           }
 
+          function form4_f1(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_1.value !=''){
+                        if (f4_bar1_width == 0){
+                            f4_bar1_width = f4_bar1_width + 5;
+                            f4_full_width = f4_full_width + f4_bar1_width
+                            bar4.style.width = f4_full_width + 5 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar1_width
+                         f4_bar1_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f2(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_2.value !=''){
+                        if (f4_bar2_width == 0){
+                            f4_bar2_width = f4_bar2_width + 5;
+                            f4_full_width = f4_full_width + f4_bar2_width
+                            bar4.style.width = f4_full_width + 5 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar2_width
+                         f4_bar2_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f3(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_3.value !=''){
+                        if (f4_bar3_width == 0){
+                            f4_bar3_width = f4_bar3_width + 5;
+                            f4_full_width = f4_full_width + f4_bar3_width
+                            bar4.style.width = f4_full_width + 5 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar3_width
+                         f4_bar3_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f4(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_4.value !=''){
+                        if (f4_bar4_width == 0){
+                            f4_bar4_width = f4_bar4_width + 5;
+                            f4_full_width = f4_full_width + f4_bar4_width
+                            bar4.style.width = f4_full_width + 5 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar4_width
+                         f4_bar4_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f5(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_5.value !=''){
+                        if (f4_bar5_width == 0){
+                            f4_bar5_width = f4_bar5_width + 5;
+                            f4_full_width = f4_full_width + f4_bar5_width
+                            bar4.style.width = f4_full_width + 5 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar5_width
+                         f4_bar5_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f6(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_6.value !=''){
+                        if (f4_bar6_width == 0){
+                            f4_bar6_width = f4_bar6_width + 5;
+                            f4_full_width = f4_full_width + f4_bar6_width
+                            bar4.style.width = f4_full_width + 5 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar6_width
+                         f4_bar6_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f7(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_7.value !=''){
+                        if (f4_bar7_width == 0){
+                            f4_bar7_width = f4_bar7_width + 10;
+                            f4_full_width = f4_full_width + f4_bar7_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar7_width
+                         f4_bar7_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f8(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_8.value !=''){
+                        if (f4_bar8_width == 0){
+                            f4_bar8_width = f4_bar8_width + 10;
+                            f4_full_width = f4_full_width + f4_bar8_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar8_width
+                         f4_bar8_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f9(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_9.value !=''){
+                        if (f4_bar9_width == 0){
+                            f4_bar9_width = f4_bar9_width + 10;
+                            f4_full_width = f4_full_width + f4_bar9_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar9_width
+                         f4_bar9_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f10(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_10.value !=''){
+                        if (f4_bar10_width == 0){
+                            f4_bar10_width = f4_bar10_width + 10;
+                            f4_full_width = f4_full_width + f4_bar10_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar10_width
+                         f4_bar10_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f11(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_11.value !=''){
+                        if (f4_bar11_width == 0){
+                            f4_bar11_width = f4_bar11_width + 10;
+                            f4_full_width = f4_full_width + f4_bar11_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar11_width
+                         f4_bar11_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f12(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_12.value !=''){
+                        if (f4_bar12_width == 0){
+                            f4_bar12_width = f4_bar12_width + 10;
+                            f4_full_width = f4_full_width + f4_bar12_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar12_width
+                         f4_bar12_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+          function form4_f13(){
+               var bar4 = document.getElementById('progress-4');
+               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                    if (f4_13.value !=''){
+                        if (f4_bar13_width == 0){
+                            f4_bar13_width = f4_bar13_width + 10;
+                            f4_full_width = f4_full_width + f4_bar13_width
+                            bar4.style.width = f4_full_width + 10 + "%";
+                            console.log('full width: ' + f4_full_width)
+
+                        }
+                    }
+                    else{
+                         f4_full_width = f4_full_width - f4_bar13_width
+                         f4_bar13_width = 0;
+                         bar4.style.width = f4_full_width + "%";
+                         console.log('full width: ' + f4_full_width)
+                    }
+               }
+
+          }
+
+
+          var f5_bar1_width = 0;
+          var f5_bar2_width = 0;
+          var f5_bar3_width = 0;
+          var f5_bar4_width = 0;
+          var f5_bar5_width = 0;
+          var f5_full_width = 0;
           function form_bar5(){
                 var bar5 = document.getElementById('progress-5');
                 var f5_1 = document.getElementById('f5_1');
@@ -498,12 +1423,125 @@ height: 3200px;">
                  f5_4.value !='' && f5_5.value !=''){
                     bar5.style.width = "100%";
                 }
-                else{
-                    bar5.style.width = "0%";
-                }
+          }
+
+          function form5_f1(){
+               var bar5 = document.getElementById('progress-5');
+               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                    if (f5_1.value !=''){
+                        if (f5_bar1_width == 0){
+                            f5_bar1_width = f5_bar1_width + 10;
+                            f5_full_width = f5_full_width + f5_bar1_width
+                            bar5.style.width = f5_full_width + 10 + "%";
+                            console.log('full width: ' + f5_full_width)
+
+                        }
+                    }
+                    else{
+                         f5_full_width = f5_full_width - f5_bar1_width
+                         f5_bar1_width = 0;
+                         bar5.style.width = f5_full_width + "%";
+                         console.log('full width: ' + f5_full_width)
+                    }
+               }
 
           }
 
+          function form5_f2(){
+               var bar5 = document.getElementById('progress-5');
+               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                    if (f5_2.value !=''){
+                        if (f5_bar2_width == 0){
+                            f5_bar2_width = f5_bar2_width + 20;
+                            f5_full_width = f5_full_width + f5_bar2_width
+                            bar5.style.width = f5_full_width + 20 + "%";
+                            console.log('full width: ' + f5_full_width)
+
+                        }
+                    }
+                    else{
+                         f5_full_width = f5_full_width - f5_bar2_width
+                         f5_bar2_width = 0;
+                         bar5.style.width = f5_full_width + "%";
+                         console.log('full width: ' + f5_full_width)
+                    }
+               }
+
+          }
+
+          function form5_f3(){
+               var bar5 = document.getElementById('progress-5');
+               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                    if (f5_3.value !=''){
+                        if (f5_bar3_width == 0){
+                            f5_bar3_width = f5_bar3_width + 20;
+                            f5_full_width = f5_full_width + f5_bar3_width
+                            bar5.style.width = f5_full_width + 20 + "%";
+                            console.log('full width: ' + f5_full_width)
+
+                        }
+                    }
+                    else{
+                         f5_full_width = f5_full_width - f5_bar3_width
+                         f5_bar3_width = 0;
+                         bar5.style.width = f5_full_width + "%";
+                         console.log('full width: ' + f5_full_width)
+                    }
+               }
+
+          }
+
+          function form5_f4(){
+               var bar5 = document.getElementById('progress-5');
+               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                    if (f5_4.value !=''){
+                        if (f5_bar4_width == 0){
+                            f5_bar4_width = f5_bar4_width + 20;
+                            f5_full_width = f5_full_width + f5_bar4_width
+                            bar5.style.width = f5_full_width + 20 + "%";
+                            console.log('full width: ' + f5_full_width)
+
+                        }
+                    }
+                    else{
+                         f5_full_width = f5_full_width - f5_bar4_width
+                         f5_bar4_width = 0;
+                         bar5.style.width = f5_full_width + "%";
+                         console.log('full width: ' + f5_full_width)
+                    }
+               }
+
+          }
+
+          function form5_f5(){
+               var bar5 = document.getElementById('progress-5');
+               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                    if (f5_5.value !=''){
+                        if (f5_bar5_width == 0){
+                            f5_bar5_width = f5_bar1_width + 20;
+                            f5_full_width = f5_full_width + f5_bar5_width
+                            bar5.style.width = f5_full_width + 20 + "%";
+                            console.log('full width: ' + f5_full_width)
+
+                        }
+                    }
+                    else{
+                         f5_full_width = f5_full_width - f5_bar5_width
+                         f5_bar5_width = 0;
+                         bar5.style.width = f5_full_width + "%";
+                         console.log('full width: ' + f5_full_width)
+                    }
+               }
+
+          }
+
+
+          var f6_bar1_width = 0;
+          var f6_bar2_width = 0;
+          var f6_bar3_width = 0;
+          var f6_bar4_width = 0;
+          var f6_bar5_width = 0;
+          var f6_full_width = 0;
           function form_bar6(){
                 var bar6 = document.getElementById('progress-6');
                 var f6_1 = document.getElementById('f6_1');
@@ -515,12 +1553,123 @@ height: 3200px;">
                  f6_4.value !='' && f6_5.value !=''){
                     bar6.style.width = "100%";
                 }
-                else{
-                    bar6.style.width = "0%";
-                }
 
           }
 
+          function form6_f1(){
+               var bar6 = document.getElementById('progress-6');
+               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                    if (f6_1.value !=''){
+                        if (f6_bar1_width == 0){
+                            f6_bar1_width = f6_bar1_width + 10;
+                            f6_full_width = f6_full_width + f6_bar1_width
+                            bar6.style.width = f6_full_width + 10 + "%";
+                            console.log('full width: ' + f6_full_width)
+
+                        }
+                    }
+                    else{
+                         f6_full_width = f6_full_width - f6_bar1_width
+                         f6_bar1_width = 0;
+                         bar6.style.width = f6_full_width + "%";
+                         console.log('full width: ' + f6_full_width)
+                    }
+               }
+
+          }
+
+          function form6_f2(){
+               var bar6 = document.getElementById('progress-6');
+               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                    if (f6_2.value !=''){
+                        if (f6_bar2_width == 0){
+                            f6_bar2_width = f6_bar2_width + 20;
+                            f6_full_width = f6_full_width + f6_bar2_width
+                            bar6.style.width = f6_full_width + 20 + "%";
+                            console.log('full width: ' + f6_full_width)
+
+                        }
+                    }
+                    else{
+                         f6_full_width = f6_full_width - f6_bar2_width
+                         f6_bar2_width = 0;
+                         bar6.style.width = f6_full_width + "%";
+                         console.log('full width: ' + f6_full_width)
+                    }
+               }
+
+          }
+
+          function form6_f3(){
+               var bar6 = document.getElementById('progress-6');
+               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                    if (f6_3.value !=''){
+                        if (f6_bar3_width == 0){
+                            f6_bar3_width = f6_bar3_width + 20;
+                            f6_full_width = f6_full_width + f6_bar3_width
+                            bar6.style.width = f6_full_width + 20 + "%";
+                            console.log('full width: ' + f6_full_width)
+
+                        }
+                    }
+                    else{
+                         f6_full_width = f6_full_width - f6_bar3_width
+                         f6_bar3_width = 0;
+                         bar6.style.width = f6_full_width + "%";
+                         console.log('full width: ' + f6_full_width)
+                    }
+               }
+
+          }
+
+          function form6_f4(){
+               var bar6 = document.getElementById('progress-6');
+               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                    if (f6_4.value !=''){
+                        if (f6_bar4_width == 0){
+                            f6_bar4_width = f6_bar4_width + 20;
+                            f6_full_width = f6_full_width + f6_bar4_width
+                            bar6.style.width = f6_full_width + 20 + "%";
+                            console.log('full width: ' + f6_full_width)
+
+                        }
+                    }
+                    else{
+                         f6_full_width = f6_full_width - f6_bar4_width
+                         f6_bar4_width = 0;
+                         bar6.style.width = f6_full_width + "%";
+                         console.log('full width: ' + f6_full_width)
+                    }
+               }
+
+          }
+
+          function form6_f5(){
+               var bar6 = document.getElementById('progress-6');
+               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                    if (f6_5.value !=''){
+                        if (f6_bar5_width == 0){
+                            f6_bar5_width = f6_bar5_width + 20;
+                            f6_full_width = f6_full_width + f6_bar5_width
+                            bar6.style.width = f6_full_width + 20 + "%";
+                            console.log('full width: ' + f6_full_width)
+
+                        }
+                    }
+                    else{
+                         f6_full_width = f6_full_width - f6_bar5_width
+                         f6_bar5_width = 0;
+                         bar6.style.width = f6_full_width + "%";
+                         console.log('full width: ' + f6_full_width)
+                    }
+               }
+
+          }
+
+
+          var f7_bar1_width = 0;
+          var f7_bar2_width = 0;
+          var f7_full_width = 0;
           function form_bar7(){
                 var bar7 = document.getElementById('progress-7');
                 var f7_1 = document.getElementById('f7_1');
@@ -528,12 +1677,59 @@ height: 3200px;">
                 if (f7_1.value !='' && f7_2.value !=''){
                     bar7.style.width = "100%";
                 }
-                else{
-                    bar7.style.width = "0%";
-                }
 
           }
 
+          function form7_f1(){
+               var bar7 = document.getElementById('progress-7');
+               if (bar7.style.width != "100%" || bar7.style.width != "0%"){
+                    if (f7_1.value !=''){
+                        if (f7_bar1_width == 0){
+                            f7_bar1_width = f7_bar1_width + 40;
+                            f7_full_width = f7_full_width + f7_bar1_width
+                            bar7.style.width = f7_full_width + 40 + "%";
+                            console.log('full width: ' + f7_full_width)
+
+                        }
+                    }
+                    else{
+                         f7_full_width = f7_full_width - f7_bar1_width
+                         f7_bar1_width = 0;
+                         bar7.style.width = f7_full_width + "%";
+                         console.log('full width: ' + f7_full_width)
+                    }
+               }
+
+          }
+
+          function form7_f2(){
+               var bar7 = document.getElementById('progress-7');
+               if (bar7.style.width != "100%" || bar7.style.width != "0%"){
+                    if (f7_2.value !=''){
+                        if (f7_bar2_width == 0){
+                            f7_bar2_width = f7_bar2_width + 30;
+                            f7_full_width = f7_full_width + f7_bar2_width
+                            bar7.style.width = f7_full_width + 30 + "%";
+                            console.log('full width: ' + f7_full_width)
+
+                        }
+                    }
+                    else{
+                         f7_full_width = f7_full_width - f7_bar2_width
+                         f7_bar2_width = 0;
+                         bar7.style.width = f7_full_width + "%";
+                         console.log('full width: ' + f7_full_width)
+                    }
+               }
+
+          }
+
+
+          var f8_bar1_width = 0;
+          var f8_bar2_width = 0;
+          var f8_bar3_width = 0;
+          var f8_bar4_width = 0;
+          var f8_full_width = 0;
           function form_bar8(){
                 var bar8 = document.getElementById('progress-8');
                 var f8_1 = document.getElementById('f8_1');
@@ -544,15 +1740,100 @@ height: 3200px;">
                  f8_4.value !=''){
                     bar8.style.width = "100%";
                 }
-                else{
-                    bar8.style.width = "0%";
-                }
+
+          }
+
+          function form8_f1(){
+               var bar8 = document.getElementById('progress-8');
+               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                    if (f8_1.value !=''){
+                        if (f8_bar1_width == 0){
+                            f8_bar1_width = f8_bar1_width + 25;
+                            f8_full_width = f8_full_width + f8_bar1_width
+                            bar8.style.width = f8_full_width + 25 + "%";
+                            console.log('full width: ' + f8_full_width)
+
+                        }
+                    }
+                    else{
+                         f8_full_width = f8_full_width - f8_bar1_width
+                         f8_bar1_width = 0;
+                         bar8.style.width = f8_full_width + "%";
+                         console.log('full width: ' + f8_full_width)
+                    }
+               }
+
+          }
+
+          function form8_f2(){
+               var bar8 = document.getElementById('progress-8');
+               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                    if (f8_2.value !=''){
+                        if (f8_bar2_width == 0){
+                            f8_bar2_width = f8_bar2_width + 20;
+                            f8_full_width = f8_full_width + f8_bar2_width
+                            bar8.style.width = f8_full_width + 20 + "%";
+                            console.log('full width: ' + f8_full_width)
+
+                        }
+                    }
+                    else{
+                         f8_full_width = f8_full_width - f8_bar2_width
+                         f8_bar2_width = 0;
+                         bar8.style.width = f8_full_width + "%";
+                         console.log('full width: ' + f8_full_width)
+                    }
+               }
+
+          }
+
+          function form8_f3(){
+               var bar8 = document.getElementById('progress-8');
+               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                    if (f8_3.value !=''){
+                        if (f8_bar3_width == 0){
+                            f8_bar3_width = f8_bar3_width + 20;
+                            f8_full_width = f8_full_width + f8_bar3_width
+                            bar8.style.width = f8_full_width + 20 + "%";
+                            console.log('full width: ' + f8_full_width)
+
+                        }
+                    }
+                    else{
+                         f8_full_width = f8_full_width - f8_bar3_width
+                         f8_bar3_width = 0;
+                         bar8.style.width = f8_full_width + "%";
+                         console.log('full width: ' + f8_full_width)
+                    }
+               }
+
+          }
+
+          function form8_f4(){
+               var bar8 = document.getElementById('progress-8');
+               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                    if (f8_4.value !=''){
+                        if (f8_bar4_width == 0){
+                            f8_bar4_width = f8_bar4_width + 25;
+                            f8_full_width = f8_full_width + f8_bar4_width
+                            bar8.style.width = f8_full_width + 25 + "%";
+                            console.log('full width: ' + f8_full_width)
+
+                        }
+                    }
+                    else{
+                         f8_full_width = f8_full_width - f8_bar4_width
+                         f8_bar4_width = 0;
+                         bar8.style.width = f8_full_width + "%";
+                         console.log('full width: ' + f8_full_width)
+                    }
+               }
 
           }
 
           </script>
 
-          <div class="rect-4" id="f1" style="height:2900px">
+          <div class="rect-4" id="f1" style="height:3250px">
                     <div style="position:absolute; left:5%; padding-right: 5%;">
                         <div style="padding-top: 2%;">
                             <p class="font" style="color: black; text-transform: uppercase ;">Need help? hit the <img src="static/assets/img/icon-right-inside.png"> icon to Refer to the parameters</p>
@@ -563,14 +1844,14 @@ height: 3200px;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv1()" alt="Info"></a>
                             </div>
 
-                            <div class="font-head">1. DPIA Assessment - Part 1<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-1" style="background-color:#0070AD; margin-left:-0.3px; height: 8.5px; width:0px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head">1. DPIA Assessment - Part 1<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-1" style="background-color:#0070AD; margin-left:-0.3px; height: 8.5px; width:0px; margin-top: -0.5px; border-radius: 4px;"></div></div></div>
 
 
                             <div class="form-group" id="div1" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar1()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the purpose of the processing defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_1" id="f1_1">
+                                            <select class="form-select drop-down" name="f1_1" id="f1_1" onchange="form1_f1()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -582,7 +1863,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the aim of the project defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_2" id="f1_2">
+                                            <select class="form-select drop-down" name="f1_2" id="f1_2" onchange="form1_f2()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -594,7 +1875,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is method of processing defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_3" id="f1_3">
+                                            <select class="form-select drop-down" name="f1_3" id="f1_3" onchange="form1_f3()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -606,7 +1887,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the expected benefit(s) from the processing defined ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_4" id="f1_4">
+                                            <select class="form-select drop-down" name="f1_4" id="f1_4" onchange="form1_f4()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -618,7 +1899,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the list of departments who will benefit from this processing defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_5" id="f1_5">
+                                            <select class="form-select drop-down" name="f1_5" id="f1_5" onchange="form1_f5()">
                                                 <option ></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -628,7 +1909,7 @@ height: 3200px;">
                                         </div>
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the list of members / teams who will be involved in the processing defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_6" id="f1_6">
+                                            <select class="form-select drop-down" name="f1_6" id="f1_6" onchange="form1_f6()">
                                                 <option ></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -653,7 +1934,7 @@ height: 3200px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar2()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of collecting, using, storing and deleting data in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_1" id="f2_1">
+                                            <select class="form-select drop-down" name="f2_1" id="f2_1" onchange="form2_f1()">
                                                 <option ></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -663,7 +1944,7 @@ height: 3200px;">
                                         </div>
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the data source(s) used to initiate processing defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_2" id="f2_2">
+                                            <select class="form-select drop-down" name="f2_2" id="f2_2" onchange="form2_f2()">
                                                 <option ></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -675,7 +1956,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a list of people who will have access to this data?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_3" id="f2_3">
+                                            <select class="form-select drop-down" name="f2_3" id="f2_3" onchange="form2_f3()">
                                                 <option ></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -685,8 +1966,8 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the types of High-risk processing defined for this data processing?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_4" id="f2_4">
-                                                <option selected value="0"></option>
+                                            <select class="form-select drop-down" name="f2_4" id="f2_4" onchange="form2_f4()">
+                                                <option ></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
                                                 <option value="3">Optimized</option>
@@ -697,7 +1978,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you comply by legal requirements to collect the data (Do you have consent of the data subjects) ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_5" id="f2_5">
+                                            <select class="form-select drop-down" name="f2_5" id="f2_5" onchange="form2_f5()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -706,7 +1987,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How many data subjects are likely to be affected by the project?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_6" id="f2_6">
+                                            <select class="form-select drop-down" name="f2_6" id="f2_6" onchange="form2_f6()">
                                                 <option></option>
                                                 <option value="1">Less Than 100</option>
                                                 <option value="2">100-1000</option>
@@ -718,7 +1999,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Where is data stored ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_7" id="f2_7">
+                                            <select class="form-select drop-down" name="f2_7" id="f2_7" onchange="form2_f7()">
                                                 <option></option>
                                                 <option value="1">Shared Drive File </option>
                                                 <option value="2">National Database </option>
@@ -730,7 +2011,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have appropriate measures to destroy data after use?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_8" id="f2_8">
+                                            <select class="form-select drop-down" name="f2_8" id="f2_8" onchange="form2_f8()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -739,7 +2020,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the Data retention policy defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_9" id="f2_9">
+                                            <select class="form-select drop-down" name="f2_9" id="f2_9" onchange="form2_f9()">
                                                 <option></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -766,13 +2047,13 @@ height: 3200px;">
                                         <!--Question 1-->
                                         <label class="col-sm-6" style="padding-top: 10px;">Who all will be involved in the consultation process ?</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_1" id="f3_1">
+                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_1" id="f3_1" onchange="form3_f1()">
                                         </div>
 
                                         <!--Question 2-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you designed a Consultation Process . This Consultation process will involve seeking views of Data subjects or their representatives on the intended processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_2" id="f3_2">
+                                            <select class="form-select drop-down" name="f3_2" id="f3_2" onchange="form3_f2()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>>
@@ -782,7 +2063,7 @@ height: 3200px;">
                                         <!--Question 3-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Is there a process in your organization to choose the people for consultation on the proposed data processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_3" id="f3_3">
+                                            <select class="form-select drop-down" name="f3_3" id="f3_3" onchange="form3_f3()">
                                                 <option ></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -795,7 +2076,7 @@ height: 3200px;">
                                         <!--Question 4-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization of evaluating data processors, information security experts or other staff as consultants ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_4" id="f3_4">
+                                            <select class="form-select drop-down" name="f3_4" id="f3_4" onchange="form3_f4()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -807,7 +2088,7 @@ height: 3200px;">
                                         <!--Question 5-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization of reaching out to the consultants for consultation by data subjects, project teams etc ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_5" id="f3_5">
+                                            <select class="form-select drop-down" name="f3_5" id="f3_5" onchange="form3_f5()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -819,7 +2100,7 @@ height: 3200px;">
                                         <!--Question 6-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is your process defined for mapping roles of the selected consultant(s) ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_6" id="f3_6">
+                                            <select class="form-select drop-down" name="f3_6" id="f3_6" onchange="form3_f6()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -831,7 +2112,7 @@ height: 3200px;">
                                         <!--Question 7-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a list of members, other than designated consultant, who will also involve from the organization in the consultation process ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_7" id="f3_7">
+                                            <select class="form-select drop-down" name="f3_7" id="f3_7" onchange="form3_f7()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -841,7 +2122,7 @@ height: 3200px;">
                                          <!--Question 8-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a process to monitor the consultation process ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_8" id="f3_8">
+                                            <select class="form-select drop-down" name="f3_8" id="f3_8" onchange="form3_f8()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -851,7 +2132,7 @@ height: 3200px;">
                                         <!--Question 9-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization to deliberate on the issues raised by the consultants or data subjects ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_9" id="f3_9">
+                                            <select class="form-select drop-down" name="f3_9" id="f3_9" onchange="form3_f9()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -863,7 +2144,7 @@ height: 3200px;">
                                          <!--Question 10-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a proper forum where these consultants can provide assurances and rasie their concerns ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_10" id="f3_10">
+                                            <select class="form-select drop-down" name="f3_10" id="f3_10" onchange="form3_f10()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -873,7 +2154,7 @@ height: 3200px;">
                                          <!--Question 11-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for keeping a check that all the issues raised by these consultants have been resolved ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_11" id="f3_11">
+                                            <select class="form-select drop-down" name="f3_11" id="f3_11" onchange="form3_f11()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -883,7 +2164,7 @@ height: 3200px;">
                                         <!--Question 12-->
                                         <label class="col-sm-6" style="padding-top: 10px;">If Response to Question 10 is Yes , Please provide the nsame of the assigned personnel.</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_12" id="f3_12">
+                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_12" id="f3_12" onchange="form3_f12()">
                                         </div>
 
                                     </div>
@@ -902,7 +2183,7 @@ height: 3200px;">
                                         <!--Question 1-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">What is legal bases of processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_1" id="f4_1">
+                                            <select class="form-select drop-down" name="f4_1" id="f4_1" onchange="form4_f1()">
                                                 <option ></option>
                                                 <option >Consent</option>
                                                 <option >Performance of contract</option>
@@ -916,7 +2197,7 @@ height: 3200px;">
                                         <!--Question 2-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of defining the legality of data processing with respect to the data subjects in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_2" id="f4_2">
+                                            <select class="form-select drop-down" name="f4_2" id="f4_2" onchange="form4_f2()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -928,7 +2209,7 @@ height: 3200px;">
                                         <!--Question 3-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Is there a process to evaluate the outcome of the processing with respect to the desired goals ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_3" id="f4_3">
+                                            <select class="form-select drop-down" name="f4_3" id="f4_3" onchange="form4_f3()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -940,7 +2221,7 @@ height: 3200px;">
                                         <!--Question 4-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Will the data processing achieve the desired goal ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_4" id="f4_4">
+                                            <select class="form-select drop-down" name="f4_4" id="f4_4" onchange="form4_f4()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -952,7 +2233,7 @@ height: 3200px;">
                                         <!--Question 5-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Is there an alternate approach/s to achieve the same outcome ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_5" id="f4_5">
+                                            <select class="form-select drop-down" name="f4_5" id="f4_5" onchange="form4_f5()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -964,7 +2245,7 @@ height: 3200px;">
                                          <!--Question 6-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How mature is the process to explore the alternate approaches (less intrusive measures) in order to  achieve the same results ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_6" id="f4_6">
+                                            <select class="form-select drop-down" name="f4_6" id="f4_6" onchange="form4_f6()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -976,7 +2257,7 @@ height: 3200px;">
                                          <!--Question 7-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">What is the maturity of defined data quality KPIs and metrics in your organization to monitor data quality and integrity ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_7" id="f4_7">
+                                            <select class="form-select drop-down" name="f4_7" id="f4_7" onchange="form4_f7()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -988,7 +2269,7 @@ height: 3200px;">
                                          <!--Question 8-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent  is the information that will be given to the data subjects defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_8" id="f4_8">
+                                            <select class="form-select drop-down" name="f4_8" id="f4_8" onchange="form4_f8()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1000,7 +2281,7 @@ height: 3200px;">
                                          <!--Question 9-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization of upholding the Data Subject Rights while processing their data ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_9" id="f4_9">
+                                            <select class="form-select drop-down" name="f4_9" id="f4_9" onchange="form4_f9()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1012,7 +2293,7 @@ height: 3200px;">
                                          <!--Question 10-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process to monitor how compliant designated processing entities are while preforming the proposed processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_10" id="f4_10">
+                                            <select class="form-select drop-down" name="f4_10" id="f4_10" onchange="form4_f10()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1024,7 +2305,7 @@ height: 3200px;">
                                          <!--Question 11-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How mature is your process is to ensure that data processing is not used for out of scope requirement in order to prevent function creep ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_11" id="f4_11">
+                                            <select class="form-select drop-down" name="f4_11" id="f4_11" onchange="form4_f11()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1036,7 +2317,7 @@ height: 3200px;">
                                          <!--Question 12-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extentare the measures defined to ensure processors comply to the scope of the project during data processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_12" id="f4_12">
+                                            <select class="form-select drop-down" name="f4_12" id="f4_12" onchange="form4_f12()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1048,7 +2329,7 @@ height: 3200px;">
                                          <!--Question 13-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extentare the measures defined to safeguard any international transfers ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_13" id="f4_13">
+                                            <select class="form-select drop-down" name="f4_13" id="f4_13" onchange="form4_f13()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1076,7 +2357,7 @@ height: 3200px;">
                                         <!--Question 1-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/team who will be responsible for Identifying all the risks ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_1" id="f5_1">
+                                            <select class="form-select drop-down" name="f5_1" id="f5_1" onchange="form5_f1()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1086,7 +2367,7 @@ height: 3200px;">
                                         <!--Question 2-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of documenting type and details of the risks from the proposed processing in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_2" id="f5_2">
+                                            <select class="form-select drop-down" name="f5_2" id="f5_2" onchange="form5_f2()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -1098,7 +2379,7 @@ height: 3200px;">
                                         <!--Question 3-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of calculating likehlihood and severity of the risk from the proposed processing in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_3" id="f5_3">
+                                            <select class="form-select drop-down" name="f5_3" id="f5_3" onchange="form5_f3()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -1110,7 +2391,7 @@ height: 3200px;">
                                         <!--Question 4-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of finding residual risks < define what is residual risks > defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_4" id="f5_4">
+                                            <select class="form-select drop-down" name="f5_4" id="f5_4" onchange="form5_f4()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -1122,7 +2403,7 @@ height: 3200px;">
                                         <!--Question 5-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent  is the plan to quantify the impact of the risks defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_5" id="f5_5">
+                                            <select class="form-select drop-down" name="f5_5" id="f5_5" onchange="form5_f5()">
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -1148,7 +2429,7 @@ height: 3200px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar6()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/ team who will be responsible for describing the risk mitigation measures ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_1" id="f6_1">
+                                            <select class="form-select drop-down" name="f6_1" id="f6_1" onchange="form6_f1()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1158,7 +2439,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/ team who will be responsible who will be responsible for defining the impact of risk ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_2" id="f6_2">
+                                            <select class="form-select drop-down" name="f6_2" id="f6_2" onchange="form6_f2()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1168,7 +2449,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the plan to reduce or eliminate risk defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_3" id="f6_3">
+                                            <select class="form-select drop-down" name="f6_3" id="f6_3" onchange="form6_f3()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1180,7 +2461,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for planning and leading the risk mitigation action plan ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_4" id="f6_4">
+                                            <select class="form-select drop-down" name="f6_4" id="f6_4" onchange="form6_f4()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1190,7 +2471,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for auditing the plan ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_5" id="f6_5">
+                                            <select class="form-select drop-down" name="f6_5" id="f6_5" onchange="form6_f5()">
                                                 <option ></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1214,7 +2495,7 @@ height: 3200px;">
                                     <div class="row mb-3" style="margin-left: 30px" onchange="form_bar7()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for examining the residual risks ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f7_1" id="f7_1">
+                                            <select class="form-select drop-down" name="f7_1" id="f7_1" onchange="form7_f1()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1224,7 +2505,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Comments provided by Consultation team :</label>
                                         <div class="col-sm-3">
-                                            <input type="text" class="form-control drop-down" name="f7_2" id="f7_2" placeholder="NA">
+                                            <input type="text" class="form-control drop-down" name="f7_2" id="f7_2" placeholder="NA" onchange="form7_f2()">
                                         </div>
 
                                         <div style="margin-bottom:25px">
@@ -1244,7 +2525,7 @@ height: 3200px;">
                                     <div class="row mb-3" style="margin-left: 30px" onchange="form_bar8()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for collecting and analysing the DPIA outcomes ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_1" id="f8_1">
+                                            <select class="form-select drop-down" name="f8_1" id="f8_1" onchange="form8_f1()">
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1254,7 +2535,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for planning intergration of DPIA outcomes into the project plan ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_2" id="f8_2">
+                                            <select class="form-select drop-down" name="f8_2" id="f8_2" onchange="form8_f2()">
                                                 <option ></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1264,7 +2545,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is your policy for assigning time period to Implement the DPIA outcomes defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_3" id="f8_3">
+                                            <select class="form-select drop-down" name="f8_3" id="f8_3" onchange="form8_f3()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1276,7 +2557,7 @@ height: 3200px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the KPI's which will depict the success of Integration defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_4" id="f8_4">
+                                            <select class="form-select drop-down" name="f8_4" id="f8_4" onchange="form8_f4()">
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>

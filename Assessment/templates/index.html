@@ -18,31 +18,32 @@
         var value_dict = {{value_dict|safe}}
         console.log(value_dict)
 
+        if (value_dict != 'undefined'){
+            if(document.getElementsByName('title').value == null){
+                document.forms['organization_form']['title'].value = value_dict.title;
+            }
+            if(document.getElementsByName('author').value == null){
+                document.forms['organization_form']['author'].value = value_dict.author;
+            }
+            if(document.getElementsByName('role').value == null){
+                document.forms['organization_form']['role'].value = value_dict.role;
+            }
+            if(document.getElementsByName('department').value == null){
+                document.forms['organization_form']['department'].value = value_dict.department;
+            }
+            if(document.getElementsByName('manager').value == null){
+                document.forms['organization_form']['manager'].value = value_dict.manager;
+            }
+            if(document.getElementsByName('status').value == null){
+                document.forms['organization_form']['status'].value = value_dict.status;
+            }
+            if(document.getElementsByName('date').value == null){
+                document.forms['organization_form']['date'].value = value_dict.date;
+            }
 
-        if(document.getElementsByName('title').value == null){
-            document.forms['organization_form']['title'].value = value_dict.title;
+            console.log('Value Replaced Successfully');
         }
-        if(document.getElementsByName('author').value == null){
-            document.forms['organization_form']['author'].value = value_dict.author;
-        }
-        if(document.getElementsByName('role').value == null){
-            document.forms['organization_form']['role'].value = value_dict.role;
-        }
-        if(document.getElementsByName('department').value == null){
-            document.forms['organization_form']['department'].value = value_dict.department;
-        }
-        if(document.getElementsByName('manager').value == null){
-            document.forms['organization_form']['manager'].value = value_dict.manager;
-        }
-        if(document.getElementsByName('status').value == null){
-            document.forms['organization_form']['status'].value = value_dict.status;
-        }
-        if(document.getElementsByName('date').value == null){
-            document.forms['organization_form']['date'].value = value_dict.date;
-        }
-
-        console.log('Value Replaced Successfully');
-    };
+  }
 </script>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
