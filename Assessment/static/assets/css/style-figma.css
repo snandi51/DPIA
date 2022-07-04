@@ -14,7 +14,7 @@
 
 .alt-nav{
     position: absolute;
-    width: 1280px;
+    width: 1263px;
     height: 78px;
     left: 0px;
     top: 60px;
@@ -1112,7 +1112,7 @@ input[type="radio"]{
 
 .gdpr_top_label1{
     position: absolute;
-    width: 175%;
+    width: 75%;
     height: 720px;
     left: 13.3%;
     font-family: 'Ubuntu';
@@ -1126,7 +1126,7 @@ input[type="radio"]{
 
 .gdpr_top_label2{
     position: absolute;
-    width: 175%;
+    width: 75%;
     height: 720px;
     left: 13.3%;
     font-family: 'Ubuntu';
