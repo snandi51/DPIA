@@ -34,6 +34,7 @@ def login_user(request):
             num = 1
             display_name = {}
             context = {'authorised': True,
+                       'db_range': range(1, 3),
                        'db_instance': len(db_instance),
                        'session_dict': session_dict}
             for i in session_dict:

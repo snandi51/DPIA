@@ -15,10 +15,14 @@
         var session_dict = {{ session_dict|safe }}
         console.log(session_dict);
 
+        var session = {{ db_dict_num|safe }}
+        console.log(session);
+
         var value_dict = {{value_dict|safe}}
         console.log(value_dict)
 
-        if (value_dict != 'undefined'){
+        if (value_dict != '0' &&  session != '0'){
+            console.log('Enter in session data replacement')
             if(document.getElementsByName('title').value == null){
                 document.forms['organization_form']['title'].value = value_dict.title;
             }

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <form method="POST" name="dpia_screening_form" action="dpia_screening">
-    <div class="alt-nav">
+    <div class="alt-nav" style="width:1263px;">
         <div style="position: absolute;
         left: 14.39%;
         right: 38.75%;
@@ -89,7 +89,7 @@ height: 3800px;">
 
                     //Session management starts
                     // Form 1
-                    if (value_dict != 'undefined'){
+                    if (value_dict != 'undefined' && value_dict !='0'){
                         if(document.getElementsByName('f1_1').value == null){
                         document.forms['dpia_screening_form']['f1_1'].value = value_dict.f1_1;
                         }
@@ -405,6 +405,7 @@ height: 3800px;">
 
           function form_bar1(){
                 var bar1 = document.getElementById('progress-1');
+                var label_1 = document.getElementById('label-1')
                 var f1_1 = document.getElementById('f1_1');
                 var f1_2 = document.getElementById('f1_2');
                 var f1_3 = document.getElementById('f1_3');
@@ -414,11 +415,16 @@ height: 3800px;">
                 if (f1_1.value !='' && f1_2.value !='' && f1_3.value !='' &&
                  f1_4.value !='' && f1_5.value !='' && f1_6.value !=''){
                     bar1.style.width = "100%";
+                    label_1.style.color = 'black';
+                }
+                else{
+                    label_1.style.color = 'red';
                 }
           }
 
           function form1_f1(){
                var bar1 = document.getElementById('progress-1');
+               var form1_Q1 = document.getElementById('form1_Q1');
                if (bar1.style.width != "100%" || bar1.style.width != "0%"){
                     if (f1_1.value !=''){
                         if (bar1_width == 0){
@@ -563,6 +569,7 @@ height: 3800px;">
 
           function form_bar2(){
                 var bar2 = document.getElementById('progress-2');
+                var label_2 = document.getElementById('label-2')
                 var f2_1 = document.getElementById('f2_1');
                 var f2_2 = document.getElementById('f2_2');
                 var f2_3 = document.getElementById('f2_3');
@@ -576,6 +583,10 @@ height: 3800px;">
                  f2_4.value !='' && f2_5.value !='' &&
                  f2_6.value !='' && f2_7.value !='' && f2_8.value !='' && f2_9.value !=''){
                     bar2.style.width = "100%";
+                    label_2.style.color = 'black';
+                }
+                else{
+                    label_2.style.color = 'red';
                 }
 
           }
@@ -795,6 +806,7 @@ height: 3800px;">
           var f3_full_width = 0;
           function form_bar3(){
                 var bar3 = document.getElementById('progress-3');
+                var label_3 = document.getElementById('label-3')
                 var f3_1 = document.getElementById('f3_1');
                 var f3_2 = document.getElementById('f3_2');
                 var f3_3 = document.getElementById('f3_3');
@@ -812,6 +824,10 @@ height: 3800px;">
                  f3_8.value !='' && f3_9.value !='' && f3_10.value !='' &&
                  f3_11.value !='' && f3_12.value !=''){
                     bar3.style.width = "100%";
+                    label_3.style.color = 'black';
+                }
+                else{
+                    label_3.style.color = 'red';
                 }
 
           }
@@ -1097,6 +1113,7 @@ height: 3800px;">
           var f4_full_width = 0;
           function form_bar4(){
                 var bar4 = document.getElementById('progress-4');
+                var label_4 = document.getElementById('label-4')
                 var f4_1 = document.getElementById('f4_1');
                 var f4_2 = document.getElementById('f4_2');
                 var f4_3 = document.getElementById('f4_3');
@@ -1115,6 +1132,10 @@ height: 3800px;">
                  f4_8.value !='' && f4_9.value !='' && f4_10.value !='' && f4_11.value !='' &&
                  f4_12.value !='' && f4_13.value !=''){
                     bar4.style.width = "100%";
+                    label_4.style.color = 'black';
+                }
+                else{
+                    label_4.style.color = 'red';
                 }
 
           }
@@ -1414,6 +1435,7 @@ height: 3800px;">
           var f5_full_width = 0;
           function form_bar5(){
                 var bar5 = document.getElementById('progress-5');
+                var label_5 = document.getElementById('label-5')
                 var f5_1 = document.getElementById('f5_1');
                 var f5_2 = document.getElementById('f5_2');
                 var f5_3 = document.getElementById('f5_3');
@@ -1422,6 +1444,10 @@ height: 3800px;">
                 if (f5_1.value !='' && f5_2.value !='' && f5_3.value !='' &&
                  f5_4.value !='' && f5_5.value !=''){
                     bar5.style.width = "100%";
+                    label_5.style.color = 'black';
+                }
+                else{
+                    label_5.style.color = 'red';
                 }
           }
 
@@ -1544,6 +1570,7 @@ height: 3800px;">
           var f6_full_width = 0;
           function form_bar6(){
                 var bar6 = document.getElementById('progress-6');
+                var label_6 = document.getElementById('label-6')
                 var f6_1 = document.getElementById('f6_1');
                 var f6_2 = document.getElementById('f6_2');
                 var f6_3 = document.getElementById('f6_3');
@@ -1552,6 +1579,10 @@ height: 3800px;">
                 if (f6_1.value !='' && f6_2.value !='' && f6_3.value !='' &&
                  f6_4.value !='' && f6_5.value !=''){
                     bar6.style.width = "100%";
+                    label_6.style.color = 'black';
+                }
+                else{
+                    label_6.style.color = 'red';
                 }
 
           }
@@ -1672,10 +1703,15 @@ height: 3800px;">
           var f7_full_width = 0;
           function form_bar7(){
                 var bar7 = document.getElementById('progress-7');
+                var label_7 = document.getElementById('label-7')
                 var f7_1 = document.getElementById('f7_1');
                 var f7_2 = document.getElementById('f7_2');
                 if (f7_1.value !='' && f7_2.value !=''){
                     bar7.style.width = "100%";
+                    label_7.style.color = 'black';
+                }
+                else{
+                    label_7.style.color = 'red';
                 }
 
           }
@@ -1732,6 +1768,7 @@ height: 3800px;">
           var f8_full_width = 0;
           function form_bar8(){
                 var bar8 = document.getElementById('progress-8');
+                var label_8 = document.getElementById('label-8')
                 var f8_1 = document.getElementById('f8_1');
                 var f8_2 = document.getElementById('f8_2');
                 var f8_3 = document.getElementById('f8_3');
@@ -1739,6 +1776,10 @@ height: 3800px;">
                 if (f8_1.value !='' && f8_2.value !='' && f8_3.value !='' &&
                  f8_4.value !=''){
                     bar8.style.width = "100%";
+                    label_8.style.color = 'black';
+                }
+                else{
+                    label_8.style.color = 'red';
                 }
 
           }
@@ -1844,14 +1885,14 @@ height: 3800px;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv1()" alt="Info"></a>
                             </div>
 
-                            <div class="font-head">1. DPIA Assessment - Part 1<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-1" style="background-color:#0070AD; margin-left:-0.3px; height: 8.5px; width:0px; margin-top: -0.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-1">1. DPIA Assessment - Part 1<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-1" style="background-color:#0070AD; margin-left:-0.3px; height: 8.5px; width:0px; margin-top: -0.5px; border-radius: 4px;"></div></div></div>
 
 
                             <div class="form-group" id="div1" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar1()">
-                                        <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the purpose of the processing defined in your organization?</label>
+                                        <label class="col-sm-6" id="form1_Q1" style="padding-bottom: 10px;">To what extent is the purpose of the processing defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_1" id="f1_1" onchange="form1_f1()">
+                                            <select class="form-select drop-down" name="f1_1" id="f1_1" onchange="form1_f1()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1863,7 +1904,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the aim of the project defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_2" id="f1_2" onchange="form1_f2()">
+                                            <select class="form-select drop-down" name="f1_2" id="f1_2" onchange="form1_f2()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1875,7 +1916,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is method of processing defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_3" id="f1_3" onchange="form1_f3()">
+                                            <select class="form-select drop-down" name="f1_3" id="f1_3" onchange="form1_f3()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1887,7 +1928,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the expected benefit(s) from the processing defined ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_4" id="f1_4" onchange="form1_f4()">
+                                            <select class="form-select drop-down" name="f1_4" id="f1_4" onchange="form1_f4()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1899,7 +1940,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the list of departments who will benefit from this processing defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_5" id="f1_5" onchange="form1_f5()">
+                                            <select class="form-select drop-down" name="f1_5" id="f1_5" onchange="form1_f5()" required>
                                                 <option ></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1909,7 +1950,7 @@ height: 3800px;">
                                         </div>
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the list of members / teams who will be involved in the processing defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f1_6" id="f1_6" onchange="form1_f6()">
+                                            <select class="form-select drop-down" name="f1_6" id="f1_6" onchange="form1_f6()" required>
                                                 <option ></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -1928,13 +1969,13 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv2()" alt="Info"></a>
                             </div>
-                            <div class="font-head">2. DPIA Assessment - Part 2<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-2" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-2">2. DPIA Assessment - Part 2<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-2" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div2" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar2()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of collecting, using, storing and deleting data in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_1" id="f2_1" onchange="form2_f1()">
+                                            <select class="form-select drop-down" name="f2_1" id="f2_1" onchange="form2_f1()" required>
                                                 <option ></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -1944,7 +1985,7 @@ height: 3800px;">
                                         </div>
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the data source(s) used to initiate processing defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_2" id="f2_2" onchange="form2_f2()">
+                                            <select class="form-select drop-down" name="f2_2" id="f2_2" onchange="form2_f2()" required>
                                                 <option ></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -1956,7 +1997,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a list of people who will have access to this data?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_3" id="f2_3" onchange="form2_f3()">
+                                            <select class="form-select drop-down" name="f2_3" id="f2_3" onchange="form2_f3()" required>
                                                 <option ></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1966,7 +2007,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the types of High-risk processing defined for this data processing?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_4" id="f2_4" onchange="form2_f4()">
+                                            <select class="form-select drop-down" name="f2_4" id="f2_4" onchange="form2_f4()" required>
                                                 <option ></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -1978,7 +2019,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you comply by legal requirements to collect the data (Do you have consent of the data subjects) ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_5" id="f2_5" onchange="form2_f5()">
+                                            <select class="form-select drop-down" name="f2_5" id="f2_5" onchange="form2_f5()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -1987,7 +2028,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How many data subjects are likely to be affected by the project?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_6" id="f2_6" onchange="form2_f6()">
+                                            <select class="form-select drop-down" name="f2_6" id="f2_6" onchange="form2_f6()" required>
                                                 <option></option>
                                                 <option value="1">Less Than 100</option>
                                                 <option value="2">100-1000</option>
@@ -1999,7 +2040,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Where is data stored ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_7" id="f2_7" onchange="form2_f7()">
+                                            <select class="form-select drop-down" name="f2_7" id="f2_7" onchange="form2_f7()" required>
                                                 <option></option>
                                                 <option value="1">Shared Drive File </option>
                                                 <option value="2">National Database </option>
@@ -2011,7 +2052,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have appropriate measures to destroy data after use?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_8" id="f2_8" onchange="form2_f8()">
+                                            <select class="form-select drop-down" name="f2_8" id="f2_8" onchange="form2_f8()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2020,7 +2061,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the Data retention policy defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f2_9" id="f2_9" onchange="form2_f9()">
+                                            <select class="form-select drop-down" name="f2_9" id="f2_9" onchange="form2_f9()" required>
                                                 <option></option>
                                                 <option value="1">Initial</option>
                                                 <option value="2">Defined</option>
@@ -2039,7 +2080,7 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv3()" alt="Info"></a>
                             </div>
-                            <div class="font-head">3. DPIA Assessment - Part 3 <div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-3" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-3">3. DPIA Assessment - Part 3 <div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-3" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div3" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar3()">
@@ -2047,13 +2088,13 @@ height: 3800px;">
                                         <!--Question 1-->
                                         <label class="col-sm-6" style="padding-top: 10px;">Who all will be involved in the consultation process ?</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_1" id="f3_1" onchange="form3_f1()">
+                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_1" id="f3_1" onchange="form3_f1()" required>
                                         </div>
 
                                         <!--Question 2-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you designed a Consultation Process . This Consultation process will involve seeking views of Data subjects or their representatives on the intended processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_2" id="f3_2" onchange="form3_f2()">
+                                            <select class="form-select drop-down" name="f3_2" id="f3_2" onchange="form3_f2()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>>
@@ -2063,7 +2104,7 @@ height: 3800px;">
                                         <!--Question 3-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Is there a process in your organization to choose the people for consultation on the proposed data processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_3" id="f3_3" onchange="form3_f3()">
+                                            <select class="form-select drop-down" name="f3_3" id="f3_3" onchange="form3_f3()" required>
                                                 <option ></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2076,7 +2117,7 @@ height: 3800px;">
                                         <!--Question 4-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization of evaluating data processors, information security experts or other staff as consultants ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_4" id="f3_4" onchange="form3_f4()">
+                                            <select class="form-select drop-down" name="f3_4" id="f3_4" onchange="form3_f4()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2088,7 +2129,7 @@ height: 3800px;">
                                         <!--Question 5-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization of reaching out to the consultants for consultation by data subjects, project teams etc ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_5" id="f3_5" onchange="form3_f5()">
+                                            <select class="form-select drop-down" name="f3_5" id="f3_5" onchange="form3_f5()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2100,7 +2141,7 @@ height: 3800px;">
                                         <!--Question 6-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is your process defined for mapping roles of the selected consultant(s) ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_6" id="f3_6" onchange="form3_f6()">
+                                            <select class="form-select drop-down" name="f3_6" id="f3_6" onchange="form3_f6()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2112,7 +2153,7 @@ height: 3800px;">
                                         <!--Question 7-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a list of members, other than designated consultant, who will also involve from the organization in the consultation process ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_7" id="f3_7" onchange="form3_f7()">
+                                            <select class="form-select drop-down" name="f3_7" id="f3_7" onchange="form3_f7()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2122,7 +2163,7 @@ height: 3800px;">
                                          <!--Question 8-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a process to monitor the consultation process ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_8" id="f3_8" onchange="form3_f8()">
+                                            <select class="form-select drop-down" name="f3_8" id="f3_8" onchange="form3_f8()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2132,7 +2173,7 @@ height: 3800px;">
                                         <!--Question 9-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization to deliberate on the issues raised by the consultants or data subjects ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_9" id="f3_9" onchange="form3_f9()">
+                                            <select class="form-select drop-down" name="f3_9" id="f3_9" onchange="form3_f9()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2144,7 +2185,7 @@ height: 3800px;">
                                          <!--Question 10-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Do you have a proper forum where these consultants can provide assurances and rasie their concerns ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_10" id="f3_10" onchange="form3_f10()">
+                                            <select class="form-select drop-down" name="f3_10" id="f3_10" onchange="form3_f10()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2154,7 +2195,7 @@ height: 3800px;">
                                          <!--Question 11-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for keeping a check that all the issues raised by these consultants have been resolved ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f3_11" id="f3_11" onchange="form3_f11()">
+                                            <select class="form-select drop-down" name="f3_11" id="f3_11" onchange="form3_f11()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2164,7 +2205,7 @@ height: 3800px;">
                                         <!--Question 12-->
                                         <label class="col-sm-6" style="padding-top: 10px;">If Response to Question 10 is Yes , Please provide the nsame of the assigned personnel.</label>
                                         <div class="col-sm-3">
-                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_12" id="f3_12" onchange="form3_f12()">
+                                            <input type="text" style="margin-bottom: 15px;" class="text-box-1" name="f3_12" id="f3_12" onchange="form3_f12()" required>
                                         </div>
 
                                     </div>
@@ -2175,7 +2216,7 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv4()" alt="Info"></a>
                             </div>
-                            <div class="font-head">4. DPIA Assessment -  Part 4<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-4" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-4">4. DPIA Assessment -  Part 4<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-4" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div4" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar4()">
@@ -2183,7 +2224,7 @@ height: 3800px;">
                                         <!--Question 1-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">What is legal bases of processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_1" id="f4_1" onchange="form4_f1()">
+                                            <select class="form-select drop-down" name="f4_1" id="f4_1" onchange="form4_f1()" required>
                                                 <option ></option>
                                                 <option >Consent</option>
                                                 <option >Performance of contract</option>
@@ -2197,7 +2238,7 @@ height: 3800px;">
                                         <!--Question 2-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of defining the legality of data processing with respect to the data subjects in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_2" id="f4_2" onchange="form4_f2()">
+                                            <select class="form-select drop-down" name="f4_2" id="f4_2" onchange="form4_f2()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2209,7 +2250,7 @@ height: 3800px;">
                                         <!--Question 3-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Is there a process to evaluate the outcome of the processing with respect to the desired goals ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_3" id="f4_3" onchange="form4_f3()">
+                                            <select class="form-select drop-down" name="f4_3" id="f4_3" onchange="form4_f3()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2221,7 +2262,7 @@ height: 3800px;">
                                         <!--Question 4-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Will the data processing achieve the desired goal ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_4" id="f4_4" onchange="form4_f4()">
+                                            <select class="form-select drop-down" name="f4_4" id="f4_4" onchange="form4_f4()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2233,7 +2274,7 @@ height: 3800px;">
                                         <!--Question 5-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Is there an alternate approach/s to achieve the same outcome ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_5" id="f4_5" onchange="form4_f5()">
+                                            <select class="form-select drop-down" name="f4_5" id="f4_5" onchange="form4_f5()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2245,7 +2286,7 @@ height: 3800px;">
                                          <!--Question 6-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How mature is the process to explore the alternate approaches (less intrusive measures) in order to  achieve the same results ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_6" id="f4_6" onchange="form4_f6()">
+                                            <select class="form-select drop-down" name="f4_6" id="f4_6" onchange="form4_f6()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2257,7 +2298,7 @@ height: 3800px;">
                                          <!--Question 7-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">What is the maturity of defined data quality KPIs and metrics in your organization to monitor data quality and integrity ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_7" id="f4_7" onchange="form4_f7()">
+                                            <select class="form-select drop-down" name="f4_7" id="f4_7" onchange="form4_f7()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2269,7 +2310,7 @@ height: 3800px;">
                                          <!--Question 8-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent  is the information that will be given to the data subjects defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_8" id="f4_8" onchange="form4_f8()">
+                                            <select class="form-select drop-down" name="f4_8" id="f4_8" onchange="form4_f8()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2281,7 +2322,7 @@ height: 3800px;">
                                          <!--Question 9-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process in your organization of upholding the Data Subject Rights while processing their data ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_9" id="f4_9" onchange="form4_f9()">
+                                            <select class="form-select drop-down" name="f4_9" id="f4_9" onchange="form4_f9()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2293,7 +2334,7 @@ height: 3800px;">
                                          <!--Question 10-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process to monitor how compliant designated processing entities are while preforming the proposed processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_10" id="f4_10" onchange="form4_f10()">
+                                            <select class="form-select drop-down" name="f4_10" id="f4_10" onchange="form4_f10()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2305,7 +2346,7 @@ height: 3800px;">
                                          <!--Question 11-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How mature is your process is to ensure that data processing is not used for out of scope requirement in order to prevent function creep ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_11" id="f4_11" onchange="form4_f11()">
+                                            <select class="form-select drop-down" name="f4_11" id="f4_11" onchange="form4_f11()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2317,7 +2358,7 @@ height: 3800px;">
                                          <!--Question 12-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extentare the measures defined to ensure processors comply to the scope of the project during data processing ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_12" id="f4_12" onchange="form4_f12()">
+                                            <select class="form-select drop-down" name="f4_12" id="f4_12" onchange="form4_f12()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2329,7 +2370,7 @@ height: 3800px;">
                                          <!--Question 13-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extentare the measures defined to safeguard any international transfers ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f4_13" id="f4_13" onchange="form4_f13()">
+                                            <select class="form-select drop-down" name="f4_13" id="f4_13" onchange="form4_f13()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2349,7 +2390,7 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv5()" alt="Info"></a>
                             </div>
-                            <div class="font-head">5. DPIA Assessment - Part 5<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-5" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-5">5. DPIA Assessment - Part 5<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-5" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div5" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar5()">
@@ -2357,7 +2398,7 @@ height: 3800px;">
                                         <!--Question 1-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/team who will be responsible for Identifying all the risks ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_1" id="f5_1" onchange="form5_f1()">
+                                            <select class="form-select drop-down" name="f5_1" id="f5_1" onchange="form5_f1()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2367,7 +2408,7 @@ height: 3800px;">
                                         <!--Question 2-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of documenting type and details of the risks from the proposed processing in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_2" id="f5_2" onchange="form5_f2()">
+                                            <select class="form-select drop-down" name="f5_2" id="f5_2" onchange="form5_f2()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2379,7 +2420,7 @@ height: 3800px;">
                                         <!--Question 3-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of calculating likehlihood and severity of the risk from the proposed processing in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_3" id="f5_3" onchange="form5_f3()">
+                                            <select class="form-select drop-down" name="f5_3" id="f5_3" onchange="form5_f3()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2391,7 +2432,7 @@ height: 3800px;">
                                         <!--Question 4-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">How matured is the process of finding residual risks < define what is residual risks > defined in your organization?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_4" id="f5_4" onchange="form5_f4()">
+                                            <select class="form-select drop-down" name="f5_4" id="f5_4" onchange="form5_f4()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2403,7 +2444,7 @@ height: 3800px;">
                                         <!--Question 5-->
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent  is the plan to quantify the impact of the risks defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f5_5" id="f5_5" onchange="form5_f5()">
+                                            <select class="form-select drop-down" name="f5_5" id="f5_5" onchange="form5_f5()" required>
                                                 <option></option>
                                                 <option value="1">No Process</option>
                                                 <option value="2">Recommended</option>
@@ -2423,13 +2464,13 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv6()" alt="Info"></a>
                             </div>
-                            <div class="font-head">6. DPIA Assessment - Part 6<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-6" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-6">6. DPIA Assessment - Part 6<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-6" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div6" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 10px" onchange="form_bar6()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/ team who will be responsible for describing the risk mitigation measures ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_1" id="f6_1" onchange="form6_f1()">
+                                            <select class="form-select drop-down" name="f6_1" id="f6_1" onchange="form6_f1()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2439,7 +2480,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person/ team who will be responsible who will be responsible for defining the impact of risk ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_2" id="f6_2" onchange="form6_f2()">
+                                            <select class="form-select drop-down" name="f6_2" id="f6_2" onchange="form6_f2()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2449,7 +2490,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is the plan to reduce or eliminate risk defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_3" id="f6_3" onchange="form6_f3()">
+                                            <select class="form-select drop-down" name="f6_3" id="f6_3" onchange="form6_f3()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2461,7 +2502,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for planning and leading the risk mitigation action plan ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_4" id="f6_4" onchange="form6_f4()">
+                                            <select class="form-select drop-down" name="f6_4" id="f6_4" onchange="form6_f4()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2471,7 +2512,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for auditing the plan ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f6_5" id="f6_5" onchange="form6_f5()">
+                                            <select class="form-select drop-down" name="f6_5" id="f6_5" onchange="form6_f5()" required>
                                                 <option ></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2489,13 +2530,13 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv7()" alt="Info"></a>
                             </div>
-                            <div class="font-head">7. DPIA Assessment - Part 7<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-7" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-7">7. DPIA Assessment - Part 7<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-7" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div7" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 30px" onchange="form_bar7()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for examining the residual risks ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f7_1" id="f7_1" onchange="form7_f1()">
+                                            <select class="form-select drop-down" name="f7_1" id="f7_1" onchange="form7_f1()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2505,7 +2546,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Comments provided by Consultation team :</label>
                                         <div class="col-sm-3">
-                                            <input type="text" class="form-control drop-down" name="f7_2" id="f7_2" placeholder="NA" onchange="form7_f2()">
+                                            <input type="text" class="form-control drop-down" name="f7_2" id="f7_2" placeholder="NA" onchange="form7_f2()" required>
                                         </div>
 
                                         <div style="margin-bottom:25px">
@@ -2519,13 +2560,13 @@ height: 3800px;">
                             <div style="position:absolute; left:90%; padding-right: 5%;">
                                 <a href="javascript:;"><img src="static/assets/img/icon-right-inside.png" onclick="toggleDiv8()" alt="Info"></a>
                             </div>
-                            <div class="font-head">8. DPIA Assessment - Part 8<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-8" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
+                            <div class="font-head" id="label-8">8. DPIA Assessment - Part 8<div class="progress-bar-1" style="margin-left: 180px;"><div id="progress-8" style="background-color:#0070AD; margin-left:-0.3px; width: 0%; height: 8.5px; border-radius: 4px;"></div></div></div>
 
                             <div class="form-group" id="div8" style="display:none ; margin-top:10px;">
                                     <div class="row mb-3" style="margin-left: 30px" onchange="form_bar8()">
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for collecting and analysing the DPIA outcomes ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_1" id="f8_1" onchange="form8_f1()">
+                                            <select class="form-select drop-down" name="f8_1" id="f8_1" onchange="form8_f1()" required>
                                                 <option></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2535,7 +2576,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">Have you assigned a person who will be responsible for planning intergration of DPIA outcomes into the project plan ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_2" id="f8_2" onchange="form8_f2()">
+                                            <select class="form-select drop-down" name="f8_2" id="f8_2" onchange="form8_f2()" required>
                                                 <option ></option>
                                                 <option value="0">Yes</option>
                                                 <option value="1">No</option>
@@ -2545,7 +2586,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent is your policy for assigning time period to Implement the DPIA outcomes defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_3" id="f8_3" onchange="form8_f3()">
+                                            <select class="form-select drop-down" name="f8_3" id="f8_3" onchange="form8_f3()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>
@@ -2557,7 +2598,7 @@ height: 3800px;">
 
                                         <label class="col-sm-6" style="padding-bottom: 10px;">To what extent are the KPI's which will depict the success of Integration defined in your organization ?</label>
                                         <div class="col-sm-3">
-                                            <select class="form-select drop-down" name="f8_4" id="f8_4" onchange="form8_f4()">
+                                            <select class="form-select drop-down" name="f8_4" id="f8_4" onchange="form8_f4()" required>
                                                 <option></option>
                                                 <option value="1">Absent</option>
                                                 <option value="2">Basic</option>

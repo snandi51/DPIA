@@ -60,7 +60,8 @@ height: 577px;">
                 var value_dict = {{value_dict|safe}}
                 console.log(value_dict)
 
-                if (value_dict != 'undefined'){
+                if (value_dict != 'undefined' && value_dict !='0'){
+                    console.log('enter in value replacement')
                     if(document.getElementsByName('name_of_organization').value == null){
                     document.forms['screening_form1']['name_of_organization'].value = value_dict.name_of_organization;
                     }

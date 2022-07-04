@@ -39,11 +39,17 @@ def home(request):
         session_dict = get_session_data()
         count = 1
         context = {}
+        session_data = False
         for i in session_dict:
-            if (title == session_dict.get('session_dict_{}'.format(count)).get('title')) or (
-                    status == session_dict.get('session_dict_{}'.format(count)).get('status')):
+            if (title == session_dict.get('session_dict_{}'.format(count)).get('title')) and (
+                    status == session_dict.get('session_dict_{}'.format(count)).get('status') and
+                    date == session_dict.get('session_dict_{}'.format(count)).get('date')
+            ):
+                session_data = True
                 context['value_dict'] = session_dict.get('session_dict_{}'.format(count))
             count+=1
+        if not session_data:
+            context['value_dict'] = 0
         context['input_data'] = input_data
         context['session_dict'] = session_dict
         return render(request, 'screening.html', context)
@@ -59,11 +65,14 @@ def no_session(request):
     if request.method == "GET":
         context = {}
         db_dict_num = request.GET.get('search')
-        session_dict = get_session_data()
-        context['value_dict'] = session_dict.get('session_dict_{}'.format(db_dict_num))
-        context['db_dict_num'] = db_dict_num
-        context['session_dict'] = session_dict
-        return render(request, 'index.html', context)
+        if db_dict_num == '0':
+            context['value_dict'] = 0
+        else:
+            session_dict = get_session_data()
+            context['value_dict'] = session_dict.get('session_dict_{}'.format(db_dict_num))
+            context['db_dict_num'] = db_dict_num
+            context['session_dict'] = session_dict
+            return render(request, 'index.html', context)
     return render(request, 'index.html')
 
 
@@ -264,12 +273,16 @@ def screening(request):
         session_dict = get_session_data()
         count = 1
         context = {}
+        session_data = False
         for i in session_dict:
             if request.session['title'] == session_dict.get('session_dict_{}'.format(count)).get('title')\
-                    or request.session['status'] == session_dict.get('session_dict_{}'.format(count)).get('status')\
-                    or request.session['date'] == session_dict.get('session_dict_{}'.format(count)).get('date'):
+                    and request.session['status'] == session_dict.get('session_dict_{}'.format(count)).get('status')\
+                    and request.session['date'] == session_dict.get('session_dict_{}'.format(count)).get('date'):
                 context['value_dict'] = session_dict.get('session_dict_{}'.format(count))
+                session_data = True
             count += 1
+        if not session_data:
+            context['value_dict'] = 0
         context['input_data'] = input_data
         context['session_dict'] = session_dict
         context['dpia_status'] = dpia_status(input_data)
@@ -1311,12 +1324,16 @@ def dpia_screening(request):
         session_dict = get_session_data()
         count = 1
         context = {}
+        session_data = False
         for i in session_dict:
             if request.session['title'] == session_dict.get('session_dict_{}'.format(count)).get('title') \
-                    or request.session['status'] == session_dict.get('session_dict_{}'.format(count)).get('status') \
-                    or request.session['date'] == session_dict.get('session_dict_{}'.format(count)).get('date'):
+                    and request.session['status'] == session_dict.get('session_dict_{}'.format(count)).get('status') \
+                    and request.session['date'] == session_dict.get('session_dict_{}'.format(count)).get('date'):
                 context['value_dict'] = session_dict.get('session_dict_{}'.format(count))
+                session_data = True
             count += 1
+        if not session_data:
+            context['value_dict'] = 0
         context['session_dict'] = session_dict
         return render(request, 'dpia_screening.html', context)
     if request.method == 'POST':
