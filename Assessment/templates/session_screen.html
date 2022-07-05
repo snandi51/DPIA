@@ -66,26 +66,25 @@
     var x = {{db_data|safe}}
     console.log(x)
 
-    for (var i = 1; i <= num_range; i++) {
-      const button = document.createElement("button");
-      button.innerText = session_db[`session_dict_${i}`].title + "\n" +
-      "Date : "+ session_db[`session_dict_${i}`].date + "\n" +
-      "Status : "+ session_db[`session_dict_${i}`].status + "\n" +
-      "Project Name : "+ session_db[`session_dict_${i}`].name_of_organization;
-      button.className = "session_box";
-      (function(index){
-            button.addEventListener("click", function() {
-            console.log(index)
-            window.location.href = "{% url 'no_session' %}" + "?search="+index
-            })
-        })(i)
-      document.getElementById("main").appendChild(button);
-    }
-    console.log(i);
-<!--    const div1 = document.createElement("button");-->
-<!--    div1.innerHTML = "ADD NEW ASSESSMENT +"-->
-<!--    div1.className = "create-session";-->
-<!--    document.getElementById("main").appendChild(div1);-->
+<!--    for (var i = 1; i <= num_range; i++) {-->
+<!--      const button = document.createElement("button");-->
+<!--      const inside_div = document.createElement("div");-->
+<!--      button.innerText = session_db[`session_dict_${i}`].title + "\n" +-->
+<!--      "Date : "+ session_db[`session_dict_${i}`].date + "\n" +-->
+<!--      "Status : "+ session_db[`session_dict_${i}`].status + "\n" +-->
+<!--      "Project Name : "+ session_db[`session_dict_${i}`].name_of_organization;-->
+<!--      button.className = "session_box";-->
+<!--      inside_div.className = "inside_div";-->
+<!--      button.id = "button_id";-->
+<!--      (function(index){-->
+<!--            button.addEventListener("click", function() {-->
+<!--            console.log(index)-->
+<!--            window.location.href = "{% url 'no_session' %}" + "?search="+index-->
+<!--            })-->
+<!--        })(i)-->
+<!--      document.getElementById("main").appendChild(button);-->
+<!--    }-->
+<!--    console.log(i);-->
 
 
     function clickDB(){
@@ -96,6 +95,7 @@
 
     function noSession(){
          var num = 0;
+         console.log('enter in no session')
          window.location.href = "{% url 'no_session' %}" + "?search="+num
     }
 
@@ -114,35 +114,38 @@
     console.log("DB instances are "+ d)
 
     function getNum(i){
+        window.location.href = "{% url 'no_session' %}" + "?search="+i
         console.log('div clicked ' + i)
     }
 
 
-</script>
 
-<style>
-.Column {
-    display: table-cell;
-    background-color: black; /*Optional*/
-    padding: 10px;
-    margin-left: 10px;
-    width: 100px;
-}
-</style>
+</script>
 
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 900px;
 height: 1200px;
-margin-left: 150px;
+margin-left: 220px;
 padding-top: 100px;"
 >
-<!--{% for i in db_range %}-->
-<!--<a href="javascript:"><div class="Column" style="padding-left: 10px;  margin-left:18px;  padding-left: 20px; border-color: black;" onclick="getNum(i)">-->
-<!--    <h4>{{ i }}</h4>-->
-<!--</div></a>-->
-<!--{% endfor %}-->
+{% for i in session_dict.values %}
+    <a href="javascript:;"><div class="session_div_out" onclick="getNum('{{i.title}}')">
+        <div class="top-label-div">
+            <p class="session_steps">{{ i.title }}</p>
+            <p class="session-date">Date:&nbsp;<label style="color: #919198;"> {{ i.date }} </label></p>
+            <p class="session-date">DPIA Status:&nbsp;<label style="color: #919198;"> {{ i.status }} </label></p>
+            <p class="session-date">Project Name:&nbsp;<label style="color: #919198;"> {{ i.role }} </label></p>
+        </div>
+    </div></a>
+{% endfor %}
 
+<a onclick="noSession()" href="javascript:;">
+    <div class="session_div_out">
+        <img class="session-png" src="static/assets/img/session_create.png"/>
+        <p class="session-text">ADD NEW ASSESSMENT +</p>
+    </div>
+</a>
 </body>
 </html>
 {% endblock %}

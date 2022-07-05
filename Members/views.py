@@ -22,6 +22,7 @@ def login_user(request):
             single_list.append(item)
         dict_count = 1
         session_dict = {}
+        display_list = ['DPIA1', 'DPIA2']
         for items in db_instance:
             session_dict['session_dict_{}'.format(dict_count)] = items.__dict__
             session_dict.get('session_dict_{}'.format(dict_count))['_state'] = \
@@ -34,14 +35,16 @@ def login_user(request):
             num = 1
             display_name = {}
             context = {'authorised': True,
+                       'display_list': display_list,
                        'db_range': range(1, 3),
                        'db_instance': len(db_instance),
                        'session_dict': session_dict}
             for i in session_dict:
                 context['session_dict_{}'.format(num)] = session_dict.get('session_dict_{}'.format(num))
-                display_name['title{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('title')
-                display_name['date{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('date')
-                display_name['status{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('status')
+                context['title{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('title')
+                context['date{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('date')
+                context['status{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('status')
+                context['role{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('role')
                 context['display_data'] = display_name
                 num += 1
             if len(db_instance) == 0:

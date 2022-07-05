@@ -62,18 +62,19 @@ def home(request):
 
 
 def no_session(request):
+    context = {}
     if request.method == "GET":
-        context = {}
         db_dict_num = request.GET.get('search')
         if db_dict_num == '0':
             context['value_dict'] = 0
         else:
             session_dict = get_session_data()
-            context['value_dict'] = session_dict.get('session_dict_{}'.format(db_dict_num))
-            context['db_dict_num'] = db_dict_num
+            for data in range(1, len(session_dict) + 1):
+                if db_dict_num == session_dict.get('session_dict_{}'.format(data)).get('title'):
+                    context['value_dict'] = session_dict.get('session_dict_{}'.format(data))
             context['session_dict'] = session_dict
             return render(request, 'index.html', context)
-    return render(request, 'index.html')
+    return render(request, 'index.html', context)
 
 
 def get_session_data():
