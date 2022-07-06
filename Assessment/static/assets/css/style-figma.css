@@ -659,7 +659,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 168px;
-    top: 300px;
+    top: 230px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -681,7 +681,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 470px;
-    top: 300px;
+    top: 230px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -702,7 +702,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 772px;
-    top: 300px;
+    top: 230px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -724,7 +724,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 168px;
-    top: 573px;
+    top: 504px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -746,7 +746,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 470px;
-    top: 573px;
+    top: 504px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -767,7 +767,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 772px;
-    top: 573px;
+    top: 504px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -789,7 +789,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 168px;
-    top: 848px;
+    top: 778px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -810,7 +810,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 470px;
-    top: 848px;
+    top: 778px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -839,7 +839,7 @@ input[type="radio"]{
     justify-content: center;
     align-items: center;
     color: #12ABDB;
-    top: 1055px;
+    top: 986px;
     padding: 9px 8px 7px;
 
     position: absolute;
@@ -1279,7 +1279,7 @@ input[type="radio"]{
 .text-box-1{
     display: flex;
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'Ubuntu';
     width: 175px;
     height: 26px;
@@ -1621,7 +1621,8 @@ input[type="radio"]{
     width: 100%;
     left: 0px;
     top: 0px;
-    border-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     background: #EBEBEB;
 }
 
@@ -1660,6 +1661,16 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     font-size: 12px;
     font-weight: 500;
+}
+
+.warning-div{
+    height: 50px;
+    width: 790px;
+    font-size: 14px;
+    font-family: 'Ubuntu';
+    background-color: #FFF7FA;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
 
