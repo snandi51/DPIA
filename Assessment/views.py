@@ -1233,7 +1233,7 @@ class RiskCalculations:
             risk_score = 0
             number_of_risks = 0
         elif self.input_data.get('f7_1') == '1':
-            risk_score += 3
+            risk_score += 1
             number_of_risks += 1
         total_risk = [risk_score, number_of_risks]
         return total_risk
@@ -1592,7 +1592,7 @@ def dpia_screening(request):
         request.session['form5_percentage'] = form5_percentage
         form6_percentage = round((table.risk_calculation_f6_all()[1] / table.form6) * 100, 2)
         request.session['form6_percentage'] = form6_percentage
-        form7_percentage = round((table.risk_calculation_f7_all()[1] / table.form7) * 100, 2)
+        form7_percentage = round((table.risk_calculation_f7_all()[1] / table.form7) * 200, 2)
         request.session['form7_percentage'] = form7_percentage
         form8_percentage = round((table.risk_calculation_f8_all()[1] / table.form8) * 100, 2)
         request.session['form8_percentage'] = form8_percentage
