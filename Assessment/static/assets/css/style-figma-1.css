@@ -14,8 +14,8 @@
 
 .alt-nav{
     position: absolute;
-    width: 1280px;
-    height: 78px;
+    width: 1300px;
+    height: 60px;
     left: 0px;
     top: 60px;
 
@@ -76,13 +76,12 @@
     width: 60%;
     height: 10%;
     left: 12.5%;
-    top: 15%;
+    top: 13%;
 }
 
 .rect-4{
     position: absolute;
     width: 70%;
-    height: 62.50%;
     left: 12.5%;
     top: 27%;
 

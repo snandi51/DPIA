@@ -5,51 +5,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="static/assets/css/style-figma.css" rel="stylesheet">
-<div class="alt-nav">
-    <div style="position: absolute;
-    left: 14.39%;
-    right: 38.75%;
-    top: 13.22%;
-    bottom: 88.89%;
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 28px;
-    /* or 200% */
 
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    color: #12ABDB;">
-        TITLE
-    </div>
-    <div style="position: absolute;
-    height: 26px;
-    left: 14.39%;
-    right: 38.75%;
-    top: 40%;
-
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 28px;
-    /* or 117% */
-
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    /* Typography/On Surface/High Emphasis */
-
-    color: rgba(39, 41, 54, 0.85);">
-        Login
-    </div>
-</div>
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 1240px;
 height: 577px;">
 <div class="login-box">
     <div class="login-inside">
+
 <!--        {% if messages %}-->
 <!--            {% for message in messages %}-->
 <!--                <div class="alert alert-warning alert-dismissible fade show" style="height: 15px; width: 320px; font-size:10px; padding-top:5px;" role="alert">-->
@@ -58,29 +21,30 @@ height: 577px;">
 <!--                </div>-->
 <!--            {% endfor %}-->
 <!--        {% endif %}-->
+        <p class="dpia-title">DATA PROTECTION IMPACT ASSESSMENT</p>
         <form method="POST">
             <fieldset class="form-group">
-                <div style="width: 80px; margin-left: -280px; margin-top: -40px;">
-                    <label style="width: 80px; margin-left: -8px; font-size:12px;">Username *</label>
+                <div style="width: 80px; margin-left: -280px; margin-top: -30px;">
+                    <label style="width: 80px; margin-left: 28px; font-size:12px;">Username </label>
                     <input type="text" placeholder="Username" class="login-text-box-1" name="username" required>
                 </div>
                 <div style="width: 80px; margin-left: -280px; margin-top: 25px;">
-                    <label style="width: 80px; margin-left: -8px; font-size:12px;">Password *</label>
+                    <label style="width: 80px; margin-left: 28px; font-size:12px;">Password </label>
                     <input type="password" placeholder="Password" class="login-text-box-2" name="password" required>
+                    <a href="{% url 'login' %}"><button type="submit" class="login1-button1">Login</button></a>
                 </div>
-                <div style="width: 220px; height: 120px; margin-left: -290px; margin-top: 45px;">
+                <div style="width: 220px; height: 120px; margin-left: -250px; margin-top: 40px;">
 <!--                    <button type="submit" class="login-submit">Login</button>-->
                     <a href="{% url 'forget_password' %}"><div style="font-size:12px; font-weight: 500px; font-family: 'Ubuntu';">FORGOT PASSWORD ?</div></a>
-                    <p style="font-size:10px; font-family: 'Ubuntu'; margin-top: 90px;">'*' fields are mandatory in this screen</p>
                 </div>
             </fieldset>
             <div class="login-right">
                 <img class="login-png" src="static/assets/img/login.png"/>
-                <a href="{% url 'login' %}"><button type="submit" class="login1-button1">Login</button></a>
             </div>
         </form>
     </div>
 </div >
+<img class="bar-png" src="static/assets/img/bar.png"/>
 {% endblock %}
 </body>
 

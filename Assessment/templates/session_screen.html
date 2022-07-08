@@ -9,29 +9,12 @@
     <meta charset="UTF-8">
     <title>Session Screen</title>
 </head>
-<div class="alt-nav" style="width: 1263px;">
-    <div style="position: absolute;
-    left: 14.39%;
-    right: 38.75%;
-    top: 13.22%;
-    bottom: 88.89%;
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 28px;
-    /* or 200% */
-
-    font-feature-settings: 'pnum' on, 'lnum' on;
-
-    color: #12ABDB;">
-        TITLE
-    </div>
+<div class="alt-nav" style="width: 1280px;">
     <div style="position: absolute;
     height: 26px;
     left: 11.39%;
     right: 38.75%;
-    top: 40%;
+    top: 30%;
 
     font-family: 'Ubuntu';
     font-style: normal;
@@ -45,7 +28,7 @@
     /* Typography/On Surface/High Emphasis */
 
     color: rgba(39, 41, 54, 0.85);">
-        <a href="javascript:;"><button onclick="noSession()" class="button-assessment">Start DPIA Assessment</button></a>
+<!--        <a href="javascript:;"><button onclick="noSession()" class="button-assessment">Start DPIA Assessment</button></a>-->
         <a href="#"><img src="static/assets/img/Icon.png"/></a>
         DPIA Assessments
     </div>
@@ -125,9 +108,10 @@
 <body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
 position: static;
 width: 900px;
-height: 1200px;
+height: 100%;
 margin-left: 220px;
-padding-top: 100px;"
+padding-top: 100px;
+padding-bottom: 100px;"
 >
 {% for i in session_dict.values %}
     <a href="javascript:;"><div class="session_div_out" onclick="getNum('{{i.title}}')">
@@ -148,4 +132,7 @@ padding-top: 100px;"
 </a>
 </body>
 </html>
+<div>
+    <img style="width:1280px; height:25px; margin-left: -220px; margin-bottom:-316px;" src="static/assets/img/bar.png"/>
+</div>
 {% endblock %}
