@@ -47,10 +47,7 @@ def login_user(request):
                 context['role{}'.format(num)] = session_dict.get('session_dict_{}'.format(num)).get('role')
                 context['display_data'] = display_name
                 num += 1
-            if len(db_instance) == 0:
-                return render(request, 'index.html', context)
-            else:
-                return render(request, 'session_screen.html', context)
+            return render(request, 'session_screen.html', context)
         else:
             messages.success(request, 'Invalid Username or Password')
             return render(request, 'login.html')
