@@ -509,14 +509,21 @@ height: 750px;">
                 }
 
 <!--          var bar_width_full = 10;-->
-
+          var value_dict = {{value_dict|safe}}
           var bar1_width = 0;
+          var session_bar1_width = 0;
+          var session_bar2_width = 0;
+          var session_bar3_width = 0;
+          var session_bar4_width = 0;
+          var session_bar5_width = 0;
+          var session_bar6_width = 0;
           var bar2_width = 0;
           var bar3_width = 0;
           var bar4_width = 0;
           var bar5_width = 0;
           var bar6_width = 0;
           var full_width = 0;
+          var session_full_width = 100;
 
           function form_bar1(){
                 var bar1 = document.getElementById('progress-1');
@@ -540,23 +547,46 @@ height: 750px;">
           function form1_f1(){
                var bar1 = document.getElementById('progress-1');
                var form1_q1 = document.getElementById('form1_q1')
-               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
-                    if (f1_1.value !=''){
-                        if (bar1_width == 0){
-                            bar1_width = bar1_width + 10;
-                            full_width = full_width + bar1_width
-                            bar1.style.width = full_width + 10 + "%";
-                            form1_q1.style.color = 'black';
-                            console.log('full width: ' + full_width)
 
+               if (value_dict != 0){
+                   if(f1_1.value =='' && session_bar1_width == 0){
+                       session_bar1_width = session_bar1_width + 10;
+                       session_full_width = session_full_width - session_bar1_width;
+                       bar1.style.width = session_full_width + "%";
+                       form1_q1.style.color = 'red';
+                       console.log('session 1 full width: '+session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session_bar1_width == 10){
+                           session_bar1_width = session_bar1_width - 10;
+                           session_full_width = session_full_width + 10;
+                           bar1.style.width = session_full_width + "%";
+                           form1_q1.style.color = 'black';
+                           console.log('session 1 full width: '+session_full_width)
+                           console.log('inside ELSE session method')
                         }
-                    }
-                    else{
-                         full_width = full_width - bar1_width
-                         bar1_width = 0;
-                         bar1.style.width = full_width + "%";
-                         form1_q1.style.color = 'red';
-                         console.log('full width: ' + full_width)
+                   }
+               }
+               else{
+                    if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                        if (f1_1.value !=''){
+                            if (bar1_width == 0){
+                                bar1_width = bar1_width + 10;
+                                full_width = full_width + bar1_width
+                                bar1.style.width = full_width + 10 + "%";
+                                form1_q1.style.color = 'black';
+                                console.log('full width F1: ' + full_width)
+
+                            }
+                        }
+                        else{
+                             full_width = full_width - bar1_width
+                             bar1_width = 0;
+                             bar1.style.width = full_width + "%";
+                             form1_q1.style.color = 'red';
+                             console.log('full width: ' + full_width)
+                        }
                     }
                }
 
@@ -565,126 +595,235 @@ height: 750px;">
           function form1_f2(){
                var bar1 = document.getElementById('progress-1');
                var form1_q2 = document.getElementById('form1_q2')
-               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
-                    if (f1_2.value !=''){
-                        if (bar2_width == 0){
-                            bar2_width = bar2_width + 10;
-                            full_width = full_width + bar2_width
-                            bar1.style.width = full_width + 10 + "%";
-                            form1_q2.style.color = 'black';
-                            console.log('full width: ' + full_width)
-
+               if (value_dict != 0){
+                   if(f1_2.value =='' && session_bar2_width == 0){
+                       session_bar2_width = session_bar2_width + 20;
+                       session_full_width = session_full_width - session_bar2_width;
+                       bar1.style.width = session_full_width + "%";
+                       form1_q2.style.color = 'red';
+                       console.log('session 1 full width: '+session_full_width)
+                       console.log('inside 2nd IF session method')
+                   }
+                   else{
+                        if (session_bar2_width == 20){
+                           session_bar2_width = session_bar2_width - 20;
+                           session_full_width = session_full_width + 20;
+                           bar1.style.width = session_full_width + "%";
+                           form1_q2.style.color = 'black';
+                           console.log('session 1 full width: '+session_full_width)
+                           console.log('inside 2nd ELSE session method')
                         }
-                    }
-                    else{
-                         full_width = full_width - bar2_width
-                         bar2_width = 0;
-                         bar1.style.width = full_width + "%";
-                         form1_q2.style.color = 'red';
-                         console.log('full width: ' + full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                        if (f1_2.value !=''){
+                            if (bar2_width == 0){
+                                bar2_width = bar2_width + 10;
+                                full_width = full_width + bar2_width
+                                bar1.style.width = full_width + 10 + "%";
+                                form1_q2.style.color = 'black';
+                                console.log('full width: ' + full_width)
 
+                            }
+                        }
+                        else{
+                             full_width = full_width - bar2_width
+                             bar2_width = 0;
+                             bar1.style.width = full_width + "%";
+                             form1_q2.style.color = 'red';
+                             console.log('full width: ' + full_width)
+                        }
+                   }
+               }
           }
 
           function form1_f3(){
                var bar1 = document.getElementById('progress-1');
                var form1_q3 = document.getElementById('form1_q3');
-               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
-                    if (f1_3.value !=''){
-                        if (bar3_width == 0){
-                            bar3_width = bar3_width + 10;
-                            full_width = full_width + bar3_width
-                            bar1.style.width = full_width + 10 + "%";
-                            form1_q3.style.color = 'black';
-                            console.log('full width: ' + full_width)
 
+               if (value_dict != 0){
+                   if(f1_3.value =='' && session_bar3_width == 0){
+                       session_bar3_width = session_bar3_width + 10;
+                       session_full_width = session_full_width - session_bar3_width;
+                       bar1.style.width = session_full_width + "%";
+                       form1_q3.style.color = 'red';
+                       console.log('session 3 full width: '+session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session_bar3_width == 10){
+                           session_bar3_width = session_bar3_width - 10;
+                           session_full_width = session_full_width + 10;
+                           bar1.style.width = session_full_width + "%";
+                           form1_q3.style.color = 'black';
+                           console.log('session 3 full width: '+session_full_width)
+                           console.log('inside ELSE session method')
                         }
-                    }
-                    else{
-                         full_width = full_width - bar3_width
-                         bar3_width = 0;
-                         bar1.style.width = full_width + "%";
-                         form1_q3.style.color = 'red';
-                         console.log('full width: ' + full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                        if (f1_3.value !=''){
+                            if (bar3_width == 0){
+                                bar3_width = bar3_width + 10;
+                                full_width = full_width + bar3_width
+                                bar1.style.width = full_width + 10 + "%";
+                                form1_q3.style.color = 'black';
+                                console.log('full width: ' + full_width)
 
+                            }
+                        }
+                        else{
+                             full_width = full_width - bar3_width
+                             bar3_width = 0;
+                             bar1.style.width = full_width + "%";
+                             form1_q3.style.color = 'red';
+                             console.log('full width: ' + full_width)
+                        }
+                   }
+               }
           }
 
           function form1_f4(){
                var bar1 = document.getElementById('progress-1');
                var form1_q4 = document.getElementById('form1_q4');
-               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
-                    if (f1_4.value !=''){
-                        if (bar4_width == 0){
-                            bar4_width = bar4_width + 10;
-                            full_width = full_width + bar4_width
-                            bar1.style.width = full_width + 10 + "%";
-                            form1_q4.style.color = 'black';
-                            console.log('full width: ' + full_width)
 
+               if (value_dict != 0){
+                   if(f1_4.value =='' && session_bar4_width == 0){
+                       session_bar4_width = session_bar4_width + 20;
+                       session_full_width = session_full_width - session_bar4_width;
+                       bar1.style.width = session_full_width + "%";
+                       form1_q4.style.color = 'red';
+                       console.log('session 4 full width: '+session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session_bar4_width == 20){
+                           session_bar4_width = session_bar1_width - 20;
+                           session_full_width = session_full_width + 20;
+                           bar1.style.width = session_full_width + "%";
+                           form1_q4.style.color = 'black';
+                           console.log('session 4 full width: '+session_full_width)
+                           console.log('inside ELSE session method')
                         }
-                    }
-                    else{
-                         full_width = full_width - bar4_width
-                         bar4_width = 0;
-                         bar1.style.width = full_width + "%";
-                         form1_q4.style.color = 'red';
-                         console.log('full width: ' + full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                        if (f1_4.value !=''){
+                            if (bar4_width == 0){
+                                bar4_width = bar4_width + 10;
+                                full_width = full_width + bar4_width
+                                bar1.style.width = full_width + 10 + "%";
+                                form1_q4.style.color = 'black';
+                                console.log('full width: ' + full_width)
 
+                            }
+                        }
+                        else{
+                             full_width = full_width - bar4_width
+                             bar4_width = 0;
+                             bar1.style.width = full_width + "%";
+                             form1_q4.style.color = 'red';
+                             console.log('full width: ' + full_width)
+                        }
+                   }
+               }
           }
 
           function form1_f5(){
                var bar1 = document.getElementById('progress-1');
                var form1_q5 = document.getElementById('form1_q5');
-               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
-                    if (f1_5.value !=''){
-                        if (bar5_width == 0){
-                            bar5_width = bar5_width + 20;
-                            full_width = full_width + bar5_width
-                            bar1.style.width = full_width + 20 + "%";
-                            form1_q5.style.color = 'black';
-                            console.log('full width: ' + full_width)
 
+               if (value_dict != 0){
+                   if(f1_5.value =='' && session_bar5_width == 0){
+                       session_bar5_width = session_bar5_width + 20;
+                       session_full_width = session_full_width - session_bar5_width;
+                       bar1.style.width = session_full_width + "%";
+                       form1_q5.style.color = 'red';
+                       console.log('session 5 full width: '+session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session_bar5_width == 20){
+                           session_bar5_width = session_bar5_width - 20;
+                           session_full_width = session_full_width + 20;
+                           bar1.style.width = session_full_width + "%";
+                           form1_q5.style.color = 'black';
+                           console.log('session 5 full width: '+session_full_width)
+                           console.log('inside ELSE session method')
                         }
-                    }
-                    else{
-                         full_width = full_width - bar5_width
-                         bar5_width = 0;
-                         bar1.style.width = full_width + "%";
-                         form1_q5.style.color = 'red';
-                         console.log('full width: ' + full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                        if (f1_5.value !=''){
+                            if (bar5_width == 0){
+                                bar5_width = bar5_width + 20;
+                                full_width = full_width + bar5_width
+                                bar1.style.width = full_width + 20 + "%";
+                                form1_q5.style.color = 'black';
+                                console.log('full width: ' + full_width)
 
+                            }
+                        }
+                        else{
+                             full_width = full_width - bar5_width
+                             bar5_width = 0;
+                             bar1.style.width = full_width + "%";
+                             form1_q5.style.color = 'red';
+                             console.log('full width: ' + full_width)
+                        }
+                   }
+               }
           }
 
           function form1_f6(){
                var bar1 = document.getElementById('progress-1');
                var form1_q6 = document.getElementById('form1_q6');
-               if (bar1.style.width != "100%" || bar1.style.width != "0%"){
-                    if (f1_6.value !=''){
-                        if (bar6_width == 0){
-                            bar6_width = bar6_width + 10;
-                            full_width = full_width + bar6_width
-                            bar1.style.width = full_width + 10 + "%";
-                            form1_q6.style.color = 'black';
-                            console.log('full width: ' + full_width)
 
+               if (value_dict != 0){
+                   if(f1_6.value =='' && session_bar6_width == 0){
+                       session_bar6_width = session_bar6_width + 20;
+                       session_full_width = session_full_width - session_bar6_width;
+                       bar1.style.width = session_full_width + "%";
+                       form1_q6.style.color = 'red';
+                       console.log('session 6 full width: '+session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session_bar6_width == 20){
+                           session_bar6_width = session_bar6_width - 20;
+                           session_full_width = session_full_width + 20;
+                           bar1.style.width = session_full_width + "%";
+                           form1_q6.style.color = 'black';
+                           console.log('session 6 full width: '+session_full_width)
+                           console.log('inside ELSE session method')
                         }
-                    }
-                    else{
-                         full_width = full_width - bar6_width
-                         bar6_width = 0;
-                         bar1.style.width = full_width + "%";
-                         form1_q6.style.color = 'red';
-                         console.log('full width: ' + full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar1.style.width != "100%" || bar1.style.width != "0%"){
+                        if (f1_6.value !=''){
+                            if (bar6_width == 0){
+                                bar6_width = bar6_width + 10;
+                                full_width = full_width + bar6_width
+                                bar1.style.width = full_width + 10 + "%";
+                                form1_q6.style.color = 'black';
+                                console.log('full width: ' + full_width)
 
+                            }
+                        }
+                        else{
+                             full_width = full_width - bar6_width
+                             bar6_width = 0;
+                             bar1.style.width = full_width + "%";
+                             form1_q6.style.color = 'red';
+                             console.log('full width: ' + full_width)
+                        }
+                   }
+               }
           }
 
 
@@ -697,7 +836,17 @@ height: 750px;">
           var f2_bar7_width = 0;
           var f2_bar8_width = 0;
           var f2_bar9_width = 0;
+          var session2_bar1_width = 0;
+          var session2_bar2_width = 0;
+          var session2_bar3_width = 0;
+          var session2_bar4_width = 0;
+          var session2_bar5_width = 0;
+          var session2_bar6_width = 0;
+          var session2_bar7_width = 0;
+          var session2_bar8_width = 0;
+          var session2_bar9_width = 0;
           var f2_full_width = 0;
+          var f2_session_full_width = 100;
 
           function form_bar2(){
                 var bar2 = document.getElementById('progress-2');
@@ -715,10 +864,14 @@ height: 750px;">
                  f2_4.value !='' && f2_5.value !='' &&
                  f2_6.value !='' && f2_7.value !='' && f2_8.value !='' && f2_9.value !=''){
                     bar2.style.width = "100%";
+                    console.log('f2_all_IF_method')
                     label_2.style.color = 'black';
+                    var form2_q1 = document.getElementById('form2_q1');
+                    form2_q1.style.color = 'black';
                 }
                 else{
                     label_2.style.color = 'red';
+                    console.log('f2_all_ELSE_method')
                 }
 
           }
@@ -726,228 +879,425 @@ height: 750px;">
           function form2_f1(){
                var bar2 = document.getElementById('progress-2');
                var form2_q1 = document.getElementById('form2_q1');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_1.value !=''){
-                        if (f2_bar1_width == 0){
-                            f2_bar1_width = f2_bar1_width + 10;
-                            f2_full_width = f2_full_width + f2_bar1_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q1.style.color = 'black';
-                            console.log('full width: ' + f2_full_width)
-
+               if (value_dict != 0){
+                   if(f2_1.value =='' && session2_bar1_width == 0){
+                       session2_bar1_width = session2_bar1_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar1_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q1.style.color = 'red';
+                       console.log('session 2_1 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar1_width == 10){
+                           session2_bar1_width = session2_bar1_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q1.style.color = 'black';
+                           console.log('session 1 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 1 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar1_width
-                         f2_bar1_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q1.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_1.value !=''){
+                            if (f2_bar1_width == 0){
+                                f2_bar1_width = f2_bar1_width + 10;
+                                f2_full_width = f2_full_width + f2_bar1_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q1.style.color = 'black';
+                                console.log('full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar1_width
+                             f2_bar1_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q1.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
 
           function form2_f2(){
                var bar2 = document.getElementById('progress-2');
                var form2_q2 = document.getElementById('form2_q2');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_2.value !=''){
-                        if (f2_bar2_width == 0){
-                            f2_bar2_width = f2_bar2_width + 10;
-                            f2_full_width = f2_full_width + f2_bar2_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q2.style.color = 'black';
-                            console.log('full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_2.value =='' && session2_bar2_width == 0){
+                       session2_bar2_width = session2_bar2_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar2_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q2.style.color = 'red';
+                       console.log('session 2_2 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar2_width == 10){
+                           session2_bar2_width = session2_bar2_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q2.style.color = 'black';
+                           console.log('session 1 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 2 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar2_width
-                         f2_bar2_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q2.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_2.value !=''){
+                            if (f2_bar2_width == 0){
+                                f2_bar2_width = f2_bar2_width + 10;
+                                f2_full_width = f2_full_width + f2_bar2_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q2.style.color = 'black';
+                                console.log('full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar2_width
+                             f2_bar2_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q2.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
 
           function form2_f3(){
                var bar2 = document.getElementById('progress-2');
                var form2_q3 = document.getElementById('form2_q3');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_3.value !=''){
-                        if (f2_bar3_width == 0){
-                            f2_bar3_width = f2_bar3_width + 10;
-                            f2_full_width = f2_full_width + f2_bar3_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q3.style.color = 'black';
-                            console.log('full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_3.value =='' && session2_bar3_width == 0){
+                       session2_bar3_width = session2_bar3_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar3_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q3.style.color = 'red';
+                       console.log('session 2_3 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar3_width == 10){
+                           session2_bar3_width = session2_bar3_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q3.style.color = 'black';
+                           console.log('session 1 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 3 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar3_width
-                         f2_bar3_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q3.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_3.value !=''){
+                            if (f2_bar3_width == 0){
+                                f2_bar3_width = f2_bar3_width + 10;
+                                f2_full_width = f2_full_width + f2_bar3_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q3.style.color = 'black';
+                                console.log('full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar3_width
+                             f2_bar3_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q3.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           function form2_f4(){
                var bar2 = document.getElementById('progress-2');
                var form2_q4 = document.getElementById('form2_q4');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_4.value !=''){
-                        if (f2_bar4_width == 0){
-                            f2_bar4_width = f2_bar4_width + 10;
-                            f2_full_width = f2_full_width + f2_bar4_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q4.style.color = 'black';
-                            console.log(' 4th full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_4.value =='' && session2_bar4_width == 0){
+                       session2_bar4_width = session2_bar4_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar4_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q4.style.color = 'red';
+                       console.log('session 2_4 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar4_width == 10){
+                           session2_bar4_width = session2_bar4_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q4.style.color = 'black';
+                           console.log('session 1 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 4 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar4_width
-                         f2_bar4_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q4.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_4.value !=''){
+                            if (f2_bar4_width == 0){
+                                f2_bar4_width = f2_bar4_width + 10;
+                                f2_full_width = f2_full_width + f2_bar4_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q4.style.color = 'black';
+                                console.log(' 4th full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar4_width
+                             f2_bar4_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q4.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           function form2_f5(){
                var bar2 = document.getElementById('progress-2');
                var form2_q5 = document.getElementById('form2_q5');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_5.value !=''){
-                        if (f2_bar5_width == 0){
-                            f2_bar5_width = f2_bar5_width + 10;
-                            f2_full_width = f2_full_width + f2_bar5_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q5.style.color = 'black';
-                            console.log(' 4th full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_5.value =='' && session2_bar5_width == 0){
+                       session2_bar5_width = session2_bar5_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar5_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q5.style.color = 'red';
+                       console.log('session 2_5 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar5_width == 10){
+                           session2_bar5_width = session2_bar5_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q5.style.color = 'black';
+                           console.log('session 2_5 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 5 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar5_width
-                         f2_bar5_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q5.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_5.value !=''){
+                            if (f2_bar5_width == 0){
+                                f2_bar5_width = f2_bar5_width + 10;
+                                f2_full_width = f2_full_width + f2_bar5_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q5.style.color = 'black';
+                                console.log(' 4th full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar5_width
+                             f2_bar5_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q5.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           function form2_f6(){
                var bar2 = document.getElementById('progress-2');
                var form2_q6 = document.getElementById('form2_q6');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_6.value !=''){
-                        if (f2_bar6_width == 0){
-                            f2_bar6_width = f2_bar6_width + 10;
-                            f2_full_width = f2_full_width + f2_bar6_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q6.style.color = 'black';
-                            console.log(' 4th full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_6.value =='' && session2_bar6_width == 0){
+                       session2_bar6_width = session2_bar6_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar6_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q6.style.color = 'red';
+                       console.log('session 2_6 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar6_width == 10){
+                           session2_bar1_width = session2_bar6_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q6.style.color = 'black';
+                           console.log('session 2_6 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 6 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar6_width
-                         f2_bar6_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q6.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_6.value !=''){
+                            if (f2_bar6_width == 0){
+                                f2_bar6_width = f2_bar6_width + 10;
+                                f2_full_width = f2_full_width + f2_bar6_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q6.style.color = 'black';
+                                console.log(' 4th full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar6_width
+                             f2_bar6_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q6.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           function form2_f7(){
                var bar2 = document.getElementById('progress-2');
                var form2_q7 = document.getElementById('form2_q7');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_7.value !=''){
-                        if (f2_bar7_width == 0){
-                            f2_bar7_width = f2_bar7_width + 10;
-                            f2_full_width = f2_full_width + f2_bar7_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q7.style.color = 'black';
-                            console.log(' 4th full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_7.value =='' && session2_bar7_width == 0){
+                       session2_bar7_width = session2_bar7_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar7_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q7.style.color = 'red';
+                       console.log('session 2_7 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar7_width == 10){
+                           session2_bar7_width = session2_bar7_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q7.style.color = 'black';
+                           console.log('session 2_7 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 7 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar7_width
-                         f2_bar7_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q7.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_7.value !=''){
+                            if (f2_bar7_width == 0){
+                                f2_bar7_width = f2_bar7_width + 10;
+                                f2_full_width = f2_full_width + f2_bar7_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q7.style.color = 'black';
+                                console.log(' 4th full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar7_width
+                             f2_bar7_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q7.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           function form2_f8(){
                var bar2 = document.getElementById('progress-2');
                var form2_q8 = document.getElementById('form2_q8');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_8.value !=''){
-                        if (f2_bar8_width == 0){
-                            f2_bar8_width = f2_bar8_width + 10;
-                            f2_full_width = f2_full_width + f2_bar8_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q8.style.color = 'black';
-                            console.log(' 4th full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_8.value =='' && session2_bar8_width == 0){
+                       session2_bar8_width = session2_bar8_width + 10;
+                       f2_session_full_width = f2_session_full_width - session2_bar8_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q8.style.color = 'red';
+                       console.log('session 2_8 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar8_width == 10){
+                           session2_bar8_width = session2_bar8_width - 10;
+                           f2_session_full_width = f2_session_full_width + 10;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q8.style.color = 'black';
+                           console.log('session 2_8 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 8 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar8_width
-                         f2_bar8_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q8.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_8.value !=''){
+                            if (f2_bar8_width == 0){
+                                f2_bar8_width = f2_bar8_width + 10;
+                                f2_full_width = f2_full_width + f2_bar8_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q8.style.color = 'black';
+                                console.log(' 4th full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar8_width
+                             f2_bar8_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q8.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           function form2_f9(){
                var bar2 = document.getElementById('progress-2');
                var form2_q9 = document.getElementById('form2_q9');
-               if (bar2.style.width != "100%" || bar2.style.width != "0%"){
-                    if (f2_9.value !=''){
-                        if (f2_bar9_width == 0){
-                            f2_bar9_width = f2_bar9_width + 10;
-                            f2_full_width = f2_full_width + f2_bar9_width
-                            bar2.style.width = f2_full_width + 10 + "%";
-                            form2_q9.style.color = 'black';
-                            console.log(' 4th full width: ' + f2_full_width)
 
+               if (value_dict != 0){
+                   if(f2_9.value =='' && session2_bar9_width == 0){
+                       session2_bar9_width = session2_bar9_width + 20;
+                       f2_session_full_width = f2_session_full_width - session2_bar9_width;
+                       bar2.style.width = f2_session_full_width + "%";
+                       form2_q9.style.color = 'red';
+                       console.log('session 2_9 full width: '+f2_session_full_width)
+                       console.log('inside IF session method')
+                   }
+                   else{
+                        if (session2_bar9_width == 20){
+                           session2_bar9_width = session2_bar9_width - 20;
+                           f2_session_full_width = f2_session_full_width + 20;
+                           bar2.style.width = f2_session_full_width + "%";
+                           form2_q9.style.color = 'black';
+                           console.log('session 2_9 full width: '+f2_session_full_width)
+                           console.log('inside ELSE 9 session method')
                         }
-                    }
-                    else{
-                         f2_full_width = f2_full_width - f2_bar9_width
-                         f2_bar9_width = 0;
-                         bar2.style.width = f2_full_width + "%";
-                         form2_q9.style.color = 'red';
-                         console.log('full width: ' + f2_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar2.style.width != "100%" || bar2.style.width != "0%"){
+                        if (f2_9.value !=''){
+                            if (f2_bar9_width == 0){
+                                f2_bar9_width = f2_bar9_width + 10;
+                                f2_full_width = f2_full_width + f2_bar9_width
+                                bar2.style.width = f2_full_width + 10 + "%";
+                                form2_q9.style.color = 'black';
+                                console.log(' 4th full width: ' + f2_full_width)
 
+                            }
+                        }
+                        else{
+                             f2_full_width = f2_full_width - f2_bar9_width
+                             f2_bar9_width = 0;
+                             bar2.style.width = f2_full_width + "%";
+                             form2_q9.style.color = 'red';
+                             console.log('full width: ' + f2_full_width)
+                        }
+                   }
+               }
           }
 
           var f3_bar1_width = 0;
@@ -962,6 +1312,20 @@ height: 750px;">
           var f3_bar10_width = 0;
           var f3_bar11_width = 0;
           var f3_bar12_width = 0;
+          var session3_bar1_width = 0;
+          var session3_bar2_width = 0;
+          var session3_bar3_width = 0;
+          var session3_bar4_width = 0;
+          var session3_bar5_width = 0;
+          var session3_bar6_width = 0;
+          var session3_bar7_width = 0;
+          var session3_bar8_width = 0;
+          var session3_bar9_width = 0;
+          var session3_bar10_width = 0;
+          var session3_bar11_width = 0;
+          var session3_bar12_width = 0;
+
+          var f3_session_full_width = 100;
           var f3_full_width = 0;
           function form_bar3(){
                 var bar3 = document.getElementById('progress-3');
@@ -994,301 +1358,589 @@ height: 750px;">
           function form3_f1(){
                var bar3 = document.getElementById('progress-3');
                var form3_q1 = document.getElementById('form3_q1');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_1.value !=''){
-                        if (f3_bar1_width == 0){
-                            f3_bar1_width = f3_bar1_width + 10;
-                            f3_full_width = f3_full_width + f3_bar1_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q1.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_1.value =='' && session3_bar1_width == 0){
+                       session3_bar1_width = session3_bar1_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar1_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q1.style.color = 'red';
+                       console.log('session 3_1 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_1 session method')
+                   }
+                   else{
+                        if (session3_bar1_width == 10){
+                           session3_bar1_width = session3_bar1_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q1.style.color = 'black';
+                           console.log('session 3_1 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_1 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar1_width
-                         f3_bar1_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q1.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_1.value !=''){
+                            if (f3_bar1_width == 0){
+                                f3_bar1_width = f3_bar1_width + 10;
+                                f3_full_width = f3_full_width + f3_bar1_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q1.style.color = 'black';
+                                console.log('f3_1 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar1_width
+                             f3_bar1_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q1.style.color = 'red';
+                             console.log('f3_1 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f2(){
                var bar3 = document.getElementById('progress-3');
                var form3_q2 = document.getElementById('form3_q2');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_2.value !=''){
-                        if (f3_bar2_width == 0){
-                            f3_bar2_width = f3_bar2_width + 10;
-                            f3_full_width = f3_full_width + f3_bar2_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q2.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_2.value =='' && session3_bar2_width == 0){
+                       session3_bar2_width = session3_bar2_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar2_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q2.style.color = 'red';
+                       console.log('session 3_2 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_2 session method')
+                   }
+                   else{
+                        if (session3_bar2_width == 10){
+                           session3_bar2_width = session3_bar2_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q2.style.color = 'black';
+                           console.log('session 3_2 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_2 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar2_width
-                         f3_bar2_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q2.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_2.value !=''){
+                            if (f3_bar2_width == 0){
+                                f3_bar2_width = f3_bar2_width + 10;
+                                f3_full_width = f3_full_width + f3_bar2_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q2.style.color = 'black';
+                                console.log('f3_2 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar2_width
+                             f3_bar2_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q2.style.color = 'red';
+                             console.log('f3_2 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f3(){
                var bar3 = document.getElementById('progress-3');
                var form3_q3 = document.getElementById('form3_q3');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_3.value !=''){
-                        if (f3_bar3_width == 0){
-                            f3_bar3_width = f3_bar3_width + 10;
-                            f3_full_width = f3_full_width + f3_bar3_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q3.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_3.value =='' && session3_bar3_width == 0){
+                       session3_bar3_width = session3_bar3_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar3_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q3.style.color = 'red';
+                       console.log('session 3_3 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_3 session method')
+                   }
+                   else{
+                        if (session3_bar3_width == 10){
+                           session3_bar3_width = session3_bar3_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q3.style.color = 'black';
+                           console.log('session 3_3 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_3 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar3_width
-                         f3_bar3_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q3.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_3.value !=''){
+                            if (f3_bar3_width == 0){
+                                f3_bar3_width = f3_bar3_width + 10;
+                                f3_full_width = f3_full_width + f3_bar3_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q3.style.color = 'black';
+                                console.log('f3_3 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar3_width
+                             f3_bar3_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q3.style.color = 'red';
+                             console.log('f3_3 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f4(){
                var bar3 = document.getElementById('progress-3');
                var form3_q4 = document.getElementById('form3_q4');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_4.value !=''){
-                        if (f3_bar4_width == 0){
-                            f3_bar4_width = f3_bar4_width + 10;
-                            f3_full_width = f3_full_width + f3_bar4_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q4.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_4.value =='' && session3_bar4_width == 0){
+                       session3_bar4_width = session3_bar4_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar4_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q4.style.color = 'red';
+                       console.log('session 3_4 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_4 session method')
+                   }
+                   else{
+                        if (session3_bar4_width == 10){
+                           session3_bar4_width = session3_bar4_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q4.style.color = 'black';
+                           console.log('session 3_4 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_4 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar4_width
-                         f3_bar4_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q4.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_4.value !=''){
+                            if (f3_bar4_width == 0){
+                                f3_bar4_width = f3_bar4_width + 10;
+                                f3_full_width = f3_full_width + f3_bar4_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q4.style.color = 'black';
+                                console.log('f3_4 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar4_width
+                             f3_bar4_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q4.style.color = 'red';
+                             console.log('f3_4 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f5(){
                var bar3 = document.getElementById('progress-3');
                var form3_q5 = document.getElementById('form3_q5');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_5.value !=''){
-                        if (f3_bar5_width == 0){
-                            f3_bar5_width = f3_bar5_width + 10;
-                            f3_full_width = f3_full_width + f3_bar5_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q5.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_5.value =='' && session3_bar5_width == 0){
+                       session3_bar5_width = session3_bar5_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar5_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q5.style.color = 'red';
+                       console.log('session 3_5 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_5 session method')
+                   }
+                   else{
+                        if (session3_bar5_width == 10){
+                           session3_bar5_width = session3_bar5_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q5.style.color = 'black';
+                           console.log('session 3_5 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_5 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar5_width
-                         f3_bar5_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q5.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_5.value !=''){
+                            if (f3_bar5_width == 0){
+                                f3_bar5_width = f3_bar5_width + 10;
+                                f3_full_width = f3_full_width + f3_bar5_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q5.style.color = 'black';
+                                console.log('f3_5 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar5_width
+                             f3_bar5_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q5.style.color = 'red';
+                             console.log('f3_5 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f6(){
                var bar3 = document.getElementById('progress-3');
                var form3_q6 = document.getElementById('form3_q6');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_6.value !=''){
-                        if (f3_bar6_width == 0){
-                            f3_bar6_width = f3_bar6_width + 10;
-                            f3_full_width = f3_full_width + f3_bar6_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q6.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_6.value =='' && session3_bar6_width == 0){
+                       session3_bar6_width = session3_bar6_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar6_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q6.style.color = 'red';
+                       console.log('session 3_6 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_6 session method')
+                   }
+                   else{
+                        if (session3_bar6_width == 10){
+                           session3_bar6_width = session3_bar6_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q6.style.color = 'black';
+                           console.log('session 3_6 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_6 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar6_width
-                         f3_bar6_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q6.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_6.value !=''){
+                            if (f3_bar6_width == 0){
+                                f3_bar6_width = f3_bar6_width + 10;
+                                f3_full_width = f3_full_width + f3_bar6_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q6.style.color = 'black';
+                                console.log('f3_6 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar6_width
+                             f3_bar6_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q6.style.color = 'red';
+                             console.log('f3_6 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f7(){
                var bar3 = document.getElementById('progress-3');
                var form3_q7 = document.getElementById('form3_q7');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_3.value !=''){
-                        if (f3_bar7_width == 0){
-                            f3_bar7_width = f3_bar7_width + 10;
-                            f3_full_width = f3_full_width + f3_bar7_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q7.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_7.value =='' && session3_bar7_width == 0){
+                       session3_bar7_width = session3_bar7_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar7_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q7.style.color = 'red';
+                       console.log('session 3_7 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_7 session method')
+                   }
+                   else{
+                        if (session3_bar7_width == 10){
+                           session3_bar7_width = session3_bar7_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q7.style.color = 'black';
+                           console.log('session 3_7 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_7 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar7_width
-                         f3_bar7_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q7.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_7.value !=''){
+                            if (f3_bar7_width == 0){
+                                f3_bar7_width = f3_bar7_width + 10;
+                                f3_full_width = f3_full_width + f3_bar7_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q7.style.color = 'black';
+                                console.log('f3_7 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar7_width
+                             f3_bar7_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q7.style.color = 'red';
+                             console.log('f3_7 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f8(){
                var bar3 = document.getElementById('progress-3');
                var form3_q8 = document.getElementById('form3_q8');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_8.value !=''){
-                        if (f3_bar8_width == 0){
-                            f3_bar8_width = f3_bar8_width + 5;
-                            f3_full_width = f3_full_width + f3_bar8_width
-                            bar3.style.width = f3_full_width + 5 + "%";
-                            form3_q8.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_8.value =='' && session3_bar8_width == 0){
+                       session3_bar8_width = session3_bar8_width + 10;
+                       f3_session_full_width = f3_session_full_width - session3_bar8_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q8.style.color = 'red';
+                       console.log('session 3_8 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_8 session method')
+                   }
+                   else{
+                        if (session3_bar8_width == 10){
+                           session3_bar8_width = session3_bar8_width - 10;
+                           f3_session_full_width = f3_session_full_width + 10;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q8.style.color = 'black';
+                           console.log('session 3_8 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_8 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar8_width
-                         f3_bar8_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q8.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_8.value !=''){
+                            if (f3_bar8_width == 0){
+                                f3_bar8_width = f3_bar8_width + 5;
+                                f3_full_width = f3_full_width + f3_bar8_width
+                                bar3.style.width = f3_full_width + 5 + "%";
+                                form3_q8.style.color = 'black';
+                                console.log('f3_8 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar8_width
+                             f3_bar8_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q8.style.color = 'red';
+                             console.log('f3_8 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f9(){
                var bar3 = document.getElementById('progress-3');
                var form3_q9 = document.getElementById('form3_q9');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_9.value !=''){
-                        if (f3_bar9_width == 0){
-                            f3_bar9_width = f3_bar9_width + 5;
-                            f3_full_width = f3_full_width + f3_bar9_width
-                            bar3.style.width = f3_full_width + 5 + "%";
-                            form3_q9.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_9.value =='' && session3_bar9_width == 0){
+                       session3_bar9_width = session3_bar9_width + 5;
+                       f3_session_full_width = f3_session_full_width - session3_bar9_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q9.style.color = 'red';
+                       console.log('session 3_9 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_9 session method')
+                   }
+                   else{
+                        if (session3_bar9_width == 5){
+                           session3_bar9_width = session3_bar9_width - 5;
+                           f3_session_full_width = f3_session_full_width + 5;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q9.style.color = 'black';
+                           console.log('session 3_9 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_9 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar9_width
-                         f3_bar9_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q9.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_9.value !=''){
+                            if (f3_bar9_width == 0){
+                                f3_bar9_width = f3_bar9_width + 5;
+                                f3_full_width = f3_full_width + f3_bar9_width
+                                bar3.style.width = f3_full_width + 5 + "%";
+                                form3_q9.style.color = 'black';
+                                console.log('f3_9 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar9_width
+                             f3_bar9_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q9.style.color = 'red';
+                             console.log('f3_9 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f10(){
                var bar3 = document.getElementById('progress-3');
                var form3_q10 = document.getElementById('form3_q10');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_10.value !=''){
-                        if (f3_bar10_width == 0){
-                            f3_bar10_width = f3_bar10_width + 5;
-                            f3_full_width = f3_full_width + f3_bar10_width
-                            bar3.style.width = f3_full_width + 5 + "%";
-                            form3_q10.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_10.value =='' && session3_bar10_width == 0){
+                       session3_bar10_width = session3_bar10_width + 5;
+                       f3_session_full_width = f3_session_full_width - session3_bar10_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q10.style.color = 'red';
+                       console.log('session 3_10 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_10 session method')
+                   }
+                   else{
+                        if (session3_bar10_width == 5){
+                           session3_bar10_width = session3_bar10_width - 5;
+                           f3_session_full_width = f3_session_full_width + 5;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q10.style.color = 'black';
+                           console.log('session 3_10 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_10 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar10_width
-                         f3_bar10_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q10.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_10.value !=''){
+                            if (f3_bar10_width == 0){
+                                f3_bar10_width = f3_bar10_width + 5;
+                                f3_full_width = f3_full_width + f3_bar10_width
+                                bar3.style.width = f3_full_width + 5 + "%";
+                                form3_q10.style.color = 'black';
+                                console.log('f3_10 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar10_width
+                             f3_bar10_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q10.style.color = 'red';
+                             console.log('f3_10 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f11(){
                var bar3 = document.getElementById('progress-3');
                var form3_q11 = document.getElementById('form3_q11');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_11.value !=''){
-                        if (f3_bar11_width == 0){
-                            f3_bar11_width = f3_bar11_width + 5;
-                            f3_full_width = f3_full_width + f3_bar11_width
-                            bar3.style.width = f3_full_width + 5 + "%";
-                            form3_q11.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_11.value =='' && session3_bar11_width == 0){
+                       session3_bar11_width = session3_bar11_width + 5;
+                       f3_session_full_width = f3_session_full_width - session3_bar11_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q11.style.color = 'red';
+                       console.log('session 3_11 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_11 session method')
+                   }
+                   else{
+                        if (session3_bar11_width == 5){
+                           session3_bar11_width = session3_bar11_width - 5;
+                           f3_session_full_width = f3_session_full_width + 5;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q11.style.color = 'black';
+                           console.log('session 3_11 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_11 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar11_width
-                         f3_bar11_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q11.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_11.value !=''){
+                            if (f3_bar11_width == 0){
+                                f3_bar11_width = f3_bar11_width + 5;
+                                f3_full_width = f3_full_width + f3_bar11_width
+                                bar3.style.width = f3_full_width + 5 + "%";
+                                form3_q11.style.color = 'black';
+                                console.log('f3_11 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar11_width
+                             f3_bar11_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q11.style.color = 'red';
+                             console.log('f3_11 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
           function form3_f12(){
                var bar3 = document.getElementById('progress-3');
                var form3_q12 = document.getElementById('form3_q12');
-               if (bar3.style.width != "100%" || bar3.style.width != "0%"){
-                    if (f3_12.value !=''){
-                        if (f3_bar12_width == 0){
-                            f3_bar12_width = f3_bar12_width + 10;
-                            f3_full_width = f3_full_width + f3_bar12_width
-                            bar3.style.width = f3_full_width + 10 + "%";
-                            form3_q12.style.color = 'black';
-                            console.log('full width: ' + f3_full_width)
 
+               if (value_dict != 0){
+                   if(f3_12.value =='' && session3_bar12_width == 0){
+                       session3_bar12_width = session3_bar12_width + 5;
+                       f3_session_full_width = f3_session_full_width - session3_bar12_width;
+                       bar3.style.width = f3_session_full_width + "%";
+                       form3_q12.style.color = 'red';
+                       console.log('session 3_12 full width: '+f3_session_full_width)
+                       console.log('inside IF 3_12 session method')
+                   }
+                   else{
+                        if (session3_bar12_width == 5){
+                           session3_bar12_width = session3_bar12_width - 5;
+                           f3_session_full_width = f3_session_full_width + 5;
+                           bar3.style.width = f3_session_full_width + "%";
+                           form3_q12.style.color = 'black';
+                           console.log('session 3_12 full width: '+f3_session_full_width)
+                           console.log('inside ELSE 3_12 session method')
                         }
-                    }
-                    else{
-                         f3_full_width = f3_full_width - f3_bar12_width
-                         f3_bar12_width = 0;
-                         bar3.style.width = f3_full_width + "%";
-                         form3_q12.style.color = 'red';
-                         console.log('full width: ' + f3_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar3.style.width != "100%" || bar3.style.width != "0%"){
+                        if (f3_12.value !=''){
+                            if (f3_bar12_width == 0){
+                                f3_bar12_width = f3_bar12_width + 10;
+                                f3_full_width = f3_full_width + f3_bar12_width
+                                bar3.style.width = f3_full_width + 10 + "%";
+                                form3_q12.style.color = 'black';
+                                console.log('f3_12 IF condition')
+                                console.log('full width: ' + f3_full_width)
 
+                            }
+                        }
+                        else{
+                             f3_full_width = f3_full_width - f3_bar12_width
+                             f3_bar12_width = 0;
+                             bar3.style.width = f3_full_width + "%";
+                             form3_q12.style.color = 'red';
+                             console.log('f3_12 ELSE condition')
+                             console.log('full width: ' + f3_full_width)
+                        }
+                   }
+               }
           }
 
 
@@ -1305,6 +1957,21 @@ height: 750px;">
           var f4_bar11_width = 0;
           var f4_bar12_width = 0;
           var f4_bar13_width = 0;
+          var session4_bar1_width = 0;
+          var session4_bar2_width = 0;
+          var session4_bar3_width = 0;
+          var session4_bar4_width = 0;
+          var session4_bar5_width = 0;
+          var session4_bar6_width = 0;
+          var session4_bar7_width = 0;
+          var session4_bar8_width = 0;
+          var session4_bar9_width = 0;
+          var session4_bar10_width = 0;
+          var session4_bar11_width = 0;
+          var session4_bar12_width = 0;
+          var session4_bar13_width = 0;
+
+          var f4_session_full_width = 100;
           var f4_full_width = 0;
           function form_bar4(){
                 var bar4 = document.getElementById('progress-4');
@@ -1327,6 +1994,8 @@ height: 750px;">
                  f4_8.value !='' && f4_9.value !='' && f4_10.value !='' && f4_11.value !='' &&
                  f4_12.value !='' && f4_13.value !=''){
                     bar4.style.width = "100%";
+                    var form4_q1 = document.getElementById('form4_q1');
+                    form4_q1.style.color = 'black';
                     label_4.style.color = 'black';
                 }
                 else{
@@ -1338,326 +2007,612 @@ height: 750px;">
           function form4_f1(){
                var bar4 = document.getElementById('progress-4');
                var form4_q1 = document.getElementById('form4_q1');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_1.value !=''){
-                        if (f4_bar1_width == 0){
-                            f4_bar1_width = f4_bar1_width + 5;
-                            f4_full_width = f4_full_width + f4_bar1_width
-                            bar4.style.width = f4_full_width + 5 + "%";
-                            form4_q1.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_1.value =='' && session4_bar1_width == 0){
+                       session4_bar1_width = session4_bar1_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar1_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q1.style.color = 'red';
+                       console.log('session 4_1 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_1 session method')
+                   }
+                   else{
+                        if (session4_bar1_width == 10){
+                           session4_bar1_width = session4_bar1_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q1.style.color = 'black';
+                           console.log('session 4_1 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_1 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar1_width
-                         f4_bar1_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q1.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_1.value !=''){
+                            if (f4_bar1_width == 0){
+                                f4_bar1_width = f4_bar1_width + 5;
+                                f4_full_width = f4_full_width + f4_bar1_width
+                                bar4.style.width = f4_full_width + 5 + "%";
+                                form4_q1.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar1_width
+                             f4_bar1_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q1.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f2(){
                var bar4 = document.getElementById('progress-4');
                var form4_q2 = document.getElementById('form4_q2');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_2.value !=''){
-                        if (f4_bar2_width == 0){
-                            f4_bar2_width = f4_bar2_width + 5;
-                            f4_full_width = f4_full_width + f4_bar2_width
-                            bar4.style.width = f4_full_width + 5 + "%";
-                            form4_q2.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_2.value =='' && session4_bar2_width == 0){
+                       session4_bar2_width = session4_bar2_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar2_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q2.style.color = 'red';
+                       console.log('session 4_2 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_2 session method')
+                   }
+                   else{
+                        if (session4_bar2_width == 10){
+                           session4_bar2_width = session4_bar2_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q2.style.color = 'black';
+                           console.log('session 4_2 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_2 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar2_width
-                         f4_bar2_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q2.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_2.value !=''){
+                            if (f4_bar2_width == 0){
+                                f4_bar2_width = f4_bar2_width + 5;
+                                f4_full_width = f4_full_width + f4_bar2_width
+                                bar4.style.width = f4_full_width + 5 + "%";
+                                form4_q2.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar2_width
+                             f4_bar2_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q2.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f3(){
                var bar4 = document.getElementById('progress-4');
                var form4_q3 = document.getElementById('form4_q3');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_3.value !=''){
-                        if (f4_bar3_width == 0){
-                            f4_bar3_width = f4_bar3_width + 5;
-                            f4_full_width = f4_full_width + f4_bar3_width
-                            bar4.style.width = f4_full_width + 5 + "%";
-                            form4_q3.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_3.value =='' && session4_bar3_width == 0){
+                       session4_bar3_width = session4_bar3_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar3_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q3.style.color = 'red';
+                       console.log('session 4_3 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_3 session method')
+                   }
+                   else{
+                        if (session4_bar3_width == 10){
+                           session4_bar3_width = session4_bar3_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q3.style.color = 'black';
+                           console.log('session 4_3 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_3 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar3_width
-                         f4_bar3_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q3.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_3.value !=''){
+                            if (f4_bar3_width == 0){
+                                f4_bar3_width = f4_bar3_width + 5;
+                                f4_full_width = f4_full_width + f4_bar3_width
+                                bar4.style.width = f4_full_width + 5 + "%";
+                                form4_q3.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar3_width
+                             f4_bar3_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q3.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f4(){
                var bar4 = document.getElementById('progress-4');
                var form4_q4 = document.getElementById('form4_q4');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_4.value !=''){
-                        if (f4_bar4_width == 0){
-                            f4_bar4_width = f4_bar4_width + 5;
-                            f4_full_width = f4_full_width + f4_bar4_width
-                            bar4.style.width = f4_full_width + 5 + "%";
-                            form4_q4.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_4.value =='' && session4_bar4_width == 0){
+                       session4_bar4_width = session4_bar4_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar4_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q4.style.color = 'red';
+                       console.log('session 4_4 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_4 session method')
+                   }
+                   else{
+                        if (session4_bar4_width == 10){
+                           session4_bar4_width = session4_bar4_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q4.style.color = 'black';
+                           console.log('session 4_4 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_4 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar4_width
-                         f4_bar4_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q4.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_4.value !=''){
+                            if (f4_bar4_width == 0){
+                                f4_bar4_width = f4_bar4_width + 5;
+                                f4_full_width = f4_full_width + f4_bar4_width
+                                bar4.style.width = f4_full_width + 5 + "%";
+                                form4_q4.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar4_width
+                             f4_bar4_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q4.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f5(){
                var bar4 = document.getElementById('progress-4');
                var form4_q5 = document.getElementById('form4_q5');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_5.value !=''){
-                        if (f4_bar5_width == 0){
-                            f4_bar5_width = f4_bar5_width + 5;
-                            f4_full_width = f4_full_width + f4_bar5_width
-                            bar4.style.width = f4_full_width + 5 + "%";
-                            form4_q5.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_5.value =='' && session4_bar5_width == 0){
+                       session4_bar5_width = session4_bar5_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar5_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q5.style.color = 'red';
+                       console.log('session 4_5 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_5 session method')
+                   }
+                   else{
+                        if (session4_bar5_width == 10){
+                           session4_bar5_width = session4_bar5_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q5.style.color = 'black';
+                           console.log('session 4_5 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_5 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar5_width
-                         f4_bar5_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q5.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_5.value !=''){
+                            if (f4_bar5_width == 0){
+                                f4_bar5_width = f4_bar5_width + 5;
+                                f4_full_width = f4_full_width + f4_bar5_width
+                                bar4.style.width = f4_full_width + 5 + "%";
+                                form4_q5.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar5_width
+                             f4_bar5_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q5.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f6(){
                var bar4 = document.getElementById('progress-4');
                var form4_q6 = document.getElementById('form4_q6');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_6.value !=''){
-                        if (f4_bar6_width == 0){
-                            f4_bar6_width = f4_bar6_width + 5;
-                            f4_full_width = f4_full_width + f4_bar6_width
-                            bar4.style.width = f4_full_width + 5 + "%";
-                            form4_q6.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_6.value =='' && session4_bar6_width == 0){
+                       session4_bar6_width = session4_bar6_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar6_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q6.style.color = 'red';
+                       console.log('session 4_6 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_6 session method')
+                   }
+                   else{
+                        if (session4_bar6_width == 10){
+                           session4_bar6_width = session4_bar6_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q6.style.color = 'black';
+                           console.log('session 4_6 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_6 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar6_width
-                         f4_bar6_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q6.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_6.value !=''){
+                            if (f4_bar6_width == 0){
+                                f4_bar6_width = f4_bar6_width + 5;
+                                f4_full_width = f4_full_width + f4_bar6_width
+                                bar4.style.width = f4_full_width + 5 + "%";
+                                form4_q6.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar6_width
+                             f4_bar6_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q6.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f7(){
                var bar4 = document.getElementById('progress-4');
                var form4_q7 = document.getElementById('form4_q7');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_7.value !=''){
-                        if (f4_bar7_width == 0){
-                            f4_bar7_width = f4_bar7_width + 10;
-                            f4_full_width = f4_full_width + f4_bar7_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q7.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_7.value =='' && session4_bar7_width == 0){
+                       session4_bar7_width = session4_bar7_width + 10;
+                       f4_session_full_width = f4_session_full_width - session4_bar7_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q7.style.color = 'red';
+                       console.log('session 4_7 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_7 session method')
+                   }
+                   else{
+                        if (session4_bar7_width == 10){
+                           session4_bar7_width = session4_bar7_width - 10;
+                           f4_session_full_width = f4_session_full_width + 10;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q7.style.color = 'black';
+                           console.log('session 4_7 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_7 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar7_width
-                         f4_bar7_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q7.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_7.value !=''){
+                            if (f4_bar7_width == 0){
+                                f4_bar7_width = f4_bar7_width + 10;
+                                f4_full_width = f4_full_width + f4_bar7_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q7.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar7_width
+                             f4_bar7_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q7.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f8(){
                var bar4 = document.getElementById('progress-4');
                var form4_q8 = document.getElementById('form4_q8');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_8.value !=''){
-                        if (f4_bar8_width == 0){
-                            f4_bar8_width = f4_bar8_width + 10;
-                            f4_full_width = f4_full_width + f4_bar8_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q8.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_8.value =='' && session4_bar8_width == 0){
+                       session4_bar8_width = session4_bar8_width + 5;
+                       f4_session_full_width = f4_session_full_width - session4_bar8_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q8.style.color = 'red';
+                       console.log('session 4_8 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_8 session method')
+                   }
+                   else{
+                        if (session4_bar8_width == 5){
+                           session4_bar8_width = session4_bar8_width - 5;
+                           f4_session_full_width = f4_session_full_width + 5;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q8.style.color = 'black';
+                           console.log('session 4_8 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_8 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar8_width
-                         f4_bar8_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q8.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_8.value !=''){
+                            if (f4_bar8_width == 0){
+                                f4_bar8_width = f4_bar8_width + 10;
+                                f4_full_width = f4_full_width + f4_bar8_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q8.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar8_width
+                             f4_bar8_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q8.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f9(){
                var bar4 = document.getElementById('progress-4');
                var form4_q9 = document.getElementById('form4_q9');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_9.value !=''){
-                        if (f4_bar9_width == 0){
-                            f4_bar9_width = f4_bar9_width + 10;
-                            f4_full_width = f4_full_width + f4_bar9_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q9.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_9.value =='' && session4_bar9_width == 0){
+                       session4_bar9_width = session4_bar9_width + 5;
+                       f4_session_full_width = f4_session_full_width - session4_bar9_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q9.style.color = 'red';
+                       console.log('session 4_9 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_9 session method')
+                   }
+                   else{
+                        if (session4_bar9_width == 5){
+                           session4_bar9_width = session4_bar9_width - 5;
+                           f4_session_full_width = f4_session_full_width + 5;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q9.style.color = 'black';
+                           console.log('session 4_9 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_9 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar9_width
-                         f4_bar9_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q9.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_9.value !=''){
+                            if (f4_bar9_width == 0){
+                                f4_bar9_width = f4_bar9_width + 10;
+                                f4_full_width = f4_full_width + f4_bar9_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q9.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar9_width
+                             f4_bar9_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q9.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f10(){
                var bar4 = document.getElementById('progress-4');
                var form4_q10 = document.getElementById('form4_q10');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_10.value !=''){
-                        if (f4_bar10_width == 0){
-                            f4_bar10_width = f4_bar10_width + 10;
-                            f4_full_width = f4_full_width + f4_bar10_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q10.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_10.value =='' && session4_bar10_width == 0){
+                       session4_bar10_width = session4_bar10_width + 5;
+                       f4_session_full_width = f4_session_full_width - session4_bar10_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q10.style.color = 'red';
+                       console.log('session 4_10 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_10 session method')
+                   }
+                   else{
+                        if (session4_bar10_width == 5){
+                           session4_bar10_width = session4_bar10_width - 5;
+                           f4_session_full_width = f4_session_full_width + 5;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q10.style.color = 'black';
+                           console.log('session 4_10 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_10 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar10_width
-                         f4_bar10_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q10.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_10.value !=''){
+                            if (f4_bar10_width == 0){
+                                f4_bar10_width = f4_bar10_width + 10;
+                                f4_full_width = f4_full_width + f4_bar10_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q10.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar10_width
+                             f4_bar10_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q10.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f11(){
                var bar4 = document.getElementById('progress-4');
                var form4_q11 = document.getElementById('form4_q11');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_11.value !=''){
-                        if (f4_bar11_width == 0){
-                            f4_bar11_width = f4_bar11_width + 10;
-                            f4_full_width = f4_full_width + f4_bar11_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q11.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_11.value =='' && session4_bar11_width == 0){
+                       session4_bar11_width = session4_bar11_width + 5;
+                       f4_session_full_width = f4_session_full_width - session4_bar11_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q11.style.color = 'red';
+                       console.log('session 4_11 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_11 session method')
+                   }
+                   else{
+                        if (session4_bar11_width == 5){
+                           session4_bar11_width = session4_bar11_width - 5;
+                           f4_session_full_width = f4_session_full_width + 5;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q11.style.color = 'black';
+                           console.log('session 4_11 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_11 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar11_width
-                         f4_bar11_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q11.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_11.value !=''){
+                            if (f4_bar11_width == 0){
+                                f4_bar11_width = f4_bar11_width + 10;
+                                f4_full_width = f4_full_width + f4_bar11_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q11.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar11_width
+                             f4_bar11_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q11.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f12(){
                var bar4 = document.getElementById('progress-4');
                var form4_q12 = document.getElementById('form4_q12');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_12.value !=''){
-                        if (f4_bar12_width == 0){
-                            f4_bar12_width = f4_bar12_width + 10;
-                            f4_full_width = f4_full_width + f4_bar12_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q12.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_12.value =='' && session4_bar12_width == 0){
+                       session4_bar12_width = session4_bar12_width + 5;
+                       f4_session_full_width = f4_session_full_width - session4_bar12_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q12.style.color = 'red';
+                       console.log('session 4_12 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_12 session method')
+                   }
+                   else{
+                        if (session4_bar12_width == 5){
+                           session4_bar12_width = session4_bar11_width - 5;
+                           f4_session_full_width = f4_session_full_width + 5;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q12.style.color = 'black';
+                           console.log('session 4_12 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_12 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar12_width
-                         f4_bar12_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q12.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_12.value !=''){
+                            if (f4_bar12_width == 0){
+                                f4_bar12_width = f4_bar12_width + 10;
+                                f4_full_width = f4_full_width + f4_bar12_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q12.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar12_width
+                             f4_bar12_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q12.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
           function form4_f13(){
                var bar4 = document.getElementById('progress-4');
                var form4_q13 = document.getElementById('form4_q13');
-               if (bar4.style.width != "100%" || bar4.style.width != "0%"){
-                    if (f4_13.value !=''){
-                        if (f4_bar13_width == 0){
-                            f4_bar13_width = f4_bar13_width + 10;
-                            f4_full_width = f4_full_width + f4_bar13_width
-                            bar4.style.width = f4_full_width + 10 + "%";
-                            form4_q13.style.color = 'black';
-                            console.log('full width: ' + f4_full_width)
 
+               if (value_dict != 0){
+                   if(f4_13.value =='' && session4_bar13_width == 0){
+                       session4_bar13_width = session4_bar13_width + 5;
+                       f4_session_full_width = f4_session_full_width - session4_bar13_width;
+                       bar4.style.width = f4_session_full_width + "%";
+                       form4_q13.style.color = 'red';
+                       console.log('session 4_13 full width: '+f4_session_full_width)
+                       console.log('inside IF 4_13 session method')
+                   }
+                   else{
+                        if (session4_bar13_width == 5){
+                           session4_bar1_width = session4_bar13_width - 5;
+                           f4_session_full_width = f4_session_full_width + 5;
+                           bar4.style.width = f4_session_full_width + "%";
+                           form4_q13.style.color = 'black';
+                           console.log('session 4_13 full width: '+f4_session_full_width)
+                           console.log('inside ELSE 4_13 session method')
                         }
-                    }
-                    else{
-                         f4_full_width = f4_full_width - f4_bar13_width
-                         f4_bar13_width = 0;
-                         bar4.style.width = f4_full_width + "%";
-                         form4_q13.style.color = 'red';
-                         console.log('full width: ' + f4_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar4.style.width != "100%" || bar4.style.width != "0%"){
+                        if (f4_13.value !=''){
+                            if (f4_bar13_width == 0){
+                                f4_bar13_width = f4_bar13_width + 10;
+                                f4_full_width = f4_full_width + f4_bar13_width
+                                bar4.style.width = f4_full_width + 10 + "%";
+                                form4_q13.style.color = 'black';
+                                console.log('full width: ' + f4_full_width)
 
+                            }
+                        }
+                        else{
+                             f4_full_width = f4_full_width - f4_bar13_width
+                             f4_bar13_width = 0;
+                             bar4.style.width = f4_full_width + "%";
+                             form4_q13.style.color = 'red';
+                             console.log('full width: ' + f4_full_width)
+                        }
+                   }
+               }
           }
 
 
@@ -1667,6 +2622,13 @@ height: 750px;">
           var f5_bar4_width = 0;
           var f5_bar5_width = 0;
           var f5_full_width = 0;
+          var session5_bar1_width = 0;
+          var session5_bar2_width = 0;
+          var session5_bar3_width = 0;
+          var session5_bar4_width = 0;
+          var session5_bar5_width = 0;
+
+          var f5_session_full_width = 100;
           function form_bar5(){
                 var bar5 = document.getElementById('progress-5');
                 var label_5 = document.getElementById('label-5')
@@ -1688,126 +2650,236 @@ height: 750px;">
           function form5_f1(){
                var bar5 = document.getElementById('progress-5');
                var form5_q1 = document.getElementById('form5_q1');
-               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
-                    if (f5_1.value !=''){
-                        if (f5_bar1_width == 0){
-                            f5_bar1_width = f5_bar1_width + 10;
-                            f5_full_width = f5_full_width + f5_bar1_width
-                            bar5.style.width = f5_full_width + 10 + "%";
-                            form5_q1.style.color = 'black';
-                            console.log('full width: ' + f5_full_width)
 
+               if (value_dict != 0){
+                   if(f5_1.value =='' && session5_bar1_width == 0){
+                       session5_bar1_width = session5_bar1_width + 20;
+                       f5_session_full_width = f5_session_full_width - session5_bar1_width;
+                       bar5.style.width = f5_session_full_width + "%";
+                       form5_q1.style.color = 'red';
+                       console.log('session 5_1 full width: '+f5_session_full_width)
+                       console.log('inside IF 5_1 session method')
+                   }
+                   else{
+                        if (session5_bar1_width == 20){
+                           session5_bar1_width = session5_bar1_width - 20;
+                           f5_session_full_width = f5_session_full_width + 20;
+                           bar5.style.width = f5_session_full_width + "%";
+                           form5_q1.style.color = 'black';
+                           console.log('session 5_1 full width: '+f5_session_full_width)
+                           console.log('inside ELSE 5_1 session method')
                         }
-                    }
-                    else{
-                         f5_full_width = f5_full_width - f5_bar1_width
-                         f5_bar1_width = 0;
-                         bar5.style.width = f5_full_width + "%";
-                         form5_q1.style.color = 'red';
-                         console.log('full width: ' + f5_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                        if (f5_1.value !=''){
+                            if (f5_bar1_width == 0){
+                                f5_bar1_width = f5_bar1_width + 10;
+                                f5_full_width = f5_full_width + f5_bar1_width
+                                bar5.style.width = f5_full_width + 10 + "%";
+                                form5_q1.style.color = 'black';
+                                console.log('full width: ' + f5_full_width)
 
+                            }
+                        }
+                        else{
+                             f5_full_width = f5_full_width - f5_bar1_width
+                             f5_bar1_width = 0;
+                             bar5.style.width = f5_full_width + "%";
+                             form5_q1.style.color = 'red';
+                             console.log('full width: ' + f5_full_width)
+                        }
+                   }
+               }
           }
 
           function form5_f2(){
                var bar5 = document.getElementById('progress-5');
                var form5_q2 = document.getElementById('form5_q2');
-               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
-                    if (f5_2.value !=''){
-                        if (f5_bar2_width == 0){
-                            f5_bar2_width = f5_bar2_width + 20;
-                            f5_full_width = f5_full_width + f5_bar2_width
-                            bar5.style.width = f5_full_width + 20 + "%";
-                            form5_q2.style.color = 'black';
-                            console.log('full width: ' + f5_full_width)
 
+               if (value_dict != 0){
+                   if(f5_2.value =='' && session5_bar2_width == 0){
+                       session5_bar2_width = session5_bar2_width + 20;
+                       f5_session_full_width = f5_session_full_width - session5_bar2_width;
+                       bar5.style.width = f5_session_full_width + "%";
+                       form5_q2.style.color = 'red';
+                       console.log('session 5_2 full width: '+f5_session_full_width)
+                       console.log('inside IF 5_2 session method')
+                   }
+                   else{
+                        if (session5_bar2_width == 20){
+                           session5_bar2_width = session5_bar2_width - 20;
+                           f5_session_full_width = f5_session_full_width + 20;
+                           bar5.style.width = f5_session_full_width + "%";
+                           form5_q2.style.color = 'black';
+                           console.log('session 5_2 full width: '+f5_session_full_width)
+                           console.log('inside ELSE 5_2 session method')
                         }
-                    }
-                    else{
-                         f5_full_width = f5_full_width - f5_bar2_width
-                         f5_bar2_width = 0;
-                         bar5.style.width = f5_full_width + "%";
-                         form5_q2.style.color = 'red';
-                         console.log('full width: ' + f5_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                        if (f5_2.value !=''){
+                            if (f5_bar2_width == 0){
+                                f5_bar2_width = f5_bar2_width + 20;
+                                f5_full_width = f5_full_width + f5_bar2_width
+                                bar5.style.width = f5_full_width + 20 + "%";
+                                form5_q2.style.color = 'black';
+                                console.log('full width: ' + f5_full_width)
 
+                            }
+                        }
+                        else{
+                             f5_full_width = f5_full_width - f5_bar2_width
+                             f5_bar2_width = 0;
+                             bar5.style.width = f5_full_width + "%";
+                             form5_q2.style.color = 'red';
+                             console.log('full width: ' + f5_full_width)
+                        }
+                   }
+               }
           }
 
           function form5_f3(){
                var bar5 = document.getElementById('progress-5');
                var form5_q3 = document.getElementById('form5_q3');
-               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
-                    if (f5_3.value !=''){
-                        if (f5_bar3_width == 0){
-                            f5_bar3_width = f5_bar3_width + 20;
-                            f5_full_width = f5_full_width + f5_bar3_width
-                            bar5.style.width = f5_full_width + 20 + "%";
-                            form5_q3.style.color = 'black';
-                            console.log('full width: ' + f5_full_width)
 
+               if (value_dict != 0){
+                   if(f5_3.value =='' && session5_bar3_width == 0){
+                       session5_bar3_width = session5_bar3_width + 20;
+                       f5_session_full_width = f5_session_full_width - session5_bar3_width;
+                       bar5.style.width = f5_session_full_width + "%";
+                       form5_q3.style.color = 'red';
+                       console.log('session 5_3 full width: '+f5_session_full_width)
+                       console.log('inside IF 5_3 session method')
+                   }
+                   else{
+                        if (session5_bar3_width == 20){
+                           session5_bar3_width = session5_bar3_width - 20;
+                           f5_session_full_width = f5_session_full_width + 20;
+                           bar5.style.width = f5_session_full_width + "%";
+                           form5_q3.style.color = 'black';
+                           console.log('session 5_3 full width: '+f5_session_full_width)
+                           console.log('inside ELSE 5_3 session method')
                         }
-                    }
-                    else{
-                         f5_full_width = f5_full_width - f5_bar3_width
-                         f5_bar3_width = 0;
-                         bar5.style.width = f5_full_width + "%";
-                         form5_q3.style.color = 'red';
-                         console.log('full width: ' + f5_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                        if (f5_3.value !=''){
+                            if (f5_bar3_width == 0){
+                                f5_bar3_width = f5_bar3_width + 20;
+                                f5_full_width = f5_full_width + f5_bar3_width
+                                bar5.style.width = f5_full_width + 20 + "%";
+                                form5_q3.style.color = 'black';
+                                console.log('full width: ' + f5_full_width)
 
+                            }
+                        }
+                        else{
+                             f5_full_width = f5_full_width - f5_bar3_width
+                             f5_bar3_width = 0;
+                             bar5.style.width = f5_full_width + "%";
+                             form5_q3.style.color = 'red';
+                             console.log('full width: ' + f5_full_width)
+                        }
+                   }
+               }
           }
 
           function form5_f4(){
                var bar5 = document.getElementById('progress-5');
                var form5_q4 = document.getElementById('form5_q4');
-               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
-                    if (f5_4.value !=''){
-                        if (f5_bar4_width == 0){
-                            f5_bar4_width = f5_bar4_width + 20;
-                            f5_full_width = f5_full_width + f5_bar4_width
-                            bar5.style.width = f5_full_width + 20 + "%";
-                            form5_q4.style.color = 'black';
-                            console.log('full width: ' + f5_full_width)
 
+               if (value_dict != 0){
+                   if(f5_4.value =='' && session5_bar4_width == 0){
+                       session5_bar4_width = session5_bar4_width + 20;
+                       f5_session_full_width = f5_session_full_width - session5_bar4_width;
+                       bar5.style.width = f5_session_full_width + "%";
+                       form5_q4.style.color = 'red';
+                       console.log('session 5_4 full width: '+f5_session_full_width)
+                       console.log('inside IF 5_4 session method')
+                   }
+                   else{
+                        if (session5_bar4_width == 20){
+                           session5_bar4_width = session5_bar4_width - 20;
+                           f5_session_full_width = f5_session_full_width + 20;
+                           bar5.style.width = f5_session_full_width + "%";
+                           form5_q4.style.color = 'black';
+                           console.log('session 5_4 full width: '+f5_session_full_width)
+                           console.log('inside ELSE 5_4 session method')
                         }
-                    }
-                    else{
-                         f5_full_width = f5_full_width - f5_bar4_width
-                         f5_bar4_width = 0;
-                         bar5.style.width = f5_full_width + "%";
-                         form5_q4.style.color = 'red';
-                         console.log('full width: ' + f5_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                        if (f5_4.value !=''){
+                            if (f5_bar4_width == 0){
+                                f5_bar4_width = f5_bar4_width + 20;
+                                f5_full_width = f5_full_width + f5_bar4_width
+                                bar5.style.width = f5_full_width + 20 + "%";
+                                form5_q4.style.color = 'black';
+                                console.log('full width: ' + f5_full_width)
 
+                            }
+                        }
+                        else{
+                             f5_full_width = f5_full_width - f5_bar4_width
+                             f5_bar4_width = 0;
+                             bar5.style.width = f5_full_width + "%";
+                             form5_q4.style.color = 'red';
+                             console.log('full width: ' + f5_full_width)
+                        }
+                   }
+               }
           }
 
           function form5_f5(){
                var bar5 = document.getElementById('progress-5');
                var form5_q5 = document.getElementById('form5_q5');
-               if (bar5.style.width != "100%" || bar5.style.width != "0%"){
-                    if (f5_5.value !=''){
-                        if (f5_bar5_width == 0){
-                            f5_bar5_width = f5_bar1_width + 20;
-                            f5_full_width = f5_full_width + f5_bar5_width
-                            bar5.style.width = f5_full_width + 20 + "%";
-                            form5_q5.style.color = 'black';
-                            console.log('full width: ' + f5_full_width)
 
+               if (value_dict != 0){
+                   if(f5_5.value =='' && session5_bar5_width == 0){
+                       session5_bar5_width = session5_bar5_width + 20;
+                       f5_session_full_width = f5_session_full_width - session5_bar5_width;
+                       bar5.style.width = f5_session_full_width + "%";
+                       form5_q5.style.color = 'red';
+                       console.log('session 5_5 full width: '+f5_session_full_width)
+                       console.log('inside IF 5_5 session method')
+                   }
+                   else{
+                        if (session5_bar5_width == 20){
+                           session5_bar5_width = session5_bar5_width - 20;
+                           f5_session_full_width = f5_session_full_width + 20;
+                           bar5.style.width = f5_session_full_width + "%";
+                           form5_q5.style.color = 'black';
+                           console.log('session 5_5 full width: '+f5_session_full_width)
+                           console.log('inside ELSE 5_5 session method')
                         }
-                    }
-                    else{
-                         f5_full_width = f5_full_width - f5_bar5_width
-                         f5_bar5_width = 0;
-                         bar5.style.width = f5_full_width + "%";
-                         form5_q5.style.color = 'red';
-                         console.log('full width: ' + f5_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar5.style.width != "100%" || bar5.style.width != "0%"){
+                        if (f5_5.value !=''){
+                            if (f5_bar5_width == 0){
+                                f5_bar5_width = f5_bar1_width + 20;
+                                f5_full_width = f5_full_width + f5_bar5_width
+                                bar5.style.width = f5_full_width + 20 + "%";
+                                form5_q5.style.color = 'black';
+                                console.log('full width: ' + f5_full_width)
 
+                            }
+                        }
+                        else{
+                             f5_full_width = f5_full_width - f5_bar5_width
+                             f5_bar5_width = 0;
+                             bar5.style.width = f5_full_width + "%";
+                             form5_q5.style.color = 'red';
+                             console.log('full width: ' + f5_full_width)
+                        }
+                   }
+               }
           }
 
 
@@ -1817,6 +2889,13 @@ height: 750px;">
           var f6_bar4_width = 0;
           var f6_bar5_width = 0;
           var f6_full_width = 0;
+          var session6_bar1_width = 0;
+          var session6_bar2_width = 0;
+          var session6_bar3_width = 0;
+          var session6_bar4_width = 0;
+          var session6_bar5_width = 0;
+
+          var f6_session_full_width = 100;
           function form_bar6(){
                 var bar6 = document.getElementById('progress-6');
                 var label_6 = document.getElementById('label-6')
@@ -1839,131 +2918,245 @@ height: 750px;">
           function form6_f1(){
                var bar6 = document.getElementById('progress-6');
                var form6_q1 = document.getElementById('form6_q1');
-               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
-                    if (f6_1.value !=''){
-                        if (f6_bar1_width == 0){
-                            f6_bar1_width = f6_bar1_width + 10;
-                            f6_full_width = f6_full_width + f6_bar1_width
-                            bar6.style.width = f6_full_width + 10 + "%";
-                            form6_q1.style.color = 'black';
-                            console.log('full width: ' + f6_full_width)
 
+               if (value_dict != 0){
+                   if(f6_1.value =='' && session6_bar1_width == 0){
+                       session6_bar1_width = session6_bar1_width + 20;
+                       f6_session_full_width = f6_session_full_width - session6_bar1_width;
+                       bar6.style.width = f6_session_full_width + "%";
+                       form6_q1.style.color = 'red';
+                       console.log('session 6_1 full width: '+f6_session_full_width)
+                       console.log('inside IF 6_1 session method')
+                   }
+                   else{
+                        if (session6_bar1_width == 20){
+                           session6_bar1_width = session6_bar1_width - 20;
+                           f6_session_full_width = f6_session_full_width + 20;
+                           bar6.style.width = f6_session_full_width + "%";
+                           form6_q1.style.color = 'black';
+                           console.log('session 6_1 full width: '+f6_session_full_width)
+                           console.log('inside ELSE 6_1 session method')
                         }
-                    }
-                    else{
-                         f6_full_width = f6_full_width - f6_bar1_width
-                         f6_bar1_width = 0;
-                         bar6.style.width = f6_full_width + "%";
-                         form6_q1.style.color = 'red';
-                         console.log('full width: ' + f6_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                        if (f6_1.value !=''){
+                            if (f6_bar1_width == 0){
+                                f6_bar1_width = f6_bar1_width + 10;
+                                f6_full_width = f6_full_width + f6_bar1_width
+                                bar6.style.width = f6_full_width + 10 + "%";
+                                form6_q1.style.color = 'black';
+                                console.log('full width: ' + f6_full_width)
 
+                            }
+                        }
+                        else{
+                             f6_full_width = f6_full_width - f6_bar1_width
+                             f6_bar1_width = 0;
+                             bar6.style.width = f6_full_width + "%";
+                             form6_q1.style.color = 'red';
+                             console.log('full width: ' + f6_full_width)
+                        }
+                   }
+               }
           }
 
           function form6_f2(){
                var bar6 = document.getElementById('progress-6');
                var form6_q2 = document.getElementById('form6_q2');
-               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
-                    if (f6_2.value !=''){
-                        if (f6_bar2_width == 0){
-                            f6_bar2_width = f6_bar2_width + 20;
-                            f6_full_width = f6_full_width + f6_bar2_width
-                            bar6.style.width = f6_full_width + 20 + "%";
-                            form6_q2.style.color = 'black';
-                            console.log('full width: ' + f6_full_width)
 
+               if (value_dict != 0){
+                   if(f6_2.value =='' && session6_bar2_width == 0){
+                       session6_bar2_width = session6_bar2_width + 20;
+                       f6_session_full_width = f6_session_full_width - session6_bar2_width;
+                       bar6.style.width = f6_session_full_width + "%";
+                       form6_q2.style.color = 'red';
+                       console.log('session 6_2 full width: '+f6_session_full_width)
+                       console.log('inside IF 6_2 session method')
+                   }
+                   else{
+                        if (session6_bar2_width == 20){
+                           session6_bar2_width = session6_bar2_width - 20;
+                           f6_session_full_width = f6_session_full_width + 20;
+                           bar6.style.width = f6_session_full_width + "%";
+                           form6_q2.style.color = 'black';
+                           console.log('session 6_2 full width: '+f6_session_full_width)
+                           console.log('inside ELSE 6_2 session method')
                         }
-                    }
-                    else{
-                         f6_full_width = f6_full_width - f6_bar2_width
-                         f6_bar2_width = 0;
-                         bar6.style.width = f6_full_width + "%";
-                         form6_q2.style.color = 'red';
-                         console.log('full width: ' + f6_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                        if (f6_2.value !=''){
+                            if (f6_bar2_width == 0){
+                                f6_bar2_width = f6_bar2_width + 20;
+                                f6_full_width = f6_full_width + f6_bar2_width
+                                bar6.style.width = f6_full_width + 20 + "%";
+                                form6_q2.style.color = 'black';
+                                console.log('full width: ' + f6_full_width)
 
+                            }
+                        }
+                        else{
+                             f6_full_width = f6_full_width - f6_bar2_width
+                             f6_bar2_width = 0;
+                             bar6.style.width = f6_full_width + "%";
+                             form6_q2.style.color = 'red';
+                             console.log('full width: ' + f6_full_width)
+                        }
+                   }
+               }
           }
 
           function form6_f3(){
                var bar6 = document.getElementById('progress-6');
                var form6_q3 = document.getElementById('form6_q3');
-               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
-                    if (f6_3.value !=''){
-                        if (f6_bar3_width == 0){
-                            f6_bar3_width = f6_bar3_width + 20;
-                            f6_full_width = f6_full_width + f6_bar3_width
-                            bar6.style.width = f6_full_width + 20 + "%";
-                            form6_q3.style.color = 'black';
-                            console.log('full width: ' + f6_full_width)
 
+               if (value_dict != 0){
+                   if(f6_3.value =='' && session6_bar3_width == 0){
+                       session6_bar3_width = session6_bar3_width + 20;
+                       f6_session_full_width = f6_session_full_width - session6_bar3_width;
+                       bar6.style.width = f6_session_full_width + "%";
+                       form6_q3.style.color = 'red';
+                       console.log('session 6_3 full width: '+f6_session_full_width)
+                       console.log('inside IF 6_3 session method')
+                   }
+                   else{
+                        if (session6_bar3_width == 20){
+                           session6_bar3_width = session6_bar3_width - 20;
+                           f6_session_full_width = f6_session_full_width + 20;
+                           bar6.style.width = f6_session_full_width + "%";
+                           form6_q3.style.color = 'black';
+                           console.log('session 6_3 full width: '+f6_session_full_width)
+                           console.log('inside ELSE 6_3 session method')
                         }
-                    }
-                    else{
-                         f6_full_width = f6_full_width - f6_bar3_width
-                         f6_bar3_width = 0;
-                         bar6.style.width = f6_full_width + "%";
-                         form6_q3.style.color = 'red';
-                         console.log('full width: ' + f6_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                        if (f6_3.value !=''){
+                            if (f6_bar3_width == 0){
+                                f6_bar3_width = f6_bar3_width + 20;
+                                f6_full_width = f6_full_width + f6_bar3_width
+                                bar6.style.width = f6_full_width + 20 + "%";
+                                form6_q3.style.color = 'black';
+                                console.log('full width: ' + f6_full_width)
 
+                            }
+                        }
+                        else{
+                             f6_full_width = f6_full_width - f6_bar3_width
+                             f6_bar3_width = 0;
+                             bar6.style.width = f6_full_width + "%";
+                             form6_q3.style.color = 'red';
+                             console.log('full width: ' + f6_full_width)
+                        }
+                   }
+               }
           }
 
           function form6_f4(){
                var bar6 = document.getElementById('progress-6');
                var form6_q4 = document.getElementById('form6_q4');
-               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
-                    if (f6_4.value !=''){
-                        if (f6_bar4_width == 0){
-                            f6_bar4_width = f6_bar4_width + 20;
-                            f6_full_width = f6_full_width + f6_bar4_width
-                            bar6.style.width = f6_full_width + 20 + "%";
-                            form6_q4.style.color = 'black';
-                            console.log('full width: ' + f6_full_width)
 
+               if (value_dict != 0){
+                   if(f6_4.value =='' && session6_bar4_width == 0){
+                       session6_bar4_width = session6_bar4_width + 20;
+                       f6_session_full_width = f6_session_full_width - session6_bar4_width;
+                       bar6.style.width = f6_session_full_width + "%";
+                       form6_q4.style.color = 'red';
+                       console.log('session 6_4 full width: '+f6_session_full_width)
+                       console.log('inside IF 6_4 session method')
+                   }
+                   else{
+                        if (session6_bar4_width == 20){
+                           session6_bar4_width = session6_bar4_width - 20;
+                           f6_session_full_width = f6_session_full_width + 20;
+                           bar6.style.width = f6_session_full_width + "%";
+                           form6_q4.style.color = 'black';
+                           console.log('session 6_4 full width: '+f6_session_full_width)
+                           console.log('inside ELSE 6_4 session method')
                         }
-                    }
-                    else{
-                         f6_full_width = f6_full_width - f6_bar4_width
-                         f6_bar4_width = 0;
-                         bar6.style.width = f6_full_width + "%";
-                         form6_q4.style.color = 'red';
-                         console.log('full width: ' + f6_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                        if (f6_4.value !=''){
+                            if (f6_bar4_width == 0){
+                                f6_bar4_width = f6_bar4_width + 20;
+                                f6_full_width = f6_full_width + f6_bar4_width
+                                bar6.style.width = f6_full_width + 20 + "%";
+                                form6_q4.style.color = 'black';
+                                console.log('full width: ' + f6_full_width)
 
+                            }
+                        }
+                        else{
+                             f6_full_width = f6_full_width - f6_bar4_width
+                             f6_bar4_width = 0;
+                             bar6.style.width = f6_full_width + "%";
+                             form6_q4.style.color = 'red';
+                             console.log('full width: ' + f6_full_width)
+                        }
+                   }
+               }
           }
 
           function form6_f5(){
                var bar6 = document.getElementById('progress-6');
                var form6_q5 = document.getElementById('form6_q5');
-               if (bar6.style.width != "100%" || bar6.style.width != "0%"){
-                    if (f6_5.value !=''){
-                        if (f6_bar5_width == 0){
-                            f6_bar5_width = f6_bar5_width + 20;
-                            f6_full_width = f6_full_width + f6_bar5_width
-                            bar6.style.width = f6_full_width + 20 + "%";
-                            form6_q5.style.color = 'black';
-                            console.log('full width: ' + f6_full_width)
 
+               if (value_dict != 0){
+                   if(f6_5.value =='' && session6_bar5_width == 0){
+                       session6_bar5_width = session6_bar5_width + 20;
+                       f6_session_full_width = f6_session_full_width - session6_bar5_width;
+                       bar6.style.width = f6_session_full_width + "%";
+                       form6_q5.style.color = 'red';
+                       console.log('session 6_5 full width: '+f6_session_full_width)
+                       console.log('inside IF 6_5 session method')
+                   }
+                   else{
+                        if (session6_bar5_width == 20){
+                           session6_bar5_width = session6_bar5_width - 20;
+                           f6_session_full_width = f6_session_full_width + 20;
+                           bar6.style.width = f6_session_full_width + "%";
+                           form6_q5.style.color = 'black';
+                           console.log('session 6_5 full width: '+f6_session_full_width)
+                           console.log('inside ELSE 6_5 session method')
                         }
-                    }
-                    else{
-                         f6_full_width = f6_full_width - f6_bar5_width
-                         f6_bar5_width = 0;
-                         bar6.style.width = f6_full_width + "%";
-                         form6_q5.style.color = 'red';
-                         console.log('full width: ' + f6_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar6.style.width != "100%" || bar6.style.width != "0%"){
+                        if (f6_5.value !=''){
+                            if (f6_bar5_width == 0){
+                                f6_bar5_width = f6_bar5_width + 20;
+                                f6_full_width = f6_full_width + f6_bar5_width
+                                bar6.style.width = f6_full_width + 20 + "%";
+                                form6_q5.style.color = 'black';
+                                console.log('full width: ' + f6_full_width)
 
+                            }
+                        }
+                        else{
+                             f6_full_width = f6_full_width - f6_bar5_width
+                             f6_bar5_width = 0;
+                             bar6.style.width = f6_full_width + "%";
+                             form6_q5.style.color = 'red';
+                             console.log('full width: ' + f6_full_width)
+                        }
+                   }
+               }
           }
 
 
           var f7_bar1_width = 0;
           var f7_bar2_width = 0;
+          var session7_bar1_width = 0;
+          var session7_bar2_width = 0;
+
+          var f7_session_full_width = 100;
           var f7_full_width = 0;
           function form_bar7(){
                 var bar7 = document.getElementById('progress-7');
@@ -1983,51 +3176,95 @@ height: 750px;">
           function form7_f1(){
                var bar7 = document.getElementById('progress-7');
                var form7_q1 = document.getElementById('form7_q1');
-               if (bar7.style.width != "100%" || bar7.style.width != "0%"){
-                    if (f7_1.value !=''){
-                        if (f7_bar1_width == 0){
-                            f7_bar1_width = f7_bar1_width + 40;
-                            f7_full_width = f7_full_width + f7_bar1_width
-                            bar7.style.width = f7_full_width + 40 + "%";
-                            form7_q1.style.color = 'black';
-                            console.log('full width: ' + f7_full_width)
 
+               if (value_dict != 0){
+                   if(f7_1.value =='' && session7_bar1_width == 0){
+                       session7_bar1_width = session7_bar1_width + 50;
+                       f7_session_full_width = f7_session_full_width - session7_bar1_width;
+                       bar7.style.width = f7_session_full_width + "%";
+                       form7_q1.style.color = 'red';
+                       console.log('session 7_1 full width: '+f7_session_full_width)
+                       console.log('inside IF 7_1 session method')
+                   }
+                   else{
+                        if (session7_bar1_width == 50){
+                           session7_bar1_width = session7_bar1_width - 50;
+                           f7_session_full_width = f7_session_full_width + 50;
+                           bar7.style.width = f7_session_full_width + "%";
+                           form7_q1.style.color = 'black';
+                           console.log('session 7_1 full width: '+f7_session_full_width)
+                           console.log('inside ELSE 7_1 session method')
                         }
-                    }
-                    else{
-                         f7_full_width = f7_full_width - f7_bar1_width
-                         f7_bar1_width = 0;
-                         bar7.style.width = f7_full_width + "%";
-                         form7_q1.style.color = 'red';
-                         console.log('full width: ' + f7_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar7.style.width != "100%" || bar7.style.width != "0%"){
+                        if (f7_1.value !=''){
+                            if (f7_bar1_width == 0){
+                                f7_bar1_width = f7_bar1_width + 40;
+                                f7_full_width = f7_full_width + f7_bar1_width
+                                bar7.style.width = f7_full_width + 40 + "%";
+                                form7_q1.style.color = 'black';
+                                console.log('full width: ' + f7_full_width)
 
+                            }
+                        }
+                        else{
+                             f7_full_width = f7_full_width - f7_bar1_width
+                             f7_bar1_width = 0;
+                             bar7.style.width = f7_full_width + "%";
+                             form7_q1.style.color = 'red';
+                             console.log('full width: ' + f7_full_width)
+                        }
+                   }
+               }
           }
 
           function form7_f2(){
                var bar7 = document.getElementById('progress-7');
                var form7_q2 = document.getElementById('form7_q2');
-               if (bar7.style.width != "100%" || bar7.style.width != "0%"){
-                    if (f7_2.value !=''){
-                        if (f7_bar2_width == 0){
-                            f7_bar2_width = f7_bar2_width + 30;
-                            f7_full_width = f7_full_width + f7_bar2_width
-                            bar7.style.width = f7_full_width + 30 + "%";
-                            form7_q2.style.color = 'black';
-                            console.log('full width: ' + f7_full_width)
 
+               if (value_dict != 0){
+                   if(f7_2.value =='' && session7_bar2_width == 0){
+                       session7_bar2_width = session7_bar2_width + 50;
+                       f7_session_full_width = f7_session_full_width - session7_bar2_width;
+                       bar7.style.width = f7_session_full_width + "%";
+                       form7_q2.style.color = 'red';
+                       console.log('session 7_2 full width: '+f7_session_full_width)
+                       console.log('inside IF 7_2 session method')
+                   }
+                   else{
+                        if (session7_bar2_width == 50){
+                           session7_bar2_width = session7_bar2_width - 50;
+                           f7_session_full_width = f7_session_full_width + 50;
+                           bar7.style.width = f7_session_full_width + "%";
+                           form7_q2.style.color = 'black';
+                           console.log('session 7_2 full width: '+f7_session_full_width)
+                           console.log('inside ELSE 7_2 session method')
                         }
-                    }
-                    else{
-                         f7_full_width = f7_full_width - f7_bar2_width
-                         f7_bar2_width = 0;
-                         bar7.style.width = f7_full_width + "%";
-                         form7_q2.style.color = 'red';
-                         console.log('full width: ' + f7_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar7.style.width != "100%" || bar7.style.width != "0%"){
+                        if (f7_2.value !=''){
+                            if (f7_bar2_width == 0){
+                                f7_bar2_width = f7_bar2_width + 30;
+                                f7_full_width = f7_full_width + f7_bar2_width
+                                bar7.style.width = f7_full_width + 30 + "%";
+                                form7_q2.style.color = 'black';
+                                console.log('full width: ' + f7_full_width)
 
+                            }
+                        }
+                        else{
+                             f7_full_width = f7_full_width - f7_bar2_width
+                             f7_bar2_width = 0;
+                             bar7.style.width = f7_full_width + "%";
+                             form7_q2.style.color = 'red';
+                             console.log('full width: ' + f7_full_width)
+                        }
+                   }
+               }
           }
 
 
@@ -2035,6 +3272,12 @@ height: 750px;">
           var f8_bar2_width = 0;
           var f8_bar3_width = 0;
           var f8_bar4_width = 0;
+          var session8_bar1_width = 0;
+          var session8_bar2_width = 0;
+          var session8_bar3_width = 0;
+          var session8_bar4_width = 0;
+
+          var f8_session_full_width = 100;
           var f8_full_width = 0;
           function form_bar8(){
                 var bar8 = document.getElementById('progress-8');
@@ -2057,101 +3300,189 @@ height: 750px;">
           function form8_f1(){
                var bar8 = document.getElementById('progress-8');
                var form8_q1 = document.getElementById('form8_q1');
-               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
-                    if (f8_1.value !=''){
-                        if (f8_bar1_width == 0){
-                            f8_bar1_width = f8_bar1_width + 25;
-                            f8_full_width = f8_full_width + f8_bar1_width
-                            bar8.style.width = f8_full_width + 25 + "%";
-                            form8_q1.style.color = 'black';
-                            console.log('full width: ' + f8_full_width)
 
+               if (value_dict != 0){
+                   if(f8_1.value =='' && session8_bar1_width == 0){
+                       session8_bar1_width = session8_bar1_width + 25;
+                       f8_session_full_width = f8_session_full_width - session8_bar1_width;
+                       bar8.style.width = f8_session_full_width + "%";
+                       form8_q1.style.color = 'red';
+                       console.log('session 8_1 full width: '+f8_session_full_width)
+                       console.log('inside IF 8_1 session method')
+                   }
+                   else{
+                        if (session8_bar1_width == 25){
+                           session8_bar1_width = session8_bar1_width - 25;
+                           f8_session_full_width = f8_session_full_width + 25;
+                           bar8.style.width = f8_session_full_width + "%";
+                           form8_q1.style.color = 'black';
+                           console.log('session 8_1 full width: '+f8_session_full_width)
+                           console.log('inside ELSE 8_1 session method')
                         }
-                    }
-                    else{
-                         f8_full_width = f8_full_width - f8_bar1_width
-                         f8_bar1_width = 0;
-                         bar8.style.width = f8_full_width + "%";
-                         form8_q1.style.color = 'red';
-                         console.log('full width: ' + f8_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                        if (f8_1.value !=''){
+                            if (f8_bar1_width == 0){
+                                f8_bar1_width = f8_bar1_width + 25;
+                                f8_full_width = f8_full_width + f8_bar1_width
+                                bar8.style.width = f8_full_width + 25 + "%";
+                                form8_q1.style.color = 'black';
+                                console.log('full width: ' + f8_full_width)
 
+                            }
+                        }
+                        else{
+                             f8_full_width = f8_full_width - f8_bar1_width
+                             f8_bar1_width = 0;
+                             bar8.style.width = f8_full_width + "%";
+                             form8_q1.style.color = 'red';
+                             console.log('full width: ' + f8_full_width)
+                        }
+                   }
+               }
           }
 
           function form8_f2(){
                var bar8 = document.getElementById('progress-8');
                var form8_q2 = document.getElementById('form8_q2');
-               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
-                    if (f8_2.value !=''){
-                        if (f8_bar2_width == 0){
-                            f8_bar2_width = f8_bar2_width + 20;
-                            f8_full_width = f8_full_width + f8_bar2_width
-                            bar8.style.width = f8_full_width + 20 + "%";
-                            form8_q2.style.color = 'black';
-                            console.log('full width: ' + f8_full_width)
 
+               if (value_dict != 0){
+                   if(f8_2.value =='' && session8_bar2_width == 0){
+                       session8_bar2_width = session8_bar2_width + 25;
+                       f8_session_full_width = f8_session_full_width - session8_bar2_width;
+                       bar8.style.width = f8_session_full_width + "%";
+                       form8_q2.style.color = 'red';
+                       console.log('session 8_2 full width: '+f8_session_full_width)
+                       console.log('inside IF 8_2 session method')
+                   }
+                   else{
+                        if (session8_bar2_width == 25){
+                           session8_bar2_width = session8_bar2_width - 25;
+                           f8_session_full_width = f8_session_full_width + 25;
+                           bar8.style.width = f8_session_full_width + "%";
+                           form8_q2.style.color = 'black';
+                           console.log('session 8_2 full width: '+f8_session_full_width)
+                           console.log('inside ELSE 8_2 session method')
                         }
-                    }
-                    else{
-                         f8_full_width = f8_full_width - f8_bar2_width
-                         f8_bar2_width = 0;
-                         bar8.style.width = f8_full_width + "%";
-                         form8_q2.style.color = 'red';
-                         console.log('full width: ' + f8_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                        if (f8_2.value !=''){
+                            if (f8_bar2_width == 0){
+                                f8_bar2_width = f8_bar2_width + 20;
+                                f8_full_width = f8_full_width + f8_bar2_width
+                                bar8.style.width = f8_full_width + 20 + "%";
+                                form8_q2.style.color = 'black';
+                                console.log('full width: ' + f8_full_width)
 
+                            }
+                        }
+                        else{
+                             f8_full_width = f8_full_width - f8_bar2_width
+                             f8_bar2_width = 0;
+                             bar8.style.width = f8_full_width + "%";
+                             form8_q2.style.color = 'red';
+                             console.log('full width: ' + f8_full_width)
+                        }
+                   }
+               }
           }
 
           function form8_f3(){
                var bar8 = document.getElementById('progress-8');
                var form8_q3 = document.getElementById('form8_q3');
-               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
-                    if (f8_3.value !=''){
-                        if (f8_bar3_width == 0){
-                            f8_bar3_width = f8_bar3_width + 20;
-                            f8_full_width = f8_full_width + f8_bar3_width
-                            bar8.style.width = f8_full_width + 20 + "%";
-                            form8_q3.style.color = 'black';
-                            console.log('full width: ' + f8_full_width)
 
+               if (value_dict != 0){
+                   if(f8_3.value =='' && session8_bar3_width == 0){
+                       session8_bar3_width = session8_bar3_width + 25;
+                       f8_session_full_width = f8_session_full_width - session8_bar3_width;
+                       bar8.style.width = f8_session_full_width + "%";
+                       form8_q3.style.color = 'red';
+                       console.log('session 8_3 full width: '+f8_session_full_width)
+                       console.log('inside IF 8_3 session method')
+                   }
+                   else{
+                        if (session8_bar3_width == 25){
+                           session8_bar3_width = session8_bar3_width - 25;
+                           f8_session_full_width = f8_session_full_width + 25;
+                           bar8.style.width = f8_session_full_width + "%";
+                           form8_q3.style.color = 'black';
+                           console.log('session 8_3 full width: '+f8_session_full_width)
+                           console.log('inside ELSE 8_3 session method')
                         }
-                    }
-                    else{
-                         f8_full_width = f8_full_width - f8_bar3_width
-                         f8_bar3_width = 0;
-                         bar8.style.width = f8_full_width + "%";
-                         form8_q3.style.color = 'red';
-                         console.log('full width: ' + f8_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                        if (f8_3.value !=''){
+                            if (f8_bar3_width == 0){
+                                f8_bar3_width = f8_bar3_width + 20;
+                                f8_full_width = f8_full_width + f8_bar3_width
+                                bar8.style.width = f8_full_width + 20 + "%";
+                                form8_q3.style.color = 'black';
+                                console.log('full width: ' + f8_full_width)
 
+                            }
+                        }
+                        else{
+                             f8_full_width = f8_full_width - f8_bar3_width
+                             f8_bar3_width = 0;
+                             bar8.style.width = f8_full_width + "%";
+                             form8_q3.style.color = 'red';
+                             console.log('full width: ' + f8_full_width)
+                        }
+                   }
+               }
           }
 
           function form8_f4(){
                var bar8 = document.getElementById('progress-8');
                var form8_q4 = document.getElementById('form8_q4');
-               if (bar8.style.width != "100%" || bar8.style.width != "0%"){
-                    if (f8_4.value !=''){
-                        if (f8_bar4_width == 0){
-                            f8_bar4_width = f8_bar4_width + 25;
-                            f8_full_width = f8_full_width + f8_bar4_width
-                            bar8.style.width = f8_full_width + 25 + "%";
-                            form8_q4.style.color = 'black';
-                            console.log('full width: ' + f8_full_width)
 
+               if (value_dict != 0){
+                   if(f8_4.value =='' && session8_bar4_width == 0){
+                       session8_bar4_width = session8_bar4_width + 25;
+                       f8_session_full_width = f8_session_full_width - session8_bar4_width;
+                       bar8.style.width = f8_session_full_width + "%";
+                       form8_q4.style.color = 'red';
+                       console.log('session 8_4 full width: '+f8_session_full_width)
+                       console.log('inside IF 8_4 session method')
+                   }
+                   else{
+                        if (session8_bar4_width == 25){
+                           session8_bar4_width = session8_bar4_width - 25;
+                           f8_session_full_width = f8_session_full_width + 25;
+                           bar8.style.width = f8_session_full_width + "%";
+                           form8_q4.style.color = 'black';
+                           console.log('session 8_4 full width: '+f8_session_full_width)
+                           console.log('inside ELSE 8_4 session method')
                         }
-                    }
-                    else{
-                         f8_full_width = f8_full_width - f8_bar4_width
-                         f8_bar4_width = 0;
-                         bar8.style.width = f8_full_width + "%";
-                         form8_q4.style.color = 'red';
-                         console.log('full width: ' + f8_full_width)
-                    }
+                   }
                }
+               else{
+                   if (bar8.style.width != "100%" || bar8.style.width != "0%"){
+                        if (f8_4.value !=''){
+                            if (f8_bar4_width == 0){
+                                f8_bar4_width = f8_bar4_width + 25;
+                                f8_full_width = f8_full_width + f8_bar4_width
+                                bar8.style.width = f8_full_width + 25 + "%";
+                                form8_q4.style.color = 'black';
+                                console.log('full width: ' + f8_full_width)
 
+                            }
+                        }
+                        else{
+                             f8_full_width = f8_full_width - f8_bar4_width
+                             f8_bar4_width = 0;
+                             bar8.style.width = f8_full_width + "%";
+                             form8_q4.style.color = 'red';
+                             console.log('full width: ' + f8_full_width)
+                        }
+                   }
+               }
           }
 
           function warning(){
