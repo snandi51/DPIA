@@ -141,8 +141,8 @@
 
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 13px;
     line-height: 16px;
     /* identical to box height, or 133% */
 
@@ -265,7 +265,7 @@ border-radius: 0px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Ubuntu';
     padding: 9px 8px 7px;
     color: #FFFFFF;
@@ -343,7 +343,7 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 24px;
     margin-top: 2%;
     /* or 150% */
@@ -451,8 +451,8 @@ input[type="radio"]{
     position: absolute;
     width: 800px;
     height: 250px;
-    left: 204px;
-    top: 145px;
+    left: 230px;
+    top: 210px;
     border-radius: 8px;
 
     background: #FFFFFF;
@@ -465,8 +465,18 @@ input[type="radio"]{
 .result-text{
     height: 46px;
     width: 915px;
-    padding-left: 400px;
-    padding-top: 50px;
+    padding-left: 430px;
+    padding-top: 80px;
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.result-text-2{
+    height: 46px;
+    width: 915px;
+    padding-left: 420px;
+    padding-top: 80px;
     font-family: 'Ubuntu';
     font-size: 30px;
     font-weight: 500;
@@ -483,7 +493,7 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     flex-direction: row;
     margin-left: 380px;
-    margin-top: 130px;
+    margin-top: 100px;
     justify-content: center;
     align-items: center;
     color: #12ABDB;
@@ -513,7 +523,7 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     flex-direction: row;
     margin-left: 570px;
-    margin-top: 130px;
+    margin-top: 100px;
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
@@ -544,9 +554,9 @@ input[type="radio"]{
 .result-png-1{
     position: absolute;
     width: 250px;
-    height: 260px;
+    height: 280px;
     left: 40px;
-    top: -25px;
+    top: -45px;
 }
 
 .result-instruction{
@@ -636,7 +646,7 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     color: #FFFFFF;
     font-size: 14px;
-    top: 168px;
+    top: 130px;
 
 }
 
@@ -658,7 +668,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 168px;
-    top: 230px;
+    top: 200px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -680,7 +690,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 470px;
-    top: 230px;
+    top: 200px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -701,7 +711,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 772px;
-    top: 230px;
+    top: 200px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -723,7 +733,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 168px;
-    top: 504px;
+    top: 475px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -745,7 +755,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 470px;
-    top: 504px;
+    top: 475px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -766,7 +776,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 772px;
-    top: 504px;
+    top: 475px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -788,7 +798,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 168px;
-    top: 778px;
+    top: 750px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -809,7 +819,7 @@ input[type="radio"]{
     height: 250px;
     width: 280px;
     left: 470px;
-    top: 778px;
+    top: 750px;
     border-radius: 8px;
     background: #FFFFFF;
 }
@@ -838,7 +848,7 @@ input[type="radio"]{
     justify-content: center;
     align-items: center;
     color: #12ABDB;
-    top: 986px;
+    top: 960px;
     padding: 9px 8px 7px;
 
     position: absolute;
@@ -936,7 +946,8 @@ input[type="radio"]{
 
 .gdpr_font1{
     position: absolute;
-    font-size: 12px;
+    font-size: 30px;
+
 }
 
 
@@ -1142,7 +1153,7 @@ input[type="radio"]{
     width: 850px;
     height: 320px;
     left: 13.3%;
-    top: 52%;
+    top: 40%;
 
     background: #FFFFFF;
     /* Elevation/03 */
@@ -1240,11 +1251,12 @@ input[type="radio"]{
 .form-select-custom1{
 
     display: flex;
-    font-size: 14px;
+    font-size: 13px;
     top: 2%;
     font-family: 'Ubuntu';
     width: 300px;
     height: 35px;
+    margin-left: 15px;
 }
 
 .dpa_checkbox1{
@@ -1302,10 +1314,10 @@ input[type="radio"]{
 
 .login-box{
     position: flex;
-    height: 380px;
+    height: 355px;
     width: 400px;
-    margin-left: 150px;
-    margin-top: -50px;
+    margin-left: 120px;
+    margin-top: -35px;
 
     background: #FFFFFF;
     /* Elevation/03 */
@@ -1524,8 +1536,8 @@ input[type="radio"]{
 .login-png{
     width: 320px;
     height: 310px;
-    margin-left: -80px;
-    margin-top: -170px;
+    margin-left: -40px;
+    margin-top: -175px;
 }
 
 
@@ -1535,7 +1547,7 @@ input[type="radio"]{
     /* Auto layout */
 
     display: flex;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     font-family: 'Ubuntu';
     flex-direction: row;
@@ -1620,6 +1632,7 @@ input[type="radio"]{
     width: 100%;
     left: 0px;
     top: 0px;
+    align: center;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     background: #EBEBEB;
@@ -1630,8 +1643,8 @@ input[type="radio"]{
     position: absolute;
     font-size: 14px;
     font-weight: 500;
-    margin-left: 10px;
-    padding: 10px;
+    align-item: center;
+    padding: 13px;
     color: black;
 }
 
@@ -1697,13 +1710,13 @@ input[type="radio"]{
 .bar-png3{
     height: 25px;
     width: 1263px;
-    margin-top: 2529px;
+    margin-top: 1650px;
 }
 
 .bar-png4{
     height: 25px;
     width: 1263px;
-    margin-bottom: -1075px;
+    margin-bottom: -900px;
 }
 
 .bar-png5{
@@ -1777,8 +1790,19 @@ input[type="radio"]{
     margin-bottom: -136px;
 }
 
+.rect-4-index{
+    position: absolute;
+    width: 850px;
+    height: 320px;
+    left: 15%;
+    top: 28%;
 
+    background: #FFFFFF;
+    /* Elevation/03 */
 
+    box-shadow: 0px 12px 17px rgba(0, 67, 103, 0.14), 0px 5px 22px rgba(0, 67, 103, 0.12), 0px 7px 8px rgba(0, 67, 103, 0.2);
+    border-radius: 8px;
+}
 
 
 

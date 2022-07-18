@@ -28,7 +28,7 @@ def login_user(request):
             session_dict.get('session_dict_{}'.format(dict_count))['_state'] = \
                 str(session_dict.get('session_dict_{}'.format(dict_count))['_state'])
             session_dict.get('session_dict_{}'.format(dict_count))['date'] = \
-                session_dict.get('session_dict_{}'.format(dict_count))['date'].strftime("%d/%m/%Y")
+                session_dict.get('session_dict_{}'.format(dict_count))['date'].strftime("%d %B %Y")
             dict_count += 1
         if user is not None:
             login(request, user)
