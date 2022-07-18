@@ -35,14 +35,14 @@ height: 577px;">
 <div class="result-box">
     {% if dpia_status %}
             {% if dpia_status == 'Recommended' %}
-                <p class="result-text">DPIA is recommended</p>
+                <p class="result-text-2">DPIA is Recommended</p>
                 <a href="{% url 'screening' %}"><button class="result-button1">Retake Screening</button></a>
                 <a href="{% url 'dpia_screening' %}"><button class="result-button2">Proceed to Assessment</button></a>
                 <div>
                     <img class="result-png" src="static/assets/img/result_recommanded.png"/>
                 </div>
             {% elif dpia_status == 'Mandatory' %}
-                <p class="result-text">DPIA is mandatory</p>
+                <p class="result-text">DPIA is Mandatory</p>
                 <a href="{% url 'screening' %}"><button class="result-button1">Retake Screening</button></a>
                 <a href="{% url 'dpia_screening' %}"><button class="result-button2">Proceed to Assessment</button></a>
                 <div>
@@ -65,16 +65,16 @@ height: 577px;">
             {% endif %}
         {% endif %}
 </div >
-<div class="result-instruction">
-    <a style="margin-left:13px;">INSTRUCTIONS: </a>
-    <ol>
-        <li>If "Result" cell in "DPIA Screening" sheet shows an output as "Yes, DPIA Is Recommended" or "Yes, DPIA is Mandatory", then please open the "DPIA Assessment" sheet and provide your responses.</li>
-        <li>On the basis of the responses provided in "DPIA Assessment" sheet, we will be preparing a "Risk Summary" sheet. This sheet will have the following details :</li>
-        <li>Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.</li>
-        <li>Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned with these risks.</li>
-        <li>Heatmap which will depict the current scenario and possible risk at each step of the whole process.</li>
-    </ol>
-</div>
+<!--<div class="result-instruction">-->
+<!--    <a style="margin-left:13px;">INSTRUCTIONS: </a>-->
+<!--    <ol>-->
+<!--        <li>If "Result" cell in "DPIA Screening" sheet shows an output as "Yes, DPIA Is Recommended" or "Yes, DPIA is Mandatory", then please open the "DPIA Assessment" sheet and provide your responses.</li>-->
+<!--        <li>On the basis of the responses provided in "DPIA Assessment" sheet, we will be preparing a "Risk Summary" sheet. This sheet will have the following details :</li>-->
+<!--        <li>Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.</li>-->
+<!--        <li>Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned with these risks.</li>-->
+<!--        <li>Heatmap which will depict the current scenario and possible risk at each step of the whole process.</li>-->
+<!--    </ol>-->
+<!--</div>-->
 <img class="bar-png" src="static/assets/img/bar.png"/>
 {% endblock %}
 </body>

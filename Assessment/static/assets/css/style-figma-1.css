@@ -124,8 +124,8 @@
 
     font-family: 'Ubuntu';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 14px;
     line-height: 16px;
     /* identical to box height, or 133% */
 
@@ -343,7 +343,7 @@ input[type="radio"]{
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 24px;
     /* or 150% */
 
@@ -408,3 +408,4 @@ input[type="radio"]{
     border-width: thin;
     border-radius: 4px;
 }
+
