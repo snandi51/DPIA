@@ -105,34 +105,29 @@
 
 </script>
 
-<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
-position: static;
-width: 900px;
-height: 100%;
-margin-left: 220px;
-padding-top: 100px;
-padding-bottom: 100px;"
->
-{% for i in session_dict.values %}
-    <a href="javascript:;"><div class="session_div_out" onclick="getNum('{{i.title}}')">
-        <div class="top-label-div">
-            <p class="session_steps">{{ i.title }}</p>
-            <p class="session-date">Date:&nbsp;<label style="color: #919198;"> {{ i.date }} </label></p>
-            <p class="session-date">DPIA Status:&nbsp;<label style="color: #919198;"> {{ i.status }} </label></p>
-            <p class="session-date">Project Name:&nbsp;<label style="color: #919198;"> {{ i.role }} </label></p>
-        </div>
-    </div></a>
-{% endfor %}
+<body class="body-class">
+    <div style="margin-top: 100px; margin-left: 100px;">
+        {% for i in session_dict.values %}
+            <a href="javascript:;"><div class="session_div_out" onclick="getNum('{{i.title}}')">
+                <div class="top-label-div">
+                    <p class="session_steps">{{ i.title }}</p>
+                    <p class="session-date">Date:&nbsp;<label style="color: #919198;"> {{ i.date }} </label></p>
+                    <p class="session-date">DPIA Status:&nbsp;<label style="color: #919198;"> {{ i.status }} </label></p>
+                    <p class="session-date">Project Name:&nbsp;<label style="color: #919198;"> {{ i.role }} </label></p>
+                </div>
+            </div></a>
+        {% endfor %}
 
-<a onclick="noSession()" href="javascript:;">
-    <div class="session_div_out">
-        <img class="session-png" src="static/assets/img/session_create.png"/>
-        <p class="session-text">ADD NEW ASSESSMENT +</p>
+        <a onclick="noSession()" href="javascript:;">
+            <div class="session_div_out">
+                <img class="session-png" src="static/assets/img/session_create.png"/>
+                <p class="session-text">ADD NEW ASSESSMENT +</p>
+            </div>
+        </a>
     </div>
-</a>
 </body>
 </html>
 <div>
-    <img style="width:1280px; height:25px; margin-left: -220px; margin-bottom:-316px;" src="static/assets/img/bar.png"/>
+    <img style="width:100%; height:25px; margin-bottom:-316px;" src="static/assets/img/bar.png"/>
 </div>
 {% endblock %}

@@ -143,7 +143,7 @@ padding-top: 100px;"
 
     <div class="user-info2" style="margin-top: -80px;">
       <div style="width: 20%; height: 100px; float: left;">
-          <p class="gdpr_font1">Total Risks:&nbsp;<b>3</b></p>
+          <p class="gdpr_font1">Total Risks:&nbsp;<b>{{ total_no_of_risk }}</b></p>
       </div>
     </div>
 
@@ -151,15 +151,77 @@ padding-top: 100px;"
         <div style="position:absolute; left:5%; padding-right: 5%;">
             <div class="form-group">
                 <div class="col" style="padding-top:25px">
-                    <label class="scr-h1" >Step 1:</label>
                     <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Explain broadly what project aims to achieve and what type of processing it involves. You may find it helpful to refer or link to other documents, such as a project proposal. Summarise why you identified the need for a DPIA.</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">1. Explain broadly what project aims to achieve and what type of processing it involves. You may find it helpful to refer or link to other documents, such as a project proposal. Summarise why you identified the need for a DPIA.</p>
                     </div>
                     <div style="padding-top:50px">
-                        <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
-                    </div>
-                    <div style="padding-top:15px">
-                        <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                        <div class="gdpr_text_box_1" style="border: groove;">
+<!--                            Question 1-->
+                            {% if final_dict.f1_1 == '1' %}
+                            <label class="paragraph-text">Our organization does not define the purpose of processing data.</label>
+                            {% elif final_dict.f1_1 == '2'   %}
+                            <label class="paragraph-text">For this scope of service , the project lead defines the purpose of processing the data.</label>
+                            {% elif final_dict.f1_1 == '3'   %}
+                            <label class="paragraph-text">For this scope of service , the project lead collects information from the stakeholders before defining the purpose of processing the data.</label>
+                            {% else %}
+                            <label class="paragraph-text">For this scope of service , the project lead collects information from the stakeholders and probes them on possible requirements before defining the purpose of processing the data.</label>
+                            {% endif %}
+
+                            <!--Question 2-->
+                            {% if final_dict.f1_2 == '1' %}
+                            <label class="paragraph-text"> We do not define the aim of the project.</label>
+                            {% elif final_dict.f1_2 == '2'   %}
+                            <label class="paragraph-text">The project lead defines the aim of the project by using purpose of processing as a reference.</label>
+                            {% elif final_dict.f1_2 == '3'   %}
+                            <label class="paragraph-text">The project team analyzes the purpose of processing and then collectively decide the aim of the project.</label>
+                            {% else %}
+                            <label class="paragraph-text">The project team analyzes the purpose of processing and then collectively decide the aim of the project which is further approved by the project lead and other stakeholders.</label>
+                            {% endif %}
+
+                            <!--Question 3-->
+                            {% if final_dict.f1_3 == '1' %}
+                            <i class="paragraph-text">At present , method of processing the data is not defined for this scope of service.</i>
+                            {% elif final_dict.f1_3 == '2'   %}
+                            <i class="paragraph-text">At present , basic research is done before finalizing the method of processing data.</i>
+                            {% elif final_dict.f1_3 == '3'   %}
+                            <i class="paragraph-text">At present , the project team researches for possible methods and then the final method is decided after discussion with the project lead.</i>
+                            {% else %}
+                            <i class="paragraph-text">At present ,an extensive research is done by the project team  for possible methods and then the final method is decided after discussion with the project lead and related stakeholders..</i>
+                            {% endif %}
+
+                            <!--Question 4-->
+                            {% if final_dict.f1_4 == '1' %}
+                            <i class="paragraph-text">Expected benefits from processing data is also not defined for this project.</i>
+                            {% elif final_dict.f1_4 == '2'   %}
+                            <i class="paragraph-text">Expected benefits from processing data are assumed by the project team on the basis of the aim of the project and not documented in the report.</i>
+                            {% elif final_dict.f1_4 == '3'   %}
+                            <i class="paragraph-text">Expected benefits from processing data is well defined by the project lead and also documented in the report.</i>
+                            {% else %}
+                            <i class="paragraph-text">Expected benefits from processing data is well defined by the project lead and is reviewed by the senior management.</i>
+                            {% endif %}
+
+                            <!--Question 5-->
+                            {% if final_dict.f1_5 == '1' %}
+                            <i class="paragraph-text">We do not prepare a list of departments who will be affected by this data processing.</i>
+                            {% elif final_dict.f1_5 == '2'   %}
+                            <i class="paragraph-text">The project lead prepares the list of  benefits for each department and documents it.</i>
+                            {% elif final_dict.f1_5 == '3'   %}
+                            <i class="paragraph-text">The project lead sends a meassage to all the concerned departments about the benefits and documents the list of departments in the report.</i>
+                            {% else %}
+                            <i class="paragraph-text">The project lead reaches out to all the concerned departments and present them the benefits they will receive from this data processing and documents both the benefits and recommendations/suggestions from each department.</i>
+                            {% endif %}
+
+                            <!--Question 6-->
+                            {% if final_dict.f1_6 == '1' %}
+                            <i class="paragraph-text">There is no such process to capture the list of team members involved in this data processing.</i>
+                            {% elif final_dict.f1_6 == '2'   %}
+                            <i class="paragraph-text">The list of team members who will be involved in the data processing are decided by the project lead and not documented at any stage.</i>
+                            {% elif final_dict.f1_6 == '3'   %}
+                            <i class="paragraph-text">The list of team members who will be involved in this data processing is documented during the commencement of the project</i>
+                            {% else %}
+                            <i class="paragraph-text">The list of team members who will be involved in this data processing is well prepared before the start of the project and are given a unique project code to monitor any changes in the team.</i>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,9 +236,8 @@ padding-top: 100px;"
 
               <div class="form-group" id="Asset3">
                   <div class="col">
-                      <label class="scr-h1" >Step 2:</label>
                         <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe the nature and scope of the processing, and the context and scope of the processing</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">2. Describe the nature and scope of the processing, and the context and scope of the processing</p>
                         </div>
                       <div class="font info" style= "display:none; padding-top: 10px;" id="info2">
                             <div style="padding-top:50px">
@@ -197,9 +258,8 @@ padding-top: 100px;"
             <hr>
               <div class="form-group" id="Asset7" >
                   <div class="col">
-                      <label class="scr-h1" >Step 3:</label>
                       <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Consider how to consult with relevant stakeholders</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">3. Consider how to consult with relevant stakeholders</p>
                         </div>
                       <div class="font info" style= "display:none; padding-top: 5px;" id="info3">
                             <div style="padding-top:30px">
@@ -223,9 +283,8 @@ padding-top: 100px;"
 
               <div class="form-group" id="Asset4">
                   <div class="col">
-                      <label class="scr-h1" >Step 4:</label>
                         <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe compliance and proportionality measures, in particular</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">4. Describe compliance and proportionality measures, in particular</p>
                         </div>
                       <div class="font info" style= "display:none; padding-top: 10px;" id="info4">
                             <div style="padding-top:50px">
@@ -248,16 +307,55 @@ padding-top: 100px;"
 
               <div class="form-group" id="Asset9">
                   <div class="col">
-                      <label class="scr-h1" >Step 5:</label>
                       <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe source of risk and nature of potential impact on individuals</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">5. Describe source of risk and nature of potential impact on individuals</p>
                       </div>
                       <div class="font info" style= "display:none; padding-top: 10px;" id="info5">
                             <div style="padding-top:50px">
-                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
-                            </div>
-                            <div style="padding-top:15px">
-                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                                <div class="gdpr_text_box_no_border">
+                                    <table class="table table-bordered" style="border-color: black;">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Describe source of risk and nature of potential impact on individuals. Include associated compliance and corporate risks as necessary.</th>
+                                          <th scope="col">Likelihood of harm <br>(Remote, possible or probable)</th>
+                                          <th scope="col">Severity of harm <br>(Minimal, significant or severe)</th>
+                                          <th scope="col">Overall risk <br>(Low, medium or high)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row">1</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">2</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">3</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                      <tr>
+                                          <th scope="row">4</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                      <tr>
+                                          <th scope="row">5</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
                             </div>
                       </div>
                   </div>
@@ -274,16 +372,61 @@ padding-top: 100px;"
 
               <div class="form-group" id="Asset10">
                   <div class="col">
-                      <label class="scr-h1" >Step 6:</label>
                       <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Describe source of risk and nature of potential impact on individuals</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">6. Describe source of risk and nature of potential impact on individuals</p>
                       </div>
                       <div class="font info" style= "display:none; padding-top: 10px;" id="info6">
                             <div style="padding-top:50px">
-                                <input class="gdpr_text_box_1" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
-                            </div>
-                            <div style="padding-top:15px">
-                                <input class="gdpr_text_box_2" placeholder="Add Comments" type="text"  name="gdpr_text_box_1">
+                                <div class="gdpr_text_box_no_border">
+                                    <table class="table table-bordered" style="border-color: black;">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Risk</th>
+                                          <th scope="col">Options to reduce or eliminate risk</th>
+                                          <th scope="col">Effect on risk <br>(Eliminated, reduced or accepted)</th>
+                                          <th scope="col">Residual risk <br>(Low, medium or high)</th>
+                                            <th scope="col">Measure approved <br>(Yes/no)</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row">1</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">2</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">3</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                            <td></td>
+                                        </tr>
+                                      <tr>
+                                          <th scope="row">4</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                      <tr>
+                                          <th scope="row">5</th>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
                             </div>
                       </div>
                   </div>
@@ -300,9 +443,8 @@ padding-top: 100px;"
 
               <div class="form-group" id="Asset11">
                   <div class="col">
-                      <label class="scr-h1" >Step 7:</label>
                       <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Identify and obtain necessary approvals</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">7. Identify and obtain necessary approvals</p>
                       </div>
                       <div class="font info" style= "display:none; padding-top: 10px;" id="info7">
                             <div style="padding-top:50px">
@@ -325,9 +467,8 @@ padding-top: 100px;"
 
               <div class="form-group" id="Asset12">
                   <div class="col">
-                      <label class="scr-h1"> Step 8:</label>
                        <div class="gdpr-steps-div" style="font-size: 16px;">
-                           <p style="font-size:14px; font-family: 'Ubuntu'">Identify and record outcomes</p>
+                           <p style="font-size:14px; font-family: 'Ubuntu'">8. Identify and record outcomes</p>
                       </div>
                       <div class="font info" style= "display:none; padding-top: 10px;" id="info8">
                             <div style="padding-top:50px">
