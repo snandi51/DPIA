@@ -946,7 +946,8 @@ input[type="radio"]{
 
 .gdpr_font1{
     position: absolute;
-    font-size: 30px;
+    font-size: 26px;
+    margin-left: 20px;
 
 }
 
@@ -1172,10 +1173,35 @@ input[type="radio"]{
 .gdpr_text_box_1{
     position: flex;
     width: 760px;
-    height: 200px;
+    height: 270px;
+    padding:10px;
+    border: groove;
+    padding-bottom: 170px;
+    font-size: 10px;
+}
+
+.gdpr_text_box_no_border{
+    position: flex;
+    width: 760px;
+    height: 270px;
     padding:10px;
     padding-bottom: 170px;
     font-size: 10px;
+}
+
+.paragraph-text{
+    font-family: 'Ubuntu';
+    font-size: 12px;
+    font-style: normal;
+    display: inline;
+
+}
+
+.paragraph-text2{
+    font-family: 'Ubuntu';
+    font-size: 12px;
+    margin-top: -10px;
+
 }
 
 .gdpr_text_box_2{
@@ -1692,6 +1718,7 @@ input[type="radio"]{
     margin-left: -304px;
     font-weight: 500;
     font-size: 18px;
+    font-family: 'Ubuntu';
 }
 
 .bar-png{
@@ -1805,7 +1832,14 @@ input[type="radio"]{
 }
 
 
-
+.body-class{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
 
 
 

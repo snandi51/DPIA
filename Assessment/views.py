@@ -47,6 +47,7 @@ def home(request):
             ):
                 session_data = True
                 context['value_dict'] = session_dict.get('session_dict_{}'.format(count))
+                request.session['value_dict_final'] = session_dict.get('session_dict_{}'.format(count))
             count+=1
         if not session_data:
             context['value_dict'] = 0
@@ -73,6 +74,7 @@ def no_session(request):
                 if db_dict_num == session_dict.get('session_dict_{}'.format(data)).get('title'):
                     context['value_dict'] = session_dict.get('session_dict_{}'.format(data))
             context['session_dict'] = session_dict
+            request.session['value_dict_final'] = session_dict
             return render(request, 'index.html', context)
     return render(request, 'index.html', context)
 
@@ -118,10 +120,12 @@ def result(request):
 
 @login_required
 def gdpr_report(request):
+    final_dict = request.session.get('value_dict_final')
     context = {
-
+        'final_dict': final_dict,
+        'total_no_of_risk': request.session.get('total_no_of_risk')
     }
-    return render(request, 'gdpr_report.html')
+    return render(request, 'gdpr_report.html', context)
 
 
 @login_required
@@ -1661,6 +1665,10 @@ def dpia_screening(request):
         request.session['risk_score6']= table.risk_calculation_f6_all()
         request.session['risk_score7']= table.risk_calculation_f7_all()
         request.session['risk_score8']= table.risk_calculation_f8_all()
+        request.session['total_no_of_risk'] = table.risk_calculation_f1_all()[1] + table.risk_calculation_f2_all()[1] + \
+                                              table.risk_calculation_f3_all()[1] + table.risk_calculation_f4_all()[1] + \
+                                              table.risk_calculation_f5_all()[1] + table.risk_calculation_f6_all()[1] + \
+                                              table.risk_calculation_f7_all()[1] + table.risk_calculation_f8_all()[1]
 
         context = {
             'input_data': input_data,
@@ -1691,10 +1699,7 @@ def dpia_screening(request):
             'form6_percentage': form6_percentage,
             'form7_percentage': form7_percentage,
             'form8_percentage': form8_percentage,
-            'total_no_of_risk': table.risk_calculation_f1_all()[1] + table.risk_calculation_f2_all()[1]
-                                + table.risk_calculation_f3_all()[1] + table.risk_calculation_f4_all()[1]
-                                + table.risk_calculation_f5_all()[1] + table.risk_calculation_f6_all()[1]
-                                + table.risk_calculation_f7_all()[1] + table.risk_calculation_f8_all()[1]
+            'total_no_of_risk': request.session.get('total_no_of_risk')
         }
         return render(request, 'risk_summary.html', context)
     else:
