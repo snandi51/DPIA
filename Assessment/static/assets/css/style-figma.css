@@ -1723,8 +1723,10 @@ input[type="radio"]{
 
 .bar-png{
     height: 25px;
-    width: 1280px;
-    margin-bottom: -955px
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .bar2-png{
