@@ -1,0 +1,133 @@
+{% extends 'base-figma.html' %}
+{% block content %}
+{% load static %}
+
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Screen</title>
+</head>
+<div class="alt-nav" style="width: 1280px;">
+    <div style="position: absolute;
+    height: 26px;
+    left: 11.39%;
+    right: 38.75%;
+    top: 30%;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 117% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* Typography/On Surface/High Emphasis */
+
+    color: rgba(39, 41, 54, 0.85);">
+<!--        <a href="javascript:;"><button onclick="noSession()" class="button-assessment">Start DPIA Assessment</button></a>-->
+        <a href="#"><img src="static/assets/img/Icon.png"/></a>
+        DPIA Assessments
+    </div>
+</div>
+<script type="text/javascript">
+
+    window.onload = function(){
+        console.log('inside ready function')
+    };
+
+    var num_range = {{db_instance|safe}}
+    console.log('Num Range:'+num_range)
+
+    var session_db = {{ session_dict|safe }}
+    var session_db_num = Object.keys(session_db)
+    console.log(session_db);
+
+    var x = {{db_data|safe}}
+    console.log(x)
+
+<!--    for (var i = 1; i <= num_range; i++) {-->
+<!--      const button = document.createElement("button");-->
+<!--      const inside_div = document.createElement("div");-->
+<!--      button.innerText = session_db[`session_dict_${i}`].title + "\n" +-->
+<!--      "Date : "+ session_db[`session_dict_${i}`].date + "\n" +-->
+<!--      "Status : "+ session_db[`session_dict_${i}`].status + "\n" +-->
+<!--      "Project Name : "+ session_db[`session_dict_${i}`].name_of_organization;-->
+<!--      button.className = "session_box";-->
+<!--      inside_div.className = "inside_div";-->
+<!--      button.id = "button_id";-->
+<!--      (function(index){-->
+<!--            button.addEventListener("click", function() {-->
+<!--            console.log(index)-->
+<!--            window.location.href = "{% url 'no_session' %}" + "?search="+index-->
+<!--            })-->
+<!--        })(i)-->
+<!--      document.getElementById("main").appendChild(button);-->
+<!--    }-->
+<!--    console.log(i);-->
+
+
+    function clickDB(){
+        var data1 = document.getElementById('objects').value
+        console.log('Value is: '+ data1)
+
+    }
+
+    function noSession(){
+         var num = 0;
+         console.log('enter in no session')
+         window.location.href = "{% url 'no_session' %}" + "?search="+num
+    }
+
+    function setGetParameter(){
+    searchWord = document.getElementById('db_value').value;
+    console.log("Word is: "+searchWord)
+    window.location.href = "{% url 'no_session' %}" + "?search="+searchWord;
+    }
+
+<!--    document.addEventListener("click", function(){-->
+<!--        a = document.getElementById("session_button").index;-->
+<!--        console.log(a);-->
+<!--    });-->
+
+    var d = {{ db_instance|safe }}
+    console.log("DB instances are "+ d)
+
+    function getNum(i){
+        window.location.href = "{% url 'no_session' %}" + "?search="+i
+        console.log('div clicked ' + i)
+    }
+
+
+
+</script>
+
+<body class="body-class">
+    <div style="margin-top: 100px; margin-left: 100px;">
+        {% for i in session_dict.values %}
+            <a href="javascript:;"><div class="session_div_out" onclick="getNum('{{i.title}}')">
+                <div class="top-label-div">
+                    <p class="session_steps">{{ i.title }}</p>
+                    <p class="session-date">Date:&nbsp;<label style="color: #919198;"> {{ i.date }} </label></p>
+                    <p class="session-date">DPIA Status:&nbsp;<label style="color: #919198;"> {{ i.status }} </label></p>
+                    <p class="session-date">Project Name:&nbsp;<label style="color: #919198;"> {{ i.role }} </label></p>
+                </div>
+            </div></a>
+        {% endfor %}
+
+        <a onclick="noSession()" href="javascript:;">
+            <div class="session_div_out">
+                <img class="session-png" src="static/assets/img/session_create.png"/>
+                <p class="session-text">ADD NEW ASSESSMENT +</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
+<div>
+    <img class="bar-png" src="static/assets/img/bar.png"/>
+</div>
+{% endblock %}

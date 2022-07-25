@@ -1,14 +1,22 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base-figma.html' %}
 {% block content %}
+{% load static %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="container text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7);">
-<div class ="form-group;" style =" width: 500px; padding-bottom: 210px; margin-top: 100px">
-    <br>
-    <h1 class="text-black" style="border-color:white; font-family: Verdana">You have been logged out.</h1>
-    <a href="{% url 'login' %}"><button type="button" class="btn btn-primary rounded-pill" style="font-family:Verdana"><i class="fa fa-lock fa-lg "></i> Login Again</button></a>
-    </div>
-</div>
-
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+<body class="body-class">
+<div class="logout-box">
+        <p class="status-text" style="margin-left: 50px">Log out !</p>
+        <div class="status-msg">
+        </div>
+        <a href="{% url 'login' %}"><button class="logout-button1">Login again</button></a>
+        <div>
+            <img class="status-png" src="static/assets/img/logout.png"/>
+        </div>
+</div >
+<img class="bar-png" src="static/assets/img/bar.png"/>
 {% endblock %}
+</body>
+
+</html>

@@ -1,38 +1,47 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base-figma.html' %}
 {% block content %}
+{% load static %}
 
-<div style="margin-top: 70px" class="text-black  text-center">
-</div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="container col-sm-4 text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7); height: auto">
-    <div class ="form-group" style =" width: 500px; margin-left:30px; padding-bottom: 50px; margin-top: 40px">
-            <div class="col-md-8 text-black;">
-                    {% if messages %}
-                            {% for message in messages %}
-                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <p1>{{ message }}.</p1>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                            {% endfor %}
-                    {% endif %}
-                <form method="POST">
-                    <fieldset class="form-group">
-                        <br>
-                         <center><h4 class="text-black" style="font-family: Verdana"><strong><i class="fa fa-user"></i> LOGIN</strong></h4></center>
-                          <div class="form-group;" style="padding:10px">
-                            <label class="text-black" for="exampleInputEmail1">Username *</label>
-                            <input type="text" class="form-control" name="username" required>
-                          </div>
-                          <div class="form-group" style="padding:10px">
-                            <label class="text-black" for="exampleInputPassword1">Password *</label>
-                            <input type="password" class="form-control" name="password" required>
-                          </div>
-                            <br>
-                          <center><button type="submit" class="btn btn-primary rounded-pill login_button" style="font-family: Verdana"><i class="fa fa-unlock fa-lg "></i>  Login</button></center>
-                    </fieldset>
-                </form>
+<!DOCTYPE html>
+<html lang="en">
+<link href="static/assets/css/style-figma.css" rel="stylesheet">
+
+<body class="body-class">
+<div class="login-box">
+    <div class="login-inside">
+<!--        {% if messages %}-->
+<!--            {% for message in messages %}-->
+<!--                <div class="alert alert-warning alert-dismissible fade show" style="height: 15px; width: 320px; font-size:10px; padding-top:5px;" role="alert">-->
+<!--                    <p1>{{ message }}.</p1>-->
+<!--                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
+<!--                </div>-->
+<!--            {% endfor %}-->
+<!--        {% endif %}-->
+        <p class="dpia-title">DATA PROTECTION IMPACT ASSESSMENT</p>
+        <form method="POST">
+            <fieldset class="form-group">
+                <div style="width: 80px; margin-left: -280px; margin-top: -25px;">
+                    <label style="width: 80px; margin-left: 28px; font-size:14px;">Username </label>
+                    <input type="text" placeholder="Username" class="login-text-box-1" name="username" required>
+                </div>
+                <div style="width: 80px; margin-left: -280px; margin-top: 25px;">
+                    <label style="width: 80px; margin-left: 28px; font-size:14px;">Password </label>
+                    <input type="password" placeholder="Password" class="login-text-box-2" name="password" required>
+                    <a href="{% url 'login' %}"><button type="submit" class="login1-button1">Login</button></a>
+                </div>
+                <div style="width: 220px; height: 120px; margin-left: -250px; margin-top: 30px;">
+<!--                    <button type="submit" class="login-submit">Login</button>-->
+                    <a href="{% url 'forget_password' %}"><div style="font-size:10px; font-weight: 500px; font-family: 'Ubuntu';">FORGOT PASSWORD?</div></a>
+                </div>
+            </fieldset>
+            <div class="login-right">
+                <img class="login-png" src="static/assets/img/login.png"/>
             </div>
+        </form>
     </div>
-    </div>
-{% endblock content %}
+</div >
+<img class="bar-png" src="static/assets/img/bar.png"/>
+{% endblock %}
+</body>
+
+</html>

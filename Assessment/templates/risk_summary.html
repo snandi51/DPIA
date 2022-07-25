@@ -1,137 +1,312 @@
-{% extends 'base.html' %}
+{% extends 'base-figma.html' %}
 {% block content %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
 <script type ="text/javascript">
-    function myFunction() {
-        var row1 = document.getElementById("row1");
-            row1.bgColor = "green";
+    window.onload = function() {
+        var value = {{value|safe}}
+        console.log(value)
+
+        if(value == 1){
+         var pdf_button = document.getElementById('pdf_button')
+         pdf_button.style.background = '#0E88AF';
+         pdf_button.style.color = '#FFFFFF';
+         pdf_button.disabled = false;
+        }
+
+    }
+
+    function pdf_page(){
+        window.location.href = "{% url 'pdf' %}"
+        console.log('Opening PDF')
+    }
+
+    function risk_clickable_box1(){
+        var title = "Step 1 : Specify the need for a DPIA"
+        var num = 1
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('1')
+    }
+
+    function risk_clickable_box2(){
+        var num = 2
+        var title = "Step 2 : Details on the proposed processing"
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('2')
+    }
+
+    function risk_clickable_box3(){
+        var title = "Step 3 : The consultation process used"
+        var num = 3
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('3')
+    }
+
+    function risk_clickable_box4(){
+        var title = "Step 4 : Assess necessity and proportion"
+        var num = 4
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('4')
+    }
+
+    function risk_clickable_box5(){
+        var title = "Step 5 : Risk identification & assessment"
+        var num = 5
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('5')
+    }
+
+    function risk_clickable_box6(){
+        var title = "Step 6 : Measures to mitigate or eliminate risk"
+        var num = 6
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('6')
+    }
+
+    function risk_clickable_box7(){
+        var title = "Step 7 : Obtain necessary approvals"
+        var num = 7
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('7')
+    }
+
+    function risk_clickable_box8(){
+        var title = "Step 8 : Sign off and record outcomes"
+        var num = 8
+        window.location.href = "{% url 'risk_summary_details' %}" + "?search="+title
+        console.log('8')
     }
 </script>
+<div class="alt-nav" style="width:1263px;">
+    <div style="position: absolute;
+    height: 26px;
+    left: 11.39%;
+    right: 38.75%;
+    top: 30%;
 
-<body>
-<br><br>
-<div class="container text-white rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding:20px">
-      <main id="main">
-          <center><h3 class="text-black verdana" style="font-size:25px"><strong>RISK SUMMARY</strong></h3></center>
-        <table class="table table-bordered" style="margin-bottom: 10px; border-color: black;">
-          <thead>
-            <tr>
-              <th scope="col" class="table-active">Total Risks</th>
-              <th scope="col" class="table-active">{{ total_no_of_risk }}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row" class="table-active">Data Protection impacted assessment steps</th>
-                <th scope="row" class="table-active">Number of Risks</th>
-                <th scope="row" class="table-active">Risk Score</th>
-                <th scope="row" class="table-active">Risk Percentage</th>
-            </tr>
-            <tr>
-              <td>Step 1 : Specify the need for a DPIA</td>
-              <td>{{ risk_score1.1 }}</td>
-              <td>{{ risk_score1.0 }}</td>
-              {% if form1_color == 'green'%}
-                <td class="bg-success" id="row1" >{{ form1_percentage }}%</td>
-              {% elif form1_color == 'yellow' %}
-                <td class="bg-warning" id="row1" >{{ form1_percentage }}%</td>
-              {% else %}
-                <td class="bg-danger" id="row1" >{{ form1_percentage }}%</td>
-              {% endif %}
-            </tr>
-            <tr>
-              <td>Step 2: Provide details on the proposed processing</td>
-              <td>{{ risk_score2.1 }}</td>
-              <td>{{ risk_score2.0 }}</td>
-                {% if form2_color == 'green'%}
-                  <td class="bg-success" >{{ form2_percentage }}%</td>
-                {% elif form2_color == 'yellow' %}
-                  <td class="bg-warning">{{ form2_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form2_percentage }}%</td>
-                {% endif %}
-            </tr>
-            <tr>
-              <td>Step 3: Describe the consultation process used</td>
-              <td>{{ risk_score3.1 }}</td>
-              <td>{{ risk_score3.0 }}</td>
-                {% if form3_color == 'green'%}
-                  <td class="bg-success" >{{ form3_percentage }}%</td>
-                {% elif form3_color == 'yellow' %}
-                  <td class="bg-warning">{{ form3_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form3_percentage }}%</td>
-                {% endif %}
-            </tr>
-            <tr>
-              <td>Step 4: Describe the importance and materiality of processing</td>
-              <td>{{ risk_score4.1 }}</td>
-              <td>{{ risk_score4.0 }}</td>
-                {% if form4_color == 'green'%}
-                  <td class="bg-success" >{{ form4_percentage }}%</td>
-                {% elif form4_color == 'yellow' %}
-                  <td class="bg-warning">{{ form4_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form4_percentage }}%</td>
-                {% endif %}
-            </tr>
-            <tr>
-              <td>Step 5: Risk identification and assessment</td>
-              <td>{{ risk_score5.1 }}</td>
-              <td>{{ risk_score5.0 }}</td>
-                {% if form5_color == 'green'%}
-                  <td class="bg-success" >{{ form5_percentage }}%</td>
-                {% elif form5_color == 'yellow' %}
-                  <td class="bg-warning">{{ form5_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form5_percentage }}%</td>
-                {% endif %}
-            </tr>
-            <tr>
-              <td>Step 6: Describe measures to mitigate or eliminate risk</td>
-              <td>{{ risk_score6.1 }}</td>
-              <td>{{ risk_score6.1 }}</td>
-                {% if form6_color == 'green'%}
-                  <td class="bg-success" >{{ form6_percentage }}%</td>
-                {% elif form6_color == 'yellow' %}
-                  <td class="bg-warning">{{ form6_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form6_percentage }}%</td>
-                {% endif %}
-            </tr>
-            <tr>
-              <td>Step 7 : Obtain necessary approvals</td>
-              <td>{{ risk_score7.1 }}</td>
-              <td>{{ risk_score7.0 }}</td>
-                {% if form7_color == 'green'%}
-                  <td class="bg-success" >{{ form7_percentage }}%</td>
-                {% elif form7_color == 'yellow' %}
-                  <td class="bg-warning">{{ form7_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form7_percentage }}%</td>
-                {% endif %}
-            </tr>
-            <tr>
-              <td>Step 8 : Implement DPIA outcomes in Organization</td>
-              <td>{{ risk_score8.1 }}</td>
-              <td>{{ risk_score8.0 }}</td>
-                {% if form8_color == 'green'%}
-                  <td class="bg-success" >{{ form8_percentage }}%</td>
-                {% elif form8_color == 'yellow' %}
-                  <td class="bg-warning">{{ form8_percentage }}%</td>
-                {% else %}
-                  <td class="bg-danger">{{ form8_percentage }}%</td>
-                {% endif %}
-            </tr>
-          </tbody>
-    </table>
-        <a><button type="button" style="font-family:Verdana; margin-left:720px" class="btn btn-success rounded-pill">Generate PDF</button></a> <a><button type="button" style="font-family:Verdana" class="btn btn-success rounded-pill">Create Summary Report</button></a>
-      </main>
-    <!-- End #main -->
-  </div>
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 117% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* Typography/On Surface/High Emphasis */
+
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
+        <button onclick="pdf_page()" disabled id="pdf_button" class="summary-button1">Generate PDF</button>
+        <a href="javascript:;"><button class="summary-button2">Create Summary Report</button></a>
+        Risk Summary
+    </div>
+</div>
+
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: 1090px;
+height: 1100px; margin-left: 150px;
+padding-top: 100px;"
+>
+    <div class="user-info1">
+      <div style="width: 20%; height: 100px; float: left;">
+          <p class="gdpr_font1">Total Risks:<b>&nbsp;{{ total_no_of_risk }}</b></p>
+      </div>
+    </div>
+
+<!--    <div class="user-info2">-->
+<!--      <div style="width: 20%; height: 100px; float: left;">-->
+<!--          <p class="gdpr_font1">Number of Risks:<br><b>3</b></p>-->
+<!--      </div>-->
+<!--      <div style="width: 20%; height: 100px; float: left;">-->
+<!--          <p class="gdpr_font1">Total number of Risks:<br><b>{{ total_no_of_risk }}</b></p>-->
+<!--      </div>-->
+<!--      <div style="width: 20%; height: 100px; float: left;">-->
+<!--          <p class="gdpr_font1">Risk Percentage:<br><b>3</b></p>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <!--    Risk Summary box 1-->
+    <a href="#" onClick="risk_clickable_box1()">
+        <div class="risk-clickable-box1" id="risk-clickable-box1">
+            <div class="inside-risk-clickable-box1">
+                <p class="risk_summary_steps">Step 1</p>
+                <p class="risk_summary_title">Specify the need for a DPIA</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score1.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score1.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form1_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <!--    Risk Summary box 2-->
+    <a href="#" onClick="risk_clickable_box2()">
+        <div class="risk-clickable-box2" id="risk-clickable-box2">
+            <div class="inside-risk-clickable-box2">
+                <p class="risk_summary_steps">Step 2</p>
+                <p class="risk_summary_title">Details on the proposed processing</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score2.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score2.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form2_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <!--    Risk Summary box 3-->
+    <a href="#" onClick="risk_clickable_box3()">
+        <div class="risk-clickable-box3" id="risk-clickable-box3">
+            <div class="inside-risk-clickable-box3">
+                <p class="risk_summary_steps">Step 3</p>
+                <p class="risk_summary_title">The consultation process used</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score3.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score3.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form3_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <!--    Risk Summary box 4-->
+    <a href="#" onClick="risk_clickable_box4()">
+        <div class="risk-clickable-box4" id="risk-clickable-box4">
+            <div class="inside-risk-clickable-box4">
+                <p class="risk_summary_steps">Step 4</p>
+                <p class="risk_summary_title">Assess necessity and proportion</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score4.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score4.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form4_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <!--    Risk Summary box 5-->
+    <a href="#" onClick="risk_clickable_box5()">
+        <div class="risk-clickable-box5" id="risk-clickable-box5">
+            <div class="inside-risk-clickable-box5">
+                <p class="risk_summary_steps">Step 5</p>
+                <p class="risk_summary_title">Risk identification & assessment</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score5.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score5.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form5_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <!--    Risk Summary box 6-->
+    <a href="#" onClick="risk_clickable_box6()">
+        <div class="risk-clickable-box6" id="risk-clickable-box6">
+            <div class="inside-risk-clickable-box6">
+                <p class="risk_summary_steps">Step 6</p>
+                <p class="risk_summary_title">Measures to mitigate or eliminate risk</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score6.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score6.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form6_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <!--    Risk Summary box 7-->
+    <a href="#" onClick="risk_clickable_box7()">
+        <div class="risk-clickable-box7" id="risk-clickable-box7">
+            <div class="inside-risk-clickable-box7">
+                <p class="risk_summary_steps">Step 7</p>
+                <p class="risk_summary_title">Obtain necessary approvals</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score7.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score7.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form7_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+     <!--    Risk Summary box 8-->
+    <a href="#" onClick="risk_clickable_box8()">
+        <div class="risk-clickable-box8" id="risk-clickable-box8">
+            <div class="inside-risk-clickable-box8">
+                <p class="risk_summary_steps">Step 8</p>
+                <p class="risk_summary_title">Sign off and Record outcomes</p>
+            </div>
+            <div class="risk-details1">
+                <p>Numbers of Risks</p>
+                <p class="num_risk1">{{ risk_score8.1 }}</p>
+            </div>
+            <div class="risk-details2">
+                <p>Risks Score</p>
+                <p class="num_risk2">{{ risk_score8.0 }}</p>
+            </div>
+            <div class="risk-details3">
+                <p>Risk Percentage</p>
+                <p class="num_risk3">{{ form8_percentage }}%</p>
+            </div>
+        </div>
+    </a>
+
+    <a href="{% url 'gdpr_report' %}"><button class="risk-summary-gdpr-button">Proceed to GDPR Report</button></a>
+<img class="bar-png5" src="static/assets/img/bar.png"/>
 {% endblock %}
 </body>
 

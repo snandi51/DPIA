@@ -1,37 +1,78 @@
-{% extends 'base.html' %}
+{% extends 'base-figma.html' %}
 {% block content %}
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
-<div style="margin-top:130px">
 
+<div class="alt-nav">
+    <div style="position: absolute;
+    height: 26px;
+    left: 11.39%;
+    right: 38.75%;
+    top: 30%;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 117% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* Typography/On Surface/High Emphasis */
+
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
+        Result
+    </div>
 </div>
-<body>
-<div class="container col-sm-4 text-black rounded-top" style="background-color: rgba(245, 245, 248, 0.7); padding: 30px; margin-top:30px; height:200px">
-    <center>
-        <h3 class ="verdana_result" style="font-family:Verdana"><strong>RESULT</strong></h3>
-        {% if dpia_status %}
+<body class="body-class">
+<div class="result-box">
+    {% if dpia_status %}
             {% if dpia_status == 'Recommended' %}
-                <p style="color:#FFBF00; font-family:Verdana"><b>DPIA IS RECOMMENDED</b></p>
-                <a href="{% url 'dpia_screening' %}"><button type="button" style="font-family:Verdana" class="btn btn-success rounded-pill">Start Assessment</button></a>
+                <p class="result-text-2">DPIA is Recommended</p>
+                <a href="{% url 'screening' %}"><button class="result-button1">Retake Screening</button></a>
+                <a href="{% url 'dpia_screening' %}"><button class="result-button2">Proceed to Assessment</button></a>
+                <div>
+                    <img class="result-png" src="static/assets/img/result_recommanded.png"/>
+                </div>
             {% elif dpia_status == 'Mandatory' %}
-                <p style="color:red; font-family:Verdana"><b>DPIA IS MANDATORY</b></p>
-                <a href="{% url 'dpia_screening' %}"><button type="button" style="font-family:Verdana" class="btn btn-success rounded-pill">Start Assessment</button></a>
+                <p class="result-text">DPIA is Mandatory</p>
+                <a href="{% url 'screening' %}"><button class="result-button1">Retake Screening</button></a>
+                <a href="{% url 'dpia_screening' %}"><button class="result-button2">Proceed to Assessment</button></a>
+                <div>
+                    <img class="result-png-1" src="static/assets/img/result_mandatory.png"/>
+                </div>
             {% elif dpia_status == 'Not Required' %}
-                <p style="color:green; font-family:Verdana"><b>DPIA IS NOT REQUIRED</b></p>
-        <a href="{% url 'index' %}"><button type="button" style="font-family:Verdana" class="btn btn-primary rounded-pill">Back to Home</button></a>
+                <p class="result-text">DPIA is not required</p>
+                <a href="{% url 'screening' %}"><button class="result-button1">Retake Screening</button></a>
+                <a href="{% url 'index' %}"><button class="result-button2">Back to Home</button></a>
+                <div>
+                    <img class="result-png" src="static/assets/img/result_not_recommended.png"/>
+                </div>
             {% else %}
-                <p style="color:green; font-family:Verdana"><b>DPIA IS NOT MANDATORY</b></p>
-                <button type="button" onclick="history.back()" style="font-family:Verdana" class="btn btn-primary rounded-pill">Back to Screening</button>
+                <p class="result-text">DPIA is not mandatory</p>
+                <a href="{% url 'screening' %}"><button class="result-button1">Retake Screening</button></a>
+                <a href="{% url 'index' %}"><button class="result-button2">Back to Home</button></a>
+                <div>
+                    <img class="result-png" src="static/assets/img/result_png1.png"/>
+                </div>
             {% endif %}
         {% endif %}
-    </center>
-<!-- End #main -->
-    </div >
-<div style="margin-bottom: 90px">
-
-</div>
+</div >
+<!--<div class="result-instruction">-->
+<!--    <a style="margin-left:13px;">INSTRUCTIONS: </a>-->
+<!--    <ol>-->
+<!--        <li>If "Result" cell in "DPIA Screening" sheet shows an output as "Yes, DPIA Is Recommended" or "Yes, DPIA is Mandatory", then please open the "DPIA Assessment" sheet and provide your responses.</li>-->
+<!--        <li>On the basis of the responses provided in "DPIA Assessment" sheet, we will be preparing a "Risk Summary" sheet. This sheet will have the following details :</li>-->
+<!--        <li>Steps which are in compliance with recommended "Security by Design" prinicple of GDPR.</li>-->
+<!--        <li>Steps which are weak points in the current process and may be vulnerable to threats. Mitigation measures will be mentioned with these risks.</li>-->
+<!--        <li>Heatmap which will depict the current scenario and possible risk at each step of the whole process.</li>-->
+<!--    </ol>-->
+<!--</div>-->
+<img class="bar-png" src="static/assets/img/bar.png"/>
 {% endblock %}
 </body>
 

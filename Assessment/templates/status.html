@@ -1,0 +1,35 @@
+{% extends 'base-figma.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="body-class">
+<div class="status-box">
+        {% if status == '1' %}
+                <p class="status-text" style="margin-left: 50px">Approved !</p>
+                <div class="status-msg">
+                    <p>Your final GDPR Report is approved & is ready for download</p>
+                </div>
+                <a href="{% url 'screening' %}"><button class="status-button1">Back to Assessments</button></a>
+                <a href="{% url 'pdf' %}"><button class="status-button2">Download PDF Report</button></a>
+                <div>
+                    <img class="status-png" src="static/assets/img/approve.png"/>
+                </div>
+        {% else %}
+                <p class="status-text" style="margin-left: 50px">Sorry !</p>
+                <div class="status-msg">
+                    <p>Your final GDPR Report is rejected. We request you to take the assessment again.</p>
+                </div>
+                <a href="{% url 'screening' %}"><button class="status-button3">Back to Assessments</button></a>
+                <div>
+                    <img class="status-png" src="static/assets/img/reject.png"/>
+                </div>
+        {% endif %}
+</div >
+<img class="bar-png" src="static/assets/img/bar.png"/>
+{% endblock %}
+</body>
+
+</html>

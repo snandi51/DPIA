@@ -1,0 +1,101 @@
+{% extends 'base-figma.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<script type ="text/javascript">
+    function myFunction() {
+        var row1 = document.getElementById("row1");
+            row1.bgColor = "green";
+    }
+</script>
+<div class="alt-nav" style="width:1263px;">
+    <div style="position: absolute;
+    height: 26px;
+    left: 11.39%;
+    right: 38.75%;
+    top: 30%;
+
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 117% */
+
+    font-feature-settings: 'pnum' on, 'lnum' on;
+
+    /* Typography/On Surface/High Emphasis */
+
+    color: rgba(39, 41, 54, 0.85);">
+        <a href="#" onclick="history.back()"><img src="static/assets/img/Icon.png"/></a>
+        {{ title }}
+    </div>
+</div>
+
+<body style="background: linear-gradient(3.47deg, #00649B 13.28%, #66A9CD 93.28%);
+position: static;
+width: 1090px;
+height: 1400px; margin-left: 150px;
+padding-top: 100px;"
+>
+    <div class="user-info1">
+      <div style="width: 20%; height: 100px; float: left;">
+          <p class="gdpr_font1">Total Risks:&nbsp;<b>34</b></p>
+      </div>
+    </div>
+
+<!--    summary box 1-->
+    <div class="summary_details_box_1">
+        <div class="inside-summary-box1">
+            Risk 1
+        </div>
+        <p class="issue_definition">Issue Definition</p>
+        <div class="summary-text-box-1">
+            List of people who will have access to data is not defined
+        </div>
+
+        <p class="issue_definition">Risk Definition</p>
+        <div class="summary-text-box-1">
+            Data might be accessed or available to people who are not the right receipients
+        </div>
+        <p class="issue_definition1">Likelihood of Damage:&nbsp;<b>  Possibly</b></p>
+        <p class="issue_definition1">Severity of Damage:&nbsp;<b>  Significant</b></p>
+        <p class="issue_definition1">Overall Risk:&nbsp;<b>  High</b></p>
+        <p class="issue_definition1"><b>Risk Migration: </b></p>
+
+        <div>
+            <input class="input-box-1" placeholder="Add comments" type="text" id="comments_box_1" name="comments_box_1">
+        </div>
+
+    </div>
+
+<!--    summary box 2-->
+    <div class="summary_details_box_2">
+        <div class="inside-summary-box1">
+            Risk 2
+        </div>
+        <p class="issue_definition">Issue Definition</p>
+        <div class="summary-text-box-1">
+            List of people who will have access to data is not defined
+        </div>
+
+        <p class="issue_definition">Risk Definition</p>
+        <div class="summary-text-box-1">
+            Data might be accessed or available to people who are not the right receipients
+        </div>
+        <p class="issue_definition1">Likelihood of Damage:&nbsp;<b>  Possibly</b></p>
+        <p class="issue_definition1">Severity of Damage:&nbsp;<b>  Significant</b></p>
+        <p class="issue_definition1">Overall Risk:&nbsp;<b>  High</b></p>
+        <p class="issue_definition1"><b>Risk Migration: </b></p>
+
+        <div>
+            <input class="input-box-1" placeholder="Add comments" type="text" id="comments_box_1" name="comments_box_1">
+        </div>
+    </div>
+<img class="bar-png6" src="static/assets/img/bar.png"/>
+{% endblock %}
+</body>
+
+</html>
